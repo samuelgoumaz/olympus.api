@@ -1,7 +1,7 @@
 {
   "name": "@samuelgoumaz/olympus.api",
   "publishConfig": {
-    "@samuelgoumaz:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/olympus.api"
   },
   "version": "0.1.0",
   "description": "API for Supermassive NextJS project Frontend.",
