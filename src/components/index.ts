@@ -20,3 +20,5 @@ export { default as Input } from "./Input";
 export { default as Media } from "./Media";
 export { default as Main } from "./Main";
 export { default as Slider } from "./Slider";
+export { default as Banner } from "./Banner";
+export { default as Section } from "./Section";
