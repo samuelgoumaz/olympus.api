@@ -1,0 +1,92 @@
+@import "./responsive.scss";
+
+// _default.scss
+// Default configuration
+// ==========================================================================
+html, body, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+canvas {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  border: 0;
+}
+sup {
+  font-size: 0.75em;
+  line-height: inherit;
+}
+a {
+  cursor: pointer !important;
+}
+
+// Title
+// ==========================================================================
+.body {
+  font-size: 1.25em;
+  line-height: 1.2;
+  font-weight: normal;
+}
+h6 {
+  font-size: 1.25em;
+  line-height: 1.2;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// responsive
+@media #{$small-and-down} {
+  .body {
+    font-size: 1em;
+  }
+  h6 {
+    font-size: 1em;
+    line-height: 1.2;
+  }
+}
+@media #{$medium-and-down} {
+  .body {
+    font-size: 1.1em;
+  }
+  h6 {
+    font-size: 1.1em;
+    line-height: 1.2;
+  }
+}
+@media #{$medium-and-up} {
+  // styles for medium screens and larger
+}
+@media #{$large-and-up} {
+  // styles for large screens and up
+}
+@media #{$extra-large-and-up} {
+  // styles for extra large screens and up
+}

@@ -56,11 +56,14 @@ const Header = ({
   children
 }: HeaderProps) => (
   <header
-    className={`header`}
-    fx_aside={fx_aside}
-    fx_negative={fx_negative}
-    fx_top={fx_top}
-    fx_pinned={fx_pinned}
+    className={`
+      header
+      ${fx_aside === true && `fx_aside`}
+      ${fx_negative === true && `fx_negative`}
+      ${fx_top === true && `fx_top`}
+      ${fx_pinned === true && `fx_pinned`}
+
+    `}
   >
     <div className={`header-inner`}>
 
