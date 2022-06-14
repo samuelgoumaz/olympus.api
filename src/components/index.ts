@@ -1,3 +1,5 @@
-export { default as International } from "section/international";
-export { default as Header } from "layout/header";
-export { default as Button } from "ui/button";
+export { default as Button } from "./Button";
+export { default as Header } from "./Header";
+export { default as International } from "./International";
+export { default as Post } from "./Post";
+export { default as Tag } from "./Tag";
