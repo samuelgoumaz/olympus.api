@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Tag from '../Tag';
+import Seo from '../Seo';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Tag from '../Tag';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Tag',
-  component: Tag,
-} as ComponentMeta<typeof Tag>;
+  title: 'ReactComponentLibrary/Seo',
+  component: Seo,
+} as ComponentMeta<typeof Seo>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
+const Template: ComponentStory<typeof Seo> = (args) => <Seo {...args} />;
 
 /*
 # Args

@@ -35,10 +35,5 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
-  label: 'Hello world!'
-};
-
-export const Matisa = Template.bind({});
-Weedonist.args = {
-  title: 'The<strong>Weedonist</strong>'
+  title: 'Hello world!'
 };

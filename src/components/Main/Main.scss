@@ -1,0 +1,42 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.main-container {
+  background: red;
+
+  .main-inner {
+    .main-inner-col {
+      &.col-left {
+      }
+      &.col-middle {
+      }
+      &.col-right {
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@Main #{$small-and-down} {
+}
+
+@Main #{$medium-and-down} {
+}
+
+@Main #{$medium-and-up} {
+}
+
+@Main #{$large-and-up} {
+}
+
+@Main #{$extra-large-and-up} {
+}
