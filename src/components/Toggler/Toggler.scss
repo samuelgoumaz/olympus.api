@@ -6,18 +6,105 @@
 @import "../../../lib/materialize/responsive.scss";
 
 /*
-# document
-*/
+# document */
 .toggler-container {
-  background: red;
+  width: auto;
+  vertical-align: top;
+  display: inline-block;
 
-  .toggler-inner {
-    .toggler-inner-col {
-      &.col-left {
+  /*
+  handler */
+  .toggler-handler {
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: relative;
+    z-index: 2;
+
+    /*
+    icon */
+    .icon {
+      width: 100%;
+      height: 100%;
+      display: table;
+
+      span {
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 3em;
       }
-      &.col-middle {
+    }
+
+    /*
+    label */
+    .label {
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.875em;
+      font-weight: bold;
+    }
+
+    &.hv_label {
+      .icon {
+        height: 70%;
+
+        span {
+          vertical-align: bottom;
+        }
       }
-      &.col-right {
+      .label {
+        height: 30%;
+        vertical-align: top;
+        padding: 0;
+      }
+    }
+  }
+
+  /*
+  content */
+  .toggler-container {
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    position: fixed;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    background: yellow;
+
+    /*
+    FX */
+    .fx_content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: pink;
+    }
+
+    /*
+    Toggler Content */
+    .toggler-content {
+      width: 100%;
+      height: 100%;
+      display: table;
+      position: relative;
+      z-index: 2;
+
+      .toggler-content-inner {
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
       }
     }
   }

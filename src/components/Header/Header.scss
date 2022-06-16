@@ -9,7 +9,10 @@
 # Header
 */
 .header-container {
-  background: red;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  top: 0;
 
   .header-inner {
     width: 100%;
@@ -29,14 +32,28 @@
       &.col-left {
         text-align: left;
         width: 35%;
+
+        .branding {
+          width: auto;
+          height: 80px;
+          display: inline-block;
+        }
       }
       &.col-middle {
         text-align: center;
         width: 30%;
+        height: 100%;
+
+        .branding {
+          width: auto;
+          height: 80px;
+          display: inline-block;
+        }
       }
       &.col-right {
         text-align: right;
         width: 35%;
+        height: 100%;
       }
     }
   }
@@ -47,7 +64,6 @@
 */
 @media #{$small-and-down} {
   .header-container {
-    background: yellow;
 
     .header-inner {
       height: 50px;
@@ -55,9 +71,21 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+
+          .branding {
+            width: auto;
+            height: 30px;
+            display: inline-block;
+          }
         }
         &.col-middle {
           width: 30%;
+
+          .branding {
+            width: auto;
+            height: 30px;
+            display: inline-block;
+          }
         }
         &.col-right {
           width: 35%;
@@ -68,7 +96,6 @@
 }
 @media #{$medium-and-down} {
   .header-container {
-    background: green;
 
     .header-inner {
       height: 60px;
@@ -76,9 +103,21 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+
+          .branding {
+            width: auto;
+            height: 40px;
+            display: inline-block;
+          }
         }
         &.col-middle {
           width: 30%;
+
+          .branding {
+            width: auto;
+            height: 40px;
+            display: inline-block;
+          }
         }
         &.col-right {
           width: 35%;
@@ -89,7 +128,6 @@
 }
 @media #{$medium-and-up} {
   .header-container {
-    background: pink;
 
     .header-inner {
       height: 70px;
@@ -97,9 +135,21 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+
+          .branding {
+            width: auto;
+            height: 50px;
+            display: inline-block;
+          }
         }
         &.col-middle {
           width: 30%;
+
+          .branding {
+            width: auto;
+            height: 50px;
+            display: inline-block;
+          }
         }
         &.col-right {
           width: 35%;
@@ -110,7 +160,6 @@
 }
 @media #{$large-and-up} {
   .header-container {
-    background: brown;
 
     .header-inner {
       height: 80px;
@@ -118,9 +167,21 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+
+          .branding {
+            width: auto;
+            height: 60px;
+            display: inline-block;
+          }
         }
         &.col-middle {
           width: 30%;
+
+          .branding {
+            width: auto;
+            height: 60px;
+            display: inline-block;
+          }
         }
         &.col-right {
           width: 35%;
@@ -131,7 +192,6 @@
 }
 @media #{$extra-large-and-up} {
   .header-container {
-    background: orange;
 
     .header-inner {
       height: 90px;
@@ -139,9 +199,21 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+
+          .branding {
+            width: auto;
+            height: 70px;
+            display: inline-block;
+          }
         }
         &.col-middle {
           width: 30%;
+
+          .branding {
+            width: auto;
+            height: 70px;
+            display: inline-block;
+          }
         }
         &.col-right {
           width: 35%;

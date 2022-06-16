@@ -9,17 +9,11 @@
 # document
 */
 .main-container {
-  background: red;
+  position: relative;
+  z-index: 2;
 
   .main-inner {
-    .main-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
-      }
-    }
+    position: relative;
   }
 }
 

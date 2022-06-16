@@ -8,14 +8,16 @@
 /*
 # document
 */
-.footer-container {
-  .footer-inner {
-    .footer-inner-col {
-      &.col-left {
+.title-container {
+  &:after {
+  }
+  .fx-content {
+  }
+  .title-content {
+    .title-inner-content {
+      .title {
       }
-      &.col-middle {
-      }
-      &.col-right {
+      .subtitle {
       }
     }
   }

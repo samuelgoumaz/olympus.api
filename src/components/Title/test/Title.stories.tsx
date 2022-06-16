@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Calendar from '../Calendar';
+import Title from '../Title';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Calendar from '../Calendar';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Calendar',
-  component: Calendar,
-} as ComponentMeta<typeof Calendar>;
+  title: 'ReactComponentLibrary/Title',
+  component: Title,
+} as ComponentMeta<typeof Title>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Calendar> = (args) => <Calendar {...args} />;
+const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
 
 /*
 # Args
@@ -35,5 +35,6 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
-  title: 'Hello world!'
+  title: 'My Title',
+  subtitle: 'My Subtitle',
 };

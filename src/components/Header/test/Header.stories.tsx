@@ -51,3 +51,12 @@ Weedonist.args = {
   left_positive: 'http://localhost:1337/uploads/branding_85acfc9546.svg',
   left_negative: 'http://localhost:1337/uploads/branding_negative_6cc77d4e42.svg?updated_at=2022-05-23T17:43:41.259Z',
 };
+
+export const EventsConcept = Template.bind({});
+EventsConcept.args = {
+  title: '',
+  left_positive: 'http://localhost:1337/uploads/eventsconcept_logotype_9e1a701ea0.svg',
+  left_negative: 'http://localhost:1337/uploads/eventsconcept_logotype_9e1a701ea0.svg',
+  middle_positive: 'http://localhost:1337/uploads/eventsconcept_branding_6a3daad5bb.svg',
+  middle_negative: 'http://localhost:1337/uploads/eventsconcept_branding_6a3daad5bb.svg',
+};

@@ -33,7 +33,143 @@ const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  title: 'Hello world!'
+export const Error = Template.bind({});
+Error.args = {
+  display: `sasd`,
+  menu: `sdfasdfasdf`
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  display: null,
+  menu: [{
+      "id": 1,
+      "name": "Home",
+      "url": "#home",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 2,
+      "name": "Showreel",
+      "url": "#showreel",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 3,
+      "name": "Case studies",
+      "url": "#casestudies",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 4,
+      "name": "Clients",
+      "url": "#client",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 5,
+      "name": "Contact",
+      "url": "#contact",
+      "page": {
+          "data": null
+      }
+  }]
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  display: "inline",
+  menu: [{
+      "id": 1,
+      "name": "Home",
+      "url": "#home",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 2,
+      "name": "Showreel",
+      "url": "#showreel",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 3,
+      "name": "Case studies",
+      "url": "#casestudies",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 4,
+      "name": "Clients",
+      "url": "#client",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 5,
+      "name": "Contact",
+      "url": "#contact",
+      "page": {
+          "data": null
+      }
+  }]
+};
+
+export const List = Template.bind({});
+List.args = {
+  display: "list",
+  menu: [{
+      "id": 1,
+      "name": "Home",
+      "url": "#home",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 2,
+      "name": "Showreel",
+      "url": "#showreel",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 3,
+      "name": "Case studies",
+      "url": "#casestudies",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 4,
+      "name": "Clients",
+      "url": "#client",
+      "page": {
+          "data": null
+      }
+  },
+  {
+      "id": 5,
+      "name": "Contact",
+      "url": "#contact",
+      "page": {
+          "data": null
+      }
+  }]
 };

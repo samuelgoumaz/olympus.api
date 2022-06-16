@@ -2,14 +2,14 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./Introduction.scss";
+import "./Text.scss";
 
 /*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
-export interface IntroductionProps {
+export interface TextProps {
   position: number;
   body: string | null;
   children: JSX.Element | JSX.Element[];
@@ -20,7 +20,7 @@ export interface IntroductionProps {
 /*
 # Class Components
 */
-/*const Introduction: React.FC<IntroductionProps> = ({
+/*const Text: React.FC<TextProps> = ({
   left_positive,
   left_negative,
   middle_positive,
@@ -34,34 +34,36 @@ export interface IntroductionProps {
   children
 }) => (
 */
-const Introduction = ({
+const Text = ({
   position,
   body,
   children
-}: IntroductionProps) => (
+}: TextProps) => (
   <section
     className={`
-      section section-introduction
-      introduction-container
+      section section-text
+      text-container
     `}
     style={{
       position: `relative`,
       zIndex: position ?? 2
     }}
   >
-    <div className={`introduction-content`}>
+
+    <div className={`text-content`}>
       {children}
     </div>
 
-    <div className={`introduction-inner`}>
-      <div className={`introduction-inner-content`}>
+    <div className={`text-inner`}>
+      <div className={`text-inner-content`}>
         <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />
       </div>
     </div>
+
   </section>
 );
 
 /*
 # Export
 */
-export default Introduction;
+export default Text;

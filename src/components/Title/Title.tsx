@@ -2,16 +2,17 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./Introduction.scss";
+import "./Title.scss";
 
 /*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
-export interface IntroductionProps {
+export interface TitleProps {
   position: number;
-  body: string | null;
+  title: string | null;
+  subtitle: string | null;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -20,7 +21,7 @@ export interface IntroductionProps {
 /*
 # Class Components
 */
-/*const Introduction: React.FC<IntroductionProps> = ({
+/*const Title: React.FC<TitleProps> = ({
   left_positive,
   left_negative,
   middle_positive,
@@ -34,34 +35,38 @@ export interface IntroductionProps {
   children
 }) => (
 */
-const Introduction = ({
+const Title = ({
   position,
-  body,
+  title,
+  subtitle,
   children
-}: IntroductionProps) => (
+}: TitleProps) => (
   <section
     className={`
-      section section-introduction
-      introduction-container
+      section section-title
+      title-container
     `}
     style={{
       position: `relative`,
       zIndex: position ?? 2
     }}
   >
-    <div className={`introduction-content`}>
+
+    <div className={`fx-content`}>
       {children}
     </div>
 
-    <div className={`introduction-inner`}>
-      <div className={`introduction-inner-content`}>
-        <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />
+    <div className={`title-content`}>
+      <div className={`title-inner-content`}>
+        <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} />
+        <h2 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} />
       </div>
     </div>
+
   </section>
 );
 
 /*
 # Export
 */
-export default Introduction;
+export default Title;

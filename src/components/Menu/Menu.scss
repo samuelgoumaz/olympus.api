@@ -9,18 +9,38 @@
 # document
 */
 .menu-container {
-  background: red;
 
-  .menu-inner {
-    .menu-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
+  &.dsp-list {
+    .menu-line {
+      .menu-item {
       }
     }
   }
+
+  &.dsp-inline {
+    width: 100%;
+    display: table;
+
+    .menu-line {
+      display: table-cell;
+      float: none;
+
+      .menu-item {
+      }
+    }
+  }
+
+  .menu-line {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .menu-item {
+      display: block;
+      text-align: center;
+    }
+  }
+
 }
 
 /*

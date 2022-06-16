@@ -58,33 +58,33 @@ const Header = ({
   <header
     className={`
       header-container
-      ${fx_aside === true && `fx_aside`}
-      ${fx_negative === true && `fx_negative`}
-      ${fx_top === true && `fx_top`}
-      ${fx_pinned === true && `fx_pinned`}
+      ${fx_aside === true ? `fx_aside` : ``}
+      ${fx_negative === true ? `fx_negative` : ``}
+      ${fx_top === true ? `fx_top` : ``}
+      ${fx_pinned === true ? `fx_pinned` : ``}
 
     `}
   >
     <div className={`header-inner`}>
 
       <div className={`header-inner-col col-left`}>
-        {left_positive != null && left_negative != null && <img
+        {left_positive != null && left_negative != null && <a href={`/`}><img
           className={"branding"}
           width="auto"
           height="100%"
           src={fx_negative == true ? left_negative : left_positive}
-        />}
+        /></a>}
       </div>
 
       <div className={`header-inner-col col-middle`}>
         {
           middle_positive != null && middle_negative != null ?
-            <img
+            <a href={`/`}><img
               className={"branding"}
               width="auto"
               height="100%"
               src={fx_negative == true ? middle_negative : middle_positive}
-            />
+            /></a>
           :
             <h1 className="header-title" dangerouslySetInnerHTML={{ __html: title }} />
       }

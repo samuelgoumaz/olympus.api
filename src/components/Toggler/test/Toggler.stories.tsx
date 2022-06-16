@@ -35,5 +35,11 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
-  title: 'Hello world!'
+  icon: 'menu',
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  icon: 'menu',
+  label: 'menu',
 };

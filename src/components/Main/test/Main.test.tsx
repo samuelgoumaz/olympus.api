@@ -12,9 +12,13 @@ describe("Main", () => {
   test("renders the Button component", () => {
     render(
       <Main
-        label="Hello world!"
-        positive="http://localhost:1337/uploads/branding_85acfc9546.svg"
-      />
+        fx_aside={false}
+        fx_negative={false}
+        fx_top={false}
+        fx_pinned={false}
+      >
+        <h1>hello</h1>
+      </Main>
     );
   });
 });

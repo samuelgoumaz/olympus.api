@@ -25,3 +25,5 @@ export { default as Section } from "./Section";
 export { default as Picker } from "./Picker";
 export { default as Toggler } from "./Toggler";
 export { default as Dropdown } from "./Dropdown";
+export { default as Video } from "./Video";
+export { default as Title } from "./Title";

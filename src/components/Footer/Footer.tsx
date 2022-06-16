@@ -10,92 +10,87 @@ import "./Footer.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FooterProps {
-  left_positive: string | null;
-  left_negative: string | null;
-  middle_positive: string | null;
-  middle_negative: string | null;
-  fx_aside: false | true;
-  fx_negative: false | true;
-  fx_top: false | true;
-  fx_pinned: true | false;
-  title: string;
-  subtitle: string;
+  position: number;
+  facebook: false | true;
+  instagram: false | true;
+  linkedin: false | true;
+  mail: false | true;
+  tel: false | true;
+  address: string | null;
   children: JSX.Element | JSX.Element[];
 }
 
-
-
 /*
-# Class Components
-*/
-/*const Footer: React.FC<FooterProps> = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
-  title,
-  subtitle,
-  children
-}) => (
-*/
+# Class Components */
 const Footer = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
-  title,
-  subtitle,
+  position,
+  instagram,
+  facebook,
+  linkedin,
+  mail,
+  tel,
+  address,
   children
 }: FooterProps) => (
-  <div
-    className={`
-      footer-container
-      ${fx_aside === true && `fx_aside`}
-      ${fx_negative === true && `fx_negative`}
-      ${fx_top === true && `fx_top`}
-      ${fx_pinned === true && `fx_pinned`}
-
-    `}
+  <section
+    className={`section section-footer footer-container`}
+    style={{
+      position: `relative`,
+      zIndex: position ?? 2
+    }}
   >
     <div className={`footer-inner`}>
 
-      <div className={`footer-inner-col col-left`}>
-        {left_positive != null && left_negative != null && <img
-          className={"branding"}
-          width="auto"
-          height="100%"
-          src={fx_negative == true ? left_negative : left_positive}
-        />}
+      {/*
+      Specific part */}
+      {children}
+
+      {/*
+      col-address */}
+      <div className={`footer-inner-col col-address`}>
+        {address}
       </div>
 
-      <div className={`footer-inner-col col-middle`}>
-        {
-          middle_positive != null && middle_negative != null ?
-            <img
-              className={"branding"}
-              width="auto"
-              height="100%"
-              src={fx_negative == true ? middle_negative : middle_positive}
-            />
-          :
-            <h1 className="footer-title" dangerouslySetInnerHTML={{ __html: title }} />
-      }
+      {/*
+      col-social */}
+      <div className={`footer-inner-col col-social`}>
+        <ul>
+
+          {instagram && <li className={`social`}>
+            <img src={"/social/instagram.svg"} />
+          </li>}
+
+          {facebook && <li className={`social`}>
+            <img src={"/social/instagram.svg"} />
+          </li>}
+
+          {linkedin && <li className={`social`}>
+            <img src={"/social/linkedin.svg"} />
+          </li>}
+
+          {mail && <li className={`social`}>
+            <span className={`material-icons`}>send</span>
+          </li>}
+
+          {tel && <li className={`social`}>
+            <span className={`material-icons`}>call</span>
+          </li>}
+
+        </ul>
       </div>
 
-      <div className={`footer-inner-col col-right`}>
-        {children}
+      {/*
+      col-payment */}
+      <div className={`footer-inner-col col-payment`}>
+      </div>
+
+      {/*
+      col-menu */}
+      <div className={`footer-inner-col col-menu`}>
       </div>
 
     </div>
-  </div>
+  </section>
 );
 
 /*

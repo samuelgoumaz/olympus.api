@@ -33,7 +33,12 @@ const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  title: 'Hello world!'
+export const Default = Template.bind({});
+Default.args = {
+  layout_margin: false,
+  fx_margin: false,
+  fx_aside: false,
+  fx_negative: false,
+  fx_top: false,
+  fx_pinned: false,
 };

@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Introduction from '../Introduction';
+import Text from '../Text';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Introduction from '../Introduction';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Introduction',
-  component: Introduction,
-} as ComponentMeta<typeof Introduction>;
+  title: 'ReactComponentLibrary/Text',
+  component: Text,
+} as ComponentMeta<typeof Text>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Introduction> = (args) => <Introduction {...args} />;
+const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 /*
 # Args
