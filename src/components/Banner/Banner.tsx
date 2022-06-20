@@ -59,13 +59,13 @@ const Banner = ({
         {children}
       </div>
 
-      {<div className={`banner-content`}>
+      {title != false || body != false || subtitle != false ? <div className={`banner-content`}>
         <div className={`banner-content-inner`}>
           {title != null ? <h1 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-          {subtitle != null ? <h2 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+          {subtitle != null ? <h4 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
           {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         </div>
-      </div>}
+      </div> : ``}
 
     </div>
   </section>

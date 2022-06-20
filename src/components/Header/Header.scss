@@ -8,7 +8,7 @@
 /*
 # Header
 */
-.header-container {
+.header-component {
   width: 100%;
   position: fixed;
   z-index: 9;
@@ -30,6 +30,7 @@
       position: relative;
 
       &.col-left {
+        padding: 0 20px;
         text-align: left;
         width: 35%;
 
@@ -40,6 +41,7 @@
         }
       }
       &.col-middle {
+        padding: 0 20px;
         text-align: center;
         width: 30%;
         height: 100%;
@@ -63,13 +65,14 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .header-container {
+  .header-component {
 
     .header-inner {
       height: 50px;
 
       .header-inner-col {
         &.col-left {
+          padding: 0 10px;
           width: 35%;
 
           .branding {
@@ -79,6 +82,7 @@
           }
         }
         &.col-middle {
+          padding: 0;
           width: 30%;
 
           .branding {
@@ -95,7 +99,7 @@
   }
 }
 @media #{$medium-and-down} {
-  .header-container {
+  .header-component {
 
     .header-inner {
       height: 60px;
@@ -103,6 +107,7 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+          padding: 0 15px;
 
           .branding {
             width: auto;
@@ -112,6 +117,7 @@
         }
         &.col-middle {
           width: 30%;
+          padding: 0 10px;
 
           .branding {
             width: auto;
@@ -127,7 +133,7 @@
   }
 }
 @media #{$medium-and-up} {
-  .header-container {
+  .header-component {
 
     .header-inner {
       height: 70px;
@@ -135,6 +141,7 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
+          padding: 0 20px;
 
           .branding {
             width: auto;
@@ -146,6 +153,7 @@
           width: 30%;
 
           .branding {
+            padding: 0 15px;
             width: auto;
             height: 50px;
             display: inline-block;
@@ -159,7 +167,7 @@
   }
 }
 @media #{$large-and-up} {
-  .header-container {
+  .header-component {
 
     .header-inner {
       height: 80px;
@@ -191,7 +199,7 @@
   }
 }
 @media #{$extra-large-and-up} {
-  .header-container {
+  .header-component {
 
     .header-inner {
       height: 90px;

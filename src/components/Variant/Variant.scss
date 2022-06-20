@@ -8,16 +8,41 @@
 /*
 # document
 */
-.variant-container {
-  background: red;
+.variant-component {
 
-  .variant-inner {
-    .variant-inner-col {
-      &.col-left {
+  .variant-component-selector {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 15px;
+  }
+  .variant-component-list {
+    display: inline-block;
+    vertical-align: top;
+
+    .variant-component-row {
+      display: none;
+
+      &.dsp-active {
+        display: block;
       }
-      &.col-middle {
-      }
-      &.col-right {
+
+      .variant-component-col {
+        padding-left: 5px;
+        display: inline-block;
+        vertical-align: top;
+
+        &.col-remove {
+        }
+        &.col-indicator {
+          button {
+            font-size: 11px;
+          }
+        }
+        &.col-add {
+        }
+        &.col-price {
+
+        }
       }
     }
   }

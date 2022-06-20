@@ -35,5 +35,33 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
-  title: 'Hello world!'
+  variants:
+    [
+      {
+        id: 1,
+        parent_id: 2,
+        title: "5",
+        subtitle: "G",
+        sku: "amnesia-5g",
+        price_default: 20,
+        price_promotion: 30,
+        stock_disponibility: true,
+        stock_limited: 10,
+        locale: "en",
+        selected: true,
+      },
+      {
+        id: 3,
+        parent_id: 2,
+        title: "30",
+        subtitle: "G",
+        sku: "amnesia-5g",
+        price_default: 50,
+        price_promotion: 60,
+        stock_disponibility: true,
+        stock_limited: 15,
+        locale: "en",
+        selected: false,
+      },
+    ]
 };

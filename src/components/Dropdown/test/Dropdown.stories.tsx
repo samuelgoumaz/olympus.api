@@ -33,7 +33,14 @@ const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} 
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  title: 'Hello world!'
+export const Input = Template.bind({});
+Input.args = {
+  display: `input`,
+  children: [<div>line 1</div>, <div>line 2</div>, <div>line 3</div>],
+};
+
+export const Ui = Template.bind({});
+Ui.args = {
+  display: `ui`,
+  children: [<div>line 1</div>, <div>line 2</div>, <div>line 3</div>],
 };

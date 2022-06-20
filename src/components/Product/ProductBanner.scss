@@ -8,17 +8,17 @@
 /*
 # document
 */
-.dropdown-container {
-  background: red;
 
-  .dropdown-inner {
-    .dropdown-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
-      }
+
+.product-component-banner {
+  .fx {
+  }
+  .product-inner {
+    .scene {
+    }
+    .content {
+    }
+    .action {
     }
   }
 }
@@ -27,6 +27,18 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .product-component-banner {
+    .fx {
+    }
+    .product-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {

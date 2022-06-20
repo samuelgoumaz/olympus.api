@@ -8,21 +8,26 @@
 /*
 # document
 */
-.fx-component {
+.fx-product-default {
   width: 100%;
   height: 100%;
   display: block;
-  position: absolute;
-  top: 0;
+  position: relative;
+  text-align: center;
 
-  .fx-inner {
-    width: 100%;
+  img {
+    display: inline-block;
+    margin: 0 auto;
     height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding: 40px;
+  }
 
+  .version {
+    padding: 5px;
+    font-family: Monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: white;
   }
 }
 

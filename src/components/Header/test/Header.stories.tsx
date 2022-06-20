@@ -52,6 +52,13 @@ Weedonist.args = {
   left_negative: 'http://localhost:1337/uploads/branding_negative_6cc77d4e42.svg?updated_at=2022-05-23T17:43:41.259Z',
 };
 
+export const Dustygreen = Template.bind({});
+Dustygreen.args = {
+  title: ``,
+  left_positive: 'http://localhost:1337/uploads/dusty_green_193bc26ef5.png',
+  left_negative: 'http://localhost:1337/uploads/dusty_green_193bc26ef5.png',
+};
+
 export const EventsConcept = Template.bind({});
 EventsConcept.args = {
   title: '',

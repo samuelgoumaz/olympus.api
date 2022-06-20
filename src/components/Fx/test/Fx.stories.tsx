@@ -35,5 +35,10 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
-  title: 'Hello world!'
+  fx_background: {
+    background : "linear-gradient(red, yellow)",
+    opacity : 0.5,
+    mixBlendMode : "exclusion",
+    position : 1
+  }
 };

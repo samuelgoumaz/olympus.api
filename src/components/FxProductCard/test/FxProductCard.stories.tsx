@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Toggler from '../Toggler';
+import FxProductCard from '../FxProductCard';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Toggler from '../Toggler';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Toggler',
-  component: Toggler,
-} as ComponentMeta<typeof Toggler>;
+  title: 'ReactComponentLibrary/FxProductCard',
+  component: FxProductCard,
+} as ComponentMeta<typeof FxProductCard>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Toggler> = (args) => <Toggler {...args} />;
+const Template: ComponentStory<typeof FxProductCard> = (args) => <FxProductCard {...args} />;
 
 /*
 # Args
@@ -35,26 +35,6 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: 'menu',
-  display: 'aasdfasdf',
-};
-
-export const Menu = Template.bind({});
-Menu.args = {
-  icon: 'menu',
-  label: 'menu',
-  display: 'fullscreen',
-};
-
-export const Cart = Template.bind({});
-Cart.args = {
-  icon: 'local_mall',
-  label: 'cart',
-  display: 'aside',
-};
-
-export const Toggle = Template.bind({});
-Toggle.args = {
-  icon: 'view_week',
-  close: 'view_stream',
+  image : "http://localhost:1337/uploads/default_dustygreen_product_0f2dd80285.png",
+  position : 1
 };

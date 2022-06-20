@@ -11,7 +11,9 @@ import "./Toggler.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface TogglerProps {
+  display: string | null;
   icon: string | null;
+  close: string | null;
   label: string | null;
   fx_status: false | true;
   fx_children: JSX.Element | JSX.Element[];
@@ -39,7 +41,9 @@ export interface TogglerProps {
 }) => (
 */
 const Toggler = ({
+  display,
   icon,
+  close,
   label,
   fx_status,
   fx_children,
@@ -49,7 +53,7 @@ const Toggler = ({
   return (
     <div
       className={`
-        toggler-container
+        toggler-component
       `}
     >
       {/*
@@ -66,31 +70,39 @@ const Toggler = ({
 
         <div className={`icon`}>
           <span className={`material-icons`}>
-            {!fx_status ? `menu` : `close`}
+            {!fx_status ? icon : close ?? `close`}
           </span>
         </div>
 
         {label != null ? <div className={`label`}>
-          {!fx_status ? label : `Close`}
+          {!fx_status ? label : close ?? `close`}
         </div> : ``}
 
       </div>
 
       {/*
       Content */}
-      {fx_status === true && <div className={`toggler-container`}>
+      {fx_status === true && children ? <div className={`
+        toggler-container
+        ${display === `fullscreen` ? `fullscreen` : ``}
+        ${display === `aside` ? `aside` : ``}
+        ${display === `popup` ? `popup` : ``}
+        ${display == null ? `default` : ``}
+      `}>
 
         {fx_children ? <div className={`toggler-fx`}>
           {fx_children}
         </div> : ``}
 
-        {children ? <div className={`toggler-content`}>
+        {children ? <div className={`
+          toggler-content
+        `}>
           <div className={`toggler-content-inner`}>
             {children}
           </div>
         </div> : ``}
 
-      </div>}
+      </div> : ``}
 
     </div>
   )

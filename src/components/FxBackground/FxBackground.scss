@@ -8,18 +8,18 @@
 /*
 # document
 */
-.product-container {
-  background: red;
+.fx-background {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
 
-  .product-inner {
-    .product-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
-      }
-    }
+  .version {
+    padding: 5px;
+    font-family: Monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: white;
   }
 }
 

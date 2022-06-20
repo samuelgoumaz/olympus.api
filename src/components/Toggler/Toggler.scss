@@ -7,10 +7,11 @@
 
 /*
 # document */
-.toggler-container {
+.toggler-component {
   width: auto;
   vertical-align: top;
   display: inline-block;
+  background: blue;
 
   /*
   handler */
@@ -34,7 +35,8 @@
         display: table-cell;
         vertical-align: middle;
         text-align: center;
-        font-size: 3em;
+        font-size: 3em; // proportion
+        line-height: 1;
       }
     }
 
@@ -47,7 +49,7 @@
       bottom: 0;
       text-align: center;
       padding: 10px 0;
-      font-size: 0.875em;
+      font-size: 1em;
       font-weight: bold;
     }
 
@@ -70,14 +72,33 @@
   /*
   content */
   .toggler-container {
-    width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
     position: fixed;
     z-index: 1;
     display: block;
     top: 0;
     left: 0;
-    background: yellow;
+
+    &.default {
+      width: 100vw;
+    }
+
+    &.fullscreen {
+      width: 100vw;
+    }
+
+    &.aside {
+      background: white;
+      padding-top: 100px;
+      overflow: auto;
+      width: 25vw;
+      left: auto;
+      right: 0;
+    }
+
+    &.popup {
+      width: 50vw;
+    }
 
     /*
     FX */
@@ -88,7 +109,6 @@
       z-index: 1;
       top: 0;
       left: 0;
-      background: pink;
     }
 
     /*
@@ -114,16 +134,395 @@
 # Responsive
 */
 @media #{$small-and-down} {
+
+  .toggler-component {
+    background: red;
+
+    /*
+    handler */
+    .toggler-handler {
+      width: 50px;
+      height: 50px;
+
+      /*
+      icon */
+      .icon {
+        span {
+          font-size: 2em;
+        }
+      }
+
+      /*
+      label */
+      .label {
+      }
+
+      /*
+      hv_label */
+      &.hv_label {
+        .icon {
+          height: 72.5%;
+          span {
+            font-size: 1.75em;
+          }
+        }
+        .label {
+          font-size: 0.65em;
+          height: 35%;
+        }
+      }
+    }
+
+    /*
+    content */
+    .toggler-container {
+
+      &.default {
+        width: 100vw;
+      }
+
+      &.fullscreen {
+        width: 100vw;
+      }
+
+      &.aside {
+        padding-top: 50px;
+        width: 100vw;
+        left: auto;
+        right: 0;
+      }
+
+      &.popup {
+        width: 50vw;
+      }
+
+      /*
+      FX */
+      .fx_content {
+      }
+
+      /*
+      Toggler Content */
+      .toggler-content {
+        .toggler-content-inner {
+        }
+      }
+    }
+  }
+
 }
 
 @media #{$medium-and-down} {
+
+  .toggler-component {
+    background: orange;
+
+    /*
+    handler */
+    .toggler-handler {
+      width: 60px;
+      height: 60px;
+
+      /*
+      icon */
+      .icon {
+        span {
+          font-size: 2.25em;
+        }
+      }
+
+      /*
+      label */
+      .label {
+      }
+
+      &.hv_label {
+        .icon {
+          height: 75%;
+          line-height: 1;
+
+          span {
+            font-size: 2.25em;
+            vertical-align: bottom;
+          }
+        }
+        .label {
+          font-size: 0.75em;
+          height: 30%;
+        }
+      }
+    }
+
+    /*
+    content */
+    .toggler-container {
+
+      &.default {
+        width: 100vw;
+      }
+
+      &.fullscreen {
+        width: 100vw;
+      }
+
+      &.aside {
+        padding-top: 60px;
+        width: 50vw;
+        left: auto;
+        right: 0;
+      }
+
+      &.popup {
+        width: 50vw;
+      }
+
+      /*
+      FX */
+      .fx_content {
+      }
+
+      /*
+      Toggler Content */
+      .toggler-content {
+        .toggler-content-inner {
+        }
+      }
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+
+  .toggler-component {
+    background: yellow;
+
+    /*
+    handler */
+    .toggler-handler {
+      width: 70px;
+      height: 70px;
+
+      /*
+      icon */
+      .icon {
+        span {
+          font-size: 2.5em;
+        }
+      }
+
+      /*
+      label */
+      .label {
+      }
+
+      &.hv_label {
+        .icon {
+          height: 75.5%;
+          line-height: 1;
+
+          span {
+            font-size: 2.5em;
+          }
+        }
+        .label {
+          font-size: 0.8em;
+          height: 30%;
+        }
+      }
+    }
+
+    /*
+    content */
+    .toggler-container {
+
+      &.default {
+        width: 100vw;
+      }
+
+      &.fullscreen {
+        width: 100vw;
+      }
+
+      &.aside {
+        padding-top: 70px;
+        width: 33.33vw;
+        left: auto;
+        right: 0;
+      }
+
+      &.popup {
+        width: 50vw;
+      }
+
+      /*
+      FX */
+      .fx_content {
+      }
+
+      /*
+      Toggler Content */
+      .toggler-content {
+        .toggler-content-inner {
+        }
+      }
+    }
+  }
+
 }
 
 @media #{$large-and-up} {
+
+  .toggler-component {
+    background: violet;
+
+    /*
+    handler */
+    .toggler-handler {
+      width: 80px;
+      height: 80px;
+
+      /*
+      icon */
+      .icon {
+        span {
+        }
+      }
+
+      /*
+      label */
+      .label {
+      }
+
+      &.hv_label {
+        .icon {
+          height: 75%;
+          font-size: 0.9em;
+          line-height: 1;
+
+          span {
+            vertical-align: bottom;
+          }
+        }
+        .label {
+          font-size: 0.85em;
+          height: 30%;
+        }
+      }
+    }
+
+    /*
+    content */
+    .toggler-container {
+
+      &.default {
+        width: 100vw;
+      }
+
+      &.fullscreen {
+        width: 100vw;
+      }
+
+      &.aside {
+        padding-top: 80px;
+        width: 25vw;
+        left: auto;
+        right: 0;
+      }
+
+      &.popup {
+        width: 50vw;
+      }
+
+      /*
+      FX */
+      .fx_content {
+      }
+
+      /*
+      Toggler Content */
+      .toggler-content {
+        .toggler-content-inner {
+        }
+      }
+    }
+  }
+
 }
 
 @media #{$extra-large-and-up} {
+
+  .toggler-component {
+    background: turquoise;
+
+    /*
+    handler */
+    .toggler-handler {
+      width: 90px;
+      height: 90px;
+
+      /*
+      icon */
+      .icon {
+        span {
+        }
+      }
+
+      /*
+      label */
+      .label {
+      }
+
+      &.hv_label {
+        .icon {
+          height: 72.5%;
+          font-size: 1.05em;
+          line-height: 1;
+
+          span {
+            vertical-align: bottom;
+          }
+        }
+        .label {
+          font-size: 0.9em;
+          height: 30%;
+        }
+      }
+    }
+
+    /*
+    content */
+    .toggler-container {
+
+      &.default {
+        width: 100vw;
+      }
+
+      &.fullscreen {
+        width: 100vw;
+      }
+
+      &.aside {
+        padding-top: 90px;
+        width: 20vw;
+        left: auto;
+        right: 0;
+      }
+
+      &.popup {
+        width: 50vw;
+      }
+
+      /*
+      FX */
+      .fx_content {
+      }
+
+      /*
+      Toggler Content */
+      .toggler-content {
+        .toggler-content-inner {
+        }
+      }
+    }
+  }
 }

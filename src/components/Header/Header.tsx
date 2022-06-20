@@ -57,7 +57,7 @@ const Header = ({
 }: HeaderProps) => (
   <header
     className={`
-      header-container
+      header-component
       ${fx_aside === true ? `fx_aside` : ``}
       ${fx_negative === true ? `fx_negative` : ``}
       ${fx_top === true ? `fx_top` : ``}

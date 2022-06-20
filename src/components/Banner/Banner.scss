@@ -58,6 +58,7 @@
           margin: 0;
         }
         .body {
+          width: 20%;
           padding-top: 60px;
         }
       }
@@ -75,7 +76,11 @@
       }
       .banner-content {
         .banner-content-inner {
-          padding: 0 20px
+          padding: 0 20px;
+
+          .body {
+            width: 100%;
+          }
         }
       }
     }
@@ -89,7 +94,11 @@
       }
       .banner-content {
         .banner-content-inner {
-          padding: 0 40px
+          padding: 0 40px;
+
+          .body {
+            width: 75%;
+          }
         }
       }
     }
@@ -103,7 +112,11 @@
       }
       .banner-content {
         .banner-content-inner {
-          padding: 0 80px
+          padding: 0 80px;
+
+          .body {
+            width: 50%;
+          }
         }
       }
     }
@@ -117,7 +130,11 @@
       }
       .banner-content {
         .banner-content-inner {
-          padding: 0 90px
+          padding: 0 90px;
+
+          .body {
+            width: 33.33%;
+          }
         }
       }
     }
@@ -131,7 +148,11 @@
       }
       .banner-content {
         .banner-content-inner {
-          padding: 0 100px
+          padding: 0 100px;
+
+          .body {
+            width: 25%;
+          }
         }
       }
     }
