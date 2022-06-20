@@ -11,7 +11,6 @@
   width: auto;
   vertical-align: top;
   display: inline-block;
-  background: blue;
 
   /*
   handler */
@@ -21,6 +20,11 @@
     display: block;
     position: relative;
     z-index: 2;
+
+    &.dsp-active {
+      color: white;
+      mix-blend-mode: difference;
+    }
 
     /*
     icon */
@@ -136,7 +140,6 @@
 @media #{$small-and-down} {
 
   .toggler-component {
-    background: red;
 
     /*
     handler */
@@ -215,7 +218,6 @@
 @media #{$medium-and-down} {
 
   .toggler-component {
-    background: orange;
 
     /*
     handler */
@@ -294,7 +296,6 @@
 @media #{$medium-and-up} {
 
   .toggler-component {
-    background: yellow;
 
     /*
     handler */
@@ -373,7 +374,6 @@
 @media #{$large-and-up} {
 
   .toggler-component {
-    background: violet;
 
     /*
     handler */
@@ -452,7 +452,6 @@
 @media #{$extra-large-and-up} {
 
   .toggler-component {
-    background: turquoise;
 
     /*
     handler */

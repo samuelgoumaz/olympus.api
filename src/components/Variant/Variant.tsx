@@ -137,7 +137,7 @@ const Variant: React.FC<MenuProps> = ({
     }
   }
 
-  return (
+  return variants ? (
     <div
       className={`
         variant-component
@@ -194,7 +194,7 @@ const Variant: React.FC<MenuProps> = ({
         ))}
       </div>
     </div>
-  )
+  ) : null
 };
 
 /*

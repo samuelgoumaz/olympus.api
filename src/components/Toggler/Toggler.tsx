@@ -61,6 +61,7 @@ const Toggler = ({
       <div
         className={
           `toggler-handler
+            ${fx_status === true ? `dsp-active` : ``}
             ${label != null ? `hv_label`
             : ``
           }`
