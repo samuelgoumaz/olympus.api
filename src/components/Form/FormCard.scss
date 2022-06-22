@@ -1,0 +1,71 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.form-component-card {
+  width: 100%;
+  position: relative;
+  clear: both;
+  color: black;
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .form-inner {
+    position: relative;
+    z-index: 2;
+
+    .scene {
+      width: 100%;
+      display: block;
+      @include aspect-ratio(3,1);
+      background: red;
+    }
+    .content {
+      padding: 20px;
+    }
+    .action {
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .form-component-card {
+    .fx {
+    }
+    .form-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

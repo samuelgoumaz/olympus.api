@@ -50,7 +50,11 @@ const FxBackground = ({
     style={{
       width: `100%`,
       height: `100%`,
+      top: 0,
+      left: 0,
       background: background ?? `black`,
+      backgroundSize: `cover`,
+      backgroundPosition: `center`,
       opacity: opacity ?? 1,
       mixBlendMode: mixBlendMode ?? `normal`,
       position: `absolute`,

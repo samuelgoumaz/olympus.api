@@ -48,7 +48,7 @@ const Footer = ({
       {/*
       col-address */}
       <div className={`footer-inner-col col-address`}>
-        {address}
+        <div className={`body`} dangerouslySetInnerHTML={{ __html: address }} />
       </div>
 
       {/*

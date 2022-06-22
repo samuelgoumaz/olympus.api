@@ -25,7 +25,7 @@ export interface InternationalProps {
     subtitle: string | null;
     body: string | null;
   };
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 /*

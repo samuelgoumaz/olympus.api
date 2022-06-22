@@ -9,28 +9,16 @@
 # document
 */
 
-.post-component {
-  width: 25%;
-  display: inline-block;
 
-  &.post-video-component {
-
+.form-component-banner {
+  .fx {
   }
-  &.post-cover-component {
-
-  }
-  &.post-text-component {
-    width: 50%;
-  }
-
-  .post-inner {
-    .post-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
-      }
+  .form-inner {
+    .scene {
+    }
+    .content {
+    }
+    .action {
     }
   }
 }
@@ -39,6 +27,18 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .form-component-banner {
+    .fx {
+    }
+    .form-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {

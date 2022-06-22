@@ -5,22 +5,26 @@ import React, { useRef, useEffect, useState } from "react";
 import "./Post.scss";
 
 /*
+title={el.title ? el.title : el.attributes.title ? el.attributes.title : ``}
+body={el.teaser ? el.teaser : el.attributes.teaser ? el.attributes.teaser : ``}
+video={el.video ? el.video.data.attributes : el.attributes.video ? el.attributes.video.data.attributes : ``}
+cover={el.cover ? el.cover.data.attributes : el.attributes.cover ? el.attributes.cover.data.attributes : ``}
+slug={el.slug ? el.slug : el.attributes.slug ? el.attributes.slug : ``}
+display={`grid`}
+*/
+
+/*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface PostProps {
-  left_positive: string | null;
-  left_negative: string | null;
-  middle_positive: string | null;
-  middle_negative: string | null;
-  fx_aside: false | true;
-  fx_negative: false | true;
-  fx_top: false | true;
-  fx_pinned: true | false;
-  title: string;
-  subtitle: string;
-  children: JSX.Element | JSX.Element[];
+  title: string | null;
+  body: string | null;
+  video: string | null;
+  cover: string | null;
+  slug: string | null;
+  display: string | null;
 }
 
 
@@ -43,56 +47,38 @@ export interface PostProps {
 }) => (
 */
 const Post = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
   title,
-  subtitle,
-  children
+  body,
+  video,
+  cover,
+  slug,
+  display
 }: PostProps) => (
   <div
     className={`
-      post-container
-      ${fx_aside === true && `fx_aside`}
-      ${fx_negative === true && `fx_negative`}
-      ${fx_top === true && `fx_top`}
-      ${fx_pinned === true && `fx_pinned`}
-
+      post-component
+      ${video && !body ? `post-video-component` : ``}
+      ${cover && !video && !body ? `post-cover-component` : ``}
+      ${!video && !cover && body ? `post-text-component` : ``}
     `}
   >
     <div className={`post-inner`}>
 
-      <div className={`post-inner-col col-left`}>
-        {left_positive != null && left_negative != null && <img
-          className={"branding"}
-          width="auto"
-          height="100%"
-          src={fx_negative == true ? left_negative : left_positive}
-        />}
-      </div>
+      {video && cover ? <div className={`post-video`}>
+        <video playinline="true" preload="true" width="100%" height="100%" poster={cover} controls>
+          <source src={video} type="video/mp4" />
+        </video>
+      </div> : ``}
 
-      <div className={`post-inner-col col-middle`}>
-        {
-          middle_positive != null && middle_negative != null ?
-            <img
-              className={"branding"}
-              width="auto"
-              height="100%"
-              src={fx_negative == true ? middle_negative : middle_positive}
-            />
-          :
-            <h1 className="post-title" dangerouslySetInnerHTML={{ __html: title }} />
-      }
-      </div>
+      {cover && !video ? <div className={`post-image`}>
+        <img src={cover} width="100%" />
+      </div> : ``}
 
-      <div className={`post-inner-col col-right`}>
-        {children}
-      </div>
+      {title && <div className={`post-title`}>
+        <h6>{title}</h6>
+      </div>}
+
+      {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />}
 
     </div>
   </div>

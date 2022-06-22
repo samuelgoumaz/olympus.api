@@ -59,8 +59,10 @@ const Menu = ({
                 width: display === `inline` ? `${Math.floor(100/Object.keys(menu).length)}%` : `auto`
               }}
             >
-              {menu[menuKey].url || menu[menuKey].page ?
-                <span className={`menu-item`}>{menu[menuKey].name ?? null}</span>
+              {menu[menuKey].url ?
+                <a href={menu[menuKey].url}>
+                  <span className={`menu-item`}>{menu[menuKey].name ?? null}</span>
+                </a>
                 :
                 <span className={`menu-item`}>{`error on id:${menu[menuKey].id}`}</span>
               }

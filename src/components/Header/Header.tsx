@@ -10,10 +10,10 @@ import "./Header.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface HeaderProps {
-  left_positive: string | null;
-  left_negative: string | null;
-  middle_positive: string | null;
-  middle_negative: string | null;
+  left_positive: string;
+  left_negative: string;
+  middle_positive: string;
+  middle_negative: string;
   fx_aside: false | true;
   fx_negative: false | true;
   fx_top: false | true;
@@ -68,12 +68,13 @@ const Header = ({
     <div className={`header-inner`}>
 
       <div className={`header-inner-col col-left`}>
-        {left_positive != null && left_negative != null && <a href={`/`}><img
+        {left_positive && left_negative ? <a href={`/`}><img
           className={"branding"}
           width="auto"
           height="100%"
           src={fx_negative == true ? left_negative : left_positive}
-        /></a>}
+        /></a> : <h5 className="header-title" dangerouslySetInnerHTML={{ __html: title }} />}
+
       </div>
 
       <div className={`header-inner-col col-middle`}>
