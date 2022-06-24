@@ -84,7 +84,7 @@ const Product = ({
       </div>
 
       <div className={`content`}>
-        {title != null ? <h5 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+        {title != null ? <h6 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
         {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
 
         <div className={`action`}>

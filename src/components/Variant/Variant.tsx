@@ -105,8 +105,7 @@ const Variant: React.FC<MenuProps> = ({
       console.log("key", otherElement[key])
     })
 
-    myElement.classList.add(`dsp-active`)
-    console.log("selectItem", myElement)
+    myElement.classList.add(`dsp-active`);
   }
 
   function addItem (parentId, elementId) {
@@ -143,7 +142,7 @@ const Variant: React.FC<MenuProps> = ({
         variant-component
       `}
     >
-      <div className={`variant-component-selector`}>
+      {Object.keys(variants).length > 1 ? <div className={`variant-component-selector`}>
         <Dropdown>
           {Object.keys(variants).map((key) => (
             <div onClick={(event: React.MouseEvent<HTMLElement>) => {
@@ -156,7 +155,7 @@ const Variant: React.FC<MenuProps> = ({
             </div>
           ))}
         </Dropdown>
-      </div>
+      </div> : ``}
 
       <div className={`variant-component-list`}>
         {Object.keys(variants).map((key) => (

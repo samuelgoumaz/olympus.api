@@ -54,7 +54,7 @@ const FxProductCard = ({
       zIndex: position ?? 1
     }}
   >
-    <img src={image} />
+    <img className={`fx-product-card-image`} src={image} />
     <div className={`version`}>FxProductCard — Version 0.0.1</div>
   </div>
 );

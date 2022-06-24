@@ -13,9 +13,20 @@
   height: 100%;
   display: block;
   position: relative;
+  overflow: hidden;
+
+  .fx-product-card-image {
+    height: 100%;
+    width: auto;
+    display: block;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 0;
+  }
 
   .version {
-    padding: 5px;
+    padding: 0;
     font-family: Monospace;
     font-size: 10px;
     text-transform: uppercase;
