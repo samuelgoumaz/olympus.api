@@ -1,0 +1,154 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.checkout-component {
+  background: turquoise;
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
+  .checkout-component-header {
+    width: 100%;
+    height: auto;
+    clear: both;
+    display: block;
+    text-align: center;
+
+    .checkout-component-header-title {
+      line-height: 100px;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .checkout-component-col {
+    width: 33.33%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    .checkout-component-fieldset {
+
+      /**
+      # fieldset header **/
+      .checkout-component-fieldset-header {
+        padding-left: 20px;
+
+        .checkout-component-fieldset-legend {
+          width: 75%;
+          text-align: left;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0;
+        }
+        .checkout-component-fieldset-icon {
+          width: 25%;
+          text-align: right;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    /**
+    # fieldset content **/
+    &.col-resume {
+      .checkout-component-fieldset {
+        .checkout-component-fieldset-content {
+        }
+      }
+    }
+    &.col-form {
+      .checkout-component-fieldset {
+        .checkout-component-fieldset-content {
+          padding: 20px;
+        }
+      }
+    }
+    &.col-payment {
+      .checkout-component-fieldset {
+        .checkout-component-fieldset-content {
+          padding: 20px;
+        }
+      }
+    }
+
+  }
+
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .checkout-component {
+    .checkout-component-header {
+      .checkout-component-header-title {
+        line-height: 50px;
+      }
+    }
+    .checkout-component-col {
+      width: 100%;
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .checkout-component {
+    .checkout-component-header {
+      .checkout-component-header-title {
+        line-height: 60px;
+      }
+    }
+    .checkout-component-col {
+      width: 100%;
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .checkout-component {
+    .checkout-component-header {
+      .checkout-component-header-title {
+        line-height: 70px;
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .checkout-component {
+    .checkout-component-header {
+      .checkout-component-header-title {
+        line-height: 80px;
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .checkout-component {
+    .checkout-component-header {
+      .checkout-component-header-title {
+        line-height: 90px;
+      }
+    }
+  }
+}

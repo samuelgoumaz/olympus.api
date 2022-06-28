@@ -25,3 +25,105 @@
     bottom: 0;
   }
 }
+
+/*
+# Mixin : animationCloud
+==================
+*/
+@keyframes cloneAnimationAdd {
+  0% {
+    opacity: 0;
+    top: transform-origin;
+    left: transform-origin;
+    transform: scale(1);
+    //transform: translateY(0vh) translateX(0vh);
+  }
+  20% {
+    opacity: 1;
+    top: transform-origin;
+    left: transform-origin;
+    transform: scale(1.5);
+  }
+  80% {
+    opacity: 1;
+    top: 0px;
+    left: calc(100vw - 80px);
+    transform: scale(1);
+    //transform: translateY(calc(-100vh - 60px)) translateX(calc(150vw - 30px));
+  }
+  100% {
+    opacity: 0;
+    top: -40px;
+    left: calc(100vw - 80px);
+    transform: scale(0);
+  }
+}
+
+// Animation Remove ----------------------------------
+@keyframes cloneAnimationRemove{
+  0% {
+    opacity: 0;
+    top: -40px;
+    left: calc(100vw - 80px);
+    transform: scale(0);
+  }
+  20% {
+    opacity: 1;
+    top: 0px;
+    left: calc(100vw - 80px);
+    transform: scale(1);
+    //transform: translateY(calc(-100vh - 60px)) translateX(calc(150vw - 30px));
+  }
+  80% {
+    opacity: 1;
+    top: transform-origin;
+    left: transform-origin;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    top: transform-origin;
+    left: transform-origin;
+    transform: scale(1);
+    //transform: translateY(0vh) translateX(0vh);
+  }
+
+}
+
+// Cart Clone add ----------------------------------
+.cart-clone-add {
+  position: fixed;
+  opacity: 0;
+  top: transform-origin;
+  left: transform-origin;
+  transform: scale(1);
+
+  &[status="false"] {
+    display: none;
+  }
+
+  &[status="true"] {
+    display: block;
+    animation-name: cloneAnimationAdd;
+    animation-duration: 1s;
+  }
+}
+
+// Cart Clone remove ----------------------------------
+.cart-clone-remove {
+  position: fixed;
+  opacity: 0;
+  top: transform-origin;
+  left: transform-origin;
+  transform: scale(1);
+
+  &[status="false"] {
+    display: none;
+  }
+
+  &[status="true"] {
+    display: block;
+    animation-name: cloneAnimationRemove;
+    animation-duration: 1s;
+  }
+}

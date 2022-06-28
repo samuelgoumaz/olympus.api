@@ -9,15 +9,34 @@
 # document
 */
 .cart-container {
-  .cart-inner {
-    .cart-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
-      }
+  position: relative;
+
+  .cart-header {
+    background: black;
+    padding: 0 40px;
+    text-align: left;
+
+    .cart-header-icon {
+      line-height: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
     }
+    .cart-header-title {
+      line-height: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 5px;
+      margin: 0;
+      color: white;
+    }
+    .cart-header-action {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .cart-inner {
   }
 }
 
@@ -25,16 +44,86 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .cart-container {
+    .cart-header {
+      padding: 0 10px;
+
+      .cart-header-icon {
+        line-height: 50px;
+      }
+      .cart-header-title {
+        line-height: 50px;
+      }
+    }
+    .cart-inner {
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .cart-container {
+    .cart-header {
+      padding: 0 15px;
+
+      .cart-header-icon {
+        line-height: 60px;
+      }
+      .cart-header-title {
+        line-height: 60px;
+      }
+    }
+    .cart-inner {
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .cart-container {
+    .cart-header {
+      padding: 0 20px;
+
+      .cart-header-icon {
+        line-height: 70px;
+      }
+      .cart-header-title {
+        line-height: 70px;
+      }
+    }
+    .cart-inner {
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .cart-container {
+    .cart-header {
+      padding: 0 25px;
+
+      .cart-header-icon {
+        line-height: 80px;
+      }
+      .cart-header-title {
+        line-height: 80px;
+      }
+    }
+    .cart-inner {
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .cart-container {
+    .cart-header {
+      padding: 0 30px;
+
+      .cart-header-icon {
+        line-height: 90px;
+      }
+      .cart-header-title {
+        line-height: 90px;
+      }
+    }
+    .cart-inner {
+    }
+  }
 }

@@ -13,6 +13,7 @@
   position: relative;
   clear: both;
   color: black;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 
   .fx {
     width: 100%;
@@ -29,7 +30,7 @@
     .scene {
       width: 100%;
       display: block;
-      @include aspect-ratio(4,2.5);
+      @include aspect-ratio(4,2);
     }
     .content {
       padding: 20px;

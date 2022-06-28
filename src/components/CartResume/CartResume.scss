@@ -1,0 +1,129 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.cartresume-container {
+  position: relative;
+
+  .cartresume-header {
+    background: black;
+    padding: 0 40px;
+    text-align: left;
+
+    .cartresume-header-icon {
+      line-height: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+    }
+    .cartresume-header-title {
+      line-height: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 5px;
+      margin: 0;
+      color: white;
+    }
+    .cartresume-header-action {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .cartresume-inner {
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .cartresume-container {
+    .cartresume-header {
+      padding: 0 10px;
+
+      .cartresume-header-icon {
+        line-height: 50px;
+      }
+      .cartresume-header-title {
+        line-height: 50px;
+      }
+    }
+    .cartresume-inner {
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .cartresume-container {
+    .cartresume-header {
+      padding: 0 15px;
+
+      .cartresume-header-icon {
+        line-height: 60px;
+      }
+      .cartresume-header-title {
+        line-height: 60px;
+      }
+    }
+    .cartresume-inner {
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .cartresume-container {
+    .cartresume-header {
+      padding: 0 20px;
+
+      .cartresume-header-icon {
+        line-height: 70px;
+      }
+      .cartresume-header-title {
+        line-height: 70px;
+      }
+    }
+    .cartresume-inner {
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .cartresume-container {
+    .cartresume-header {
+      padding: 0 25px;
+
+      .cartresume-header-icon {
+        line-height: 80px;
+      }
+      .cartresume-header-title {
+        line-height: 80px;
+      }
+    }
+    .cartresume-inner {
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .cartresume-container {
+    .cartresume-header {
+      padding: 0 30px;
+
+      .cartresume-header-icon {
+        line-height: 90px;
+      }
+      .cartresume-header-title {
+        line-height: 90px;
+      }
+    }
+    .cartresume-inner {
+    }
+  }
+}

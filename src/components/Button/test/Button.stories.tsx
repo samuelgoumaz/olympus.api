@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button from './Button';
+import Button from '../Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,8 +19,15 @@ HelloWorld.args = {
   icon: 'home',
 };
 
-export const ClickMe = Template.bind({});
-ClickMe.args = {
+export const Default = Template.bind({});
+Default.args = {
+  label: 'cart',
+  icon: 'home',
+};
+
+export const Header = Template.bind({});
+Header.args = {
+  header: true,
   label: 'cart',
   icon: 'home',
 };

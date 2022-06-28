@@ -11,6 +11,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxProductCardProps {
   position: number;
+  display?: string | null;
   image: string | null;
   rotation?: string | null;
   children?: JSX.Element | JSX.Element[];
@@ -37,6 +38,7 @@ export interface FxProductCardProps {
 */
 const FxProductCard = ({
   position,
+  display,
   image,
   rotation,
   children
@@ -54,7 +56,14 @@ const FxProductCard = ({
       zIndex: position ?? 1
     }}
   >
-    <img className={`fx-product-card-image`} src={image} />
+    <img
+      className={`
+        fx-product-card-image
+        ${display === `left` ? `fx-left` : ``}
+        ${display === `right` ? `fx-right` : ``}
+      `}
+      src={image}
+    />
     <div className={`version`}>FxProductCard — Version 0.0.1</div>
   </div>
 );

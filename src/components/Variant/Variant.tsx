@@ -12,6 +12,7 @@ import "./Variant.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface VariantProps {
+  api: string | null;
   current?: {
     id?: number;
     sku?: number;
@@ -24,6 +25,7 @@ export interface VariantProps {
     stock_limited?: number;
     parent_id?: number;
     parent_title?: number;
+    clone: string | null;
     selected?: boolean | false;
   };
   variants: {
@@ -38,6 +40,7 @@ export interface VariantProps {
     stock_limited: number;
     parent_id: number;
     parent_title: number;
+    clone: string | null;
     selected: boolean | false;
   };
   selectItemFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
@@ -47,7 +50,7 @@ export interface VariantProps {
   children: JSX.Element | JSX.Element[];
 }
 
-function createCurrent(config: VariantProps): {
+/** function createCurrent(config: VariantProps): {
   id: number,
   sku: number,
   title: string | null,
@@ -77,15 +80,14 @@ function createCurrent(config: VariantProps): {
   };
 
   newCurrent = config.current;
-
   return newCurrent;
-}
-
+} **/
 
 /*
 # Class Components
 */
 const Variant: React.FC<MenuProps> = ({
+  api,
   variants,
   selectItemFunc,
   addItemFunc,
@@ -94,6 +96,7 @@ const Variant: React.FC<MenuProps> = ({
   children
 }: VariantProps) => {
   let selectedData = [];
+  console.log("variants". variants)
 
   function selectItem (container, parentId, elementId) {
     let myElement = container.parentNode.parentNode.parentNode.parentNode.getElementsByClassName(`ref-variant-${parentId}-${elementId}`)[0];
@@ -108,22 +111,80 @@ const Variant: React.FC<MenuProps> = ({
     myElement.classList.add(`dsp-active`);
   }
 
+  /**
+  # Add Item function **/
   function addItem (parentId, elementId) {
+
     let myVariant = variants.find(variantItem => variantItem.id === elementId);
-    console.log("addItem myVariant", myVariant)
+    let myClone =
+      myVariant.clone ?
+        myVariant.clone :
+          myVariant.attributes.product.data.attributes.default.data ?
+            `${api}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
+             : null;
+
     if (addItemFunc) {
       addItemFunc(myVariant)
       readQuantity(parentId, elementId)
     }
+
+    /**
+    # Manage clone **/
+    if (myClone) {
+      let aClone = document.createElement("img");
+      aClone.src = myClone;
+      aClone.style.left = event.clientX+"px";
+      aClone.style.top = event.clientY-60+"px";
+      aClone.style.height = "100px";
+      aClone.style.width = "auto";
+      aClone.style.zIndex = "9999";
+
+      aClone.setAttribute("class", "cart-clone-add");
+      aClone.setAttribute("status", "true");
+
+      document.body.appendChild(aClone);
+      setTimeout(() => {
+        aClone.setAttribute("status", "false");
+        document.body.removeChild(aClone);
+      }, 1000);
+    }
   }
 
-
+  /**
+  # Remove Item function **/
   function removeItem (parentId, elementId) {
     let myVariant = variants.find(variantItem => variantItem.id === elementId);
-    console.log("removeItem myVariant", myVariant)
+    let myClone =
+      myVariant.clone ?
+        myVariant.clone :
+          myVariant.attributes.product.data.attributes.default.data ?
+            `${api}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
+             : null;
+
     if (removeItemFunc) {
       removeItemFunc(myVariant)
       readQuantity(parentId, elementId)
+    }
+
+    /**
+    # Manage clone **/
+    if (myClone) {
+      let aClone = document.createElement("img");
+      aClone.src = myClone;
+      aClone.style.left = event.clientX+"px";
+      aClone.style.top = event.clientY-60+"px";
+      aClone.style.height = "100px";
+      aClone.style.width = "auto";
+      aClone.style.zIndex = "9999";
+
+      aClone.setAttribute("class", "cart-clone-remove");
+      aClone.setAttribute("status", "true");
+
+      document.body.appendChild(aClone);
+      setTimeout(() => {
+        aClone.setAttribute("status", "false");
+        document.body.removeChild(aClone);
+      }, 1000);
     }
   }
 

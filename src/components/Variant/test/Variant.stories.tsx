@@ -49,6 +49,7 @@ HelloWorld.args = {
         stock_limited: 10,
         locale: "en",
         selected: true,
+        clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_cosmic_9cba9e1147.png",
       },
       {
         id: 3,
@@ -62,6 +63,7 @@ HelloWorld.args = {
         stock_limited: 15,
         locale: "en",
         selected: false,
+        clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
       },
     ]
 };

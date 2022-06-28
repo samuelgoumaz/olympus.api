@@ -23,6 +23,12 @@
     transform: rotate(-90deg);
     position: absolute;
     right: 0;
+
+    &.fx-left {
+      transform: rotate(90deg);
+      right: auto;
+      left: 0;
+    }
   }
 
   .version {

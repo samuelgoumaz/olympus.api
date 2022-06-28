@@ -35,6 +35,7 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
+  display: "left",
   background : "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
   image : "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
   position : 1
