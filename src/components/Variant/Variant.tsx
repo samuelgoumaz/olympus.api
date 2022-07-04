@@ -13,21 +13,6 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface VariantProps {
   api: string | null;
-  current?: {
-    id?: number;
-    sku?: number;
-    title?: string | null;
-    subtitle?: string | null;
-    description?: string | null;
-    price_default?: number;
-    price_promotion?: number;
-    stock_disponibility?: boolean | null;
-    stock_limited?: number;
-    parent_id?: number;
-    parent_title?: number;
-    clone: string | null;
-    selected?: boolean | false;
-  };
   variants: {
     id: number;
     sku: number;
@@ -86,7 +71,7 @@ export interface VariantProps {
 /*
 # Class Components
 */
-const Variant: React.FC<MenuProps> = ({
+const Variant: React.FC<VariantProps> = ({
   api,
   variants,
   selectItemFunc,
@@ -96,7 +81,6 @@ const Variant: React.FC<MenuProps> = ({
   children
 }: VariantProps) => {
   let selectedData = [];
-  console.log("variants". variants)
 
   function selectItem (container, parentId, elementId) {
     let myElement = container.parentNode.parentNode.parentNode.parentNode.getElementsByClassName(`ref-variant-${parentId}-${elementId}`)[0];
@@ -105,7 +89,6 @@ const Variant: React.FC<MenuProps> = ({
 
     Object.keys(otherElement).map((key) => {
       otherElement[key].classList.remove(`dsp-active`)
-      console.log("key", otherElement[key])
     })
 
     myElement.classList.add(`dsp-active`);
@@ -207,7 +190,8 @@ const Variant: React.FC<MenuProps> = ({
         <Dropdown>
           {Object.keys(variants).map((key) => (
             <div onClick={(event: React.MouseEvent<HTMLElement>) => {
-              selectItem(event.currentTarget, variants[key].parent_id, variants[key].id)
+              if (selectItemFunc)
+                selectItem(event.currentTarget, variants[key].parent_id, variants[key].id)
             }}>
               {variants[key].title != null ? variants[key].title : ""}
               {variants[key].subtitle != null ? variants[key].subtitle : ""}
@@ -216,18 +200,22 @@ const Variant: React.FC<MenuProps> = ({
             </div>
           ))}
         </Dropdown>
-      </div> : ``}
-
-      {Object.keys(variants).length == 1 ? <div className={`variant-component-title`}>
+      </div>
+        :
+      <div className={`variant-component-title`}>
         {variants[0].title != null ? variants[0].title : ""}
         {variants[0].subtitle != null ? variants[0].subtitle : ""}
         {variants[0].price_default != null ? " for " : " for "}
         {variants[0].price_default != null ? variants[0].price_default : ""}
-      </div> : ``}
+      </div>
+      }
 
       <div className={`variant-component-list`}>
         {Object.keys(variants).map((key) => (
-          <div className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}>
+          <div
+            className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
+            key={`variant-component-key-${key}`}
+          >
             <div className={`variant-component-col col-remove`}>
               {checkQuantityFunc && readQuantity(variants[key].parent_id, variants[key].id) != 0 ? <Button icon={`remove`}
                 onClick={

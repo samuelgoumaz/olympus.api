@@ -11,8 +11,8 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxVideoProps {
   position: number;
-  cover: string | null;
-  video: string | null;
+  cover?: string | null;
+  video?: string | null;
   opacity?: string | null;
   mixBlendMode?: string | null;
 }
@@ -59,10 +59,10 @@ const FxVideo = ({
       zIndex: position ?? 1
     }}
   >
-    <video
+    {cover && video ? <video
       className={`fx-video-content`}
       loop
-      playInline
+      playinline={`true`}
       autoPlay
       muted
       preload={`true`}
@@ -71,7 +71,7 @@ const FxVideo = ({
       poster={cover ?? null}
     >
       <source src={video} type="video/mp4" />
-    </video>
+    </video> : ``}
 
     <div className={`version`}>FxVideo — Version 0.0.1</div>
   </div>

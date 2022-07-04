@@ -24,7 +24,6 @@ const Button = ({
       ${mode == `indicator` ? `button-indicator-component` : ``}
       ${mode == `border` ? `button-border-component` : ``}
       ${mode == `default` || !mode ? `button-component` : ``}
-
       ${icon != null ? `hv-icon` : ``}
       ${label ? `hv-label` : ``}
     `} onClick={onClick}>

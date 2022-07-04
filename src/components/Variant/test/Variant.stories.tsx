@@ -33,6 +33,10 @@ const Template: ComponentStory<typeof Variant> = (args) => <Variant {...args} />
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
+export const Default = Template.bind({});
+Default.args = {
+};
+
 export const Mulitples = Template.bind({});
 Mulitples.args = {
   variants:
@@ -85,6 +89,6 @@ OnlyOne.args = {
         locale: "en",
         selected: true,
         clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_cosmic_9cba9e1147.png",
-      },
+      }
     ]
 };

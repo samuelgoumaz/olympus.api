@@ -11,9 +11,9 @@
   border: 0;
   display: inline-block;
   text-align: center;
-  background: white;
   position: relative;
   margin: 0 5px;
+  background: yellow;
 
   &.hv-label {
     padding: 0 20px;
@@ -31,7 +31,7 @@
   }
 
   span {
-    font-size: 1.5em;
+    font-size: 1.75em;
     display: inline-block;
     vertical-align: top;
 
@@ -54,6 +54,7 @@
     border: 0;
     display: inline-block;
     text-align: center;
+    background: red;
 
     &.hv-label {
       padding: 0 10px;
@@ -70,7 +71,7 @@
     }
 
     span {
-      font-size: 1.1em;
+      font-size: 1em;
       &.label {
       }
       &.icon {
@@ -88,6 +89,7 @@
     border: 0;
     display: inline-block;
     text-align: center;
+    background: orange;
 
     &.hv-label {
       padding: 0 13px;
@@ -104,7 +106,7 @@
     }
 
     span {
-      font-size: 1.2em;
+      font-size: 1.125em;
       &.label {
       }
       &.icon {
@@ -122,6 +124,7 @@
     border: 0;
     display: inline-block;
     text-align: center;
+    background: green;
 
     &.hv-label {
       padding: 0 15px;
@@ -138,7 +141,7 @@
     }
 
     span {
-      font-size: 1.3em;
+      font-size: 1.25em;
       &.label {
       }
       &.icon {
@@ -172,7 +175,7 @@
     }
 
     span {
-      font-size: 1.4em;
+      font-size: 1.5em;
       &.label {
       }
       &.icon {

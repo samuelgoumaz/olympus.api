@@ -30,12 +30,22 @@ First import the library for **Development** :
 import {Header, Button, International} from "../../../olympus.api/dist/esm"
 ```
 
+```json
+../../../olympus.api/dist/esm
+```
+
 And for use the package in **Production** :
 
 ```jsx
 // Production Development.
 import {Header, Button, International} from "@samuelgoumaz/olympus.api"
 ```
+
+```json
+@samuelgoumaz/olympus.api
+```
+
+
 
 ## Components Status
 
