@@ -2,6 +2,7 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
+import Button from "../Button"
 import "./Banner.scss";
 
 /*
@@ -66,6 +67,10 @@ const Banner = ({
           {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         </div>
       </div> : ``}
+
+      <div className={`banner-action`}>
+        <Button icon={`arrow_downward`} />
+      </div>
 
     </div>
   </section>

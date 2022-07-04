@@ -176,3 +176,75 @@ Inline.args = {
     }
   },
 };
+
+export const Detail = Template.bind({});
+Detail.args = {
+  title: `Gelato Kush`,
+  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
+  slug: `gelato-kush`,
+  display: `detail`,
+  tags: {
+    0: {
+      id: 6,
+      name: "Infusion",
+      slug: "infusion",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    1: {
+      id: 7,
+      name: "Cuisine",
+      slug: "cuisine",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    2: {
+      id: 6,
+      name: "Indica",
+      slug: "indica",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 1,
+          name: "Variétés",
+          slug: "variete",
+        }
+      }
+    },
+    3: {
+      id: 2,
+      name: "Consommation",
+      slug: "consommation",
+      children: {
+        0: {
+          id: 6,
+          name: "Infusion",
+          slug: "infusion"
+        },
+        1: {
+          id: 7,
+          name: "Cuisine",
+          slug: "cuisine"
+        },
+      },
+      parent: {
+
+      },
+    }
+  },
+};

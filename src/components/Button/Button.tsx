@@ -2,23 +2,29 @@ import React from "react";
 import 'material-icons/iconfont/material-icons.css';
 import "./ButtonDefault.scss";
 import "./ButtonHeader.scss";
+import "./ButtonIndicator.scss";
+import "./ButtonBorder.scss";
 
 export interface ButtonProps {
-  header?: string | false;
   label?: string | null;
   icon?: string | null;
+  mode?: string | false;
   onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const Button = ({
-  header,
   label,
   icon,
+  mode,
   onClick
 }: button) => {
   return (
     <button className={`
-      ${header == true ? `button-header-component` : `button-component`}
+      ${mode == `header` ? `button-header-component` : ``}
+      ${mode == `indicator` ? `button-indicator-component` : ``}
+      ${mode == `border` ? `button-border-component` : ``}
+      ${mode == `default` || !mode ? `button-component` : ``}
+
       ${icon != null ? `hv-icon` : ``}
       ${label ? `hv-label` : ``}
     `} onClick={onClick}>

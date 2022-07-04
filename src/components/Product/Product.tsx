@@ -7,6 +7,7 @@ import "./ProductGrid.scss";
 import "./ProductRow.scss";
 import "./ProductCard.scss";
 import "./ProductBanner.scss";
+import "./ProductDetail.scss";
 
 /*
 # Interface
@@ -63,6 +64,7 @@ const Product = ({
       ${display === `row` ? `product-component-row` : ``}
       ${display === `card` ? `product-component-card` : ``}
       ${display === `banner` ? `product-component-banner` : ``}
+      ${display === `detail` ? `product-component-detail` : ``}
     `}
     style={{
       zIndex: position,

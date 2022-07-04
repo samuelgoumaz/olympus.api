@@ -33,8 +33,8 @@ const Template: ComponentStory<typeof Variant> = (args) => <Variant {...args} />
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
+export const Mulitples = Template.bind({});
+Mulitples.args = {
   variants:
     [
       {
@@ -64,6 +64,27 @@ HelloWorld.args = {
         locale: "en",
         selected: false,
         clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
+      },
+    ]
+};
+
+export const OnlyOne = Template.bind({});
+OnlyOne.args = {
+  variants:
+    [
+      {
+        id: 1,
+        parent_id: 2,
+        title: "5",
+        subtitle: "G",
+        sku: "amnesia-5g",
+        price_default: 20,
+        price_promotion: 30,
+        stock_disponibility: true,
+        stock_limited: 10,
+        locale: "en",
+        selected: true,
+        clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_cosmic_9cba9e1147.png",
       },
     ]
 };

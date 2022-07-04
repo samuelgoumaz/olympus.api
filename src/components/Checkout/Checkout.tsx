@@ -65,7 +65,7 @@ const Checkout = ({
           </h6>
           <div className={`checkout-component-fieldset-icon`}>
             <Button
-              header={true}
+              mode={`header`}
               icon={`local_mall`}
             />
           </div>

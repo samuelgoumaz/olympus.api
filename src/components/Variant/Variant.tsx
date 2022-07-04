@@ -218,6 +218,13 @@ const Variant: React.FC<MenuProps> = ({
         </Dropdown>
       </div> : ``}
 
+      {Object.keys(variants).length == 1 ? <div className={`variant-component-title`}>
+        {variants[0].title != null ? variants[0].title : ""}
+        {variants[0].subtitle != null ? variants[0].subtitle : ""}
+        {variants[0].price_default != null ? " for " : " for "}
+        {variants[0].price_default != null ? variants[0].price_default : ""}
+      </div> : ``}
+
       <div className={`variant-component-list`}>
         {Object.keys(variants).map((key) => (
           <div className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}>
@@ -231,11 +238,10 @@ const Variant: React.FC<MenuProps> = ({
               /> : ``}
             </div>
             <div className={`variant-component-col col-indicator`}>
-              <span className={`indicator`}>
-                {checkQuantityFunc && readQuantity(variants[key].parent_id, variants[key].id) != 0 ? <Button
-                  label={checkQuantityFunc ? readQuantity(variants[key].parent_id, variants[key].id) : 0}
-                /> : ``}
-              </span>
+              {checkQuantityFunc && readQuantity(variants[key].parent_id, variants[key].id) != 0 ? <Button
+                label={checkQuantityFunc ? readQuantity(variants[key].parent_id, variants[key].id) : 0}
+                mode={`indicator`}
+              /> : ``}
             </div>
             <div className={`variant-component-col col-add`}>
               <Button icon={`add`}

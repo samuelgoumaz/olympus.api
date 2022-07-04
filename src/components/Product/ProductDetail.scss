@@ -1,0 +1,151 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+
+
+.product-component-detail {
+  width: 100%;
+  display: block;
+  clear: both;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.15);
+
+  .fx {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .product-inner {
+    width: 100%;
+    display: table;
+    position: relative;
+    z-index: 2;
+
+    .scene {
+      width: 50%;
+      display: table-cell;
+      @include aspect-ratio(1,1);
+    }
+    .content {
+      width: 50%;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 40px;
+    }
+    .action {
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .product-component-detail {
+    .fx {
+    }
+    .product-inner {
+      display: block;
+
+      .scene {
+        width: 100%;
+        display: block;
+        @include aspect-ratio(1.5,1);
+      }
+      .content {
+        width: 100%;
+        display: block;
+        padding: 20px;
+        text-align: center;
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .product-component-detail {
+    .fx {
+    }
+    .product-inner {
+      display: block;
+
+      .scene {
+        width: 50%;
+      }
+      .content {
+        width: 50%;
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .product-component-detail {
+    .fx {
+    }
+    .product-inner {
+      display: block;
+
+      .scene {
+        width: 50%;
+      }
+      .content {
+        width: 50%;
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .product-component-detail {
+    .fx {
+    }
+    .product-inner {
+      display: block;
+
+      .scene {
+        width: 50%;
+      }
+      .content {
+        width: 50%;
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .product-component-detail {
+    .fx {
+    }
+    .product-inner {
+      display: block;
+
+      .scene {
+        width: 50%;
+      }
+      .content {
+        width: 50%;
+      }
+      .action {
+      }
+    }
+  }
+}

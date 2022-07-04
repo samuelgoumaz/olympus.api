@@ -16,6 +16,7 @@ export interface MenuProps {
     title: string | null;
     url_extern: string | null;
     url_intern: string | null;
+    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   };
 }
 
@@ -40,7 +41,8 @@ export interface MenuProps {
 */
 const Menu = ({
   display,
-  menu
+  menu,
+  onClick
 }: MenuProps) => (
   <ul
     className={`
@@ -48,6 +50,7 @@ const Menu = ({
       ${display === null || display === `list` ? `dsp-list` : ``}
       ${display === `inline` ? `dsp-inline` : ``}
     `}
+    onClick={onClick ?? null}
   >
     {
       menu && Object.keys(menu).length > 0 &&

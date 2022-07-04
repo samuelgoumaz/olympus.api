@@ -28,7 +28,6 @@ First import the library for **Development** :
 ```jsx
 // Local Development.
 import {Header, Button, International} from "../../../olympus.api/dist/esm"
-
 ```
 
 And for use the package in **Production** :
@@ -38,6 +37,18 @@ And for use the package in **Production** :
 import {Header, Button, International} from "@samuelgoumaz/olympus.api"
 ```
 
+## Components Status
 
-
-
+| Name       |     |     |
+| ---------- | --- | --- |
+| Banner     |     |     |
+| Button     |     |     |
+| Cart       |     |     |
+| CartPrice  |     |     |
+| CartResume |     |     |
+|            |     |     |
+|            |     |     |
+|            |     |     |
+|            |     |     |
+|            |     |     |
+|            |     |     |

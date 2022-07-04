@@ -14,6 +14,7 @@ export interface CartProps {
   mode?: string;
   title?: string;
   children: JSX.Element | JSX.Element[];
+  onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 
@@ -24,7 +25,8 @@ export interface CartProps {
 const Cart = ({
   mode,
   title,
-  children
+  children,
+  onClick
 }: CartProps) => (
 
   <div
@@ -41,8 +43,9 @@ const Cart = ({
       </h6>
       <div className={`cart-header-action`}>
         <Button
-          header={true}
+          mode={`header`}
           icon={`close`}
+          onClick={onClick}
         />
       </div>
     </div>

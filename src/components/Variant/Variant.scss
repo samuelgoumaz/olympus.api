@@ -14,6 +14,13 @@
     vertical-align: top;
     padding-right: 15px;
   }
+  .variant-component-title {
+    line-height: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 15px;
+    font-size: 1.5em;
+  }
   .variant-component-list {
     display: inline-block;
     vertical-align: top;
@@ -33,9 +40,6 @@
         &.col-remove {
         }
         &.col-indicator {
-          button {
-            font-size: 11px;
-          }
         }
         &.col-add {
         }
@@ -51,16 +55,136 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .variant-component {
+    .variant-component-selector {
+    }
+    .variant-component-title {
+      line-height: 50px;
+      font-size: 1em;
+    }
+    .variant-component-list {
+      .variant-component-row {
+        &.dsp-active {
+        }
+        .variant-component-col {
+          &.col-remove {
+          }
+          &.col-indicator {
+          }
+          &.col-add {
+          }
+          &.col-price {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .variant-component {
+    .variant-component-selector {
+    }
+    .variant-component-title {
+      line-height: 56px;
+      font-size: 1.1em;
+    }
+    .variant-component-list {
+      .variant-component-row {
+        &.dsp-active {
+        }
+        .variant-component-col {
+          &.col-remove {
+          }
+          &.col-indicator {
+          }
+          &.col-add {
+          }
+          &.col-price {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .variant-component {
+    .variant-component-selector {
+    }
+    .variant-component-title {
+      line-height: 60px;
+      font-size: 1.2em;
+    }
+    .variant-component-list {
+      .variant-component-row {
+        &.dsp-active {
+        }
+        .variant-component-col {
+          &.col-remove {
+          }
+          &.col-indicator {
+          }
+          &.col-add {
+          }
+          &.col-price {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .variant-component {
+    .variant-component-selector {
+    }
+    .variant-component-title {
+      line-height: 66px;
+      font-size: 1.3em;
+    }
+    .variant-component-list {
+      .variant-component-row {
+        &.dsp-active {
+        }
+        .variant-component-col {
+          &.col-remove {
+          }
+          &.col-indicator {
+          }
+          &.col-add {
+          }
+          &.col-price {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .variant-component {
+    .variant-component-selector {
+    }
+    .variant-component-title {
+      line-height: 70px;
+      font-size: 1.4em;
+    }
+    .variant-component-list {
+      .variant-component-row {
+        &.dsp-active {
+        }
+        .variant-component-col {
+          &.col-remove {
+          }
+          &.col-indicator {
+          }
+          &.col-add {
+          }
+          &.col-price {
+          }
+        }
+      }
+    }
+  }
 }

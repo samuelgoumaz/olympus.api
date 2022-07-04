@@ -15,6 +15,7 @@ export { default as Tag } from "./Tag";
 export { default as Variant } from "./Variant";
 export { default as Fx } from "./Fx";
 export { default as FxBackground } from "./FxBackground";
+export { default as FxVideo } from "./FxVideo";
 export { default as FxProductDefault } from "./FxProductDefault";
 export { default as FxProductCard } from "./FxProductCard";
 export { default as Seo } from "./Seo";
