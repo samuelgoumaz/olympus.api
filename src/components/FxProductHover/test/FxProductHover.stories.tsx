@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import FxProductDefault from '../FxProductDefault';
+import FxProductHover from '../FxProductHover';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import FxProductDefault from '../FxProductDefault';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/FxProductDefault',
-  component: FxProductDefault,
-} as ComponentMeta<typeof FxProductDefault>;
+  title: 'ReactComponentLibrary/FxProductHover',
+  component: FxProductHover,
+} as ComponentMeta<typeof FxProductHover>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof FxProductDefault> = (args) => <FxProductDefault {...args} />;
+const Template: ComponentStory<typeof FxProductHover> = (args) => <FxProductHover {...args} />;
 
 /*
 # Args
@@ -35,16 +35,8 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
+  display: "left",
+  background : "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
   image : "http://localhost:1337/uploads/dustygreen_background_jungle_inner_f2ef41988f.jpg",
-  cover: false,
-  position : 1,
-  align: `right`
-};
-
-export const Package = Template.bind({});
-Package.args = {
-  image : "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
-  cover: false,
-  position : 1,
-  align: `none`
+  position : 1
 };

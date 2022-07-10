@@ -3,17 +3,17 @@
 */
 import React from "react";
 import { render } from "@testing-library/react";
-import FxProductDefault from "../FxProductDefault";
+import FxProductHover from "../FxProductHover";
 
 /*
 # Test
 */
-describe("FxProductDefault", () => {
+describe("FxProductHover", () => {
   test("renders the Button component", () => {
     render(
-      <FxProductDefault
+      <FxProductHover
         label="Hello world!"
-        image="http://localhost:1337/uploads/dustygreen_background_jungle_inner_f2ef41988f.jpg"
+        positive="http://localhost:1337/uploads/branding_85acfc9546.svg"
       />
     );
   });

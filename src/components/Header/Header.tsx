@@ -10,10 +10,10 @@ import "./Header.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface HeaderProps {
-  left_positive: string;
-  left_negative: string;
-  middle_positive: string;
-  middle_negative: string;
+  left_positive: string | null;
+  left_negative: string | null;
+  middle_positive: string | null;
+  middle_negative: string | null;
   fx_aside: false | true;
   fx_negative: false | true;
   fx_top: false | true;
@@ -56,13 +56,11 @@ const Header = ({
   children
 }: HeaderProps) => (
   <header
-    className={`
-      header-component
+    className={`header-component
       ${fx_aside === true ? `fx_aside` : ``}
       ${fx_negative === true ? `fx_negative` : ``}
       ${fx_top === true ? `fx_top` : ``}
       ${fx_pinned === true ? `fx_pinned` : ``}
-
     `}
   >
     <div className={`header-inner`}>

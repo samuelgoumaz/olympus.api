@@ -17,6 +17,7 @@ export { default as FxBackground } from "./FxBackground";
 export { default as FxVideo } from "./FxVideo";
 export { default as FxProductDefault } from "./FxProductDefault";
 export { default as FxProductCard } from "./FxProductCard";
+export { default as FxProductImage } from "./FxProductImage";
 export { default as Seo } from "./Seo";
 export { default as Input } from "./Input";
 export { default as Media } from "./Media";

@@ -11,11 +11,11 @@ import "./Banner.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface BannerProps {
-  position: number;
-  title: string | null;
-  subtitle: string | null;
-  body: string | null;
-  children: JSX.Element | JSX.Element[];
+  position?: number;
+  title?: string | null;
+  subtitle?: string | null;
+  body?: string | null;
+  children?: JSX.Element | JSX.Element[];
 }
 
 
@@ -62,14 +62,16 @@ const Banner = ({
 
       {title != false || body != false || subtitle != false ? <div className={`banner-content`}>
         <div className={`banner-content-inner`}>
-          {title != null ? <h1 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-          {subtitle != null ? <h4 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+          {title != null ? <h2 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
           {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         </div>
       </div> : ``}
 
       <div className={`banner-action`}>
-        <Button icon={`arrow_downward`} />
+        <Button
+          icon={`arrow_downward`}
+          label={subtitle ?? null}
+        />
       </div>
 
     </div>

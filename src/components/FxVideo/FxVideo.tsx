@@ -70,7 +70,7 @@ const FxVideo = ({
       height="100%"
       poster={cover ?? null}
     >
-      <source src={video} type="video/mp4" />
+      {video && <source src={video} type="video/mp4" />}
     </video> : ``}
 
     <div className={`version`}>FxVideo — Version 0.0.1</div>

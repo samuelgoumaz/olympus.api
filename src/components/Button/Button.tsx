@@ -8,7 +8,7 @@ import "./ButtonBorder.scss";
 export interface ButtonProps {
   label?: string | null;
   icon?: string | null;
-  mode?: string | false;
+  mode?: string | null;
   onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -23,12 +23,12 @@ const Button = ({
       ${mode == `header` ? `button-header-component` : ``}
       ${mode == `indicator` ? `button-indicator-component` : ``}
       ${mode == `border` ? `button-border-component` : ``}
-      ${mode == `default` || !mode ? `button-component` : ``}
+      ${mode == `default` || mode == null ? `button-component` : ``}
       ${icon != null ? `hv-icon` : ``}
       ${label ? `hv-label` : ``}
     `} onClick={onClick}>
-      {label ? <span className={`label`}>{label}</span> : ``}
-      {icon? <span className={`icon material-icons`}>{icon}</span> : ``}
+      {label ? <span className={`label`}>{`${label}`}</span> : ``}
+      {icon ? <span className={`icon material-icons`}>{`${icon}`}</span> : ``}
     </button>
   );
 };

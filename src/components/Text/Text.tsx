@@ -10,8 +10,8 @@ import "./Text.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface TextProps {
-  position: number;
-  body: string | null;
+  position?: number;
+  body?: string;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -56,7 +56,7 @@ const Text = ({
 
     <div className={`text-inner`}>
       <div className={`text-inner-content`}>
-        <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />
+        {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
       </div>
     </div>
 

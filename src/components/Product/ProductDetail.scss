@@ -28,18 +28,25 @@
   .product-inner {
     width: 100%;
     display: table;
+    direction: rtl;
     position: relative;
     z-index: 2;
 
+
     .scene {
+      order: 2;
       width: 50%;
+      height: 100%;
       display: table-cell;
       @include aspect-ratio(1,1);
     }
     .content {
+      order: 1;
       width: 50%;
+      height: 100%;
       display: table-cell;
       vertical-align: middle;
+      text-align: left;
       padding: 40px;
     }
     .action {

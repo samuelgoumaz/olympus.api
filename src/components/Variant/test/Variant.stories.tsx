@@ -53,6 +53,7 @@ Mulitples.args = {
         stock_limited: 10,
         locale: "en",
         selected: true,
+        quantity: 0,
         clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_cosmic_9cba9e1147.png",
       },
       {
@@ -67,6 +68,7 @@ Mulitples.args = {
         stock_limited: 15,
         locale: "en",
         selected: false,
+        quantity: 42,
         clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_jungle_9a8795dfca.png",
       },
     ]
@@ -88,6 +90,7 @@ OnlyOne.args = {
         stock_limited: 10,
         locale: "en",
         selected: true,
+        quantity: 12,
         clone: "http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_cosmic_9cba9e1147.png",
       }
     ]

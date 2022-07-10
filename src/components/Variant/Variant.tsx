@@ -12,10 +12,10 @@ import "./Variant.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface VariantProps {
-  api: string | null;
-  variants: {
+  api?: string | false;
+  variants?: {
     id: number;
-    sku: number;
+    sku: string | null;
     title: string | null;
     subtitle: string | null;
     description: string | null;
@@ -26,13 +26,14 @@ export interface VariantProps {
     parent_id: number;
     parent_title: number;
     clone: string | null;
+    quantity: number;
     selected: boolean | false;
   };
-  selectItemFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
-  addItemFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
-  removeItemFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
-  checkQuantityFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
-  children: JSX.Element | JSX.Element[];
+  selectItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  addItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  removeItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  checkQuantityFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  children?: JSX.Element | JSX.Element[];
 }
 
 /** function createCurrent(config: VariantProps): {
@@ -103,19 +104,19 @@ const Variant: React.FC<VariantProps> = ({
       myVariant.clone ?
         myVariant.clone :
           myVariant.attributes.product.data.attributes.default.data ?
-            `${api}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
+            `${api != false ? api : ``}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
              : null;
 
     if (addItemFunc) {
       addItemFunc(myVariant)
-      readQuantity(parentId, elementId)
+      readQuantity(elementId)
     }
 
     /**
     # Manage clone **/
     if (myClone) {
       let aClone = document.createElement("img");
-      aClone.src = myClone;
+      aClone.src = myClone.toString();
       aClone.style.left = event.clientX+"px";
       aClone.style.top = event.clientY-60+"px";
       aClone.style.height = "100px";
@@ -141,19 +142,19 @@ const Variant: React.FC<VariantProps> = ({
       myVariant.clone ?
         myVariant.clone :
           myVariant.attributes.product.data.attributes.default.data ?
-            `${api}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
+            `${api != false ? api : ``}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
              : null;
 
     if (removeItemFunc) {
       removeItemFunc(myVariant)
-      readQuantity(parentId, elementId)
+      readQuantity(elementId)
     }
 
     /**
     # Manage clone **/
     if (myClone) {
       let aClone = document.createElement("img");
-      aClone.src = myClone;
+      aClone.src = myClone.toString();
       aClone.style.left = event.clientX+"px";
       aClone.style.top = event.clientY-60+"px";
       aClone.style.height = "100px";
@@ -171,10 +172,13 @@ const Variant: React.FC<VariantProps> = ({
     }
   }
 
-  function readQuantity (parentId, elementId) {
+  function readQuantity (elementId) {
     if (checkQuantityFunc) {
-      console.log("checkQuantityFunc(elementId)", checkQuantityFunc(elementId))
-      return checkQuantityFunc(elementId)
+      if (checkQuantityFunc(elementId)) {
+        return checkQuantityFunc(elementId)
+      } else {
+        return 0
+      }
     } else {
       return 0;
     }
@@ -182,9 +186,7 @@ const Variant: React.FC<VariantProps> = ({
 
   return variants ? (
     <div
-      className={`
-        variant-component
-      `}
+      className={`variant-component`}
     >
       {Object.keys(variants).length > 1 ? <div className={`variant-component-selector`}>
         <Dropdown>
@@ -217,7 +219,9 @@ const Variant: React.FC<VariantProps> = ({
             key={`variant-component-key-${key}`}
           >
             <div className={`variant-component-col col-remove`}>
-              {checkQuantityFunc && readQuantity(variants[key].parent_id, variants[key].id) != 0 ? <Button icon={`remove`}
+              {variants[key].quantity > 0 ? <Button
+                icon={`remove`}
+                mode={`default`}
                 onClick={
                   (event: React.MouseEvent<HTMLElement>) => {
                     removeItem(variants[key].parent_id, variants[key].id)
@@ -226,13 +230,15 @@ const Variant: React.FC<VariantProps> = ({
               /> : ``}
             </div>
             <div className={`variant-component-col col-indicator`}>
-              {checkQuantityFunc && readQuantity(variants[key].parent_id, variants[key].id) != 0 ? <Button
-                label={checkQuantityFunc ? readQuantity(variants[key].parent_id, variants[key].id) : 0}
+              {variants[key].quantity > 0 ? <Button
+                label={`${variants[key].quantity}`}
                 mode={`indicator`}
               /> : ``}
             </div>
             <div className={`variant-component-col col-add`}>
-              <Button icon={`add`}
+              <Button
+                icon={`add`}
+                mode={`default`}
                 onClick={
                   (event: React.MouseEvent<HTMLElement>) => {
                     addItem(variants[key].parent_id, variants[key].id)
@@ -247,6 +253,7 @@ const Variant: React.FC<VariantProps> = ({
           </div>
         ))}
       </div>
+
     </div>
   ) : null
 };

@@ -2,17 +2,18 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./FxProductCard.scss";
+import "./FxProductImage.scss";
 
 /*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
-export interface FxProductCardProps {
+export interface FxProductImageProps {
   position: number;
-  display?: string | null;
-  image: string | null;
+  cover?: boolean | false;
+  image?: string | null;
+  align?: string | false;
   rotation?: string | null;
   children?: JSX.Element | JSX.Element[];
 }
@@ -22,7 +23,7 @@ export interface FxProductCardProps {
 /*
 # Class Components
 */
-/*const FxProductCard: React.FC<FxProductCardProps> = ({
+/*const FxProductImage: React.FC<FxProductImageProps> = ({
   left_positive,
   left_negative,
   middle_positive,
@@ -36,16 +37,17 @@ export interface FxProductCardProps {
   children
 }) => (
 */
-const FxProductCard = ({
+const FxProductImage = ({
   position,
-  display,
   image,
+  cover,
+  align,
   rotation,
   children
-}: FxProductCardProps) => (
+}: FxProductImageProps) => (
   <div
     className={`
-      fx-item fx-product-card
+      fx-item fx-product-image
     `}
     style={{
       width: `100%`,
@@ -56,19 +58,16 @@ const FxProductCard = ({
       zIndex: position ?? 1
     }}
   >
-    {image && <img
-      className={`
-        fx-product-card-image
-        ${display === `left` ? `fx-left` : ``}
-        ${display === `right` ? `fx-right` : ``}
-      `}
-      src={image}
-    />}
-    <div className={`version`}>FxProductCard — Version 0.0.1</div>
+    {image && <img src={image} style={{
+      objectFit: cover ? `cover` : `contain`,
+      transformOrigin: align ? align === `right` ? `right` : align === `left` ? `left` : `center` : `center`,
+      float: align ? align === `right` ? `right` : align === `left` ? `left` : `none` : `none`
+    }} />}
+    <div className={`version`}>FxProductImage — Version 0.0.1</div>
   </div>
 );
 
 /*
 # Export
 */
-export default FxProductCard;
+export default FxProductImage;

@@ -72,7 +72,7 @@ const Calendar = ({
           className={"branding"}
           width="auto"
           height="100%"
-          src={fx_negative == true ? left_negative : left_positive}
+          //src={fx_negative == true ? left_negative : left_positive}
         />}
       </div>
 
@@ -83,7 +83,7 @@ const Calendar = ({
               className={"branding"}
               width="auto"
               height="100%"
-              src={fx_negative == true ? middle_negative : middle_positive}
+              //src={fx_negative == true ? middle_negative : middle_positive}
             />
           :
             <h1 className="calendar-title" dangerouslySetInnerHTML={{ __html: title }} />

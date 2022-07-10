@@ -2,14 +2,14 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./FxProductCard.scss";
+import "./FxProductHover.scss";
 
 /*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
-export interface FxProductCardProps {
+export interface FxProductHoverProps {
   position: number;
   display?: string | null;
   image: string | null;
@@ -22,7 +22,7 @@ export interface FxProductCardProps {
 /*
 # Class Components
 */
-/*const FxProductCard: React.FC<FxProductCardProps> = ({
+/*const FxProductHover: React.FC<FxProductHoverProps> = ({
   left_positive,
   left_negative,
   middle_positive,
@@ -36,13 +36,13 @@ export interface FxProductCardProps {
   children
 }) => (
 */
-const FxProductCard = ({
+const FxProductHover = ({
   position,
   display,
   image,
   rotation,
   children
-}: FxProductCardProps) => (
+}: FxProductHoverProps) => (
   <div
     className={`
       fx-item fx-product-card
@@ -64,11 +64,11 @@ const FxProductCard = ({
       `}
       src={image}
     />}
-    <div className={`version`}>FxProductCard — Version 0.0.1</div>
+    <div className={`version`}>FxProductHover — Version 0.0.1</div>
   </div>
 );
 
 /*
 # Export
 */
-export default FxProductCard;
+export default FxProductHover;

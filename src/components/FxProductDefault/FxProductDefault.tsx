@@ -11,7 +11,9 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxProductDefaultProps {
   position: number;
-  image: string | null;
+  cover?: boolean | false;
+  image?: string | null;
+  align?: string | false;
   rotation?: string | null;
   children?: JSX.Element | JSX.Element[];
 }
@@ -38,6 +40,8 @@ export interface FxProductDefaultProps {
 const FxProductDefault = ({
   position,
   image,
+  cover,
+  align,
   rotation,
   children
 }: FxProductDefaultProps) => (
@@ -54,7 +58,10 @@ const FxProductDefault = ({
       zIndex: position ?? 1
     }}
   >
-    <img src={image} />
+    {image && <img src={image} style={{
+      objectFit: cover ? `cover` : `contain`,
+      float: align ? align === `right` ? `right` : align === `left` ? `left` : `none` : `none`
+    }} />}
     <div className={`version`}>FxProductDefault — Version 0.0.1</div>
   </div>
 );

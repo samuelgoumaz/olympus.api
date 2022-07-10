@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import FxProductDefault from '../FxProductDefault';
+import FxProductImage from '../FxProductImage';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import FxProductDefault from '../FxProductDefault';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/FxProductDefault',
-  component: FxProductDefault,
-} as ComponentMeta<typeof FxProductDefault>;
+  title: 'ReactComponentLibrary/FxProductImage',
+  component: FxProductImage,
+} as ComponentMeta<typeof FxProductImage>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof FxProductDefault> = (args) => <FxProductDefault {...args} />;
+const Template: ComponentStory<typeof FxProductImage> = (args) => <FxProductImage {...args} />;
 
 /*
 # Args

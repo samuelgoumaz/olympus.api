@@ -39,6 +39,7 @@ export interface ProductProps {
   fx: JSX.Element | JSX.Element[];
   scene: JSX.Element | JSX.Element[];
   variants: JSX.Element | JSX.Element[];
+  getProductFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 
@@ -56,7 +57,8 @@ const Product = ({
   variants,
   display,
   fx,
-  scene
+  scene,
+  getProductFunc
 }: ProductProps) => (
   <article
     className={`
@@ -81,13 +83,18 @@ const Product = ({
       product-inner
     `}>
 
-      <div className={`scene`}>
+      <div onClick={getProductFunc} className={`scene`}>
         {scene}
       </div>
 
       <div className={`content`}>
-        {title != null ? <h6 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-        {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+        {display === `row` || display === `detail` && title != null ? <h4 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+
+        {display === `banner` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+
+        {display === `grid` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+
+        {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body }} /> : ``}
 
         <div className={`action`}>
           {variants}

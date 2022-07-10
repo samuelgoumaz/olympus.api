@@ -53,10 +53,10 @@ const International = ({
         */}
         <div className="section-inner-col col-left">
           <div className="flag">
-            <img className="img" src={flag} />
+            {flag && <img className="img" src={flag} />}
           </div>
           <div className="image">
-            <img className="img" src={image} />
+            {image && <img className="img" src={image} />}
           </div>
           <div className="action">
           </div>

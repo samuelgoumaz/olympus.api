@@ -3,15 +3,15 @@
 */
 import React from "react";
 import { render } from "@testing-library/react";
-import FxProductDefault from "../FxProductDefault";
+import FxProductImage from "../FxProductImage";
 
 /*
 # Test
 */
-describe("FxProductDefault", () => {
+describe("FxProductImage", () => {
   test("renders the Button component", () => {
     render(
-      <FxProductDefault
+      <FxProductImage
         label="Hello world!"
         image="http://localhost:1337/uploads/dustygreen_background_jungle_inner_f2ef41988f.jpg"
       />
