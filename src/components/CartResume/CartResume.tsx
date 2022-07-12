@@ -11,9 +11,7 @@ import Button from "../Button"
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface CartResumeProps {
-  mode?: string;
-  title?: string;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 
@@ -22,8 +20,6 @@ export interface CartResumeProps {
 # Class Components
 */
 const CartResume = ({
-  mode,
-  title,
   children
 }: CartResumeProps) => (
 
@@ -32,9 +28,9 @@ const CartResume = ({
       cartresume-container
     `}
   >
-    <div className={`cartresume-inner`}>
+    {children && <div className={`cartresume-inner`}>
       {children}
-    </div>
+    </div>}
   </div>
 );
 

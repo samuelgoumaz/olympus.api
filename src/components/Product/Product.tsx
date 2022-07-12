@@ -16,11 +16,11 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ProductProps {
   position?: number | null;
-  title: string | null;
+  title?: string | null;
   height?: string | null;
-  body: string | null;
-  slug: string | null;
-  tags: {
+  body?: string | null;
+  slug?: string | null;
+  tags?: {
     id: number;
     slug: string | null;
     name: string | null;
@@ -29,16 +29,16 @@ export interface ProductProps {
       slug: string | null;
       name: string | null;
     };
-    children: {
+    children?: {
       id: number;
       slug: string | null;
       name: string | null;
     };
   };
-  display: string | null;
-  fx: JSX.Element | JSX.Element[];
-  scene: JSX.Element | JSX.Element[];
-  variants: JSX.Element | JSX.Element[];
+  display?: string | null;
+  fx?: JSX.Element | JSX.Element[];
+  scene?: JSX.Element | JSX.Element[];
+  variants?: JSX.Element | JSX.Element[];
   getProductFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -88,17 +88,17 @@ const Product = ({
       </div>
 
       <div className={`content`}>
-        {display === `row` || display === `detail` && title != null ? <h4 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+        {display === `row` || display === `detail` && title != null ? <h4 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
-        {display === `banner` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+        {display === `banner` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
-        {display === `grid` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+        {display === `grid` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
-        {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+        {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
 
-        <div className={`action`}>
+        {variants && <div className={`action`}>
           {variants}
-        </div>
+        </div>}
 
       </div>
 
