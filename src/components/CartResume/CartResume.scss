@@ -8,7 +8,7 @@
 /*
 # document
 */
-.cartresume-container {
+.cartresume-component {
   position: relative;
 
   .cartresume-header {
@@ -44,7 +44,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .cartresume-container {
+  .cartresume-component {
     .cartresume-header {
       padding: 0 10px;
 
@@ -61,7 +61,7 @@
 }
 
 @media #{$medium-and-down} {
-  .cartresume-container {
+  .cartresume-component {
     .cartresume-header {
       padding: 0 15px;
 
@@ -78,7 +78,7 @@
 }
 
 @media #{$medium-and-up} {
-  .cartresume-container {
+  .cartresume-component {
     .cartresume-header {
       padding: 0 20px;
 
@@ -95,7 +95,7 @@
 }
 
 @media #{$large-and-up} {
-  .cartresume-container {
+  .cartresume-component {
     .cartresume-header {
       padding: 0 25px;
 
@@ -112,7 +112,7 @@
 }
 
 @media #{$extra-large-and-up} {
-  .cartresume-container {
+  .cartresume-component {
     .cartresume-header {
       padding: 0 30px;
 

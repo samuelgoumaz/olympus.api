@@ -62,7 +62,6 @@ const FxProductDefault = ({
       objectFit: cover ? `cover` : `contain`,
       float: align ? align === `right` ? `right` : align === `left` ? `left` : `none` : `none`
     }} />}
-    <div className={`version`}>FxProductDefault — Version 0.0.1</div>
   </div>
 );
 

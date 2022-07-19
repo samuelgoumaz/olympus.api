@@ -28,7 +28,6 @@
   .product-inner {
     width: 100%;
     display: table;
-    direction: rtl;
     position: relative;
     z-index: 2;
 
@@ -50,6 +49,8 @@
       padding: 40px;
     }
     .action {
+      display: block;
+      text-align: right;
     }
   }
 }

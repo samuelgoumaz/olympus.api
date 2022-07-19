@@ -42,7 +42,7 @@ const Text = ({
   <section
     className={`
       section section-text
-      text-container
+      text-component
     `}
     style={{
       position: `relative`,

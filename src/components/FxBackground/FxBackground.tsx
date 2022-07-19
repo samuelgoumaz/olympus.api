@@ -61,7 +61,6 @@ const FxBackground = ({
       zIndex: position ?? 1
     }}
   >
-    <div className={`version`}>FxBackground — Version 0.0.1</div>
   </div>
 );
 

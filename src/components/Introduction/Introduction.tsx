@@ -41,8 +41,7 @@ const Introduction = ({
 }: IntroductionProps) => (
   <section
     className={`
-      section section-introduction
-      introduction-container
+      introduction-component
     `}
     style={{
       position: `relative`,

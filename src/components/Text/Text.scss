@@ -8,7 +8,7 @@
 /*
 # document
 */
-.text-container {
+.text-component {
   width: 100%;
   position: relative;
 
@@ -46,7 +46,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .text-container {
+  .text-component {
     .text-content {
     }
     .text-inner {
@@ -62,7 +62,7 @@
 }
 
 @media #{$medium-and-down} {
-  .text-container {
+  .text-component {
     .text-content {
     }
     .text-inner {
@@ -78,7 +78,7 @@
 }
 
 @media #{$medium-and-up} {
-  .text-container {
+  .text-component {
     .text-content {
     }
     .text-inner {
@@ -94,7 +94,7 @@
 }
 
 @media #{$large-and-up} {
-  .text-container {
+  .text-component {
     .text-content {
     }
     .text-inner {
@@ -110,7 +110,7 @@
 }
 
 @media #{$extra-large-and-up} {
-  .text-container {
+  .text-component {
     .text-content {
     }
     .text-inner {

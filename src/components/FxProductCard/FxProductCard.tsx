@@ -64,7 +64,6 @@ const FxProductCard = ({
       `}
       src={image}
     />}
-    <div className={`version`}>FxProductCard — Version 0.0.1</div>
   </div>
 );
 

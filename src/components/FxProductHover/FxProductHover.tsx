@@ -64,7 +64,6 @@ const FxProductHover = ({
       `}
       src={image}
     />}
-    <div className={`version`}>FxProductHover — Version 0.0.1</div>
   </div>
 );
 

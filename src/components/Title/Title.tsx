@@ -44,7 +44,7 @@ const Title = ({
   <section
     className={`
       section section-title
-      title-container
+      title-component
     `}
     style={{
       position: `relative`,
@@ -58,8 +58,8 @@ const Title = ({
 
     <div className={`title-content`}>
       <div className={`title-inner-content`}>
-        <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} />
-        <h2 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} />
+        <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} />
       </div>
     </div>
 

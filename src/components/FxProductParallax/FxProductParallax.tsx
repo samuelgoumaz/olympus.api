@@ -55,7 +55,6 @@ const FxProductParallax = ({
     }}
   >
     {image && <img src={image} />}
-    <div className={`version`}>FxProductParallax — Version 0.0.1</div>
   </div>
 );
 

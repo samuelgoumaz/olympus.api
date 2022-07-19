@@ -13,6 +13,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface VariantProps {
   api?: string | false;
+  currency?: string | false;
   variants?: {
     id: number;
     sku: string | null;
@@ -75,6 +76,7 @@ export interface VariantProps {
 const Variant: React.FC<VariantProps> = ({
   api,
   variants,
+  currency,
   selectItemFunc,
   addItemFunc,
   removeItemFunc,
@@ -198,7 +200,8 @@ const Variant: React.FC<VariantProps> = ({
               {variants[key].title != null ? variants[key].title : ""}
               {variants[key].subtitle != null ? variants[key].subtitle : ""}
               {variants[key].price_default != null ? " for " : " for "}
-              {variants[key].price_default != null ? variants[key].price_default : ""}
+              {variants[key].price_default != null ? variants[key].price_default.toFixed(2) : ""}
+              {currency ? ` ${currency}` : ""}
             </div>
           ))}
         </Dropdown>
@@ -208,7 +211,8 @@ const Variant: React.FC<VariantProps> = ({
         {variants[0].title != null ? variants[0].title : ""}
         {variants[0].subtitle != null ? variants[0].subtitle : ""}
         {variants[0].price_default != null ? " for " : " for "}
-        {variants[0].price_default != null ? variants[0].price_default : ""}
+        {variants[0].price_default != null ? variants[0].price_default.toFixed(2) : ""}
+        {currency ? ` ${currency}` : ""}
       </div>
       }
 

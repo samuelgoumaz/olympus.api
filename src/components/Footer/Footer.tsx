@@ -33,7 +33,7 @@ const Footer = ({
   children
 }: FooterProps) => (
   <section
-    className={`section section-footer footer-container`}
+    className={`footer-component`}
     style={{
       position: `relative`,
       zIndex: position ?? 2

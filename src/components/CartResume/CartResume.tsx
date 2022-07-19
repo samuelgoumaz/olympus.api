@@ -25,7 +25,7 @@ const CartResume = ({
 
   <div
     className={`
-      cartresume-container
+      cartresume-component
     `}
   >
     {children && <div className={`cartresume-inner`}>

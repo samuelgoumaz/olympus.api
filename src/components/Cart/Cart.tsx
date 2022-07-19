@@ -31,7 +31,7 @@ const Cart = ({
 
   <div
     className={`
-      cart-container
+      cart-component
     `}
   >
     <div className={`cart-header`}>
