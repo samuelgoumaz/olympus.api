@@ -68,7 +68,6 @@
       .scene {
         width: 100%;
         display: block;
-        @include aspect-ratio(1.5,1);
       }
       .content {
         width: 100%;

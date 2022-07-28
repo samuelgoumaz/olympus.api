@@ -8,9 +8,9 @@
 /*
 # document
 */
-.banner-container {
+.banner-component {
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 90);
   position: relative;
   display: block;
   overflow: hidden;
@@ -79,7 +79,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .banner-container {
+  .banner-component {
     .banner-inner {
       .fx_content {
       }
@@ -100,7 +100,7 @@
 }
 
 @media #{$medium-and-down} {
-  .banner-container {
+  .banner-component {
     .banner-inner {
       .fx_content {
       }
@@ -121,7 +121,7 @@
 }
 
 @media #{$medium-and-up} {
-  .banner-container {
+  .banner-component {
     .banner-inner {
       .fx_content {
       }
@@ -142,7 +142,7 @@
 }
 
 @media #{$large-and-up} {
-  .banner-container {
+  .banner-component {
     .banner-inner {
       .fx_content {
       }
@@ -163,7 +163,7 @@
 }
 
 @media #{$extra-large-and-up} {
-  .banner-container {
+  .banner-component {
     .banner-inner {
       .fx_content {
       }

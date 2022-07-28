@@ -4,6 +4,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Toggler from '../Toggler';
+import Menu from '../../Menu';
 
 /*
 # Images
@@ -39,11 +40,54 @@ Default.args = {
   display: 'aasdfasdf',
 };
 
-export const Menu = Template.bind({});
-Menu.args = {
+export const DefaultMenu = Template.bind({});
+DefaultMenu.args = {
   icon: 'menu',
   label: 'menu',
   display: 'fullscreen',
+  children: [<Menu
+    display="inline"
+    menu={[{
+        "id": 1,
+        "name": "Home",
+        "url": "#home",
+        "page": {
+            "data": null
+        }
+    },
+    {
+        "id": 2,
+        "name": "Showreel",
+        "url": "#showreel",
+        "page": {
+            "data": null
+        }
+    },
+    {
+        "id": 3,
+        "name": "Case studies",
+        "url": "#casestudies",
+        "page": {
+            "data": null
+        }
+    },
+    {
+        "id": 4,
+        "name": "Clients",
+        "url": "#client",
+        "page": {
+            "data": null
+        }
+    },
+    {
+        "id": 5,
+        "name": "Contact",
+        "url": "#contact",
+        "page": {
+            "data": null
+        }
+    }]}
+  />]
 };
 
 export const Cart = Template.bind({});

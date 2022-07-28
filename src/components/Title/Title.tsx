@@ -58,8 +58,8 @@ const Title = ({
 
     <div className={`title-content`}>
       <div className={`title-inner-content`}>
-        <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} />
-        <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} />
+        {title != null ? <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+        {subtitle != null ? <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
       </div>
     </div>
 

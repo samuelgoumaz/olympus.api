@@ -2,7 +2,7 @@
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
 
-.button-border-component {
+.button-submit-component {
   font-size: 16px;
   width: auto;
   min-width: 70px;
@@ -11,7 +11,7 @@
   border: 0;
   display: inline-block;
   text-align: center;
-  background: transparent;
+  background: #f2f2f2;
   position: relative;
   margin: 0 5px;
 
@@ -46,7 +46,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .button-border-component {
+  .button-submit-component {
     width: auto;
     min-width: 50px;
     height: 50px;
@@ -80,7 +80,7 @@
 }
 
 @media #{$medium-and-down} {
-  .button-border-component {
+  .button-submit-component {
     width: auto;
     min-width: 56px;
     height: 56px;
@@ -114,7 +114,7 @@
 }
 
 @media #{$medium-and-up} {
-  .button-border-component {
+  .button-submit-component {
     width: auto;
     min-width: 60px;
     height: 60px;
@@ -148,7 +148,7 @@
 }
 
 @media #{$large-and-up} {
-  .button-border-component {
+  .button-submit-component {
     width: auto;
     min-width: 66px;
     height: 66px;

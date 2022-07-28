@@ -255,6 +255,7 @@ Banner.args = {
   body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
   slug: `gelato-kush`,
   display: `banner`,
+  variants: `<div>variants</div>`,
   tags: {
     0: {
       id: 6,

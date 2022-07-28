@@ -62,7 +62,8 @@ const FxProductImage = ({
       width: `100%`,
       objectFit: cover ? `cover` : `contain`,
       transformOrigin: align ? align === `right` ? `right` : align === `left` ? `left` : `center` : `center`,
-      float: align ? align === `right` ? `right` : align === `left` ? `left` : `none` : `none`
+      float: align ? align === `right` ? `right` : align === `left` ? `left` : `none` : `none`,
+      position: `relative`
     }} />}
   </div>
 );

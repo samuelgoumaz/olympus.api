@@ -2,6 +2,7 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
+import * as Scroll from 'react-scroll';
 import Button from "../Button"
 import "./Banner.scss";
 
@@ -15,6 +16,7 @@ export interface BannerProps {
   title?: string | null;
   subtitle?: string | null;
   body?: string | null;
+  mode?: string | null;
   children?: JSX.Element | JSX.Element[];
 }
 
@@ -42,40 +44,50 @@ const Banner = ({
   title,
   subtitle,
   body,
+  mode,
   children
 }: BannerProps) => (
-  <section
-    className={`
-      section section-banner
-      banner-container
-    `}
-    style={{
-      position: `relative`,
-      zIndex: position ?? 2
-    }}
-  >
-    <div className={`banner-inner`}>
+  <>
+    <div
+      className={`banner-component`}
+      style={{
+        position: `relative`,
+        zIndex: position ?? 2
+      }}
+    >
+      <div className={`banner-inner`}>
 
-      <div className={`fx_content`}>
-        {children}
-      </div>
-
-      {title != false || body != false || subtitle != false ? <div className={`banner-content`}>
-        <div className={`banner-content-inner`}>
-          {title != null ? <h2 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-          {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+        <div className={`fx_content`}>
+          {children}
         </div>
-      </div> : ``}
 
-      <div className={`banner-action`}>
-        <Button
-          icon={`arrow_downward`}
-          label={subtitle ?? null}
-        />
+        {title != false || body != false || subtitle != false ? <div className={`banner-content`}>
+          <div className={`banner-content-inner`}>
+            {title != null ? <h2 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+            {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+          </div>
+        </div> : ``}
+
+        <div className={`banner-action`}>
+          <Scroll.Link
+            to={`banner-component-${position ?? 0}`}
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <Button
+              icon={`arrow_downward`}
+              label={subtitle ?? null}
+              mode={`default`}
+              color={mode == `negative` ? `white` : `black`}
+            />
+          </Scroll.Link>
+        </div>
+
       </div>
-
     </div>
-  </section>
+    <div id={`banner-component-${position ?? 0}`} className={`anchor-banner`} />
+  </>
 );
 
 /*
