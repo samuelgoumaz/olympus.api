@@ -10,17 +10,13 @@ import "./Header.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface HeaderProps {
-  left_positive: string | null;
-  left_negative: string | null;
-  middle_positive: string | null;
-  middle_negative: string | null;
   fx_aside: false | true;
-  fx_negative: false | true;
   fx_top: false | true;
   fx_pinned: true | false;
-  title: string;
-  subtitle: string;
-  children: JSX.Element | JSX.Element[];
+  position?: number | null;
+  left?: JSX.Element | JSX.Element[];
+  middle?: JSX.Element | JSX.Element[];
+  right?: JSX.Element | JSX.Element[];
 }
 
 
@@ -43,55 +39,43 @@ export interface HeaderProps {
 }) => (
 */
 const Header = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
   fx_aside,
-  fx_negative,
   fx_top,
   fx_pinned,
-  title,
-  subtitle,
-  children
+  position,
+  left,
+  middle,
+  right
 }: HeaderProps) => (
   <header
     className={`header-component
       ${fx_aside === true ? `fx_aside` : ``}
-      ${fx_negative === true ? `fx_negative` : ``}
       ${fx_top === true ? `fx_top` : ``}
       ${fx_pinned === true ? `fx_pinned` : ``}
     `}
+    style={{
+      zIndex: position != null ? position : 1
+    }}
   >
+    {/**
+      <div className={`header-notification`}>
+        hello
+      </div>
+    **/}
+    
     <div className={`header-inner`}>
 
-      <div className={`header-inner-col col-left`}>
-        {left_positive && left_negative ? <a href={`/`}><img
-          className={"branding"}
-          width="auto"
-          height="100%"
-          src={fx_negative == true ? left_negative : left_positive}
-        /></a> : <h5 className="header-title" dangerouslySetInnerHTML={{ __html: title }} />}
+      {left && <div className={`header-inner-col col-left`}>
+        {left}
+      </div>}
 
-      </div>
+      {middle && <div className={`header-inner-col col-middle`}>
+        {middle}
+      </div>}
 
-      <div className={`header-inner-col col-middle`}>
-        {
-          middle_positive != null && middle_negative != null ?
-            <a href={`/`}><img
-              className={"branding"}
-              width="auto"
-              height="100%"
-              src={fx_negative == true ? middle_negative : middle_positive}
-            /></a>
-          :
-            <h1 className="header-title" dangerouslySetInnerHTML={{ __html: title }} />
-      }
-      </div>
-
-      <div className={`header-inner-col col-right`}>
-        {children}
-      </div>
+      {right && <div className={`header-inner-col col-right`}>
+        {right}
+      </div>}
 
     </div>
   </header>

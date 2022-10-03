@@ -61,7 +61,7 @@ const Checkout = ({
         # Header **/}
         <div className={`checkout-component-fieldset-header`}>
           <h6 className={`checkout-component-fieldset-legend`}>
-            {`Resume`}
+            {`1. Resumé`}
           </h6>
           <div className={`checkout-component-fieldset-icon`}>
             <Button

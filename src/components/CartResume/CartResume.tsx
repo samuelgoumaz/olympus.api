@@ -14,8 +14,6 @@ export interface CartResumeProps {
   children?: JSX.Element | JSX.Element[];
 }
 
-
-
 /*
 # Class Components
 */

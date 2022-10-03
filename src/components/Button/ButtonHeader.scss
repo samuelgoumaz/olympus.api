@@ -12,16 +12,17 @@
   &.hv-label {
     &.hv-icon {
       .icon {
-        padding: 0 20px 0 5px;
       }
       .label {
-        padding-left: 25px;
       }
     }
   }
 
   &.hv-icon {
+    padding: 0;
     .icon {
+      svg {
+      }
     }
   }
 
@@ -46,23 +47,24 @@
 */
 @media #{$small-and-down} {
   .button-header-component {
-    background: red;
     min-width: 50px;
     height: 50px;
 
     &.hv-label {
       &.hv-icon {
         .icon {
-          padding: 0 5px;
+          padding: 0;
         }
         .label {
-          padding-left: 10px;
+          padding: 0 10px;
         }
       }
     }
 
     &.hv-icon {
       .icon {
+        svg {
+        }
       }
     }
 
@@ -81,23 +83,24 @@
 
 @media #{$medium-and-down} {
   .button-header-component {
-    background: orange;
     min-width: 60px;
     height: 60px;
 
     &.hv-label {
       &.hv-icon {
         .icon {
-          padding: 0 5px;
+          padding: 0;
         }
         .label {
-          padding-left: 10px;
+          padding: 0 10px;
         }
       }
     }
 
     &.hv-icon {
       .icon {
+        svg {
+        }
       }
     }
 
@@ -116,23 +119,24 @@
 
 @media #{$medium-and-up} {
   .button-header-component {
-    background: green;
     min-width: 70px;
     height: 70px;
 
     &.hv-label {
       &.hv-icon {
         .icon {
-          padding: 0 8px 0 5px;
+          padding: 0px;
         }
         .label {
-          padding-left: 13px;
+          padding: 0 13px;
         }
       }
     }
 
     &.hv-icon {
       .icon {
+        svg {
+        }
       }
     }
 
@@ -151,23 +155,24 @@
 
 @media #{$large-and-up} {
   .button-header-component {
-    background: blue;
     min-width: 80px;
     height: 80px;
 
     &.hv-label {
       &.hv-icon {
         .icon {
-          padding: 0 10px 0 5px;
+          padding: 0;
         }
         .label {
-          padding-left: 15px;
+          padding: 0 15px;
         }
       }
     }
 
     &.hv-icon {
       .icon {
+        svg {
+        }
       }
     }
 
@@ -186,23 +191,24 @@
 
 @media #{$extra-large-and-up} {
   .button-header-component {
-    background: turquoise;
     min-width: 90px;
     height: 90px;
 
     &.hv-label {
       &.hv-icon {
         .icon {
-          padding: 0 15px 0 5px;
+          padding: 0;
         }
         .label {
-          padding-left: 20px;
+          padding: 0 20px;
         }
       }
     }
 
     &.hv-icon {
       .icon {
+        svg {
+        }
       }
     }
 

@@ -15,6 +15,7 @@ export interface MainProps {
   fx_negative: false | true;
   fx_top: false | true;
   fx_pinned: true | false;
+  position?: number | null;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -43,6 +44,7 @@ const Main = ({
   fx_negative,
   fx_top,
   fx_pinned,
+  position,
   children
 }: MainProps) => (
   <main
@@ -54,6 +56,9 @@ const Main = ({
       ${fx_top === true ? `fx_top` : ``}
       ${fx_pinned === true ? `fx_pinned` : ``}
     `}
+    style={{
+      zIndex: position != null ? position : 1
+    }}
   >
     <div className={`main-inner`}>
       {children ?? <h1>...</h1>}

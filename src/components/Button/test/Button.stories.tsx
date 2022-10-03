@@ -23,6 +23,7 @@ Header.args = {
   label: 'cart',
   icon: 'home',
   mode: 'header',
+  state: 'loading',
 };
 
 export const Indicator = Template.bind({});
@@ -30,6 +31,7 @@ Indicator.args = {
   label: 'cart',
   icon: 'home',
   mode: 'indicator',
+  state: 'loading',
 };
 
 export const Border = Template.bind({});
@@ -37,6 +39,15 @@ Border.args = {
   label: 'cart',
   icon: 'home',
   mode: 'border',
+  state: 'loading',
+};
+
+export const Submit = Template.bind({});
+Submit.args = {
+  label: 'cart',
+  icon: 'home',
+  mode: 'submit',
+  state: 'loading',
 };
 
 export const Default = Template.bind({});
@@ -44,4 +55,5 @@ Default.args = {
   label: 'cart',
   icon: 'home',
   mode: 'default',
+  state: 'loading',
 };

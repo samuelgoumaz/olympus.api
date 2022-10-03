@@ -33,12 +33,13 @@ const Template: ComponentStory<typeof Article> = (args) => <Article {...args} />
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const Grid = Template.bind({});
-Grid.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `grid`,
+export const Banner = Template.bind({});
+Banner.args = {
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `article-slug`,
+  display: `banner`,
   tags: {
     0: {
       id: 6,
@@ -105,12 +106,86 @@ Grid.args = {
   },
 };
 
-export const Inline = Template.bind({});
-Inline.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
+export const Row = Template.bind({});
+Row.args = {
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `article-slug`,
   display: `row`,
+  tags: {
+    0: {
+      id: 6,
+      name: "Infusion",
+      slug: "infusion",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    1: {
+      id: 7,
+      name: "Cuisine",
+      slug: "cuisine",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    2: {
+      id: 6,
+      name: "Indica",
+      slug: "indica",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 1,
+          name: "Variétés",
+          slug: "variete",
+        }
+      }
+    },
+    3: {
+      id: 2,
+      name: "Consommation",
+      slug: "consommation",
+      children: {
+        0: {
+          id: 6,
+          name: "Infusion",
+          slug: "infusion"
+        },
+        1: {
+          id: 7,
+          name: "Cuisine",
+          slug: "cuisine"
+        },
+      },
+      parent: {
+
+      },
+    }
+  },
+};
+
+export const Line = Template.bind({});
+Line.args = {
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `article-slug`,
+  display: `line`,
   tags: {
     0: {
       id: 6,

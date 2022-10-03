@@ -13,6 +13,7 @@ export interface FxVideoProps {
   position: number;
   cover?: string | null;
   video?: string | null;
+  videos?: array | null;
   opacity?: string | null;
   mixBlendMode?: string | null;
 }
@@ -40,6 +41,7 @@ const FxVideo = ({
   position,
   cover,
   video,
+  videos,
   opacity,
   mixBlendMode,
 }: FxVideoProps) => (
@@ -62,7 +64,7 @@ const FxVideo = ({
     {cover && video ? <video
       className={`fx-video-content`}
       loop
-      playinline={`true`}
+      playsInline={`true`}
       autoPlay
       muted
       preload={`true`}

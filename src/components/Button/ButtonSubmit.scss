@@ -14,17 +14,21 @@
   background: #f2f2f2;
   position: relative;
   margin: 0 5px;
+  overflow: hidden;
 
   &.hv-label {
     padding: 0 20px;
     &.hv-icon {
+      padding: 0 20px 0 0;
       .icon {
-        padding-left: 5px;
+        svg {
+        }
       }
     }
   }
 
   &.hv-icon {
+    padding: 0;
     .icon {
       padding-left: 0;
     }
@@ -33,7 +37,7 @@
   span {
     font-size: 1.75em;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
 
     &.label {
     }
@@ -59,7 +63,6 @@
       padding: 0 10px;
       &.hv-icon {
         .icon {
-          padding-left: 5px;
         }
       }
     }
@@ -92,8 +95,8 @@
     &.hv-label {
       padding: 0 13px;
       &.hv-icon {
+        padding: 0 13px 0 0;
         .icon {
-          padding-left: 5px;
         }
       }
     }
@@ -126,8 +129,8 @@
     &.hv-label {
       padding: 0 15px;
       &.hv-icon {
+        padding: 0 15px 0 0;
         .icon {
-          padding-left: 5px;
         }
       }
     }
@@ -160,8 +163,8 @@
     &.hv-label {
       padding: 0 18px;
       &.hv-icon {
+        padding: 0 18px 0 0;
         .icon {
-          padding-left: 5px;
         }
       }
     }

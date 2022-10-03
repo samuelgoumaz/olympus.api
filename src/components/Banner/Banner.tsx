@@ -5,6 +5,8 @@ import React, { useRef, useEffect, useState } from "react";
 import * as Scroll from 'react-scroll';
 import Button from "../Button"
 import "./Banner.scss";
+import "./BannerFullscreen.scss";
+import "./BannerSmall.scss";
 
 /*
 # Interface
@@ -17,6 +19,8 @@ export interface BannerProps {
   subtitle?: string | null;
   body?: string | null;
   mode?: string | null;
+  display?: string | null;
+  scrollTo: boolean | false;
   children?: JSX.Element | JSX.Element[];
 }
 
@@ -45,11 +49,17 @@ const Banner = ({
   subtitle,
   body,
   mode,
+  scrollTo,
+  display,
   children
 }: BannerProps) => (
   <>
     <div
-      className={`banner-component`}
+      className={`
+      ${display === `fullscreen` ? `banner-component-fullscreen` : ``}
+      ${display === `small` ? `banner-component-small` : ``}
+      ${display === null || !display ? `banner-component` : ``}
+      `}
       style={{
         position: `relative`,
         zIndex: position ?? 2
@@ -68,7 +78,7 @@ const Banner = ({
           </div>
         </div> : ``}
 
-        <div className={`banner-action`}>
+        {scrollTo && <div className={`banner-action`}>
           <Scroll.Link
             to={`banner-component-${position ?? 0}`}
             spy={true}
@@ -82,7 +92,7 @@ const Banner = ({
               color={mode == `negative` ? `white` : `black`}
             />
           </Scroll.Link>
-        </div>
+        </div>}
 
       </div>
     </div>

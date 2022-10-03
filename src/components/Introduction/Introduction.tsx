@@ -12,6 +12,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface IntroductionProps {
   position: number;
   body: string | null;
+  aside: string | null;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -37,6 +38,7 @@ export interface IntroductionProps {
 const Introduction = ({
   position,
   body,
+  aside,
   children
 }: IntroductionProps) => (
   <section
@@ -53,9 +55,12 @@ const Introduction = ({
     </div>
 
     <div className={`introduction-inner`}>
-      <div className={`introduction-inner-content`}>
+      {body && <div className={`introduction-inner-content`}>
         <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />
-      </div>
+      </div>}
+      {aside && <div className={`introduction-inner-aside`}>
+        <div className={`body`} dangerouslySetInnerHTML={{ __html: aside }} />
+      </div>}
     </div>
   </section>
 );

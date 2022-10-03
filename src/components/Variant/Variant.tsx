@@ -99,7 +99,13 @@ const Variant: React.FC<VariantProps> = ({
 
   /**
   # Add Item function **/
-  function addItem (parentId, elementId) {
+  function addItem (parentId, elementId, fxButton) {
+
+    /*
+    # set state : loading */
+    if (fxButton) {
+      fxButton.setAttribute("data-state", "loading")
+    }
 
     let myVariant = variants.find(variantItem => variantItem.id === elementId);
     let myClone =
@@ -112,6 +118,16 @@ const Variant: React.FC<VariantProps> = ({
     if (addItemFunc) {
       addItemFunc(myVariant)
       readQuantity(elementId)
+      if (fxButton) {
+        fxButton.setAttribute("data-state", "complete")
+        setTimeout(() => {
+          fxButton.setAttribute("data-state", "null")
+        }, 1000);
+      }
+    } else {
+      if (fxButton) {
+        fxButton.setAttribute("data-state", "error")
+      }
     }
 
     /**
@@ -138,7 +154,14 @@ const Variant: React.FC<VariantProps> = ({
 
   /**
   # Remove Item function **/
-  function removeItem (parentId, elementId) {
+  function removeItem (parentId, elementId, fxButton) {
+
+    /*
+    # set state : loading */
+    if (fxButton) {
+      fxButton.setAttribute("data-state", "loading")
+    }
+
     let myVariant = variants.find(variantItem => variantItem.id === elementId);
     let myClone =
       myVariant.clone ?
@@ -150,6 +173,16 @@ const Variant: React.FC<VariantProps> = ({
     if (removeItemFunc) {
       removeItemFunc(myVariant)
       readQuantity(elementId)
+      if (fxButton) {
+        fxButton.setAttribute("data-state", "complete")
+        setTimeout(() => {
+          fxButton.setAttribute("data-state", "null")
+        }, 1000);
+      }
+    } else {
+      if (fxButton) {
+        fxButton.setAttribute("data-state", "error")
+      }
     }
 
     /**
@@ -219,6 +252,7 @@ const Variant: React.FC<VariantProps> = ({
       <div className={`variant-component-list`}>
         {Object.keys(variants).map((key) => (
           <div
+            key={`api_variants_${key}`}
             className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
             key={`variant-component-key-${key}`}
           >
@@ -226,9 +260,15 @@ const Variant: React.FC<VariantProps> = ({
               {variants[key].quantity > 0 ? <Button
                 icon={`remove`}
                 mode={`default`}
+                color={`white`}
                 onClick={
                   (event: React.MouseEvent<HTMLElement>) => {
-                    removeItem(variants[key].parent_id, variants[key].id)
+                    let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                    if (
+                      myEl.getAttribute("data-state") != "loading" &&
+                      myEl.getAttribute("data-state") != "error" &&
+                      myEl.getAttribute("data-state") != "complete"
+                    ) removeItem(variants[key].parent_id, variants[key].id, myEl);
                   }
                 }
               /> : ``}
@@ -243,9 +283,15 @@ const Variant: React.FC<VariantProps> = ({
               <Button
                 icon={`add`}
                 mode={`default`}
+                color={`white`}
                 onClick={
                   (event: React.MouseEvent<HTMLElement>) => {
-                    addItem(variants[key].parent_id, variants[key].id)
+                    let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                    if (
+                      myEl.getAttribute("data-state") != "loading" &&
+                      myEl.getAttribute("data-state") != "error" &&
+                      myEl.getAttribute("data-state") != "complete"
+                    ) addItem(variants[key].parent_id, variants[key].id, myEl)
                   }
                 }
               />

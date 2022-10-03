@@ -1,0 +1,42 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.postfinance-component {
+  &:after {
+  }
+  .fx-content {
+  }
+  .postfinance-content {
+    .postfinance-inner-content {
+      .title {
+      }
+      .subtitle {
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

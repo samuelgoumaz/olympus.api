@@ -118,7 +118,6 @@
     &.fullscreen {
       width: 100vw;
       height: 100vh;
-      background: red;
       top: 0;
       left: 0;
       z-index: 1;
@@ -127,10 +126,11 @@
     }
 
     &.aside {
-      background: white;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       overflow: auto;
-      width: 30vw;
+      width: 25vw;
+      min-width: 320px;
+      max-width: 460px;
       z-index: 9;
       left: auto;
       right: 0;

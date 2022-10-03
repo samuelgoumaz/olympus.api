@@ -1,0 +1,504 @@
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# FxCube */
+.fxIcon-header {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: inline-block;
+  perspective: 200%;
+  position: relative;
+  vertical-align: middle;
+
+  .front,
+  .back,
+  .done,
+  .cancel {
+    width: 140%;
+    height: 100%;
+    margin-left: -20%;
+    padding: 0 20%;
+    display: table;
+    position: absolute;
+    @include transition(all 1s);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    .inner {
+      width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+
+      /*
+      OnClick */
+      .icon {
+        margin: 0;
+        font-size: 2.75em;
+
+        &:before {
+        }
+      }
+
+      /*
+      Loading spinner */
+      svg {
+        width: 100%;
+        height: auto;
+        display: block;
+        padding: 30px;
+      }
+    }
+  }
+
+  .cancel {
+    transform: rotateX(90deg);
+    top: -50%;
+  }
+  .front {
+    transform: rotateX(0deg);
+    top: 0px;
+  }
+  .back {
+    transform: rotateX(-90deg);
+    top: 50%;
+  }
+  .done {
+    transform: rotateX(-180deg);
+    top: 50%;
+
+    .error {
+      display: none;
+    }
+  }
+
+  &[data-state="cancel"] {
+    .cancel {
+      transform: rotateX(0deg);
+      top: 0px;
+    }
+    .front {
+      transform: rotateX(-90deg);
+      top: 50%;
+    }
+    .back {
+      transform: rotateX(-180deg);
+      top: 50%;
+    }
+    .done {
+      transform: rotateX(-270deg);
+      top: 50%;
+    }
+  }
+
+
+  &[data-state="loading"] {
+    .cancel {
+      transform: rotateX(180deg);
+      top: -50%;
+    }
+    .front {
+      transform: rotateX(90deg);
+      top: -50%;
+    }
+
+    .back {
+      transform: rotateX(0deg);
+      top: 0;
+    }
+
+    .done {
+      transform: rotateX(-90deg);
+      top: 50%;
+    }
+  }
+
+  &[data-state="error"] {
+    .done {
+      .error {
+        display: block;
+      }
+      .complete {
+        display: none;
+      }
+    }
+  }
+  &[data-state="complete"] {
+    .done {
+      .error {
+        display: none;
+      }
+    }
+  }
+
+  &[data-state="complete"],
+  &[data-state="error"] {
+    .cancel {
+      transform: rotateX(270deg);
+      top: -50%;
+    }
+    .front {
+      transform: rotateX(180deg);
+      top: -50%;
+    }
+
+    .back {
+      transform: rotateX(90deg);
+      top: -50%;
+    }
+
+    .done {
+      transform: rotateX(0deg);
+      top: 0;
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  /*
+  # FxCube */
+  .fxIcon-header {
+    width: 50px;
+    height: 50px;
+
+    .front,
+    .back,
+    .done,
+    .cancel {
+      .inner {
+        .icon {
+          font-size: 1.5em;
+          &:before {
+          }
+        }
+        svg {
+          padding: 14px;
+        }
+      }
+    }
+
+    .cancel {
+    }
+    .front {
+    }
+    .back {
+    }
+    .done {
+    }
+
+    &[data-state="cancel"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+
+    &[data-state="loading"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+    &[data-state="complete"],
+    &[data-state="error"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  /*
+  # FxCube */
+  .fxIcon-header {
+    width: 60px;
+    height: 60px;
+
+    .front,
+    .back,
+    .done,
+    .cancel {
+      .inner {
+        .icon {
+          font-size: 1.75em;
+          &:before {
+          }
+        }
+        svg {
+          padding: 17px;
+        }
+      }
+    }
+
+    .cancel {
+    }
+    .front {
+    }
+    .back {
+    }
+    .done {
+    }
+
+    &[data-state="cancel"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+
+    &[data-state="loading"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+    &[data-state="complete"],
+    &[data-state="error"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  /*
+  # FxCube */
+  .fxIcon-header {
+    width: 70px;
+    height: 70px;
+    .front,
+    .back,
+    .done,
+    .cancel {
+      .inner {
+        .icon {
+          font-size: 2em;
+          &:before {
+          }
+        }
+        svg {
+          padding: 20px;
+        }
+      }
+    }
+
+    .cancel {
+    }
+    .front {
+    }
+    .back {
+    }
+    .done {
+    }
+
+    &[data-state="cancel"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+
+    &[data-state="loading"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+    &[data-state="complete"],
+    &[data-state="error"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  /*
+  # FxCube */
+  .fxIcon-header {
+    width: 80px;
+    height: 80px;
+
+    .front,
+    .back,
+    .done,
+    .cancel {
+      .inner {
+        .icon {
+          font-size: 2.25em;
+          &:before {
+          }
+        }
+        svg {
+          padding: 22px;
+        }
+      }
+    }
+
+    .cancel {
+    }
+    .front {
+    }
+    .back {
+    }
+    .done {
+    }
+
+    &[data-state="cancel"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+
+    &[data-state="loading"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+    &[data-state="complete"],
+    &[data-state="error"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  /*
+  # FxCube */
+  .fxIcon-header {
+    width: 90px;
+    height: 90px;
+    
+    .front,
+    .back,
+    .done,
+    .cancel {
+      .inner {
+        .icon {
+          font-size: 2.5em;
+          &:before {
+          }
+        }
+        svg {
+          padding: 25px;
+        }
+      }
+    }
+
+    .cancel {
+    }
+    .front {
+    }
+    .back {
+    }
+    .done {
+    }
+
+    &[data-state="cancel"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+
+    &[data-state="loading"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+
+    &[data-state="complete"],
+    &[data-state="error"] {
+      .cancel {
+      }
+      .front {
+      }
+      .back {
+      }
+      .done {
+      }
+    }
+  }
+}

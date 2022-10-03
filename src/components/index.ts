@@ -1,4 +1,5 @@
 export { default as Button } from "./Button";
+export { default as Aside } from "./Aside";
 export { default as Calendar } from "./Calendar";
 export { default as Cart } from "./Cart";
 export { default as Footer } from "./Footer";
@@ -31,6 +32,7 @@ export { default as Dropdown } from "./Dropdown";
 export { default as Video } from "./Video";
 export { default as Title } from "./Title";
 export { default as Article } from "./Article";
+export { default as Partner } from "./Partner";
 export { default as Form } from "./Form";
 export { default as Post } from "./Post";
 export { default as CartPrice } from "./CartPrice";

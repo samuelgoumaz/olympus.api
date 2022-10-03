@@ -60,7 +60,7 @@ const Product = ({
   scene,
   getProductFunc
 }: ProductProps) => (
-  <article
+  <div
     className={`
       ${display === `grid` ? `product-component-grid` : ``}
       ${display === `row` ? `product-component-row` : ``}
@@ -106,7 +106,7 @@ const Product = ({
       </div>
 
     </div>
-  </article>
+  </div>
 );
 
 /*

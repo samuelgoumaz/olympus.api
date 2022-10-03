@@ -12,7 +12,15 @@
   width: 100%;
   position: fixed;
   z-index: 9;
+  left: 0;
   top: 0;
+
+  .header-notification {
+    width: 100%;
+    background: red;
+    color: white;
+    display: none !important;
+  }
 
   .header-inner {
     width: 100%;
@@ -20,6 +28,7 @@
     display: table;
     position: relative;
     margin: 0 auto;
+    background: linear-gradient(black, transparent);
 
     .header-inner-col {
       width: 100%;

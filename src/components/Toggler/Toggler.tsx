@@ -88,6 +88,7 @@ const Toggler = ({
         ${display === `fullscreen` ? `fullscreen` : ``}
         ${display === `aside` ? `aside` : ``}
         ${display === `popup` ? `popup` : ``}
+        ${display === `dropdown` ? `dropdown` : ``}
         ${display == null ? `default` : ``}
       `}>
 

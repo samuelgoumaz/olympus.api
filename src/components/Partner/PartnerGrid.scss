@@ -1,0 +1,124 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.partner-component-grid {
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .partner-inner {
+
+    .scene {
+      @include aspect-ratio(1,1);
+    }
+    .content {
+    }
+    .action {
+      .variant-component {
+        .variant-component-selector {
+        }
+      }
+
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .partner-component-grid {
+    width: 100%;
+
+    .fx {
+    }
+    .partner-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .partner-component-grid {
+    width: 50%;
+
+    .fx {
+    }
+    .partner-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .partner-component-grid {
+    width: 33.3333%;
+
+    .fx {
+    }
+    .partner-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .partner-component-grid {
+    width: 33.3333%;
+
+    .fx {
+    }
+    .partner-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .partner-component-grid {
+    width: 25%;
+
+    .fx {
+    }
+    .partner-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
+}

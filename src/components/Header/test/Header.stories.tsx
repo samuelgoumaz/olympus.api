@@ -4,6 +4,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Header from '../Header';
+import Button from '../../Button';
 
 /*
 # Images
@@ -55,8 +56,20 @@ Weedonist.args = {
 export const Dustygreen = Template.bind({});
 Dustygreen.args = {
   title: ``,
-  left_positive: 'http://localhost:1337/uploads/dusty_green_193bc26ef5.png',
-  left_negative: 'http://localhost:1337/uploads/dusty_green_193bc26ef5.png',
+  left: [
+    <img
+      className={`branding`}
+      width={`auto`}
+      height={`100%`}
+      src="http://localhost:1337/uploads/branding_dustygreen_9a91db1cc6.png"
+    />
+  ],
+  right: [
+    <Button
+      mode={`header`}
+      icon={`cart`}
+    />
+  ]
 };
 
 export const EventsConcept = Template.bind({});

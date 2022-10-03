@@ -20,17 +20,17 @@
 /*
 # Responsive
 */
-@Main #{$small-and-down} {
+@media #{$small-and-down} {
 }
 
-@Main #{$medium-and-down} {
+@media #{$medium-and-down} {
 }
 
-@Main #{$medium-and-up} {
+@media #{$medium-and-up} {
 }
 
-@Main #{$large-and-up} {
+@media #{$large-and-up} {
 }
 
-@Main #{$extra-large-and-up} {
+@media #{$extra-large-and-up} {
 }

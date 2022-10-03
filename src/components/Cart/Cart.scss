@@ -9,7 +9,9 @@
 # document
 */
 .cart-component {
+  min-height: 100%;
   position: relative;
+  background: white;
 
   .cart-header {
     background: black;
