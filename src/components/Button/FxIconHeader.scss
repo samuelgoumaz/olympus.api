@@ -55,7 +55,7 @@
 
   .cancel {
     transform: rotateX(90deg);
-    top: -50%;
+    top: -100%;
   }
   .front {
     transform: rotateX(0deg);
@@ -63,11 +63,11 @@
   }
   .back {
     transform: rotateX(-90deg);
-    top: 50%;
+    top: 100%;
   }
   .done {
     transform: rotateX(-180deg);
-    top: 50%;
+    top: 100%;
 
     .error {
       display: none;
@@ -81,15 +81,15 @@
     }
     .front {
       transform: rotateX(-90deg);
-      top: 50%;
+      top: 100%;
     }
     .back {
       transform: rotateX(-180deg);
-      top: 50%;
+      top: 100%;
     }
     .done {
       transform: rotateX(-270deg);
-      top: 50%;
+      top: 100%;
     }
   }
 
@@ -97,11 +97,11 @@
   &[data-state="loading"] {
     .cancel {
       transform: rotateX(180deg);
-      top: -50%;
+      top: -100%;
     }
     .front {
       transform: rotateX(90deg);
-      top: -50%;
+      top: -100%;
     }
 
     .back {
@@ -111,7 +111,7 @@
 
     .done {
       transform: rotateX(-90deg);
-      top: 50%;
+      top: 100%;
     }
   }
 
@@ -137,16 +137,16 @@
   &[data-state="error"] {
     .cancel {
       transform: rotateX(270deg);
-      top: -50%;
+      top: -100%;
     }
     .front {
       transform: rotateX(180deg);
-      top: -50%;
+      top: -100%;
     }
 
     .back {
       transform: rotateX(90deg);
-      top: -50%;
+      top: -100%;
     }
 
     .done {
@@ -440,7 +440,7 @@
   .fxIcon-header {
     width: 90px;
     height: 90px;
-    
+
     .front,
     .back,
     .done,

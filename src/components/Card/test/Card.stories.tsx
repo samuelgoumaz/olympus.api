@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Product from '../Product';
+import Card from '../Card';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Product from '../Product';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Product',
-  component: Product,
-} as ComponentMeta<typeof Product>;
+  title: 'ReactComponentLibrary/Card',
+  component: Card,
+} as ComponentMeta<typeof Card>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Product> = (args) => <Product {...args} />;
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 /*
 # Args
@@ -33,12 +33,159 @@ const Template: ComponentStory<typeof Product> = (args) => <Product {...args} />
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
+export const Banner = Template.bind({});
+Banner.args = {
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `Card-slug`,
+  display: `banner`,
+  tags: {
+    0: {
+      id: 6,
+      name: "Infusion",
+      slug: "infusion",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    1: {
+      id: 7,
+      name: "Cuisine",
+      slug: "cuisine",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    2: {
+      id: 6,
+      name: "Indica",
+      slug: "indica",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 1,
+          name: "Variétés",
+          slug: "variete",
+        }
+      }
+    },
+    3: {
+      id: 2,
+      name: "Consommation",
+      slug: "consommation",
+      children: {
+        0: {
+          id: 6,
+          name: "Infusion",
+          slug: "infusion"
+        },
+        1: {
+          id: 7,
+          name: "Cuisine",
+          slug: "cuisine"
+        },
+      },
+      parent: {
+
+      },
+    }
+  },
+};
+
 export const Grid = Template.bind({});
 Grid.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `Card-slug`,
   display: `grid`,
+  tags: {
+    0: {
+      id: 6,
+      name: "Infusion",
+      slug: "infusion",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    1: {
+      id: 7,
+      name: "Cuisine",
+      slug: "cuisine",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    2: {
+      id: 6,
+      name: "Indica",
+      slug: "indica",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 1,
+          name: "Variétés",
+          slug: "variete",
+        }
+      }
+    },
+    3: {
+      id: 2,
+      name: "Consommation",
+      slug: "consommation",
+      children: {
+        0: {
+          id: 6,
+          name: "Infusion",
+          slug: "infusion"
+        },
+        1: {
+          id: 7,
+          name: "Cuisine",
+          slug: "cuisine"
+        },
+      },
+      parent: {
+
+      },
+    }
+  },
+};
+
+export const Line = Template.bind({});
+Line.args = {
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `Card-slug`,
+  display: `line`,
   tags: {
     0: {
       id: 6,
@@ -107,9 +254,10 @@ Grid.args = {
 
 export const Row = Template.bind({});
 Row.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `Card-slug`,
   display: `row`,
   tags: {
     0: {
@@ -177,230 +325,13 @@ Row.args = {
   },
 };
 
-export const Card = Template.bind({});
-Card.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `card`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Detail = Template.bind({});
-Detail.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `detail`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Banner = Template.bind({});
-Banner.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `banner`,
-  variants: `<div>variants</div>`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Slide = Template.bind({});
-Slide.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `slide`,
-  variants: `<div>variants</div>`,
+export const Section = Template.bind({});
+Section.args = {
+  title: `Title`,
+  subtitle: `subtitle`,
+  body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
+  slug: `Card-slug`,
+  display: `section`,
   tags: {
     0: {
       id: 6,

@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import FxVideo from '../FxVideo';
+import Shop from '../Shop';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import FxVideo from '../FxVideo';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/FxVideo',
-  component: FxVideo,
-} as ComponentMeta<typeof FxVideo>;
+  title: 'ReactComponentLibrary/Shop',
+  component: Shop,
+} as ComponentMeta<typeof Shop>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof FxVideo> = (args) => <FxVideo {...args} />;
+const Template: ComponentStory<typeof Shop> = (args) => <Shop {...args} />;
 
 /*
 # Args
@@ -35,9 +35,10 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
-  position : 1,
-  cover : "http://localhost:1337/uploads/Capture_d_ecran_2022_06_30_a_17_17_30_81c662e349.jpg",
-  video : "http://localhost:1337/uploads/dustygreen_video_v2_720c534d8c.mp4",
-  opacity : 1,
-  mixBlendMode : "normal",
+  layout_margin: false,
+  fx_margin: false,
+  fx_aside: false,
+  fx_negative: false,
+  fx_top: false,
+  fx_pinned: false,
 };

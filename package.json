@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/olympus.api"
   },
-  "version": "0.2.30",
+  "version": "0.2.37",
   "description": "API for Supermassive NextJS project Frontend.",
   "scripts": {
     "rollup": "rollup -c",

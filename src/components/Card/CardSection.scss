@@ -8,22 +8,18 @@
 /*
 # document
 */
-.fx-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
 
-  .fx-image-content {
-    object-fit: cover;
+
+.card-component-section {
+  .fx {
   }
-
-  .version {
-    padding: 5px;
-    font-family: Monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    color: white;
+  .card-inner {
+    .scene {
+    }
+    .content {
+    }
+    .action {
+    }
   }
 }
 
@@ -31,6 +27,18 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .card-component-section {
+    .fx {
+    }
+    .card-inner {
+      .scene {
+      }
+      .content {
+      }
+      .action {
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {

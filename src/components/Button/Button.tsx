@@ -94,7 +94,7 @@ const Button = ({
         ${mode == `border` ? `button-border-component` : ``}
         ${mode == `default` || mode == null ? `button-component` : ``}
         ${mode == `submit` || mode == null ? `button-submit-component` : ``}
-        ${icon != null ? `hv-icon` : ``}
+        ${icon ? `hv-icon` : ``}
         ${label ? `hv-label` : ``}
       `}
       style={{
@@ -151,9 +151,9 @@ const Button = ({
                 cy={50}
                 fill={`none`}
                 stroke={color ? color : `black`}
-                stroke-width={10}
+                strokeWidth={10}
                 r={35}
-                stroke-dasharray={`164.93361431346415 56.97787143782138`}
+                strokeDasharray={`164.93361431346415 56.97787143782138`}
               >
                 <animateTransform
                   attributeName={`transform`}

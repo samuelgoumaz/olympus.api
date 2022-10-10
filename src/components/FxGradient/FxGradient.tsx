@@ -11,9 +11,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxGradientProps {
   position: number;
-  cover?: string | null;
-  video?: string | null;
-  videos?: array | null;
+  colors?: string;
   opacity?: string | null;
   mixBlendMode?: string | null;
 }
@@ -39,9 +37,7 @@ export interface FxGradientProps {
 */
 const FxGradient = ({
   position,
-  cover,
-  video,
-  videos,
+  colors,
   opacity,
   mixBlendMode,
 }: FxGradientProps) => (
@@ -54,27 +50,17 @@ const FxGradient = ({
       height: `100%`,
       top: 0,
       left: 0,
-      background: `black`,
       opacity: opacity ?? 1,
       mixBlendMode: mixBlendMode ?? `normal`,
       position: `absolute`,
       zIndex: position ?? 1
     }}
   >
-    {console.log("my video", videos)}
-    {cover && video ? <video
-      className={`fx-gradient-content`}
-      loop
-      playinline={`true`}
-      autoPlay
-      muted
-      preload={`true`}
-      width="100%"
-      height="100%"
-      poster={cover ?? null}
-    >
-      {video && <source src={video} type="video/mp4" />}
-    </video> : ``}
+    <div className={`version`}>FxGradient</div>
+    {colors != null ? <div className={`gradient-bottom`} style={{
+      background: `radial-gradient(${String(colors)})`,
+      backgroundPosition: `center top`
+    }} /> : ``}
   </div>
 );
 

@@ -26,6 +26,7 @@ FxCube */
     @include transition(all 1s);
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    opacity: 1;
 
     .inner {
       width: 100%;
@@ -56,7 +57,7 @@ FxCube */
 
   .cancel {
     transform: rotateX(90deg);
-    top: -50%;
+    top: -100%;
   }
   .front {
     transform: rotateX(0deg);
@@ -64,11 +65,11 @@ FxCube */
   }
   .back {
     transform: rotateX(-90deg);
-    top: 50%;
+    top: 100%;
   }
   .done {
     transform: rotateX(-180deg);
-    top: 50%;
+    top: 100%;
 
     .error {
       display: none;
@@ -82,15 +83,15 @@ FxCube */
     }
     .front {
       transform: rotateX(-90deg);
-      top: 50%;
+      top: 100%;
     }
     .back {
       transform: rotateX(-180deg);
-      top: 50%;
+      top: 100%;
     }
     .done {
       transform: rotateX(-270deg);
-      top: 50%;
+      top: 100%;
     }
   }
 
@@ -98,11 +99,11 @@ FxCube */
   &[data-state="loading"] {
     .cancel {
       transform: rotateX(180deg);
-      top: -50%;
+      top: -100%;
     }
     .front {
       transform: rotateX(90deg);
-      top: -50%;
+      top: -100%;
     }
 
     .back {
@@ -112,7 +113,7 @@ FxCube */
 
     .done {
       transform: rotateX(-90deg);
-      top: 50%;
+      top: 100%;
     }
   }
 
@@ -138,16 +139,16 @@ FxCube */
   &[data-state="error"] {
     .cancel {
       transform: rotateX(270deg);
-      top: -50%;
+      top: -100%;
     }
     .front {
       transform: rotateX(180deg);
-      top: -50%;
+      top: -100%;
     }
 
     .back {
       transform: rotateX(90deg);
-      top: -50%;
+      top: -100%;
     }
 
     .done {

@@ -8,6 +8,7 @@ import "./ProductRow.scss";
 import "./ProductCard.scss";
 import "./ProductBanner.scss";
 import "./ProductDetail.scss";
+import "./ProductSlide.scss";
 
 /*
 # Interface
@@ -67,6 +68,7 @@ const Product = ({
       ${display === `card` ? `product-component-card` : ``}
       ${display === `banner` ? `product-component-banner` : ``}
       ${display === `detail` ? `product-component-detail` : ``}
+      ${display === `slide` ? `product-component-slide` : ``}
     `}
     style={{
       zIndex: position,
@@ -84,20 +86,22 @@ const Product = ({
     `}>
 
       <div onClick={getProductFunc} className={`scene`}>
-        {scene}
+        {scene ? <div className={`scene-inner`}>
+          {scene}
+        </div> : ``}
       </div>
 
       <div className={`content`}>
         {display === `row` || display === `detail` && title != null ? <h4 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
-        {display === `banner` ? <div className={`content-inner`}>
+        {display === `banner` || display === `slide` ? <div className={`content-inner`}>
           {title && <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} />}
           {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
         </div> : ``}
 
         {display === `grid` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
-        {body != null && display != `banner` ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
+        {body != null && display != `banner` && display != `slide` ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
 
         {variants && <div className={`action`}>
           {variants}

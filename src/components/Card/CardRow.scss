@@ -8,7 +8,7 @@
 /*
 # document
 */
-.article-component-row {
+.card-component-row {
   width: 100%;
   display: block;
   clear: both;
@@ -24,7 +24,7 @@
     z-index: 1;
   }
 
-  .article-inner {
+  .card-inner {
     width: 100%;
     display: table;
     position: relative;
@@ -50,8 +50,8 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .article-component-row {
-    .article-inner {
+  .card-component-row {
+    .card-inner {
       display: block;
 
       .scene {

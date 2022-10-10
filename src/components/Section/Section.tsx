@@ -10,17 +10,12 @@ import "./Section.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface SectionProps {
-  left_positive: string | null;
-  left_negative: string | null;
-  middle_positive: string | null;
-  middle_negative: string | null;
-  fx_aside: false | true;
-  fx_negative: false | true;
-  fx_top: false | true;
-  fx_pinned: true | false;
   title: string;
   subtitle: string;
-  children: JSX.Element | JSX.Element[];
+  body: string;
+  display: string;
+  scene: JSX.Element | JSX.Element[];
+  fx: JSX.Element | JSX.Element[];
 }
 
 
@@ -43,55 +38,42 @@ export interface SectionProps {
 }) => (
 */
 const Section = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
   title,
   subtitle,
-  children
+  body,
+  display,
+  scene,
+  fx
 }: SectionProps) => (
   <div
     className={`
-      section-container
-      ${fx_aside === true && `fx_aside`}
-      ${fx_negative === true && `fx_negative`}
-      ${fx_top === true && `fx_top`}
-      ${fx_pinned === true && `fx_pinned`}
-
+      section-component
+      ${display == `left` || display == null ? `alignLeft` : ``}
+      ${display == `middle` ? `alignMiddle` : ``}
+      ${display == `right` ? `alignRight` : ``}
     `}
   >
+    {fx && <div className={`fx`}>
+      {fx}
+    </div>}
+
     <div className={`section-inner`}>
 
-      <div className={`section-inner-col col-left`}>
-        {left_positive != null && left_negative != null && <img
-          className={"branding"}
-          width="auto"
-          height="100%"
-          //src={fx_negative == true ? left_negative : left_positive}
-        />}
+      {/*
+      # Col scene */}
+      <div className={`section-inner-col col-scene`}>
+        {scene && <div className={`scene`}>
+          {scene}
+        </div>}
       </div>
 
-      <div className={`section-inner-col col-middle`}>
-        {
-          middle_positive != null && middle_negative != null ?
-            <img
-              className={"branding"}
-              width="auto"
-              height="100%"
-              //src={fx_negative == true ? middle_negative : middle_positive}
-            />
-          :
-            <h1 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
-      }
-      </div>
-
-      <div className={`section-inner-col col-right`}>
-        {children}
+      {/*
+      # Col content */}
+      <div className={`section-inner-col col-content`}>
+        <div className={`content`}>
+          <h1 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
+          <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
+        </div>
       </div>
 
     </div>

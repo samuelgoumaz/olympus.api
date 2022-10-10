@@ -3,4 +3,4 @@
   V. 0.0.1
   Root Components
 */
-export { default } from "./FxVideo";
+export { default } from "./Error";

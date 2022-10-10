@@ -60,6 +60,13 @@ const FxProductDefault = ({
   >
     {image && <img src={image} style={{
       objectFit: cover ? `cover` : `contain`,
+      top: 0,
+      left: 0,
+      width: `auto`,
+      height: `100%`,
+      maxHeight: `-webkit-fill-available`,
+      display: `block`,
+      position: `relative`,
       float: align ? align === `right` ? `right` : align === `left` ? `left` : `none` : `none`
     }} />}
   </div>

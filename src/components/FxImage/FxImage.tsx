@@ -11,13 +11,10 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxImageProps {
   position: number;
-  image?: string | null;
-  images?: array | null;
-  opacity?: string | null;
-  cover?: boolean | false;
+  cover?: true | false;
   display?: string | null;
-  backgroundColor?: string | null;
-  mixBlendMode?: string | null;
+  type?: string | null;
+  image?: string | null;
 }
 
 
@@ -41,41 +38,31 @@ export interface FxImageProps {
 */
 const FxImage = ({
   position,
-  image,
-  images,
-  opacity,
   cover,
-  display, // relative || absolute
-  backgroundColor,
-  mixBlendMode,
+  type,
+  image,
 }: FxImageProps) => (
   <div
     className={`
-      fx-item
       fx-image
-      ${display != null && display == `absolute` ? `absolute` : `relative`}
     `}
     style={{
-      width: `100%`,
       height: `100%`,
-      top: 0,
-      left: 0,
-      background: backgroundColor != null ? backgroundColor : `transparent`,
-      opacity: opacity ?? 1,
-      mixBlendMode: mixBlendMode ?? `normal`,
-      position: `absolute`,
+      display: `inline-block`,
+      position: `relative`,
+      textAlign: `center`,
       zIndex: position ?? 1
     }}
   >
-    {image ? <img
-      className={`fx-image-single`}
-      src={image ?? null}
+    {image != null ? <img
+      src={image}
       style={{
-        width: `100%`,
+        width: `auto`,
         height: `100%`,
-        objectFit: cover == true ? `cover` : `contain`
+        display: `inline-block`,
       }}
     /> : ``}
+
   </div>
 );
 

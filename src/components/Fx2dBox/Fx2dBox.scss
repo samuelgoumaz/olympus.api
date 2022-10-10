@@ -1,0 +1,101 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.fx-2dBox {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+
+  .fx-2dBox-action {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    
+    button {
+      background: transparent;
+    }
+  }
+
+  .fx-2dBox-inner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    .fx-element {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      @include transition(1s transform);
+      top: 0;
+      left: 0;
+
+      &.up {
+        z-index: 4;
+      }
+      &.outer {
+        z-index: 3;
+      }
+      &.inner {
+        z-index: 1;
+      }
+      &.content {
+        z-index: 2;
+        transform: scale(0.875);
+      }
+    }
+  }
+
+  &.dsp-close {
+
+  }
+  &.dsp-open {
+    .fx-2dBox-inner {
+      .fx-element {
+        &.up {
+          transform: translateY(-15%);
+        }
+        &.outer {
+          transform: translateY(75%);
+        }
+        &.inner {
+          transform: translateY(75%);
+        }
+        &.content {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}
