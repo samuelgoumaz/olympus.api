@@ -4,7 +4,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import Dropdown from "../Dropdown"
 import Button from "../Button"
-import "./Variant.scss";
+import "./VariantDefault.scss";
+import "./VariantSmart.scss";
 
 /*
 # Interface
@@ -14,6 +15,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface VariantProps {
   api?: string | false;
   currency?: string | false;
+  display?: string | false;
   variants?: {
     id: number;
     sku: string | null;
@@ -75,6 +77,7 @@ export interface VariantProps {
 */
 const Variant: React.FC<VariantProps> = ({
   api,
+  display,
   variants,
   currency,
   selectItemFunc,
@@ -221,10 +224,14 @@ const Variant: React.FC<VariantProps> = ({
 
   return variants ? (
     <div
-      className={`variant-component`}
+      className={`
+        ${display == `smart` ? `variant-component-smart` : `variant-component`}
+      `}
     >
       {Object.keys(variants).length > 1 ? <div className={`variant-component-selector`}>
-        <Dropdown>
+        <Dropdown
+          direction={`up`}
+        >
           {Object.keys(variants).map((key) => (
             <div onClick={(event: React.MouseEvent<HTMLElement>) => {
               if (selectItemFunc)

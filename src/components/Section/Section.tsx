@@ -12,6 +12,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface SectionProps {
   title: string;
   subtitle: string;
+  position?: number | false;
   body: string;
   display: string;
   scene: JSX.Element | JSX.Element[];
@@ -40,6 +41,7 @@ export interface SectionProps {
 const Section = ({
   title,
   subtitle,
+  position,
   body,
   display,
   scene,
@@ -52,6 +54,10 @@ const Section = ({
       ${display == `middle` ? `alignMiddle` : ``}
       ${display == `right` ? `alignRight` : ``}
     `}
+    style={{
+      position: `relative`,
+      zIndex: position != false ? position : 1
+    }}
   >
     {fx && <div className={`fx`}>
       {fx}
@@ -71,7 +77,7 @@ const Section = ({
       # Col content */}
       <div className={`section-inner-col col-content`}>
         <div className={`content`}>
-          <h1 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
+          <h4 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
           <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
         </div>
       </div>

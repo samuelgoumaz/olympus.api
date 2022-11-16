@@ -8,7 +8,7 @@
 /*
 # document
 */
-.product-component-card {
+.product-component-checkout {
   width: 100%;
   position: relative;
   clear: both;
@@ -24,22 +24,35 @@
     left: 0;
   }
   .product-inner {
+    width: 100%;
     position: relative;
+    display: table;
     z-index: 2;
 
     .scene {
-      width: 100%;
-      display: block;
-      @include aspect-ratio(4,2);
-    }
-    .content {
+      width: 25%;
+      display: table-cell;
+      vertical-align: middle;
       padding: 10px;
 
-      .title {
-        margin: 10px 0;
+      .scene-inner {
+        width: 100%;
+        border-radius: 50%;
+        background: pink;
+        @include aspect-ratio(1,1);
+        overflow: hidden;
       }
+
     }
-    .action {
+    .content {
+      width: 75%;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 20px;
+
+      .title {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -48,7 +61,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .product-component-card {
+  .product-component-checkout {
     .fx {
     }
     .product-inner {

@@ -11,7 +11,7 @@
 .section-component {
   width: 100%;
   display: block;
-  background: red;
+  position: relative;
 
   &:after {
     content: " ";
@@ -19,10 +19,22 @@
     clear: both;
   }
 
+  .fx {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
   /*
   # Inner */
   .section-inner {
     display: flex;
+    position: relative;
+    z-index: 2;
     justify-content: center;
 
     /*
@@ -34,22 +46,19 @@
       position: relative;
 
       &.col-scene {
-        background: turquoise;
-        @include aspect-ratio(3,2);
+        @include aspect-ratio(3,2.5);
 
         .scene {
           width: 100%;
           height: 100%;
           display: block;
           position: absolute;
-          background: pink;
+          overflow: hidden;
           top: 0;
           left: 0;
         }
       }
       &.col-content {
-        background: yellow;
-
         .content {
           padding: 100px;
         }
@@ -91,6 +100,7 @@
           }
         }
         &.col-content {
+          text-align: center;
         }
       }
     }
@@ -116,16 +126,340 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .section-component {
+
+    /*
+    # Inner */
+    .section-inner {
+      display: block;
+
+      /*
+      # col */
+      .section-inner-col {
+        width: 100%;
+        display: block;
+
+        &.col-scene {
+          .scene {
+          }
+        }
+        &.col-content {
+          .content {
+            padding: 50px;
+          }
+        }
+      }
+    }
+
+    /*
+    # left */
+    &.alignLeft {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # middle */
+    &.alignMiddle {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+            &:before {
+            }
+            .scene {
+            }
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # right */
+    &.alignRight {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .section-component {
+
+    /*
+    # Inner */
+    .section-inner {
+
+      /*
+      # col */
+      .section-inner-col {
+        &.col-scene {
+          .scene {
+          }
+        }
+        &.col-content {
+          .content {
+            padding: 60px;
+          }
+        }
+      }
+    }
+
+    /*
+    # left */
+    &.alignLeft {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # middle */
+    &.alignMiddle {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+            &:before {
+            }
+            .scene {
+            }
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # right */
+    &.alignRight {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .section-component {
+
+    /*
+    # Inner */
+    .section-inner {
+
+      /*
+      # col */
+      .section-inner-col {
+        &.col-scene {
+          .scene {
+          }
+        }
+        &.col-content {
+          .content {
+            padding: 70px;
+          }
+        }
+      }
+    }
+
+    /*
+    # left */
+    &.alignLeft {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # middle */
+    &.alignMiddle {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+            &:before {
+            }
+            .scene {
+            }
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # right */
+    &.alignRight {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .section-component {
+
+    /*
+    # Inner */
+    .section-inner {
+
+      /*
+      # col */
+      .section-inner-col {
+        &.col-scene {
+          .scene {
+          }
+        }
+        &.col-content {
+          .content {
+            padding: 80px;
+          }
+        }
+      }
+    }
+
+    /*
+    # left */
+    &.alignLeft {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # middle */
+    &.alignMiddle {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+            &:before {
+            }
+            .scene {
+            }
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # right */
+    &.alignRight {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .section-component {
+
+    /*
+    # Inner */
+    .section-inner {
+
+      /*
+      # col */
+      .section-inner-col {
+        &.col-scene {
+          .scene {
+          }
+        }
+        &.col-content {
+          .content {
+            padding: 90px;
+          }
+        }
+      }
+    }
+
+    /*
+    # left */
+    &.alignLeft {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # middle */
+    &.alignMiddle {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+            &:before {
+            }
+            .scene {
+            }
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+
+    /*
+    # right */
+    &.alignRight {
+      .section-inner {
+        .section-inner-col {
+          &.col-scene {
+          }
+          &.col-content {
+          }
+        }
+      }
+    }
+  }
 }

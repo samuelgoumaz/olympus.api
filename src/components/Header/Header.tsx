@@ -62,19 +62,25 @@ const Header = ({
         hello
       </div>
     **/}
-    
+
     <div className={`header-inner`}>
 
       {left && <div className={`header-inner-col col-left`}>
-        {left}
+        <div className={`header-inner-col-content`}>
+          {left}
+        </div>
       </div>}
 
       {middle && <div className={`header-inner-col col-middle`}>
-        {middle}
+        <div className={`header-inner-col-content`}>
+          {middle}
+        </div>
       </div>}
 
       {right && <div className={`header-inner-col col-right`}>
-        {right}
+        <div className={`header-inner-col-content`}>
+          {right}
+        </div>
       </div>}
 
     </div>

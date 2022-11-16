@@ -9,42 +9,113 @@
 # document
 */
 .cartprice-component {
-  color: black;
-
-  &:after {
-    content: " ";
-    width: 100%;
-    display: block;
-    clear: both;
-  }
+  color: inherit;
+  padding-bottom: 60px;
 
   .cartprice-component-inner {
+    width: 100%;
 
     .cartprice-component-col {
-      padding: 20px;
-      text-align: left;
+      padding: 0;
+      width: 100%;
 
+      &:after {
+        content: " ";
+        width: 100%;
+        display: block;
+        clear: both;
+      }
+
+      .cartprice-element {
+
+        .cartprice-element-inner {
+
+          .icon {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            line-height: 60px;
+            text-align: center;
+            vertical-align: middle;
+          }
+          .label, .value {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+          }
+          .value {
+            font-family: monospace;
+            font-size: 1.25em;
+          }
+        }
+      }
+      &.col-subtotal {
+        font-size: 1em;
+        .cartprice-element {
+          .cartprice-element-inner {
+            .icon {
+            }
+            .label {
+            }
+            .value {
+            }
+          }
+        }
+      }
+      &.col-promocode {
+        font-size: 1em;
+        border-top: 1px solid rgba(0,0,0,0.15);
+        .cartprice-element {
+          background: rgba(0,0,0,0.05);
+          border-bottom: 1px solid rgba(0,0,0,0.15);
+
+          .cartprice-element-inner {
+            .icon {
+            }
+            .label {
+            }
+            .value {
+            }
+          }
+        }
+      }
       &.col-price {
-        font-size: 2.5em;
-        line-height: 1;
+        font-size: 1em;
+        border-top: 1px solid rgba(0,0,0,0.15);
+        .cartprice-element {
+          .cartprice-element-inner {
+            .price {
+              padding: 0 20px;
+              line-height: 60px;
+              margin: 0;
+              font-size: 2em;
+            }
+          }
+        }
       }
       &.col-delivery {
-        font-size: 1.5em;
-        line-height: 1;
+        font-size: 1em;
+        .cartprice-element {
+          .cartprice-element-inner {
+            .icon {
+            }
+            .label {
+            }
+            .value {
+            }
+          }
+        }
       }
       &.col-condition {
-        font-size: 0.875em;
-        line-height: 1.3;
-        color: rgba(0,0,0,0.75);
+        padding: 20px;
       }
       &.col-action {
+        padding: 20px 0;
         text-align: center;
       }
       &.col-footer {
-        text-align: center;
       }
     }
-
   }
 }
 
@@ -52,76 +123,16 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .cartprice-component {
-
-    &:after {
-      content: " ";
-      width: 100%;
-      display: block;
-      clear: both;
-    }
-
-    .cartprice-content {
-    }
-  }
 }
 
 @media #{$medium-and-down} {
-  .cartprice-component {
-
-    &:after {
-      content: " ";
-      width: 100%;
-      display: block;
-      clear: both;
-    }
-
-    .cartprice-content {
-    }
-  }
 }
 
 @media #{$medium-and-up} {
-  .cartprice-component {
-
-    &:after {
-      content: " ";
-      width: 100%;
-      display: block;
-      clear: both;
-    }
-
-    .cartprice-content {
-    }
-  }
 }
 
 @media #{$large-and-up} {
-  .cartprice-component {
-
-    &:after {
-      content: " ";
-      width: 100%;
-      display: block;
-      clear: both;
-    }
-
-    .cartprice-content {
-    }
-  }
 }
 
 @media #{$extra-large-and-up} {
-  .cartprice-component {
-
-    &:after {
-      content: " ";
-      width: 100%;
-      display: block;
-      clear: both;
-    }
-
-    .cartprice-content {
-    }
-  }
 }

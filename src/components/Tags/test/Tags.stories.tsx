@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Tag from '../Tag';
+import Tags from '../Tags';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Tag from '../Tag';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Tag',
-  component: Tag,
-} as ComponentMeta<typeof Tag>;
+  title: 'ReactComponentLibrary/Tags',
+  component: Tags,
+} as ComponentMeta<typeof Tags>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
+const Template: ComponentStory<typeof Tags> = (args) => <Tags {...args} />;
 
 /*
 # Args
@@ -38,7 +38,7 @@ Default.args = {
   elements: [{
       "id": 4,
       "slug": "hybride",
-      "name": "hybride",
+      "name": "Hybride",
     },
     {
       "id": 5,

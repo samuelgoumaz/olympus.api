@@ -24,6 +24,7 @@
     top: 0;
     left: 0;
     z-index: 1;
+    overflow: hidden;
   }
   .product-inner {
     width: 100%;
@@ -37,7 +38,8 @@
       width: 50%;
       height: 100%;
       display: table-cell;
-      @include aspect-ratio(1,1);
+      @include aspect-ratio(3,2.5);
+      overflow: hidden;
 
       .scene-inner {
         width: 100%;

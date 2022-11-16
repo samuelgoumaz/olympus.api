@@ -12,6 +12,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface FxImageProps {
   position: number;
   cover?: true | false;
+  padding?: true | false;
   display?: string | null;
   type?: string | null;
   image?: string | null;
@@ -39,12 +40,14 @@ export interface FxImageProps {
 const FxImage = ({
   position,
   cover,
+  padding,
   type,
   image,
 }: FxImageProps) => (
   <div
     className={`
       fx-image
+      ${padding === true ? `hv-padding` : ``}
     `}
     style={{
       height: `100%`,

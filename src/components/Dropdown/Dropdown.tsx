@@ -4,6 +4,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import 'material-icons/iconfont/material-icons.css';
 import "./DropdownInput.scss";
+import "./DropdownUi.scss";
 
 /*
 # Interface
@@ -11,7 +12,9 @@ import "./DropdownInput.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface DropdownProps {
+  direction?: string;
   display: string | null;
+  width?: string;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -35,11 +38,14 @@ export interface DropdownProps {
 }) => (
 */
 const Dropdown = ({
+  direction,
   display,
+  width,
   children
 }: DropdownProps) => {
 
   function selectToggle (event) {
+
     if (event.classList.contains("dsp-open")) {
       event.classList.add("dsp-close");
       event.classList.remove("dsp-open");
@@ -47,6 +53,7 @@ const Dropdown = ({
       event.classList.add("dsp-open");
       event.classList.remove("dsp-close");
     }
+
   }
 
   function initData (elements) {
@@ -69,7 +76,11 @@ const Dropdown = ({
         ${display == null || display == `input` ? ` dropdown-component-input` : ``}
         ${display == `ui` ? ` dropdown-component-ui` : ``}
         ${`dsp-close`}
+        ${direction == `up` ? `up` : `down`}
       `}
+      style={{
+        width: width ? width : `auto`
+      }}
       onClick={
         (event: React.MouseEvent<HTMLElement>) => {
           selectToggle(event.currentTarget)
@@ -78,6 +89,9 @@ const Dropdown = ({
     >
       <div
         className={`dropdown-handler`}
+        style={{
+          width: width ? `100%` : `auto`
+        }}
       >
         <div className={`dropdown-current`}>{initData(children)}</div>
         <div className={`dropdown-icon dsp-close material-icons`}>{`expand_less`}</div>
@@ -85,7 +99,9 @@ const Dropdown = ({
       </div>
 
       <div
-        className={`dropdown-content`}
+        className={`
+          dropdown-content
+        `}
         onClick={
           (event: React.MouseEvent<HTMLElement>) => {
             selectData(event.target, event.currentTarget)

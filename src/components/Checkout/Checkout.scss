@@ -35,10 +35,14 @@
   }
 
   .checkout-component-col {
-    width: 33.33%;
+    width: 60%;
     display: inline-block;
     vertical-align: top;
     position: relative;
+
+    &.col-resume {
+      width: 40%;
+    }
 
     .checkout-component-fieldset {
 

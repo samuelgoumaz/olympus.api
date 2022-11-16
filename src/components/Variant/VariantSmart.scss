@@ -8,24 +8,24 @@
 /*
 # document
 */
-.variant-component {
+.variant-component-smart {
+  width: 100%;
+  display: table;
   .variant-component-selector {
-    display: inline-block;
-    vertical-align: top;
-    padding: 5px 5px 5px 0;
+    width: auto;
+    display: table-cell;
+    vertical-align: middle;
   }
   .variant-component-title {
-    line-height: 70px;
-    display: inline-block;
+    display: table-cell;
     vertical-align: middle;
-    padding: 0 15px;
-    border-radius: 35px;
-    font-size: 1.5em;
-    padding: 5px 5px 5px 0;
   }
   .variant-component-list {
-    display: inline-block;
-    vertical-align: top;
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+    transform: scale(0.75);
+    transform-origin: right;
 
     .variant-component-row {
       display: none;
@@ -35,9 +35,8 @@
       }
 
       .variant-component-col {
-        padding-left: 0;
         display: inline-block;
-        vertical-align: top;
+        vertical-align: middle;
 
         &.col-remove {
         }
@@ -46,7 +45,6 @@
         &.col-add {
         }
         &.col-price {
-
         }
       }
     }

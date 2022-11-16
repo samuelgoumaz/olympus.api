@@ -22,8 +22,11 @@
     z-index: 2;
 
     &.dsp-active {
-      color: white;
-      mix-blend-mode: difference;
+      color: inherit;
+    }
+
+    &.float {
+      float: left;
     }
 
     /*
@@ -110,7 +113,12 @@
         vertical-align: middle;
       }
     }
-
+    &.inline {
+      width: auto;
+      position: relative;
+      display: inline-block;
+      height: auto;
+    }
     &.default {
       width: 100vw;
     }

@@ -62,7 +62,7 @@ const Card = ({
   scene,
   getProductFunc
 }: CardProps) => (
-  <div
+  <article
     onClick={getProductFunc}
     className={`
       ${display === `grid` ? `card-component-grid` : ``}
@@ -104,17 +104,17 @@ const Card = ({
           {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         </div> : ``}
         <div className={`action`}>
-          <Button
+          {/**<Button
             label={null}
             icon={`arrow_forward`}
             mode={`border`}
-          />
+          />**/}
         </div>
 
       </div>
 
     </div>
-  </div>
+  </article>
 );
 
 /*

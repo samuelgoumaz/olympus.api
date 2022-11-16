@@ -21,6 +21,7 @@
     top: 0;
     left: 0;
     z-index: 1;
+    overflow: hidden;
   }
 
   .product-inner {
@@ -39,6 +40,7 @@
       top: 0;
       z-index: 1;
       float: none;
+      overflow: hidden;
     }
     .content {
       position: absolute;

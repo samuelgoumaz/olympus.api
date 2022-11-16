@@ -3,12 +3,14 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import Variant from "../Variant"
+import Tags from "../Tags"
 import "./ProductGrid.scss";
 import "./ProductRow.scss";
 import "./ProductCard.scss";
 import "./ProductBanner.scss";
 import "./ProductDetail.scss";
 import "./ProductSlide.scss";
+import "./ProductCheckout.scss";
 
 /*
 # Interface
@@ -69,6 +71,7 @@ const Product = ({
       ${display === `banner` ? `product-component-banner` : ``}
       ${display === `detail` ? `product-component-detail` : ``}
       ${display === `slide` ? `product-component-slide` : ``}
+      ${display === `checkout` ? `product-component-checkout` : ``}
     `}
     style={{
       zIndex: position,
@@ -94,14 +97,20 @@ const Product = ({
       <div className={`content`}>
         {display === `row` || display === `detail` && title != null ? <h4 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
+        {display === `checkout` || display === `card` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
+
         {display === `banner` || display === `slide` ? <div className={`content-inner`}>
           {title && <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} />}
           {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
         </div> : ``}
 
-        {display === `grid` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
+        {display === `grid` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
         {body != null && display != `banner` && display != `slide` ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
+
+        {tags && <div className={`tags`}>
+          <Tags elements={tags} />
+        </div>}
 
         {variants && <div className={`action`}>
           {variants}

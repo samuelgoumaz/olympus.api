@@ -40,5 +40,6 @@ export { default as Form } from "./Form";
 export { default as Post } from "./Post";
 export { default as CartPrice } from "./CartPrice";
 export { default as CartResume } from "./CartResume";
+export { default as CartDiscount } from "./CartDiscount";
 export { default as Checkout } from "./Checkout";
 export { default as Variant } from "./Variant";

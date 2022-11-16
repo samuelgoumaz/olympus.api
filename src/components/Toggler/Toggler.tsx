@@ -61,10 +61,10 @@ const Toggler = ({
       <div
         className={
           `toggler-handler
-            ${fx_status === true ? `dsp-active` : ``}
-            ${label != null ? `hv_label`
-            : ``
-          }`
+          ${fx_status === true ? `dsp-active` : ``}
+          ${label != null ? `hv_label` : ``}
+          ${display === `inline` ? `float` : ``}
+          `
         }
         onClick={onClick}
       >
@@ -89,6 +89,7 @@ const Toggler = ({
         ${display === `aside` ? `aside` : ``}
         ${display === `popup` ? `popup` : ``}
         ${display === `dropdown` ? `dropdown` : ``}
+        ${display === `inline` ? `inline` : ``}
         ${display == null ? `default` : ``}
       `}>
 

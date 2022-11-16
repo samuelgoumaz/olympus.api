@@ -4,6 +4,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Product from '../Product';
+import FxBackground from '../../FxBackground';
 
 /*
 # Images
@@ -400,6 +401,85 @@ Slide.args = {
   body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
   slug: `gelato-kush`,
   display: `slide`,
+  variants: `<div>variants</div>`,
+  tags: {
+    0: {
+      id: 6,
+      name: "Infusion",
+      slug: "infusion",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    1: {
+      id: 7,
+      name: "Cuisine",
+      slug: "cuisine",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    2: {
+      id: 6,
+      name: "Indica",
+      slug: "indica",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 1,
+          name: "Variétés",
+          slug: "variete",
+        }
+      }
+    },
+    3: {
+      id: 2,
+      name: "Consommation",
+      slug: "consommation",
+      children: {
+        0: {
+          id: 6,
+          name: "Infusion",
+          slug: "infusion"
+        },
+        1: {
+          id: 7,
+          name: "Cuisine",
+          slug: "cuisine"
+        },
+      },
+      parent: {
+
+      },
+    }
+  },
+};
+
+export const Checkout = Template.bind({});
+Checkout.args = {
+  title: `Gelato Kush`,
+  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
+  slug: `gelato-kush`,
+  display: `checkout`,
+  scene: [<FxBackground
+    position={1}
+    padding={true}
+    cover={`contain`}
+    background={`url(http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_heretic_7fbc545c5f.png)`}
+  />],
   variants: `<div>variants</div>`,
   tags: {
     0: {

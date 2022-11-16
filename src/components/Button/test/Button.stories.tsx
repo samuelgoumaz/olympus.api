@@ -16,6 +16,7 @@ export const Void = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Void.args = {
   label: 'hello',
+  size: `small`
 };
 
 export const Header = Template.bind({});
@@ -52,6 +53,7 @@ Submit.args = {
 
 export const Default = Template.bind({});
 Default.args = {
+  size: `small`,
   label: 'cart',
   icon: 'home',
   mode: 'default',

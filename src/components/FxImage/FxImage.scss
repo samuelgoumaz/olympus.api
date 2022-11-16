@@ -8,11 +8,16 @@
 /*
 # document
 */
-.fx-gradient {
+.fx-image {
   width: 100%;
   height: 100%;
   display: block;
   position: relative;
+  overflow: hidden;
+
+  &.hv-padding {
+    padding: 100px;
+  }
 
   .fx-gradient-content {
     object-fit: cover;
@@ -31,16 +36,61 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .fx-image {
+    &.hv-padding {
+      padding: 50px;
+    }
+    .fx-gradient-content {
+    }
+    .version {
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .fx-image {
+    &.hv-padding {
+      padding: 60px;
+    }
+    .fx-gradient-content {
+    }
+    .version {
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .fx-image {
+    &.hv-padding {
+      padding: 70px;
+    }
+    .fx-gradient-content {
+    }
+    .version {
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .fx-image {
+    &.hv-padding {
+      padding: 80px;
+    }
+    .fx-gradient-content {
+    }
+    .version {
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .fx-image {
+    &.hv-padding {
+      padding: 90px;
+    }
+    .fx-gradient-content {
+    }
+    .version {
+    }
+  }
 }

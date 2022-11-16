@@ -102,3 +102,11 @@ Toggle.args = {
   icon: 'view_week',
   close: 'view_stream',
 };
+
+export const Inline = Template.bind({});
+Inline.args = {
+  icon: 'search',
+  label: 'search',
+  display: 'inline',
+  children: [<h1>hello</h1>]
+};
