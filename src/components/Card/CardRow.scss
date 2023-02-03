@@ -33,7 +33,21 @@
     .scene {
       width: 35%;
       display: table-cell;
-      @include aspect-ratio(3,2);
+      @include aspect-ratio(1,1);
+    }
+    .image {
+      width: 100%;
+      height: 100%;
+      background: red;
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     }
     .content {
       width: 65%;

@@ -21,6 +21,7 @@
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     background: white;
+    cursor: pointer;
 
     .dropdown-current {
       width: auto;
@@ -49,6 +50,7 @@
     font-size: 1.25em;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    cursor: pointer;
 
     ul {
       width: 100%;

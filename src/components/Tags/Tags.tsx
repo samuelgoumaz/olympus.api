@@ -12,6 +12,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface TagsProps {
   elements?: JSX.Element | JSX.Element[];
+  align?: string | null;
 }
 
 
@@ -34,7 +35,8 @@ export interface TagsProps {
 }) => (
 */
 const Tags = ({
-  elements
+  elements,
+  align
 }: TagsProps) => {
   return (
     <div
@@ -44,6 +46,9 @@ const Tags = ({
     >
       <div className={`
         tags-component-inner
+        ${align === `center` ? `align-center` : ``}
+        ${align === `left` ? `align-left` : ``}
+        ${align === `right` ? `align-right` : ``}
       `}>
         {elements != null ? Object.keys(elements).map((key) => (
           <Tag

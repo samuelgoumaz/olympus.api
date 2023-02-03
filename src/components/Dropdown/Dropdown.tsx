@@ -15,37 +15,25 @@ export interface DropdownProps {
   direction?: string;
   display: string | null;
   width?: string;
+  selected?: true | false;
   children: JSX.Element | JSX.Element[];
 }
 
 
 
 /*
-# Class Components
-*/
-/*const Dropdown: React.FC<DropdownProps> = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
-  title,
-  subtitle,
-  children
-}) => (
-*/
+# Class Components */
 const Dropdown = ({
   direction,
   display,
   width,
+  selected,
   children
 }: DropdownProps) => {
 
+  /*
+  # selectToggle(event) */
   function selectToggle (event) {
-
     if (event.classList.contains("dsp-open")) {
       event.classList.add("dsp-close");
       event.classList.remove("dsp-open");
@@ -53,18 +41,29 @@ const Dropdown = ({
       event.classList.add("dsp-open");
       event.classList.remove("dsp-close");
     }
-
   }
 
+  /*
+  # initData(elements) */
   function initData (elements) {
+    let html = null;
     if (elements && elements.length > 0) {
-      let html = elements[0].props.children ?? false;
-      return html;
+      if (elements[0].type == 'ul') {
+        html = elements[0].props.children[0].props.children;
+      } else {
+        html = elements[0].props.children;
+      }
     } else {
-      return false;
+      html = false;
     }
+
+    console.log("initData >>>>>>>>>>>>>>>>>>>>>>>> ", html, elements)
+    return html;
+
   }
 
+  /*
+  # selectData(target,current) */
   function selectData (target, current) {
     let dsp = `${target}`;
     current.parentNode.getElementsByClassName("dropdown-current")[0].innerHTML = target.textContent;
@@ -104,7 +103,9 @@ const Dropdown = ({
         `}
         onClick={
           (event: React.MouseEvent<HTMLElement>) => {
-            selectData(event.target, event.currentTarget)
+            if (selected === true) {
+              selectData(event.target, event.currentTarget)
+            }
           }
         }
       >

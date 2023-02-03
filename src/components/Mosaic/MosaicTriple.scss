@@ -1,0 +1,88 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.mosaic-component-triple {
+  .mosaic-inner {
+    .scene {
+    }
+    .content {
+      .title {
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .mosaic-component-triple {
+    .mosaic-inner {
+      .scene {
+      }
+      .content {
+        .title {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .mosaic-component-triple {
+    .mosaic-inner {
+      .scene {
+      }
+      .content {
+        .title {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .mosaic-component-triple {
+    .mosaic-inner {
+      .scene {
+      }
+      .content {
+        .title {
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .mosaic-component-triple {
+    .mosaic-inner {
+      .scene {
+      }
+      .content {
+        .title {
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .mosaic-component-triple {
+    .mosaic-inner {
+      .scene {
+      }
+      .content {
+        .title {
+        }
+      }
+    }
+  }
+}

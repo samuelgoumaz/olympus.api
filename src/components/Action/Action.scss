@@ -1,0 +1,63 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.action-component {
+  width: 100%;
+  position: relative;
+  background: red;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
+  .action-inner {
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .action-component {
+    .action-inner {
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .action-component {
+    .action-inner {
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .action-component {
+    .action-inner {
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .action-component {
+    .action-inner {
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .action-component {
+    .action-inner {
+    }
+  }
+}

@@ -2,7 +2,7 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import 'material-icons/iconfont/material-icons.css';
+//import 'material-icons/iconfont/material-icons.css';
 import "./Toggler.scss";
 
 /*

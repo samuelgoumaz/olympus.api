@@ -21,7 +21,6 @@
     height: 100%;
     position: absolute;
     display: block;
-    text-align: center;
     top: 0;
     left: 0;
 
@@ -36,12 +35,15 @@
     }
 
     .banner-action {
-      text-align: center;
       padding: 70px;
       width: 100%;
       position: absolute;
       bottom: 0;
       z-index: 9;
+
+      &.align-center {
+        text-align: center;
+      }
     }
 
     .banner-content {
@@ -62,16 +64,29 @@
           display: block;
           padding: 0;
           margin: 0;
+
+          &.align-center {
+            text-align: center;
+          }
         }
         .subtitle {
           display: block;
           padding: 0;
           margin: 0;
+
+          &.align-center {
+            text-align: center;
+          }
         }
         .body {
           width: 20%;
           margin: 0 auto;
           padding-top: 60px;
+
+          &.align-center {
+            margin: 0 auto;
+            text-align: center;
+          }
         }
       }
     }

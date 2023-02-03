@@ -41,9 +41,8 @@ const Text = ({
   aside,
   children
 }: TextProps) => (
-  <section
+  <div
     className={`
-      section section-text
       text-component
     `}
     style={{
@@ -65,7 +64,7 @@ const Text = ({
       </div>}
     </div>
 
-  </section>
+  </div>
 );
 
 /*

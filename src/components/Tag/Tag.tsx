@@ -41,7 +41,9 @@ const Tag = ({
 }: TagProps) => {
   return (
     <div className={`tag-component ${slug != null ? `tag-${slug}` : ``}`}>
-      <div className={`tag-component-inner`}>
+      <div className={`
+        tag-component-inner
+      `}>
         {name != null ? <span className={`title`}>{name}</span> : ``}
       </div>
     </div>

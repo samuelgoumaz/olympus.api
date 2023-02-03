@@ -12,7 +12,7 @@ describe("Form", () => {
   test("renders the Button component", () => {
     render(
       <Form
-        title="Gelato Kush"
+        label="Hello world!"
         positive="http://localhost:1337/uploads/branding_85acfc9546.svg"
       />
     );

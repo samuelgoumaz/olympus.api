@@ -34,6 +34,78 @@ const Template: ComponentStory<typeof Product> = (args) => <Product {...args} />
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
+export const Double = Template.bind({});
+Double.args = {
+  title: `Gelato Kush`,
+  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
+  slug: `gelato-kush`,
+  display: `double`,
+  tags: {
+    0: {
+      id: 6,
+      name: "Infusion",
+      slug: "infusion",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    1: {
+      id: 7,
+      name: "Cuisine",
+      slug: "cuisine",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 2,
+          name: "Consommation",
+          slug: "consommation",
+        }
+      }
+    },
+    2: {
+      id: 6,
+      name: "Indica",
+      slug: "indica",
+      children: {
+      },
+      parent: {
+        0: {
+          id: 1,
+          name: "Variétés",
+          slug: "variete",
+        }
+      }
+    },
+    3: {
+      id: 2,
+      name: "Consommation",
+      slug: "consommation",
+      children: {
+        0: {
+          id: 6,
+          name: "Infusion",
+          slug: "infusion"
+        },
+        1: {
+          id: 7,
+          name: "Cuisine",
+          slug: "cuisine"
+        },
+      },
+      parent: {
+
+      },
+    }
+  },
+};
+
 export const Grid = Template.bind({});
 Grid.args = {
   title: `Gelato Kush`,

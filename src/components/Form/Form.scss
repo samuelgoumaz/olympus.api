@@ -1,0 +1,114 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.form-component {
+  width: 100%;
+  position: relative;
+  background: green;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
+  .form-inner {
+    width: 50%;
+    padding: 100px;
+    margin: 0 auto;
+
+    .form-inner-content {
+      background: cyan;
+    }
+    .form-inner-formular {
+      background: blue;
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .form-component {
+    .form-inner {
+      width: 100%;
+      padding: 20px;
+      margin: 0 auto;
+
+      .form-inner-content {
+      }
+      .form-inner-formular {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .form-component {
+    .form-inner {
+      width: 100%;
+      padding: 30px;
+      margin: 0 auto;
+
+      .form-inner-content {
+      }
+      .form-inner-formular {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+
+  .form-component {
+    .form-inner {
+      width: 80%;
+      padding: 40px;
+      margin: 0 auto;
+
+      .form-inner-content {
+      }
+      .form-inner-formular {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .form-component {
+    .form-inner {
+      width: 70%;
+      padding: 60px;
+      margin: 0 auto;
+
+      .form-inner-content {
+      }
+      .form-inner-formular {
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .form-component {
+    .form-inner {
+      width: 60%;
+      padding: 80px;
+      margin: 0 auto;
+
+      .form-inner-content {
+      }
+      .form-inner-formular {
+      }
+    }
+  }
+}

@@ -42,5 +42,5 @@ Input.args = {
 export const Ui = Template.bind({});
 Ui.args = {
   display: `ui`,
-  children: [<div>line 1</div>, <div>line 2</div>, <div>line 3</div>],
+  children: [<ul><li><span>line 1</span></li><li><span>line 2</span></li><li><span>line 3</span></li></ul>],
 };

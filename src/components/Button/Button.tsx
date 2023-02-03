@@ -1,5 +1,5 @@
 import React from "react";
-import 'material-icons/iconfont/material-icons.css';
+//import 'material-icons/iconfont/material-icons.css';
 import "./ButtonDefault.scss";
 import "./ButtonHeader.scss";
 import "./ButtonIndicator.scss";

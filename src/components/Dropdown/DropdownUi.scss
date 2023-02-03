@@ -19,6 +19,7 @@
     padding: 0 0 0 25px;
     overflow: hidden;
     background: orange;
+    cursor: pointer;
 
     .dropdown-current {
       width: calc(100% - 40px);
@@ -55,6 +56,7 @@
       text-align: center;
       margin: 0;
       line-height: 65px;
+      cursor: pointer;
 
       &:nth-child(odd) {
         background: rgba(0,0,0,0.05);

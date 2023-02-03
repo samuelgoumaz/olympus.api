@@ -38,7 +38,7 @@
       width: 50%;
       height: 100%;
       display: table-cell;
-      @include aspect-ratio(3,2.5);
+      @include aspect-ratio(3,3);
       overflow: hidden;
 
       .scene-inner {

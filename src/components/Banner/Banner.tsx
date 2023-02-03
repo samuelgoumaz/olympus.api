@@ -19,6 +19,7 @@ export interface BannerProps {
   subtitle?: string | null;
   body?: string | null;
   mode?: string | null;
+  align?: string | null;
   display?: string | null;
   scrollTo: boolean | false;
   children?: JSX.Element | JSX.Element[];
@@ -49,6 +50,7 @@ const Banner = ({
   subtitle,
   body,
   mode,
+  align,
   scrollTo,
   display,
   children
@@ -73,12 +75,12 @@ const Banner = ({
 
         {title != false || body != false || subtitle != false ? <div className={`banner-content`}>
           <div className={`banner-content-inner`}>
-            {title != null ? <h2 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-            {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+            {title != null ? <h2 className={`title ${align === `center` ? `align-center` : ``}`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+            {body != null ? <div className={`body ${align === `center` ? `align-center` : ``}`} dangerouslySetInnerHTML={{ __html: body }} /> : ``}
           </div>
         </div> : ``}
 
-        {scrollTo && <div className={`banner-action`}>
+        {scrollTo && <div className={`banner-action ${align === `center` ? `align-center` : ``}`}>
           <Scroll.Link
             to={`banner-component-${position ?? 0}`}
             spy={true}

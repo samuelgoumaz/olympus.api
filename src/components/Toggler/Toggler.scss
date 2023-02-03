@@ -118,6 +118,8 @@
       position: relative;
       display: inline-block;
       height: auto;
+      top: 0;
+      vertical-align: top;
     }
     &.default {
       width: 100vw;

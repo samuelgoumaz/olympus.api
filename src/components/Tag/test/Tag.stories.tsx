@@ -35,34 +35,7 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
-  elements: [{
-      "id": 4,
-      "slug": "hybride",
-      "name": "hybride",
-    },
-    {
-      "id": 5,
-      "slug": "indica-sativa",
-      "name": "Indica Sativa",
-    },
-    {
-      "id": 6,
-      "slug": "vaporisation",
-      "name": "Vaporisation",
-    },
-    {
-      "id": 7,
-      "slug": "infusion",
-      "name": "Infusion",
-    },
-    {
-      "id": 8,
-      "slug": "cuisine",
-      "name": "Cuisine",
-    },
-    {
-      "id": 9,
-      "slug": "indoor",
-      "name": "Indoor",
-  }]
+  id: 4,
+  slug: "hybride",
+  name: "hybride"
 };

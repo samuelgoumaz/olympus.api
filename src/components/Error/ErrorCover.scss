@@ -1,0 +1,79 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.error-component-cover {
+  width: 100%;
+  min-height: 100%;
+  background: red;
+  display: table;
+
+  .error-component-inner {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+
+    .error-component-content {
+      width: 100%;
+      height: auto;
+      position: relative;
+
+      .error-scene {
+        background: brown;
+        text-align: center;
+
+        .icon {
+          background: turquoise;
+          padding: 10px 0;
+        }
+        .name {
+          display: inline;
+          text-align: center;
+          font-size: 8em;
+          background: pink;
+          border-top: 1px solid rgba(0,0,0,0.25);
+        }
+      }
+      .error-content {
+        background: cyan;
+        width: 50%;
+        font-size: 2em;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+
+        &:after {
+          content: " ";
+          display: block;
+          clear: both;
+        }
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

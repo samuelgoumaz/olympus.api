@@ -4,6 +4,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Variant from "../Variant"
 import Tags from "../Tags"
+import "./ProductDouble.scss";
 import "./ProductGrid.scss";
 import "./ProductRow.scss";
 import "./ProductCard.scss";
@@ -65,6 +66,7 @@ const Product = ({
 }: ProductProps) => (
   <div
     className={`
+      ${display === `double` ? `product-component-double` : ``}
       ${display === `grid` ? `product-component-grid` : ``}
       ${display === `row` ? `product-component-row` : ``}
       ${display === `card` ? `product-component-card` : ``}
@@ -104,12 +106,13 @@ const Product = ({
           {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
         </div> : ``}
 
-        {display === `grid` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
+        {display === `grid` || display === `double` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
         {body != null && display != `banner` && display != `slide` ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
 
         {tags && <div className={`tags`}>
-          <Tags elements={tags} />
+          {display === `grid` || display === `double` ? <Tags elements={tags} align={`center`} /> : ``}
+          {display === `row` && <Tags elements={tags} align={`left`} />}
         </div>}
 
         {variants && <div className={`action`}>
