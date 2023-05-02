@@ -112,6 +112,7 @@ Grid.args = {
   body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
   slug: `gelato-kush`,
   display: `grid`,
+  variants: [<div>action</div>],
   tags: {
     0: {
       id: 6,

@@ -72,7 +72,7 @@ const Formular = ({
           className={"branding"}
           width="auto"
           height="100%"
-//src={fx_negative == true ? left_negative : left_positive}
+          //src={fx_negative == true ? left_negative : left_positive}
         />}
       </div>
 

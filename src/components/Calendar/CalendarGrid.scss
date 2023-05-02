@@ -1,0 +1,36 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.calendar-component-grid {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  .calendar-component-inner {
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

@@ -15,6 +15,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface VariantProps {
   api?: string | false;
   currency?: string | false;
+  currencyRate?: number | false;
   display?: string | false;
   variants?: {
     id: number;
@@ -80,6 +81,7 @@ const Variant: React.FC<VariantProps> = ({
   display,
   variants,
   currency,
+  currencyRate,
   selectItemFunc,
   addItemFunc,
   removeItemFunc,
@@ -111,10 +113,11 @@ const Variant: React.FC<VariantProps> = ({
     }
 
     let myVariant = variants.find(variantItem => variantItem.id === elementId);
+
     let myClone =
       myVariant.clone ?
         myVariant.clone :
-          myVariant.attributes.product.data.attributes.default.data ?
+          myVariant.attributes && myVariant.attributes.product.data.attributes.default.data ?
             `${api != false ? api : ``}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
              : null;
 
@@ -169,7 +172,7 @@ const Variant: React.FC<VariantProps> = ({
     let myClone =
       myVariant.clone ?
         myVariant.clone :
-          myVariant.attributes.product.data.attributes.default.data ?
+          myVariant.attributes && myVariant.attributes.product.data.attributes.default.data ?
             `${api != false ? api : ``}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
              : null;
 
@@ -222,97 +225,113 @@ const Variant: React.FC<VariantProps> = ({
     }
   }
 
-  return variants ? (
-    <div
-      className={`
-        ${display == `smart` ? `variant-component-smart` : `variant-component`}
-      `}
-    >
-      {Object.keys(variants).length > 1 ? <div className={`variant-component-selector`}>
-        <Dropdown
-          direction={`up`}
-        >
+  function priceFormatter (value) {
+    if (currencyRate) {
+      return Math.trunc(Math.floor(Number(value*currencyRate).toFixed(2)*100))/100
+    } else {
+      return Math.trunc(Math.floor(Number(value).toFixed(2)*100))/100
+    }
+  }
+
+  try {
+    return (
+      <div
+        className={`
+          ${display == `smart` ? `variant-component-smart` : `variant-component`}
+        `}
+      >
+        {Object.keys(variants).length > 1 ? <div className={`variant-component-selector`}>
+          <Dropdown
+            direction={`up`}
+          >
+            {Object.keys(variants).map((key) => (
+              <div onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (selectItemFunc)
+                  selectItem(event.currentTarget, variants[key].parent_id, variants[key].id)
+              }}>
+                {variants[key].title != null ? variants[key].title : ""}
+                {variants[key].subtitle != null ? variants[key].subtitle : ""}
+                {priceFormatter(variants[key].price_default) != null ? " for " : " for "}
+                {priceFormatter(variants[key].price_default) != null ? priceFormatter(variants[key].price_default) : ""}
+                {currency ? ` ${currency}` : ""}
+              </div>
+            ))}
+          </Dropdown>
+        </div>
+          :
+        <div className={`variant-component-title`}>
+          {variants[0].title != null ? variants[0].title : ""}
+          {variants[0].subtitle != null ? variants[0].subtitle : ""}
+          {priceFormatter(variants[0].price_default) != null ? " for " : " for "}
+          {priceFormatter(variants[0].price_default) != null ? priceFormatter(variants[0].price_default) : ""}
+          {currency ? ` ${currency}` : ""}
+        </div>
+        }
+
+        <div className={`variant-component-list`}>
           {Object.keys(variants).map((key) => (
-            <div onClick={(event: React.MouseEvent<HTMLElement>) => {
-              if (selectItemFunc)
-                selectItem(event.currentTarget, variants[key].parent_id, variants[key].id)
-            }}>
-              {variants[key].title != null ? variants[key].title : ""}
-              {variants[key].subtitle != null ? variants[key].subtitle : ""}
-              {variants[key].price_default != null ? " for " : " for "}
-              {variants[key].price_default != null ? variants[key].price_default.toFixed(2) : ""}
-              {currency ? ` ${currency}` : ""}
+            <div
+              key={`api_variants_${key}`}
+              className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
+              key={`variant-component-key-${key}`}
+            >
+              <div className={`variant-component-col col-remove`}>
+                {variants[key].quantity > 0 ? <Button
+                  icon={`remove`}
+                  mode={`default`}
+                  color={`white`}
+                  onClick={
+                    (event: React.MouseEvent<HTMLElement>) => {
+                      let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                      if (
+                        myEl.getAttribute("data-state") != "loading" &&
+                        myEl.getAttribute("data-state") != "error" &&
+                        myEl.getAttribute("data-state") != "complete"
+                      ) removeItem(variants[key].parent_id, variants[key].id, myEl);
+                    }
+                  }
+                /> : ``}
+              </div>
+              <div className={`variant-component-col col-indicator`}>
+                {variants[key].quantity > 0 ? <Button
+                  label={`${variants[key].quantity}`}
+                  mode={`indicator`}
+                /> : ``}
+              </div>
+              <div className={`variant-component-col col-add`}>
+                <Button
+                  icon={`add`}
+                  mode={`default`}
+                  color={`white`}
+                  onClick={
+                    (event: React.MouseEvent<HTMLElement>) => {
+                      let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                      if (
+                        myEl.getAttribute("data-state") != "loading" &&
+                        myEl.getAttribute("data-state") != "error" &&
+                        myEl.getAttribute("data-state") != "complete"
+                      ) addItem(variants[key].parent_id, variants[key].id, myEl)
+                    }
+                  }
+                />
+              </div>
+              {/**<div className={`variant-component-col col-price`}>
+                {variants[key].price_default != null ? variants[key].price_default : ""}
+                {variants[key].price_promotion != null ? variants[key].price_promotion : ""}
+              </div>**/}
             </div>
           ))}
-        </Dropdown>
-      </div>
-        :
-      <div className={`variant-component-title`}>
-        {variants[0].title != null ? variants[0].title : ""}
-        {variants[0].subtitle != null ? variants[0].subtitle : ""}
-        {variants[0].price_default != null ? " for " : " for "}
-        {variants[0].price_default != null ? variants[0].price_default.toFixed(2) : ""}
-        {currency ? ` ${currency}` : ""}
-      </div>
-      }
+        </div>
 
-      <div className={`variant-component-list`}>
-        {Object.keys(variants).map((key) => (
-          <div
-            key={`api_variants_${key}`}
-            className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
-            key={`variant-component-key-${key}`}
-          >
-            <div className={`variant-component-col col-remove`}>
-              {variants[key].quantity > 0 ? <Button
-                icon={`remove`}
-                mode={`default`}
-                color={`white`}
-                onClick={
-                  (event: React.MouseEvent<HTMLElement>) => {
-                    let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
-                    if (
-                      myEl.getAttribute("data-state") != "loading" &&
-                      myEl.getAttribute("data-state") != "error" &&
-                      myEl.getAttribute("data-state") != "complete"
-                    ) removeItem(variants[key].parent_id, variants[key].id, myEl);
-                  }
-                }
-              /> : ``}
-            </div>
-            <div className={`variant-component-col col-indicator`}>
-              {variants[key].quantity > 0 ? <Button
-                label={`${variants[key].quantity}`}
-                mode={`indicator`}
-              /> : ``}
-            </div>
-            <div className={`variant-component-col col-add`}>
-              <Button
-                icon={`add`}
-                mode={`default`}
-                color={`white`}
-                onClick={
-                  (event: React.MouseEvent<HTMLElement>) => {
-                    let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
-                    if (
-                      myEl.getAttribute("data-state") != "loading" &&
-                      myEl.getAttribute("data-state") != "error" &&
-                      myEl.getAttribute("data-state") != "complete"
-                    ) addItem(variants[key].parent_id, variants[key].id, myEl)
-                  }
-                }
-              />
-            </div>
-            {/**<div className={`variant-component-col col-price`}>
-              {variants[key].price_default != null ? variants[key].price_default : ""}
-              {variants[key].price_promotion != null ? variants[key].price_promotion : ""}
-            </div>**/}
-          </div>
-        ))}
-      </div>
+      </div>  
+    )
+  }
 
-    </div>
-  ) : null
+  catch {
+    return (
+      <h1>no variants</h1>
+    )
+  }
 };
 
 /*

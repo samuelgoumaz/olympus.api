@@ -2,17 +2,16 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./Text.scss";
+import "./Products.scss";
 
 /*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
-export interface TextProps {
+export interface ProductsProps {
   position?: number;
-  body?: string;
-  aside?: string;
+  padding?: true | false;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -21,7 +20,7 @@ export interface TextProps {
 /*
 # Class Components
 */
-/*const Text: React.FC<TextProps> = ({
+/*const Products: React.FC<ProductsProps> = ({
   left_positive,
   left_negative,
   middle_positive,
@@ -35,16 +34,16 @@ export interface TextProps {
   children
 }) => (
 */
-const Text = ({
+const Products = ({
   position,
-  body,
-  aside,
+  padding,
   children
-}: TextProps) => (
+}: ProductsProps) => (
   <section
     className={`
-      section section-text
-      text-component
+      products-component
+      panel
+      ${padding === true ? `hv-padding` : ``}
     `}
     style={{
       position: `relative`,
@@ -52,17 +51,8 @@ const Text = ({
     }}
   >
 
-    <div className={`text-content`}>
+    <div className={`products-component-inner`}>
       {children}
-    </div>
-
-    <div className={`text-inner`}>
-      {body && <div className={`text-inner-content ${aside ? `hv-aside` : ``}`}>
-        {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
-      </div>}
-      {aside && <div className={`text-inner-aside`}>
-        {aside && <div className={`aside`} dangerouslySetInnerHTML={{ __html: `${aside}` }} />}
-      </div>}
     </div>
 
   </section>
@@ -71,4 +61,4 @@ const Text = ({
 /*
 # Export
 */
-export default Text;
+export default Products;

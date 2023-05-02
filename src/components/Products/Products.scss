@@ -8,9 +8,13 @@
 /*
 # document
 */
-.text-component {
+.products-component {
   width: 100%;
   position: relative;
+
+  &.hv-padding {
+    padding: 100px;
+  }
 
   &:after {
     content: " ";
@@ -19,26 +23,7 @@
     clear: both;
   }
 
-  .text-content {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .text-inner {
-    width: 100%;
-    position: relative;
-    display: block;
-
-    .text-inner-content {
-      width: 50%;
-      margin: 0 auto;
-
-      .body {
-        padding: 100px 0;
-      }
-    }
+  .products-component-inner {
   }
 }
 
@@ -46,81 +31,51 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .text-component {
-    .text-content {
+  .products-component {
+    &.hv-padding {
+      padding: 20px;
     }
-    .text-inner {
-      .text-inner-content {
-        width: 100%;
-
-        .body {
-          padding: 20px;
-        }
-      }
+    .products-component-inner {
     }
   }
 }
 
 @media #{$medium-and-down} {
-  .text-component {
-    .text-content {
+  .products-component {
+    &.hv-padding {
+      padding: 40px;
     }
-    .text-inner {
-      .text-inner-content {
-        width: 100%;
-
-        .body {
-          padding: 30px;
-        }
-      }
+    .products-component-inner {
     }
   }
 }
 
 @media #{$medium-and-up} {
-  .text-component {
-    .text-content {
+  .products-component {
+    &.hv-padding {
+      padding: 60px;
     }
-    .text-inner {
-      .text-inner-content {
-        width: 80%;
-
-        .body {
-          padding: 40px;
-        }
-      }
+    .products-component-inner {
     }
   }
 }
 
 @media #{$large-and-up} {
-  .text-component {
-    .text-content {
+  .products-component {
+    &.hv-padding {
+      padding: 80px;
     }
-    .text-inner {
-      .text-inner-content {
-        width: 70%;
-
-        .body {
-          padding: 60px;
-        }
-      }
+    .products-component-inner {
     }
   }
 }
 
 @media #{$extra-large-and-up} {
-  .text-component {
-    .text-content {
+  .products-component {
+    &.hv-padding {
+      padding: 90px;
     }
-    .text-inner {
-      .text-inner-content {
-        width: 60%;
-
-        .body {
-          padding: 80px;
-        }
-      }
+    .products-component-inner {
     }
   }
 }

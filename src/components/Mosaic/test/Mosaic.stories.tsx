@@ -36,13 +36,27 @@ https://storybook.js.org/docs/react/writing-stories/args
 export const One = Template.bind({});
 One.args = {
   alt: `alt title`,
-  image: `http://0.0.0.0:1337/uploads/dusty_green_std_wallpaper_c0401ca5f1.jpg?updated_at=2023-01-28T23:41:13.265Z`,
+  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
   display: `one`,
 };
 
 export const Double = Template.bind({});
 Double.args = {
   alt: `alt title`,
-  image: `http://0.0.0.0:1337/uploads/dusty_green_std_wallpaper_c0401ca5f1.jpg?updated_at=2023-01-28T23:41:13.265Z`,
+  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
   display: `double`,
+};
+
+export const Quadruple = Template.bind({});
+Quadruple.args = {
+  alt: `alt title`,
+  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
+  display: `quadruple`,
+};
+
+export const Triple = Template.bind({});
+Triple.args = {
+  alt: `alt title`,
+  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
+  display: `triple`,
 };

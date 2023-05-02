@@ -37,9 +37,10 @@ const Shop = ({
   position,
   children
 }: ShopProps) => (
-  <div
+  <section
     className={`
       shop-component
+      panel
     `}
     style={{
       zIndex: position != null ? position : 1
@@ -48,7 +49,7 @@ const Shop = ({
     <div className={`shop-component-inner`}>
       {children ?? <h1>...</h1>}
     </div>
-  </div>
+  </section>
 );
 
 /*

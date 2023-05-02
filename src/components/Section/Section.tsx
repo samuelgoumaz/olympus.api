@@ -47,12 +47,13 @@ const Section = ({
   scene,
   fx
 }: SectionProps) => (
-  <div
+  <section
     className={`
       section-component
       ${display == `left` || display == null ? `alignLeft` : ``}
       ${display == `middle` ? `alignMiddle` : ``}
       ${display == `right` ? `alignRight` : ``}
+      panel
     `}
     style={{
       position: `relative`,
@@ -77,13 +78,13 @@ const Section = ({
       # Col content */}
       <div className={`section-inner-col col-content`}>
         <div className={`content`}>
-          <h4 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
+          <h2 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
           <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
 );
 
 /*

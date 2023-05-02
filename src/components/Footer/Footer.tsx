@@ -2,6 +2,7 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
+import Icon from '../Icon';
 import "./Footer.scss";
 
 /*
@@ -11,87 +12,140 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FooterProps {
   position: number;
-  facebook: false | true;
-  instagram: false | true;
-  linkedin: false | true;
-  mail: false | true;
-  tel: false | true;
-  address: string | null;
-  children: JSX.Element | JSX.Element[];
+
+  /*
+  # icon */
+  dhl?: true | false;
+  ups?: true | false;
+  fedex?: true | false;
+  poste_switzerland?: true | false;
+  americanexpress?: true | false;
+  postfinance?: true | false;
+  mastercard?: true | false;
+  maestro?: true | false;
+  payrexx?: true | false;
+  twint?: true | false;
+  visa?: true | false;
+
+  /*
+  # linked icon */
+  facebook?: string | null;
+  instagram?: string | null;
+  linkedin?: string | null;
+  youtube?: string | null;
+  soundcloud?: string | null;
+  behance?: string | null;
+  vimeo?: string | null;
+  twitter?: string | null;
+  tiktok?: string | null;
+
+
+  /*
+  # text */
+  contact?: string;
+  address?: string;
+  delivery?: string;
+  payment?: string;
+  navigation: JSX.Element | JSX.Element[];
 }
 
 /*
 # Class Components */
 const Footer = ({
+  american_express,
   position,
-  instagram,
   facebook,
+  instagram,
   linkedin,
-  mail,
-  tel,
+  youtube,
+  soundcloud,
+  behance,
+  vimeo,
+  twitter,
+  tiktok,
+  dhl,
+  ups,
+  fedex,
+  poste_switzerland,
+  americanexpress,
+  postfinance,
+  mastercard,
+  maestro,
+  payrexx,
+  twint,
+  visa,
+  contact,
   address,
-  children
-}: FooterProps) => (
-  <section
-    className={`footer-component`}
-    style={{
-      position: `relative`,
-      zIndex: position ?? 2
-    }}
-  >
-    <div className={`footer-inner`}>
+  delivery,
+  payment,
+  navigation
+}: FooterProps) => {
 
-      {/*
-      Specific part */}
-      {children}
 
-      {/*
-      col-address */}
-      <div className={`footer-inner-col col-address`}>
-        <div className={`body`} dangerouslySetInnerHTML={{ __html: address }} />
+
+  return (
+    <footer className={`footer-component panel`}>
+
+      <div className={`fx`}></div>
+
+      <div className={`footer-component-inner`}>
+
+        {/*
+        # Display delivery and payment method */}
+        {delivery || payment ? <div className={`footer-component-row shop-row`}>
+          <div className={`footer-component-col`}>
+            {delivery && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${delivery}` }} />}
+            <ul className={`social`}>
+              {dhl && <li><Icon name={`dhl`} /></li>}
+              {ups && <li><Icon name={`ups`} /></li>}
+              {fedex && <li><Icon name={`fedex`} /></li>}
+              {poste_switzerland && <li><Icon name={`poste_switzerland`} /></li>}
+            </ul>
+          </div>
+          <div className={`footer-component-col`}>
+            {payment && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${payment}` }} />}
+            <ul className={`social`}>
+              {americanexpress && <li><Icon name={`americanexpress`} /></li>}
+              {postfinance && <li><Icon name={`postfinance`} /></li>}
+              {mastercard && <li><Icon name={`mastercard`} /></li>}
+              {maestro && <li><Icon name={`maestro`} /></li>}
+              {payrexx && <li><Icon name={`payrexx`} /></li>}
+              {twint && <li><Icon name={`twint`} /></li>}
+              {visa && <li><Icon name={`visa`} /></li>}
+            </ul>
+          </div>
+        </div> : ``}
+
+        {/*
+        # Display address, contact and social */}
+        <div className={`footer-component-row contact-row`}>
+
+          {address || contact || navigation ? <div className={`footer-component-col`}>
+            {address !== null && <div className={`body address`} dangerouslySetInnerHTML={{ __html: `${address}` }} />}
+            {contact !== null && <div className={`body contact`} dangerouslySetInnerHTML={{ __html: `${contact}` }} />}
+            {navigation && <div className={`body navigation`}>{navigation}</div>}
+          </div> : ``}
+
+          <div className={`footer-component-col`}>
+            <ul className={`social`}>
+              {instagram && <li><a href={instagram} target={`blank`}><Icon name={`instagram`} /></a></li>}
+              {facebook && <li><a href={facebook} target={`blank`}><Icon name={`facebook`} /></a></li>}
+              {linkedin && <li><a href={linkedin} target={`blank`}><Icon name={`linkedin`} /></a></li>}
+              {youtube && <li><a href={youtube} target={`blank`}><Icon name={`youtube`} /></a></li>}
+              {soundcloud && <li><a href={soundcloud} target={`blank`}><Icon name={`soundcloud`} /></a></li>}
+              {behance && <li><a href={behance} target={`blank`}><Icon name={`behance`} /></a></li>}
+              {tiktok && <li><a href={tiktok} target={`tiktok`}><Icon name={`tiktok`} /></a></li>}
+              {twitter && <li><a href={twitter} target={`twitter`}><Icon name={`twitter`} /></a></li>}
+              {vimeo && <li><a href={vimeo} target={`vimeo`}><Icon name={`vimeo`} /></a></li>}
+            </ul>
+          </div>
+        </div>
+
       </div>
+    </footer>
+  )
 
-      {/*
-      col-social */}
-      <div className={`footer-inner-col col-social`}>
-        <ul>
-
-          {instagram && <li className={`social`}>
-            <img src={"/social/instagram.svg"} />
-          </li>}
-
-          {facebook && <li className={`social`}>
-            <img src={"/social/instagram.svg"} />
-          </li>}
-
-          {linkedin && <li className={`social`}>
-            <img src={"/social/linkedin.svg"} />
-          </li>}
-
-          {mail && <li className={`social`}>
-            <span className={`material-icons`}>send</span>
-          </li>}
-
-          {tel && <li className={`social`}>
-            <span className={`material-icons`}>call</span>
-          </li>}
-
-        </ul>
-      </div>
-
-      {/*
-      col-payment */}
-      <div className={`footer-inner-col col-payment`}>
-      </div>
-
-      {/*
-      col-menu */}
-      <div className={`footer-inner-col col-menu`}>
-      </div>
-
-    </div>
-  </section>
-);
+};
 
 /*
 # Export

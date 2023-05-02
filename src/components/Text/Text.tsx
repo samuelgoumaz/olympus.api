@@ -41,9 +41,10 @@ const Text = ({
   aside,
   children
 }: TextProps) => (
-  <div
+  <section
     className={`
       text-component
+      panel
     `}
     style={{
       position: `relative`,
@@ -64,7 +65,7 @@ const Text = ({
       </div>}
     </div>
 
-  </div>
+  </section>
 );
 
 /*

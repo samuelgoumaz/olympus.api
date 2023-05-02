@@ -15,9 +15,9 @@
   min-height: 500px;
   height: 80vh;
   max-height: 800px;
-  background: orange;
   position: relative;
   overflow: hidden;
+  background: red;
 
   .fx {
     position: absolute;
@@ -52,12 +52,11 @@
       height: auto;
       bottom: 0;
       z-index: 2;
-      padding: 80px;
+      padding: 100px;
 
       .content-inner {
         display: table-cell;
-        width: 50%;
-        float: none;
+        width: 30%;
         vertical-align: bottom;
 
         .title {
@@ -68,8 +67,7 @@
 
       .action {
         display: table-cell;
-        width: 50%;
-        float: none;
+        width: 70%;
         vertical-align: bottom;
         text-align: right;
       }
@@ -78,16 +76,26 @@
 }
 
 /*
-# Responsive
-*/
+# Responsive */
 @media #{$small-and-down} {
   .product-component-slide {
+    height: auto;
+    max-height: none;
+
     .fx {
     }
     .product-inner {
+      position: relative;
+      height: auto;
+      
       .scene {
+        @include aspect-ratio(1,1);
+        position: relative;
+        display: block;
       }
       .content {
+        position: relative;
+        display: block;
         padding: 30px;
 
         .content-inner {
@@ -103,7 +111,8 @@
         .action {
           width: 100%;
           display: block;
-          text-align: center;
+          text-align: left;
+          margin-top: 1em;
         }
       }
     }
@@ -121,7 +130,8 @@
         padding: 40px;
 
         .content-inner {
-          width: 66.66%;
+          width: 100%;
+          display: block;
 
           .title {
           }
@@ -130,7 +140,10 @@
         }
 
         .action {
-          width: 33.33%;
+          width: 100%;
+          display: block;
+          text-align: left;
+          margin-top: 1em;
         }
       }
     }
@@ -148,6 +161,7 @@
         padding: 50px;
 
         .content-inner {
+          width: 50%;
 
           .title {
           }
@@ -156,6 +170,8 @@
         }
 
         .action {
+          width: 50%;
+          float: none;
         }
       }
     }
@@ -170,14 +186,20 @@
       .scene {
       }
       .content {
-        padding: 60px;
+        padding: 70px;
+
         .content-inner {
+          width: 40%;
+
           .title {
           }
           .body {
           }
         }
+
         .action {
+          width: 60%;
+          float: none;
         }
       }
     }
@@ -192,14 +214,20 @@
       .scene {
       }
       .content {
-        padding: 70px;
+        padding: 90px;
+
         .content-inner {
+          width: 35%;
+
           .title {
           }
           .body {
           }
         }
+
         .action {
+          width: 65%;
+          float: none;
         }
       }
     }

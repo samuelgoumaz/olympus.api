@@ -1,0 +1,24 @@
+/**
+Parallax Effects
+================ **/
+.banner-component,
+.banner-component-fullscreen,
+.banner-component-small {
+  .parallax-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .parallax-child {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

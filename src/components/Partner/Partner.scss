@@ -8,7 +8,10 @@
 /*
 # document
 */
-.partner-component-grid {
+.partner-component {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
 
   .fx {
     width: 100%;
@@ -19,11 +22,18 @@
     z-index: 1;
   }
   .partner-inner {
+    width: 100%;
+    @include aspect-ratio(3,2);
 
-    .scene {
-      @include aspect-ratio(1,1);
-    }
-    .content {
+    .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: auto;
+      right: auto;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     .action {
       .variant-component {

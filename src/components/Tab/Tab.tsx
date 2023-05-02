@@ -45,9 +45,10 @@ const Tab = ({
   }
 
   return (
-    <div
+    <section
       className={`
         tab-component
+        panel
         ${`dsp-close`}
         ${direction == `up` ? `up` : `down`}
       `}
@@ -85,7 +86,7 @@ const Tab = ({
         {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
       </div>
 
-    </div>
+    </section>
   )
 };
 

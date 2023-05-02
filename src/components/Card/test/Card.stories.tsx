@@ -41,6 +41,7 @@ Grid.args = {
   body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
   slug: `Card-slug`,
   display: `grid`,
+  fx: [<><h1>background</h1></>]
 };
 
 export const Row = Template.bind({});
@@ -51,4 +52,5 @@ Row.args = {
   body: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`,
   slug: `Card-slug`,
   display: `row`,
+  fx: [<><h1>background</h1></>]
 };

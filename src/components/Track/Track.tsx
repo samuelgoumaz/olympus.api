@@ -11,7 +11,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface TrackProps {
   name?: string | null;
-  key?: string;
+  id?: string;
 }
 
 
@@ -21,21 +21,14 @@ export interface TrackProps {
 */
 const Track: React.FC<TrackProps> = ({
   name,
-  key
+  id
 }) => {
   return (
     <div className={`track-component`}>
       <div className={`
         track-component-inner
       `}>
-        <iframe
-          src={key}
-          width="100%"
-          height="80px"
-          frameborder="0"
-          allowtransparency="true"
-          allow="encrypted-media"
-        />
+        <iframe src={`https://open.spotify.com/embed/track/${id}?utm_source=generator`} width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         {name != null ? <span className={`title`}>{name}</span> : ``}
       </div>
     </div>

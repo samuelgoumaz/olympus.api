@@ -3,7 +3,7 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button"
-import "./PartnerGrid.scss";
+import "./Partner.scss";
 /*
 # Interface
 # react children with-typescript :
@@ -39,9 +39,15 @@ const Partner = ({
     <div className={`
       partner-inner
     `}>
-      {image && <div className={`image`}>
-        <img src={image} />
-      </div>}
+      {image && <div
+        className={`image`}
+        style={{
+          background: `url(${image})`,
+          backgroundSize: `contain`,
+          backgroundPosition: `center`,
+          backgroundRepeat: `no-repeat`,
+        }}
+      />}
 
       <div className={`content`}>
         <div className={`action`}>

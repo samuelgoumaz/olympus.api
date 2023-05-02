@@ -76,21 +76,21 @@ const CartPrice = ({
 
         {/**
         # cartprice **/}
-        {discountAmount && <div className={`cartprice-element`}>
+        {discountAmount > 0 ? <div className={`cartprice-element`}>
           <div className={`cartprice-element-inner`}>
             <span className={`icon material-icons`}>account_balance_wallet</span>
             <span className={`value`}>-{Number(discountAmount).toFixed(2)}</span>
           </div>
-        </div>}
+        </div> : ``}
 
         {/**
         # cartprice **/}
-        {discountPercent && <div className={`cartprice-element`}>
+        {discountPercent > 0 ? <div className={`cartprice-element`}>
           <div className={`cartprice-element-inner`}>
             <span className={`icon material-icons`}>percent</span>
             <span className={`value`}>-{discountPercent}%</span>
           </div>
-        </div>}
+        </div> : ``}
 
       </div> : ``}
 

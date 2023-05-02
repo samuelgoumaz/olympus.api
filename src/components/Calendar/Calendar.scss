@@ -8,15 +8,22 @@
 /*
 # document
 */
-.calendar-container {
-  .calendar-inner {
-    .calendar-inner-col {
-      &.col-left {
-      }
-      &.col-middle {
-      }
-      &.col-right {
-      }
+.calendar-component {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  .calendar-component-inner {
+    text-align: center;
+
+    &.align-left {
+      text-align: left;
+    }
+    &.align-center {
+      text-align: center;
+    }
+    &.align-right {
+      text-align: right;
     }
   }
 }

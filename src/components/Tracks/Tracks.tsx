@@ -12,6 +12,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface TracksProps {
   elements?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
   align?: string | null;
 }
 
@@ -35,12 +36,14 @@ export interface TracksProps {
 }) => (
 */
 const Tracks = ({
+  children,
   elements,
 }: TracksProps) => {
   return (
-    <div
+    <section
       className={`
         tracks-component
+        panel
       `}
     >
       <div className={`
@@ -49,13 +52,15 @@ const Tracks = ({
 
         {elements != null ? Object.keys(elements).map((key) => (
           <Track
-            key={`http://open.spotify.com/embed/track/5kWbmJzK2LYNLhcs7DKR9e?utm_source=generator`}
+            id={elements[key].key}
             name={elements[key].name}
           />
         )) : ``}
 
+        {children && children}
+
       </div>
-    </div>
+    </section>
   );
 };
 

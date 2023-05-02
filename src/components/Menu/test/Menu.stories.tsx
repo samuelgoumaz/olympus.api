@@ -87,6 +87,43 @@ Default.args = {
 export const Inline = Template.bind({});
 Inline.args = {
   display: "inline",
+  menu: [
+    {
+        "id": 15,
+        "name": "Terms and conditions",
+        "url": null,
+        "page": {
+            "id": 9,
+            "title": "Terms and Conditions",
+            "subtitle": "Dusty Green",
+            "slug": "terms-and-conditions-dusty-green",
+            "createdAt": "2022-07-19T14:36:38.639Z",
+            "updatedAt": "2022-11-25T18:36:33.735Z",
+            "publishedAt": "2022-07-19T14:36:44.302Z",
+            "locale": "en"
+        }
+    },
+    {
+        "id": 16,
+        "name": "Confidentiality",
+        "url": null,
+        "page": {
+            "id": 10,
+            "title": "Confidentiality",
+            "subtitle": "Dusty Green",
+            "slug": "confidentiality-dusty-green",
+            "createdAt": "2022-07-19T18:45:03.927Z",
+            "updatedAt": "2023-02-06T22:27:51.113Z",
+            "publishedAt": "2022-07-19T18:45:26.722Z",
+            "locale": "en"
+        }
+    }
+]
+};
+
+export const List = Template.bind({});
+List.args = {
+  display: "list",
   menu: [{
       "id": 1,
       "name": "Home",
@@ -129,9 +166,9 @@ Inline.args = {
   }]
 };
 
-export const List = Template.bind({});
-List.args = {
-  display: "list",
+export const Line = Template.bind({});
+Line.args = {
+  display: "line",
   menu: [{
       "id": 1,
       "name": "Home",

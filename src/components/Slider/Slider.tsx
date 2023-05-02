@@ -2,6 +2,7 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
+import "./Slick.scss";
 import "./Slider.scss";
 
 /*
@@ -55,14 +56,14 @@ const Slider = ({
   subtitle,
   children
 }: SliderProps) => (
-  <div
+  <section
     className={`
-      slider-container
+      slider-component
       ${fx_aside === true && `fx_aside`}
       ${fx_negative === true && `fx_negative`}
       ${fx_top === true && `fx_top`}
       ${fx_pinned === true && `fx_pinned`}
-
+      panel
     `}
   >
     <div className={`slider-inner`}>
@@ -95,7 +96,7 @@ const Slider = ({
       </div>
 
     </div>
-  </div>
+  </section>
 );
 
 /*

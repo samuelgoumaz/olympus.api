@@ -8,9 +8,25 @@
 /*
 # document
 */
+
 .mosaic-component-quadruple {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+
   .mosaic-inner {
+    width: 100%;
+    position: relative;
+
     .scene {
+      width: 100%;
+      position: relative;
+
+      .image {
+        width: 100%;
+        height: auto;
+      }
     }
     .content {
       .title {

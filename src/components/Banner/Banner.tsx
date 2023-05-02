@@ -7,6 +7,7 @@ import Button from "../Button"
 import "./Banner.scss";
 import "./BannerFullscreen.scss";
 import "./BannerSmall.scss";
+import "./Parallax.scss";
 
 /*
 # Interface
@@ -56,11 +57,12 @@ const Banner = ({
   children
 }: BannerProps) => (
   <>
-    <div
+    <section
       className={`
       ${display === `fullscreen` ? `banner-component-fullscreen` : ``}
       ${display === `small` ? `banner-component-small` : ``}
       ${display === null || !display ? `banner-component` : ``}
+      panel
       `}
       style={{
         position: `relative`,
@@ -97,7 +99,7 @@ const Banner = ({
         </div>}
 
       </div>
-    </div>
+    </section>
     <div id={`banner-component-${position ?? 0}`} className={`anchor-banner`} />
   </>
 );

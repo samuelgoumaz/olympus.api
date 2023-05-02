@@ -43,8 +43,8 @@ const Title = ({
 }: TitleProps) => (
   <section
     className={`
-      section section-title
       title-component
+      panel
     `}
     style={{
       position: `relative`,

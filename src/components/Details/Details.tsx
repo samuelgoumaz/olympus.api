@@ -46,7 +46,10 @@ const Details = ({
   aside
 }: DetailsProps) => (
   <div
-    className={`details-component`}
+    className={`
+      details-component
+      panel
+    `}
     style={{
       position: `relative`,
       zIndex: position ?? 2
@@ -60,7 +63,7 @@ const Details = ({
       {elements && <div className={`details-component-content`}>
         {elements.map((item, index) => (
           <div key={`details-component-content-${index}`} className={`details-component-item`}>
-            <h6 className={`title`} dangerouslySetInnerHTML={{ __html: item.key }} />
+            <h4 className={`title`} dangerouslySetInnerHTML={{ __html: item.key }} />
             <div className={`body`} dangerouslySetInnerHTML={{ __html: item.value }} />
           </div>
         ))}

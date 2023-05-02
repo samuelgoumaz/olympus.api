@@ -12,7 +12,6 @@
   box-shadow: 0 0 40px rgba(0,0,0,0.15);
   display: inline-block;
   vertical-align: top;
-  background: red;
   width: 50%;
 
   .fx {
@@ -31,19 +30,15 @@
     .scene {
       width: 100%;
       @include aspect-ratio(1,1);
-      background: orange;
     }
     .content {
       text-align: center;
       padding: 20px;
-      background: pink;
     }
     .action {
-      background: violet;
       padding: 0;
 
       .variant-component {
-        background: green;
         .variant-component-selector {
           width: 100%;
           padding-right: 0;

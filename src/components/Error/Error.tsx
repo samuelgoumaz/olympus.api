@@ -12,9 +12,11 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ErrorProps {
   position: number;
+  display: number | null;
   icon?: string | null;
   error?: number | null;
-  state: number | null;
+  title?: string | null;
+  subtitle?: string | null;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -27,7 +29,9 @@ const Error: React.FC<ErrorProps> = ({
   position,
   icon,
   error,
-  state, // <= cover, inline
+  display, // <= cover, inline
+  title,
+  subtitle,
   children
 }) => {
 
@@ -95,11 +99,12 @@ const Error: React.FC<ErrorProps> = ({
   }
 
   return (
-    <div
+    <section
       className={`
-        ${state === null ? 'error-component' : ''}
-        ${state === 'inline' ? 'error-component-inline' : ''}
-        ${state === 'cover' ? 'error-component-cover' : ''}
+        ${!display ? 'error-component' : ''}
+        ${display === 'inline' ? 'error-component-inline' : ''}
+        ${display === 'cover' ? 'error-component-cover' : ''}
+        panel
       `}
       style={{
         position: `relative`,
@@ -110,28 +115,24 @@ const Error: React.FC<ErrorProps> = ({
         <div className={`error-component-content`}>
 
           <div className={`error-scene`}>
-
             <div className={`icon`}>
               {iconSwitcher(icon)}
             </div>
-
             {error && <div className={`name`}>
               {error ?? 404}
             </div>}
-
           </div>
 
-
           <div className={`error-content`}>
+            {title != null ? <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+            {subtitle != null ? <span className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
             {children ?? <p>No results could be found</p>}
           </div>
 
-          {/** title != null ? <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : `` **/}
-          {/** subtitle != null ? <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : `` **/}
+
         </div>
       </div>
-    </div>
-
+    </section>
   )
 }
 

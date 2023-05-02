@@ -1,0 +1,88 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.breadcrumb-component {
+  width: 100%;
+  display: block;
+  clear: both;
+
+  .breadcrumb-component-inner {
+    padding: 10px 0;
+    text-align: center;
+
+    h1 {
+      font-size: 1.5em;
+      display: block;
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .breadcrumb-component {
+    .breadcrumb-component-inner {
+      padding: 5px 0;
+
+      h1 {
+        font-size: 0.875em;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .breadcrumb-component {
+    .breadcrumb-component-inner {
+      padding: 6px 0;
+
+      h1 {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .breadcrumb-component {
+    .breadcrumb-component-inner {
+      padding: 7px 0;
+
+      h1 {
+        font-size: 1.125em;
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .breadcrumb-component {
+    .breadcrumb-component-inner {
+      padding: 8px 0;
+
+      h1 {
+        font-size: 1.25em;
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .breadcrumb-component {
+    .breadcrumb-component-inner {
+      padding: 9px 0;
+
+      h1 {
+        font-size: 1.375em;
+      }
+    }
+  }
+}

@@ -51,6 +51,7 @@ const Menu = ({
     <ul
       className={`
         menu-container
+        ${display === null || display === `line` ? `dsp-line` : ``}
         ${display === null || display === `list` ? `dsp-list` : ``}
         ${display === `inline` ? `dsp-inline` : ``}
       `}
@@ -65,19 +66,20 @@ const Menu = ({
                   width: display === `inline` ? `${Math.floor(100/Object.keys(menu).length)}%` : `auto`
                 }}
               >
-                {menu[menuKey].url ?
-                  <span
-                    onClick={(
-                      event: React.MouseEvent<HTMLElement>) => {
-                        if (onClickFunc)
+                <span
+                  onClick={(
+                    event: React.MouseEvent<HTMLElement>) => {
+                      if (onClickFunc)
+                        if (menu[menuKey].url) {
                           openItem(event, menu[menuKey].url)
-                      }
+                        }
+                        if (menu[menuKey].page.slug) {
+                          openItem(event, `/page/${menu[menuKey].page.slug}`)
+                        }
                     }
-                    className={`menu-item`}
-                  >{menu[menuKey].name ?? null}</span>
-                  :
-                  <span className={`menu-item`}>{`error on id:${menu[menuKey].id}`}</span>
-                }
+                  }
+                  className={`menu-item`}
+                >{menu[menuKey].name ?? null}</span>
               </li>
             )
           )

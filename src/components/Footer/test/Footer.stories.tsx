@@ -33,12 +33,12 @@ const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  facebook: `#`,
-  instagram: `#`,
-  linkedin: `#`,
-  mail: `info@eventsconcept.com`,
-  tel: `+41 22 939 17 17`,
-  address: `214 Route de Meyrin<br />1217 Meyrin<br />Switzerland`
+export const Default = Template.bind({});
+Default.args = {
+  facebook: "https://www.facebook.com/",
+  instagram: "https://www.instagram.com/",
+  payment: `<p>Parce que la sécurité de vos données est au cœur de notre préoccupation nous ne collaborons qu'avec des partenaires de confiance.</p>`,
+  delivery: `<p>Afin de garantir la réception de vos commandes dans les meilleurs délais, Dusty Green confie ses livraison à des partenaires reconnus.<p>`,
+  address: `<p>214 Route de Meyrin<br />1217 Meyrin<br />Switzerland</p>`,
+  contact: `<p><a>info@eventsconcept.com</a><br />+41 22 939 17 17<p>`
 };

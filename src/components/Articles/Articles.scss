@@ -1,0 +1,47 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.articles-component {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  .articles-component-inner {
+    text-align: center;
+
+    &.align-left {
+      text-align: left;
+    }
+    &.align-center {
+      text-align: center;
+    }
+    &.align-right {
+      text-align: right;
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

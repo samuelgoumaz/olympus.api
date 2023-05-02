@@ -40,19 +40,16 @@ const Checkout = ({
   resume,
   form
 }: CheckoutProps) => (
-  <div
+  <section
     className={`
       checkout-component
+      panel
     `}
     style={{
       position: `relative`,
       zIndex: position ?? 2
     }}
   >
-
-    <div className={`checkout-component-header`}>
-      <h6 className={`checkout-component-header-title`}>{`Checkout`}</h6>
-    </div>
 
     <div className={`checkout-component-col col-resume`}>
       <div className={`checkout-component-fieldset`}>
@@ -84,7 +81,7 @@ const Checkout = ({
 
     {/** <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} /> **/}
 
-  </div>
+  </section>
 );
 
 /*

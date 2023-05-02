@@ -21,8 +21,8 @@ export interface CardProps {
   slug: string | null;
   display: string | null;
   padding?: true | false;
-  fx: JSX.Element | JSX.Element[];
-  scene: JSX.Element | JSX.Element[];
+  fx?: JSX.Element | JSX.Element[];
+  scene?: JSX.Element | JSX.Element[];
   getProductFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -57,13 +57,13 @@ const Card = ({
       height: height
     }}
   >
-
     <div className={`fx`}>
       {fx}
     </div>
 
     <div className={`
       card-inner
+      ${fx !== undefined ? `hv-fx` : ``}
     `}>
 
       <div className={`

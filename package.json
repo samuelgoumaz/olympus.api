@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/olympus.api"
   },
-  "version": "0.5.52",
+  "version": "0.8.7",
   "description": "API for Supermassive NextJS project Frontend.",
   "scripts": {
     "rollup": "rollup -c",
@@ -47,6 +47,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
+    "material-icons": "^1.13.1",
     "postcss": "^8.4.14",
     "postcss-loader": "^4.0.3",
     "postfinancecheckout": "^3.0.5",
@@ -69,8 +70,5 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "dependencies": {
-    "material-icons": "^1.13.1"
-  }
+  "types": "dist/index.d.ts"
 }

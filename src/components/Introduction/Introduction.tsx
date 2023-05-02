@@ -44,6 +44,7 @@ const Introduction = ({
   <section
     className={`
       introduction-component
+      panel
     `}
     style={{
       position: `relative`,

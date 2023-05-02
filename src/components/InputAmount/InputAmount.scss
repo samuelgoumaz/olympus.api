@@ -1,0 +1,147 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.form-item-prices {
+  position: relative;
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .form-item-inner {
+    width: 100%;
+    position: relative;
+    display: block;
+
+    .form-item-line {
+      width: 100%;
+      height: 70px;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 1em;
+
+      /* dimensions */
+      /* margin */
+      padding: 0;
+      border-radius: 10px;
+
+      /* styling */
+      border: 1px solid grey;
+
+      .form-item-input-container {
+        width: 70px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+
+        .form-item-input {
+          width: 30px;
+          height: 30px;
+          margin: 0;
+          position: absolute;
+          top: calc(50% - 15px);
+          left: calc(50% - 15px);
+        }
+      }
+
+      .form-item-label {
+        display: inline-block;
+        font-size: 1.5em;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .form-item-input-prices-handle {
+    text-align: center;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 0 10px 10px 0;
+    display: block;
+    border: 1px solid grey;
+    background: white;
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .form-item-input {
+    position: relative;
+    z-index: 1;
+
+    &.form-item-input-prices {
+
+      /* dimensions */
+      width: 100%;
+      height: 70px;
+      display: block;
+
+      /* margin */
+      padding: 0 30px;
+      border-radius: 10px;
+
+      /* styling */
+      border: 1px solid grey;
+      font-size: 1.5em;
+
+    }
+
+  }
+}
+
+.form-item-amount {
+  width: 100%;
+  text-align: right;
+  display: block;
+  vertical-align: middle;
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .input  {
+    width: auto;
+    display: inline-block;
+    background: none;
+    border: none;
+    text-align: right;
+    font-size: 1.5em;
+    padding: 0;
+  }
+  .currency {
+    display: inline-block;
+    font-size: 1.5em;
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

@@ -32,7 +32,7 @@ const Mosaic = ({
   image,
   display
 }: MosaicProps) => (
-  <article
+  <section
     className={`
       ${display === `one` ? `mosaic-component-one` : ``}
       ${display === `double` ? `mosaic-component-double` : ``}
@@ -51,7 +51,7 @@ const Mosaic = ({
     `}>
 
       <div className={`scene`}>
-        <img src={image} />
+        <img className={`image`} src={image} />
       </div>
 
       <div className={`content`}>
@@ -59,7 +59,7 @@ const Mosaic = ({
       </div>
 
     </div>
-  </article>
+  </section>
 );
 
 /*

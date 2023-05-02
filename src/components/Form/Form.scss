@@ -11,8 +11,6 @@
 .form-component {
   width: 100%;
   position: relative;
-  background: green;
-
   &:after {
     content: " ";
     width: 100%;
@@ -26,10 +24,8 @@
     margin: 0 auto;
 
     .form-inner-content {
-      background: cyan;
     }
     .form-inner-formular {
-      background: blue;
     }
   }
 }

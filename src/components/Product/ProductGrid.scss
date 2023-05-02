@@ -12,7 +12,6 @@
   box-shadow: 0 0 40px rgba(0,0,0,0.15);
   display: inline-block;
   vertical-align: top;
-  background: red;
   width: 33.33%;
 
   .fx {
@@ -25,25 +24,28 @@
   }
 
   .product-inner {
+    padding: 0 80px;
+    padding-top: 0;
+
     position: relative;
     z-index: 2;
 
     .scene {
       width: 100%;
       @include aspect-ratio(1,1);
-      background: orange;
     }
     .content {
       text-align: center;
-      padding: 20px;
-      background: pink;
+
+      .title {
+        margin: 0.5em 0;
+      }
     }
     .action {
-      background: violet;
       padding: 0;
+      margin: 0.5em 0 1em 0;
 
       .variant-component {
-        background: green;
         .variant-component-selector {
           width: 100%;
           padding-right: 0;
@@ -64,6 +66,9 @@
     .fx {
     }
     .product-inner {
+      padding: 0 30px;
+      padding-top: 0;
+
       .scene {
       }
       .content {
@@ -81,6 +86,7 @@
     .fx {
     }
     .product-inner {
+      padding: 0 40px;
       .scene {
       }
       .content {
@@ -98,6 +104,7 @@
     .fx {
     }
     .product-inner {
+      padding: 50px 0;
       .scene {
       }
       .content {
@@ -115,6 +122,7 @@
     .fx {
     }
     .product-inner {
+      padding: 0 60px;
       .scene {
       }
       .content {
@@ -132,6 +140,7 @@
     .fx {
     }
     .product-inner {
+      padding: 0 70px;
       .scene {
       }
       .content {

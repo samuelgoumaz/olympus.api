@@ -35,15 +35,17 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
-  state: null,
+  display: null,
   title: 'My Title',
   subtitle: 'My Subtitle',
+  error: '500',
 };
 
 
 export const Cover = Template.bind({});
 Cover.args = {
-  state: 'cover',
+  display: 'cover',
   title: 'My Title',
   subtitle: 'My Subtitle',
+  error: '500',
 };

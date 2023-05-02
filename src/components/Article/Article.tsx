@@ -62,7 +62,7 @@ const Article = ({
   getProductFunc
 }: ArticleProps) => (
   <article
-    onClick={getProductFunc}
+    //onClick={getProductFunc}
     className={`
       ${display === `grid` ? `article-component-grid` : ``}
       ${display === `row` ? `article-component-row` : ``}

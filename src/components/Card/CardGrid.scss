@@ -26,6 +26,11 @@
     position: relative;
     z-index: 2;
 
+    &.hv-fx {
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      color: white;
+    }
+
     .scene {
       width: 100%;
       @include aspect-ratio(1,1);

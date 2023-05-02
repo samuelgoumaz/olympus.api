@@ -35,6 +35,8 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const DefaultMultiple = Template.bind({});
 DefaultMultiple.args = {
+  currency: "EUR",
+  currencyRate: 1.5,
   variants:
     [
       {
@@ -72,6 +74,8 @@ DefaultMultiple.args = {
 
 export const DefaultUnique = Template.bind({});
 DefaultUnique.args = {
+  currency: "EUR",
+  currencyRate: 1.5,
   variants:
     [
       {
@@ -94,6 +98,8 @@ DefaultUnique.args = {
 
 export const SmartUnique = Template.bind({});
 SmartUnique.args = {
+  currency: "EUR",
+  currencyRate: 1.5,
   display: `smart`,
   variants:
     [
@@ -117,6 +123,8 @@ SmartUnique.args = {
 
 export const SmartMultiple = Template.bind({});
 SmartMultiple.args = {
+  currency: "EUR",
+  currencyRate: 1.5,
   display: `smart`,
   variants:
     [

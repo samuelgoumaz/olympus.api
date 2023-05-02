@@ -1,0 +1,81 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document */
+$grey : #ccc;
+
+.form-item-submit-payment {
+  .form-item-handler {
+    border: 1px solid $grey;
+    border-radius: 5px;
+    display: block;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: auto;
+      display: table;
+
+      li {
+        padding: 0;
+        margin: 0;
+        height: auto;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+
+        &.checkbox {
+          width: 70px;
+          height: 70px;
+          vertical-align: middle;
+          border-right: 1px solid $grey;
+
+          input[type="checkbox"] {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+            display: inline;
+            //accent-color: green;
+          }
+        }
+
+        &.card {
+          border-left: 15px solid transparent;
+
+          .icon {
+            width: 70px;
+            display: block;
+            height: auto;
+          }
+        }
+
+      }
+    }
+  }
+  .form-item-container {
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

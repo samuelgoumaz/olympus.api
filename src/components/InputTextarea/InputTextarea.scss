@@ -1,0 +1,50 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.form-item {
+
+  .form-item-input {
+
+    &.form-item-input-textarea {
+
+      /* dimensions */
+      width: 100%;
+      min-height: 150px;
+      display: block;
+
+      /* margin */
+      padding: 30px;
+      border-radius: 10px;
+
+      /* styling */
+      border: 1px solid grey;
+      font-size: 1.5em;
+
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

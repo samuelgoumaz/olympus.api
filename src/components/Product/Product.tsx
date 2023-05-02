@@ -82,40 +82,41 @@ const Product = ({
     }}
   >
 
-    <div className={`fx`}>
+    {fx && fx !== false ? <div className={`fx`}>
       {fx}
-    </div>
+    </div> : ``}
 
     <div className={`
       product-inner
     `}>
 
-      <div onClick={getProductFunc} className={`scene`}>
-        {scene ? <div className={`scene-inner`}>
+      {scene && scene !== false ? <div onClick={getProductFunc} className={`scene`}>
+        {<div className={`scene-inner`}>
           {scene}
-        </div> : ``}
-      </div>
+        </div>}
+      </div> : ``}
 
       <div className={`content`}>
-        {display === `row` || display === `detail` && title != null ? <h4 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
+        {display === `detail` && title != null ? <h2 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
         {display === `checkout` || display === `card` && title != null ? <h6 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
         {display === `banner` || display === `slide` ? <div className={`content-inner`}>
-          {title && <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} />}
+          {title && <h3 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} />}
           {body != null ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
+          {display === `slide` && tags ? <Tags elements={tags} align={`left`} /> : ``}
         </div> : ``}
 
-        {display === `grid` || display === `double` && title != null ? <h5 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
+        {display === `row` || display === `grid` || display === `double` && title != null ? <h3 onClick={getProductFunc} className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
 
-        {body != null && display != `banner` && display != `slide` ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
+        {display === `banner` || display === `grid` || display === `detail` ? <div className="body" onClick={getProductFunc} dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
 
         {tags && <div className={`tags`}>
           {display === `grid` || display === `double` ? <Tags elements={tags} align={`center`} /> : ``}
-          {display === `row` && <Tags elements={tags} align={`left`} />}
+          {display === `row` || display === `detail` ? <Tags elements={tags} align={`left`} /> : ``}
         </div>}
 
-        {variants && <div className={`action`}>
+        {variants !== false && <div className={`action`}>
           {variants}
         </div>}
 

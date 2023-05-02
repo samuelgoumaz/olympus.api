@@ -57,7 +57,6 @@ const Dropdown = ({
       html = false;
     }
 
-    console.log("initData >>>>>>>>>>>>>>>>>>>>>>>> ", html, elements)
     return html;
 
   }

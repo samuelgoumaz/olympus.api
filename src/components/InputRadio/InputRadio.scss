@@ -1,0 +1,122 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.form-item-radio {
+
+  .form-item-line {
+    width: 100%;
+    height: 70px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 1em;
+
+    /* dimensions */
+    /* margin */
+    padding: 0;
+    border-radius: 10px;
+
+    /* styling */
+    border: 1px solid grey;
+
+    .form-item-input-container {
+      width: 70px;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+
+      .form-item-input {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        position: absolute;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+      }
+    }
+
+    .form-item-label {
+      display: inline-block;
+      font-size: 1.5em;
+      vertical-align: middle;
+    }
+
+  }
+}
+
+/*
+.form-item-input-container {
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.form-item-input-container + .form-item-input-container {
+  margin-top: 1em;
+}
+
+.form-item-input-container:focus-within {
+  color: green;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: green;
+  margin: 0;
+  font: inherit;
+  color: pink;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid pink;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em green;
+  background-color: yellow;
+}
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid pink;
+  outline-offset: max(2px, 0.15em);
+}
+*/
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

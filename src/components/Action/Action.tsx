@@ -37,9 +37,10 @@ const Action = ({
   position,
   children
 }: ActionProps) => (
-  <div
+  <section
     className={`
       action-component
+      panel
     `}
     style={{
       position: `relative`,
@@ -49,7 +50,7 @@ const Action = ({
     <div className={`action-inner`}>
       {children}
     </div>
-  </div>
+  </section>
 );
 
 /*

@@ -43,28 +43,27 @@ const Form = ({
   body,
   children
 }: FormProps) => (
-  <div
+  <section
     className={`
       form-component
+      panel
     `}
     style={{
       position: `relative`,
       zIndex: position ?? 2
     }}
   >
-
     <div className={`form-inner`}>
       <div className={`form-inner-content`}>
-        {title != null ? <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-        {subtitle != null ? <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+        {title && <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} />}
+        {subtitle && <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} />}
         {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
       </div>
       <div className={`form-inner-formular`}>
         {children}
       </div>
     </div>
-
-  </div>
+  </section>
 );
 
 /*

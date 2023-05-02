@@ -46,13 +46,14 @@ const Video = ({
   subtitle,
   children
 }: VideoProps) => (
-  <div
+  <section
     className={`
-      video-container
+      video-component
       ${fx_aside === true && `fx_aside`}
       ${fx_negative === true && `fx_negative`}
       ${fx_top === true && `fx_top`}
       ${fx_pinned === true && `fx_pinned`}
+      panel
 
     `}
   >
@@ -86,7 +87,7 @@ const Video = ({
       </div>
 
     </div>
-  </div>
+  </section>
 );
 
 /*
