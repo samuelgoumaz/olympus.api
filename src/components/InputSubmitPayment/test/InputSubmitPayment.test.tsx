@@ -11,10 +11,16 @@ import InputSubmitPayment from "../InputSubmitPayment";
 describe("InputSubmitPayment", () => {
   test("renders the Button component", () => {
     render(
+      <>
       <InputSubmitPayment
         label="Hello world!"
         positive="http://localhost:1337/uploads/branding_85acfc9546.svg"
       />
+      <InputSubmitPayment
+        label="Hello world!"
+        positive="http://localhost:1337/uploads/branding_85acfc9546.svg"
+      />
+      </>
     );
   });
 });

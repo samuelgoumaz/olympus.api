@@ -56,6 +56,7 @@ const InputEmail = ({
       type="email"
       name={String(name) ?? `errorName`}
       required={required == true ? `required` : ``}
+      alt={label ? String(label) : placeholder ? String(placeholder) : ``}
       placeholder={
         `${placeholder ?? ``}${required == true ? `*` : ``}`
       }

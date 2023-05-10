@@ -345,8 +345,6 @@ const Icon = ({
       case `visa_card`:
         return (<span className={`icon`}>
           <svg
-             width="750"
-             height="471"
              viewBox="0 0 750 471"
           >
             <g

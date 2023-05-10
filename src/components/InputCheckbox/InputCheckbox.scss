@@ -4,6 +4,7 @@
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
+$grey : #ccc;
 
 /*
 # document
@@ -21,14 +22,19 @@
   border-radius: 10px;
 
   /* styling */
-  border: 1px solid grey;
+  border: 1px solid $grey;
 
   .form-item-input-container {
     width: 70px;
     height: 100%;
+    min-height: 70px;
     display: inline-block;
     vertical-align: middle;
     position: relative;
+
+    .form-item-line {
+      display: inline-block;
+    }
 
     .form-item-input {
       width: 30px;
@@ -45,6 +51,8 @@
     font-size: 1.5em;
     vertical-align: middle;
   }
+
+
 }
 
 /*

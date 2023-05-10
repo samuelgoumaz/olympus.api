@@ -45,5 +45,6 @@ HelloWorld.args = {
   onSubmit: function () {
     console.log("onSubmit > ", false);
     return false;
-  }
+  },
+  children: [<h1>hello</h1>]
 };

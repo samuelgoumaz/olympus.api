@@ -61,6 +61,7 @@ const InputSelect = ({
       className={"form-item-input form-item-input-select"}
       id={`form-item-${String(name)}`}
       name={String(name)}
+      alt={label ? label : placeholder ? placeholder : ``}
       required={required == true ? `required` : ``}
       onLoad={onLoad}
       onClick={onClick}

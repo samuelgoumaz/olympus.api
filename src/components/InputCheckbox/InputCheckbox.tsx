@@ -57,16 +57,17 @@ const InputCheckbox = ({
 
     {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
     {elements && elements.map(
-        (item) => (
+        (item, index) => (
           <div className={"form-item-line"}>
             <div className={"form-item-input-container"}>
               <input
                 className={"form-item-input form-item-input-checkbox"}
                 type={`checkbox`}
-                id={`form-item-checkbox-${String(item.key)}`}
+                id={`form-item-checkbox-${String(name)}-${String(index)}`}
                 name={String(name) ?? `errorName`}
+                alt={label ? label : placeholder ? placeholder : name}
                 required={required == true ? `required` : ``}
-                value={String(item.key)}
+                value={item.value}
                 onLoad={onLoad}
                 onClick={onClick}
                 onChange={onChange}

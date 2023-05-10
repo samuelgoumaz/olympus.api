@@ -62,7 +62,6 @@ const Formular = ({
       ${fx_negative === true && `fx_negative`}
       ${fx_top === true && `fx_top`}
       ${fx_pinned === true && `fx_pinned`}
-
     `}
   >
     <div className={`formular-inner`}>

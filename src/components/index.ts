@@ -38,6 +38,7 @@ export { default as InputEmail } from "./InputEmail";
 export { default as InputFile } from "./InputFile";
 export { default as InputAmount } from "./InputAmount";
 export { default as InputSubmit } from "./InputSubmit";
+export { default as InputCheckbox } from "./InputCheckbox";
 export { default as InputSubmitPayment } from "./InputSubmitPayment";
 export { default as Media } from "./Media";
 export { default as Main } from "./Main";

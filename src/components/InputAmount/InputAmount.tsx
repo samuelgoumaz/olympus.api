@@ -110,7 +110,7 @@ const InputAmount = ({
     switch (e.currentTarget.value) {
       case "custom":
         inputAmount.removeAttribute("disabled");
-        inputAmount.value = min ? priceFormatter(min) : priceFormatter(5);
+        inputAmount.value = min ? priceFormatter(min) : priceFormatter(20);
         break;
 
       default:
@@ -144,8 +144,9 @@ const InputAmount = ({
                   <input
                     className={"form-item-input form-item-input-prices"}
                     type="radio"
-                    id={`form-item-radio-${String(item.name)}-${index}`}
+                    id={`form-item-radio-${String(name)}-${index}`}
                     name={String(name) ?? `errorName`}
+                    alt={item.name ?? ``}
                     required={required == true ? `required` : ``}
                     value={Number(priceFormatter(item.price))}
                     onLoad={onLoad}
@@ -154,7 +155,7 @@ const InputAmount = ({
                   />
                 </span>
                 <label
-                  id={`form-item-radio-${String(item.name)}-${index}`}
+                  id={`form-item-radio-${String(name)}-${index}`}
                   className={"form-item-label"}
                 >{`${priceFormatter(item.price)} ${currency ? currency.toUpperCase() : ``} ${item.name.replaceAll(/<\/?[^>]+(>|$)/gi, "")}`}</label>
               </span>
@@ -180,7 +181,7 @@ const InputAmount = ({
             <label
               id={`form-item-radio-custom-${String(Math.round(elements.length+1))}`}
               className={"form-item-label"}
-            >Custom</label>
+            >Personnalisé</label>
           </span>}
 
         </span>
@@ -193,6 +194,7 @@ const InputAmount = ({
           className={"form-item-input form-item-input-select form-item-quantity"}
           id={`input-quantity-${String(name)}`}
           name={`input-quantity-${String(name)}`}
+          alt={`Quantity ${String(name)}`}
           required={required == true ? `required` : ``}
           onChange={
             (event: React.MouseEvent<HTMLElement>) => {
@@ -215,12 +217,12 @@ const InputAmount = ({
           className={"input input-number input-amount"}
           id={`input-amount-${String(name)}`}
           name={`input-amount-${String(name)}`}
+          alt={`Amount ${String(name)}`}
           required={required == true ? `required` : ``}
           type="number"
           placeholder={`0.00`}
-          value={priceFormatter(0)}
           disabled
-          onChange={
+          onKeyUp={
             (event: React.MouseEvent<HTMLElement>) => {
               onChangeAmount(event);
             }

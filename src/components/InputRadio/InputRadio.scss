@@ -4,6 +4,7 @@
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
+$grey : #ccc;
 
 /*
 # document
@@ -23,7 +24,7 @@
     border-radius: 10px;
 
     /* styling */
-    border: 1px solid grey;
+    border: 1px solid $grey;
 
     .form-item-input-container {
       width: 70px;

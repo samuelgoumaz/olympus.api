@@ -55,6 +55,7 @@ const InputText = ({
       className={"form-item-input form-item-input-text"}
       type="text"
       name={String(name) ?? `errorName`}
+      alt={label ? String(label) : placeholder ? String(placeholder) : ``}
       required={required == true ? `required` : ``}
       placeholder={
         `${placeholder+`${required == true ? `*` : ``}` ?? ``}`

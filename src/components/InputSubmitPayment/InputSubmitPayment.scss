@@ -4,12 +4,25 @@
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
+$grey : #ccc;
 
 /*
 # document */
-$grey : #ccc;
-
 .form-item-submit-payment {
+  .form-item-container {
+    margin: 0.5em 0;
+    border: 1px solid $grey;
+    border-radius: 5px;
+    background: white;
+    padding: 1em;
+
+    &.dsp-open {
+      display: block !important;
+    }
+    &.dsp-close {
+      display: none !important;
+    }
+  }
   .form-item-handler {
     border: 1px solid $grey;
     border-radius: 5px;

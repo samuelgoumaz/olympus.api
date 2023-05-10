@@ -48,6 +48,23 @@ const InputSubmitPayment = ({
   children
 }: InputSubmitPaymentProps) => {
 
+  /*
+  # selectToggle(event) */
+  function selectToggle (event) {
+    const inputs = document.querySelectorAll("input[name=payment_method]");
+    inputs.forEach(item => {
+      const el = document.getElementById(`submit-content-${item.id}`);
+      if (item.checked === true) {
+        el.classList.add("dsp-open");
+        el.classList.remove("dsp-close");
+      } else {
+        el.classList.add("dsp-close");
+        el.classList.remove("dsp-open");
+      }
+    });
+
+  }
+
   return (
     <div
       className={"form-item form-item-submit-payment"}
@@ -57,12 +74,18 @@ const InputSubmitPayment = ({
         <ul>
           <li className={`checkbox`}>
             <input
-              className={"form-item-input form-item-input-checkbox"}
+              className={"form-item-input form-item-input-radio"}
               type={`radio`}
               name={`payment_method`}
               required={`required`}
+              alt={label ? label : placeholder ? placeholder : name}
               id={name}
               value={name}
+              onClick={
+                (event: React.MouseEvent<HTMLElement>) => {
+                  selectToggle(event.currentTarget)
+                }
+              }
             />
           </li>
           {cards && cards.split(",").map(
@@ -83,7 +106,7 @@ const InputSubmitPayment = ({
           )}
         </ul>
       </span>
-      {children && <span className={`form-item-container`}>
+      {children && <span id={`submit-content-${name}`} className={`form-item-container dsp-close`}>
         {children}
       </span>}
     </div>

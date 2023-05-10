@@ -64,6 +64,7 @@ const InputRadio = ({
               type="radio"
               id={`form-item-radio-${String(item.key)}`}
               name={String(name) ?? `errorName`}
+              alt={String(item.value) ?? ``}
               required={required == true ? `required` : ``}
               value={String(item.key)}
               onLoad={onLoad}

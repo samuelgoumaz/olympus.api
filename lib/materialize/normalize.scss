@@ -9,6 +9,23 @@
   box-sizing: border-box;
 }
 
+// Form
+// ==========================================================================
+.form-item-label {
+  font-size: 1.5em;
+  font-weight: 900;
+  padding: 0.5em 0;
+  display: block;
+}
+
+.form-item-line {
+  label.form-item-label {
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0;
+  }
+}
+
 // Title
 // ==========================================================================
 .body {
