@@ -8,34 +8,43 @@
 /*
 # document
 */
-.article-component-card {
+
+
+.article-component-slide {
   width: 100%;
+  @include aspect-ratio(2, 1);
+  display: block;
   position: relative;
-  clear: both;
-  color: black;
 
   .fx {
+  }
+  .article-inner {
     width: 100%;
     height: 100%;
-    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
-  }
-  .article-inner {
-    position: relative;
-    z-index: 2;
-
+    display: table;
+    
     .scene {
-      width: 100%;
-      display: block;
-      @include aspect-ratio(3,1);
-      background: red;
+      width: 50%;
+      display: table-cell;
+      position: relative;
     }
     .content {
-      padding: 20px;
+      padding: 100px;
+      background: yellow;
+      vertical-align: middle;
+      width: 50%;
+      display: table-cell;
+      position: relative;
+
+      .title {
+        margin: 0.1em 0;
+      }
     }
     .action {
+      margin-top: 1em;
     }
   }
 }
@@ -44,7 +53,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .article-component-card {
+  .article-component-slide {
     .fx {
     }
     .article-inner {

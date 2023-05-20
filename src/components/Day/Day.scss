@@ -8,7 +8,7 @@
 /*
 # document
 */
-.hour-component {
+.day-component {
   width: 100%;
   display: block;
   clear: both;
@@ -16,7 +16,7 @@
   border-top: 1px solid rgba(0,0,0,0.25);
   background: rgba(0,0,0,0.05);
   
-  .hour-component-inner {
+  .day-component-inner {
     padding: 5px;
 
     .hour {
@@ -30,8 +30,8 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .hour-component {
-    .hour-component-inner {
+  .day-component {
+    .day-component-inner {
       .title {
       }
     }
@@ -39,8 +39,8 @@
 }
 
 @media #{$medium-and-down} {
-  .hour-component {
-    .hour-component-inner {
+  .day-component {
+    .day-component-inner {
       .title {
       }
     }
@@ -48,8 +48,8 @@
 }
 
 @media #{$medium-and-up} {
-  .hour-component {
-    .hour-component-inner {
+  .day-component {
+    .day-component-inner {
       .title {
       }
     }

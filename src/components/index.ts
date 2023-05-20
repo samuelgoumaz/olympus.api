@@ -1,5 +1,7 @@
 export { default as Button } from "./Button";
 export { default as Calendar } from "./Calendar";
+export { default as Hour } from "./Hour";
+export { default as Day } from "./Day";
 export { default as Cart } from "./Cart";
 export { default as Footer } from "./Footer";
 export { default as Formular } from "./Formular";

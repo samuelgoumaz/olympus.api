@@ -13,7 +13,6 @@
   display: block;
   clear: both;
   position: relative;
-  box-shadow: 0 0 40px rgba(0,0,0,0.15);
 
   .fx {
     position: absolute;
@@ -31,17 +30,22 @@
     z-index: 2;
 
     .scene {
-      width: 35%;
+      width: 50%;
       display: table-cell;
       @include aspect-ratio(3,2);
     }
     .content {
-      width: 65%;
+      width: 50%;
       display: table-cell;
       vertical-align: middle;
-      padding: 40px;
+      padding: 100px;
+
+      .title {
+        margin: 0.1em 0;
+      }
     }
     .action {
+      margin-top: 1em;
     }
   }
 }

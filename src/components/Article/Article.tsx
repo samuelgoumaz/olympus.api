@@ -3,12 +3,10 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button"
+import Tags from "../Tags"
 import "./ArticleGrid.scss";
+import "./ArticleSlide.scss";
 import "./ArticleRow.scss";
-import "./ArticleCard.scss";
-import "./ArticleBanner.scss";
-import "./ArticleSection.scss";
-import "./ArticleLine.scss";
 
 /*
 # Interface
@@ -64,17 +62,14 @@ const Article = ({
   <article
     //onClick={getProductFunc}
     className={`
+      ${display === `slide` ? `article-component-slide` : ``}
       ${display === `grid` ? `article-component-grid` : ``}
       ${display === `row` ? `article-component-row` : ``}
-      ${display === `card` ? `article-component-card` : ``}
-      ${display === `banner` ? `article-component-banner` : ``}
-      ${display === `section` ? `article-component-section` : ``}
-      ${display === `line` ? `article-component-line` : ``}
     `}
     style={{
       zIndex: position,
       position: `relative`,
-      height: height
+      height: height != null ? height : `auto`
     }}
   >
 
@@ -92,14 +87,19 @@ const Article = ({
 
       <div className={`content`}>
         {title != null ? <div className={`header`}>
-          {title != null ? <h5 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+          {title != null ? <h3 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
           {subtitle != null ? <h5 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
           {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         </div> : ``}
+
+        {display === `slide` && tags ? <Tags elements={tags} align={`left`} /> : ``}
+        {display === `grid` && tags ? <Tags elements={tags} align={`center`} /> : ``}
+        {display === `row` && tags ? <Tags elements={tags} align={`left`} /> : ``}
+
         <div className={`action`}>
           <Button
             icon={`arrow_forward`}
-            mode={`border`}
+            mode={`default`}
           />
         </div>
 

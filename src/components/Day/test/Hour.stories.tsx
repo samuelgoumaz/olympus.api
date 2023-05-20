@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Hour from '../Hour';
+import Day from '../Day';
 
 /*
 # Images
@@ -16,16 +16,16 @@ import Hour from '../Hour';
 https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 */
 export default {
-  title: 'ReactComponentLibrary/Hour',
-  component: Hour,
-} as ComponentMeta<typeof Hour>;
+  title: 'ReactComponentLibrary/Day',
+  component: Day,
+} as ComponentMeta<typeof Day>;
 
 /*
 # Template
 # More on component templates :
 https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 */
-const Template: ComponentStory<typeof Hour> = (args) => <Hour {...args} />;
+const Template: ComponentStory<typeof Day> = (args) => <Day {...args} />;
 
 /*
 # Args

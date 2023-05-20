@@ -3,8 +3,9 @@
 */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Product from '../Product';
-import FxBackground from '../../FxBackground';
+import Product from '../Product'
+import FxBackground from '../../FxBackground'
+import FxImage from '../../FxImage'
 
 /*
 # Images
@@ -34,85 +35,14 @@ const Template: ComponentStory<typeof Product> = (args) => <Product {...args} />
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const Double = Template.bind({});
-Double.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `double`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
 export const Grid = Template.bind({});
 Grid.args = {
   title: `Gelato Kush`,
   body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
   slug: `gelato-kush`,
   display: `grid`,
-  variants: [<div>action</div>],
+  scene: [<FxImage cover={false} padding={false} image="https://backend.dusty-green.com/uploads/dustygreen_cbd_shop_switzerland_heretics_bones_powder_reduce_ddd6e1a930.png?auto=format&fit=max&w=3840" />],
+  fx: [<FxBackground cover={`cover`} background="url(https://backend.dusty-green.com/uploads/dusty_green_background_heretic_bone_powder_b892d10c41.jpg)" />],
   tags: {
     0: {
       id: 6,
@@ -185,223 +115,8 @@ Row.args = {
   body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
   slug: `gelato-kush`,
   display: `row`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Card = Template.bind({});
-Card.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `card`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Detail = Template.bind({});
-Detail.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `detail`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Banner = Template.bind({});
-Banner.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `banner`,
-  variants: `<div>variants</div>`,
+  scene: [<FxImage cover={false} padding={false} image="https://backend.dusty-green.com/uploads/dustygreen_cbd_shop_switzerland_heretics_bones_powder_reduce_ddd6e1a930.png?auto=format&fit=max&w=3840" />],
+  fx: [<FxBackground cover={`cover`} background="url(https://backend.dusty-green.com/uploads/dusty_green_background_heretic_bone_powder_b892d10c41.jpg)" />],
   tags: {
     0: {
       id: 6,
@@ -474,86 +189,8 @@ Slide.args = {
   body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
   slug: `gelato-kush`,
   display: `slide`,
-  variants: `<div>variants</div>`,
-  tags: {
-    0: {
-      id: 6,
-      name: "Infusion",
-      slug: "infusion",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    1: {
-      id: 7,
-      name: "Cuisine",
-      slug: "cuisine",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 2,
-          name: "Consommation",
-          slug: "consommation",
-        }
-      }
-    },
-    2: {
-      id: 6,
-      name: "Indica",
-      slug: "indica",
-      children: {
-      },
-      parent: {
-        0: {
-          id: 1,
-          name: "Variétés",
-          slug: "variete",
-        }
-      }
-    },
-    3: {
-      id: 2,
-      name: "Consommation",
-      slug: "consommation",
-      children: {
-        0: {
-          id: 6,
-          name: "Infusion",
-          slug: "infusion"
-        },
-        1: {
-          id: 7,
-          name: "Cuisine",
-          slug: "cuisine"
-        },
-      },
-      parent: {
-
-      },
-    }
-  },
-};
-
-export const Checkout = Template.bind({});
-Checkout.args = {
-  title: `Gelato Kush`,
-  body: `<p>Gelato Kush, une variété Indica cultivée en intérieur.</p>`,
-  slug: `gelato-kush`,
-  display: `checkout`,
-  scene: [<FxBackground
-    position={1}
-    padding={true}
-    cover={`contain`}
-    background={`url(http://localhost:1337/uploads/dustygreen_weed_cannabis_cbd_product_heretic_7fbc545c5f.png)`}
-  />],
-  variants: `<div>variants</div>`,
+  scene: [<FxImage cover={false} padding={false} image="https://backend.dusty-green.com/uploads/dustygreen_cbd_shop_switzerland_heretics_bones_powder_reduce_ddd6e1a930.png?auto=format&fit=max&w=3840" />],
+  fx: [<FxBackground cover={`cover`} background="url(https://backend.dusty-green.com/uploads/dusty_green_background_heretic_bone_powder_b892d10c41.jpg)" />],
   tags: {
     0: {
       id: 6,

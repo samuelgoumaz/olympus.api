@@ -44,6 +44,14 @@
       top: 0;
       z-index: 1;
       float: none;
+
+      .scene-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        top: 0;
+      }
     }
     .content {
       position: absolute;

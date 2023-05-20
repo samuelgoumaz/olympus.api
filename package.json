@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/olympus.api"
   },
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "API for Supermassive NextJS project Frontend.",
   "scripts": {
     "rollup": "rollup -c",
@@ -70,5 +70,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "react-slick": "^0.29.0"
+  }
 }

@@ -38,6 +38,8 @@ https://storybook.js.org/docs/react/writing-stories/args
 export const Default = Template.bind({});
 Default.args = {
   display: `component`,
+  timeStart: `14`,
+  timeEnd: `3`,
   tags: [
     {
       id: 1,

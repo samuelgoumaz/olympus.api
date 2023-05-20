@@ -50,6 +50,7 @@ const FxImage = ({
       ${padding === true ? `hv-padding` : ``}
     `}
     style={{
+      width: `100%`,
       height: `100%`,
       display: `inline-block`,
       position: `relative`,
@@ -60,9 +61,10 @@ const FxImage = ({
     {image != null ? <img
       src={image}
       style={{
-        width: `auto`,
+        width: `100%`,
         height: `100%`,
         display: `inline-block`,
+        objectFit: cover === true ? `cover` : `contain`
       }}
     /> : ``}
 

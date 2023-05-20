@@ -11,7 +11,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface HourProps {
   name?: string | null;
-  id?: string;
+  height?: string;
 }
 
 
@@ -21,14 +21,21 @@ export interface HourProps {
 */
 const Hour: React.FC<HourProps> = ({
   name,
-  id
+  height
 }) => {
   return (
-    <div className={`hour-component`}>
+    <div 
+      className={`hour-component`}
+      style={{
+        height: height ? height : `auto`
+      }}
+    >
       <div className={`
         hour-component-inner
       `}>
-        <h2>hour</h2>
+        <div className={`hour`}>
+          {name}
+        </div>
       </div>
     </div>
   );

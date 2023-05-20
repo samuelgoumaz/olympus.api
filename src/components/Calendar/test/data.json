@@ -1,0 +1,4172 @@
+[
+    {
+        "id": 2,
+        "attributes": {
+            "date_start": "2023-06-16",
+            "date_end": "2023-06-16",
+            "title": "Vernissage",
+            "subtitle": "Ouverture",
+            "slug": "vernissage",
+            "time_start": "18:30",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Partie officielle &amp; discours&nbsp;</p><p>&nbsp;</p><p>Viens inaugurer avec nous cette septième édition !&nbsp;</p>",
+            "createdAt": "2023-05-03T12:33:49.879Z",
+            "updatedAt": "2023-05-03T12:33:51.701Z",
+            "publishedAt": "2023-05-03T12:33:51.698Z",
+            "tags": {
+                "data": []
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 3,
+        "attributes": {
+            "date_start": "2023-06-16",
+            "date_end": "2023-06-16",
+            "title": "Gogo Talco",
+            "subtitle": "Disco Punk",
+            "slug": "gogo-talco",
+            "time_start": "20:00",
+            "time_end": "21:00",
+            "is_all_day": null,
+            "teaser": "<p>En 2016, alors que Solange la Frange fait une pause sur les scènes après plus de dix ans de musique, Tristan Basso et Luca Manco se promettent de continuer à composer des chansons pour perpétuer leur plaisir de collaborer. Tristan a toujours aimé être l'homme de l'ombre. Compositeur sans être musicien, autodidacte et indépendant, il touche avec brio à de nombreux outils, instruments et styles de musique. Il a toujours été un amoureux exigeant du son et producteur de ses précédents albums. Luca, quant à lui, n'a jamais cessé de jouer de la guitare et de travailler sur de nouveaux projets. En marge de son activité artistique, il est engagé au Rocking-Chair où il se forme au métier de technicien du son et en profite pour assouvir son besoin de musique live. Dès l'hiver 2018, un premier modèle commun commence à prendre forme. Luca et Tristan veulent construire un nouveau son autour de l'envie de danser, de l'énergie brute d'une batterie régulière omniprésente, de guitares et de voix entraînantes. Ils savent qu'il leur faudra de la patience pour parvenir au résultat musical qui les satisfera et décident dans un premier temps de travailler en tandem. Dans un premier temps, soucieux d'épargner des heures de travail à leurs futurs collègues, ils enregistrent tout eux-mêmes à l'aide de l'ordinateur et des technologies numériques à leur disposition. Ce faisant, ils deviennent multi-instrumentistes, cherchant, échantillonnant, peaufinant jusqu'à ce qu'ils soient satisfaits. Conscients de leur désir d'abandonner au maximum la boîte à rythmes qui était la marque de fabrique de leurs précédents projets, ils veulent trouver un son organique digne d'un groupe de disco rock. Ils veulent enfin former un vrai groupe. Ils recrutent donc des musiciens et commencent à répéter.</p>",
+            "createdAt": "2023-05-03T12:36:16.308Z",
+            "updatedAt": "2023-05-03T12:36:18.665Z",
+            "publishedAt": "2023-05-03T12:36:18.657Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 4,
+        "attributes": {
+            "date_start": "2023-06-16",
+            "date_end": "2023-06-16",
+            "title": "DESIR",
+            "subtitle": "Baile | Global Music | Alternativ Latin | Electronic Music | Jersey",
+            "slug": "desir",
+            "time_start": "22:00",
+            "time_end": "02:00",
+            "is_all_day": null,
+            "teaser": "<p>DESIR est un collectif féminin de 5 djs originaires de Genève. Leurs caractères différents et goûts variés font leur force et leur permettent de proposer des sets éclectiques. Distillant trap/rap, baile funk, reggaeton et diverses sonorités électroniques, l'ambiance évolue au fil des soirées. Depuis elles s'imposent dans la communauté nocturne Genevoises grâce a leur résidence DESIR à la Gravière, ainsi que leur nombreuses apparitions dans les festivals tels que Antigel, Montreux Jazz, Eren festival ou encore GIFF festival.</p>",
+            "createdAt": "2023-05-03T12:38:18.531Z",
+            "updatedAt": "2023-05-03T12:38:21.327Z",
+            "publishedAt": "2023-05-03T12:38:21.320Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 5,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "improvisation-theatrale",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;</p><p>&nbsp;</p><p>Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-03T12:46:31.082Z",
+            "updatedAt": "2023-05-04T16:58:08.257Z",
+            "publishedAt": "2023-05-03T12:46:33.064Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 6,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Football",
+            "subtitle": "Avec PAIRES",
+            "slug": "football",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>Activité ouvert à toutes et tous !&nbsp;</p><p>Rendez-vous à La Dérivée.</p><p>&nbsp;</p><p>Le projet PAIRES est une association à but non lucratif qui vise à l’inclusion des personnes issues de la migration en Suisse. Initiées avec le projet de création de binômes, les activités de l’association se sont depuis développées avec de nouvelles actions autour de ce projet initial.</p>",
+            "createdAt": "2023-05-03T12:50:10.416Z",
+            "updatedAt": "2023-05-03T12:50:13.884Z",
+            "publishedAt": "2023-05-03T12:50:13.882Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 7,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Choeur d'hommes de Démoret ",
+            "subtitle": "Chansons françaises harmonisées",
+            "slug": "event-1",
+            "time_start": "17:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>Le Chœur d'hommes de Démoret existe depuis 1917 et perpétue l'art choral à travers les générations.&nbsp;</p><p>&nbsp;</p><p>Actuellement composé de 30 chanteurs de Démoret et des villages voisins, il est dirigé par Isabelle Vallon.&nbsp;</p><p>&nbsp;</p><p>Avec un répertoire varié, du chant traditionnel, de la chanson française, anglaise et autres, le chœur chante exclusivement à cappella.</p>",
+            "createdAt": "2023-05-03T12:51:31.909Z",
+            "updatedAt": "2023-05-03T12:51:33.485Z",
+            "publishedAt": "2023-05-03T12:51:33.483Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 8,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Sortie Ornithologique ",
+            "subtitle": "avec le COSNY",
+            "slug": "sortie-ornithologique",
+            "time_start": "17:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Découvrez les environs de La Dérivée avec le Cercle Ornithologique et Sciences Naturelles du Nord-Vaudois (COSNY)</p>",
+            "createdAt": "2023-05-03T12:53:37.884Z",
+            "updatedAt": "2023-05-03T12:53:49.390Z",
+            "publishedAt": "2023-05-03T12:53:40.925Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": [
+                {
+                    "id": 5,
+                    "name": null,
+                    "url": null,
+                    "icon": null,
+                    "file": {
+                        "data": null
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Grand Canard Blanc",
+            "subtitle": "Rock satirique et déjanté",
+            "slug": "grand-canard-blanc",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Grand Canard Blanc c’est un groupe de musique formé par Alexandre Aviolat et Anthony Duriez en 2010. Ils ont été rejoints en chemin par leur 2 compères issus de l'école de Jazz de Lausanne quelques années plus tard.&nbsp;</p><p>&nbsp;</p><p>D’horizons musicaux divers, ils ont su trouver la force de se supporter mutuellement et il en ressort un rock acoustique satirique, du Henri Death Metal acoustique effréné parsemé de folie produit sur scène avec une énergie explosive, le tout pimenté avec une pointe d’humour bon enfant.</p>",
+            "createdAt": "2023-05-03T12:55:21.651Z",
+            "updatedAt": "2023-05-03T12:55:23.185Z",
+            "publishedAt": "2023-05-03T12:55:23.183Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 10,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Soirée messages",
+            "subtitle": "Envoi de petits mots doux et anonymes",
+            "slug": "soiree-messages",
+            "time_start": "20:00",
+            "time_end": "23:30",
+            "is_all_day": null,
+            "teaser": "<p>Par les Jeux du Tiroir</p><p>&nbsp;</p><p>Une soirée message ? Viens échanger des petits mots de papier avec tes potes. Ça se passe avec nous ! Des messagers et messagères qui se baladent dans tous les sens pour transmettre tes mots drôles ou doux anonymement tout partout.</p>",
+            "createdAt": "2023-05-03T12:56:36.951Z",
+            "updatedAt": "2023-05-03T12:56:38.548Z",
+            "publishedAt": "2023-05-03T12:56:38.546Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 11,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "La Collective",
+            "subtitle": "Electro | House",
+            "slug": "la-collective",
+            "time_start": "20:00",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>La Collective rassemble des djs et artistes proposant un univers lumineux, original et queer par le biais d’une sélection musicale aussi minutieuse que joyeuse.&nbsp;</p><p>&nbsp;</p><p>Accessible mais pointu, une soirée de La Collective, c’est un voyage, c’est unique et multiple, c’est du love, de la danse et de la beauté.</p>",
+            "createdAt": "2023-05-03T12:57:35.877Z",
+            "updatedAt": "2023-05-03T12:57:38.095Z",
+            "publishedAt": "2023-05-03T12:57:38.091Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 12,
+        "attributes": {
+            "date_start": "2023-06-17",
+            "date_end": "2023-06-17",
+            "title": "Fête Eau-Lac",
+            "subtitle": "Autour de La Dérivée",
+            "slug": "event-2",
+            "time_start": "00:00",
+            "time_end": "00:00",
+            "is_all_day": true,
+            "teaser": "<p>Durant tout le weekend, découvrez les activités de la Fête Eau-Lac le long de la Thièle et aux alentours de La Dérivée.&nbsp;</p><p>&nbsp;</p><p>Plus d'informations sur: <a href=\"http://www.feteau-lac.ch\">www.feteau-lac.ch</a>&nbsp;</p>",
+            "createdAt": "2023-05-03T12:59:14.011Z",
+            "updatedAt": "2023-05-03T12:59:15.968Z",
+            "publishedAt": "2023-05-03T12:59:15.966Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 13,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Fête Eau-Lac",
+            "subtitle": "Autour de La Dérivée",
+            "slug": "event-3",
+            "time_start": "00:00",
+            "time_end": "00:00",
+            "is_all_day": true,
+            "teaser": "<p>Durant tout le weekend, découvrez les activités de la Fête Eau-Lac le long de la Thièle et aux alentours de La Dérivée.&nbsp;</p><p>&nbsp;</p><p>Plus d'informations sur: <a href=\"http://www.feteau-lac.ch\">www.feteau-lac.ch</a>&nbsp;</p>",
+            "createdAt": "2023-05-03T12:59:56.567Z",
+            "updatedAt": "2023-05-03T13:00:16.286Z",
+            "publishedAt": "2023-05-03T13:00:16.284Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 14,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Vinyasa Yoga",
+            "subtitle": "leSTUDIO nomad",
+            "slug": "event-4",
+            "time_start": "11:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>À la recherche d'un bon plan pour entamer ton dimanche au plein air?&nbsp;</p><p>&nbsp;</p><p>Rejoins-nous tous les dimanches à 11h00 pour un cours de Vinyasa Yoga.&nbsp;</p><p>&nbsp;</p><p>La recette assurée pour conclure la semaine sans stress, relaxé et heureux! Le cours Nomad Flow par leSTUDIO nomad est sur donation et ouvert à tous les niveaux. Pense à amener ton matelas si tu en as un.&nbsp;</p>",
+            "createdAt": "2023-05-03T13:02:33.250Z",
+            "updatedAt": "2023-05-04T16:55:05.178Z",
+            "publishedAt": "2023-05-03T13:02:35.128Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 15,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Méditation",
+            "subtitle": "Heartfulness",
+            "slug": "event-5",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>La méditation Heartfulness, une méditation sur le coeur.&nbsp;</p>",
+            "createdAt": "2023-05-03T13:03:53.636Z",
+            "updatedAt": "2023-05-03T13:03:55.327Z",
+            "publishedAt": "2023-05-03T13:03:55.325Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 16,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Histoires en ricochet",
+            "subtitle": "Duo Cramoisi",
+            "slug": "histoires-en-ricochet",
+            "time_start": "14:00",
+            "time_end": "15:00",
+            "is_all_day": null,
+            "teaser": "<p>C'est l'histoire d'enfants plein d'esprit et d'humour qui côtoient des monstres qu'iels s'inventent ou qu'iels rêvent ...&nbsp;</p><p>&nbsp;</p><p>L'eau comme un puit de surprises d'où jaillit un monde magique où tout est permis, même au public qui pourra inventer sa propre histoire et la jouer! La musique comme une trame qui provoque, accompagne avec des instruments étranges à découvrir en fin de spectacle.</p>",
+            "createdAt": "2023-05-03T13:05:44.780Z",
+            "updatedAt": "2023-05-03T13:05:46.316Z",
+            "publishedAt": "2023-05-03T13:05:46.314Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 14,
+                        "attributes": {
+                            "name": "Activité enfant",
+                            "slug": "activite-1",
+                            "createdAt": "2023-05-03T12:31:46.071Z",
+                            "updatedAt": "2023-05-03T12:31:48.181Z",
+                            "publishedAt": "2023-05-03T12:31:48.179Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 17,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Initiation au crochet",
+            "subtitle": "Collectif Brindille",
+            "slug": "event-6",
+            "time_start": "14:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>En complément à l'exposition visible dans les cabines téléphoniques du centre-ville d'Yverdon-les-Bains, le collectif Brindilles propose des permanences d'initiation au crochet à La Dérivée.&nbsp;</p><p>&nbsp;</p><p>Le public est bienvenu à les rejoindre pour participer à la réalisation collective d'une pelote géante !</p>",
+            "createdAt": "2023-05-03T13:06:48.810Z",
+            "updatedAt": "2023-05-03T13:06:50.282Z",
+            "publishedAt": "2023-05-03T13:06:50.280Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 18,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "La Fresque du Climat",
+            "subtitle": "Anoucha Galeazzi",
+            "slug": "la-fresque-du-climat",
+            "time_start": "15:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>Vous voulez agir pour le climat, mais vous n'avez pas le temps de devenir climatologue ?&nbsp;</p><p>&nbsp;</p><p>En 3 heures, cet atelier collaboratif permet de comprendre l'essentiel des enjeux climatiques pour passer à l'action. Nos données sont tirées d'une base scientifique de référence, celle qui oriente aujourd'hui les choix des décideurs politiques et économiques. Ce sont les rapports rédigés par le GIEC, Groupe d'Experts Intergouvernemental sur l'évolution du climat.&nbsp;</p><p>&nbsp;</p><p>En mobilisant l'intelligence collective du groupe, la Fresque du Climat permet à tous les publics de s'approprier le sujet des changements climatiques. En retraçant les liens de cause à effet, les participants peuvent prendre du recul et comprendre les enjeux climatiques dans leur globalité.</p>",
+            "createdAt": "2023-05-03T13:08:19.887Z",
+            "updatedAt": "2023-05-03T13:08:29.722Z",
+            "publishedAt": "2023-05-03T13:08:29.720Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 19,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Y a pas de mal",
+            "subtitle": "Cie Alors Voilà",
+            "slug": "y-a-pas-de-mal",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Proposé par L'Echandole&nbsp;</p><p>&nbsp;</p><p><i>Y a pas de mal</i> est une création qui va à la rencontre d’individus, et qui dévoile des fragments de vie simples et intimes avec l’auto-érotisme pour point de départ. En s’adressant directement au public, deux comédiennes invitent le public à se plonger avec légèreté et humour dans des récits à la fois anonymes et universels autour de la masturbation, une parole brute issue de 4 entretiens menés avec 6 personnes d’âges et de genres différents.&nbsp;</p><p>&nbsp;</p><p>Sans choquer, sans exhiber mais en livrant un vécu qui peut parler à toutes et tous sans porter de jugement. Chaque petit détail raconté devient un conte et permet de connecter à une mémoire collective où le récit crée du lien entre les humains.&nbsp;</p><p>&nbsp;</p><p>Sur le fil entre plaisir et fragilité, la parole brute permet de partager un endroit de jeu sensible et singulier avec le public, un endroit de jeu idéal pour interroger ensemble la frontière symbolique des tabous.</p>",
+            "createdAt": "2023-05-03T13:09:22.320Z",
+            "updatedAt": "2023-05-03T13:11:08.292Z",
+            "publishedAt": "2023-05-03T13:11:08.290Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 6,
+                        "attributes": {
+                            "name": "Arts-vivants",
+                            "slug": "arts-vivants",
+                            "createdAt": "2023-05-03T12:29:34.544Z",
+                            "updatedAt": "2023-05-03T13:09:48.414Z",
+                            "publishedAt": "2023-05-03T12:29:35.597Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 20,
+        "attributes": {
+            "date_start": "2023-06-18",
+            "date_end": "2023-06-18",
+            "title": "Foudre",
+            "subtitle": "Carmen Jaquier",
+            "slug": "event-7",
+            "time_start": "21:30",
+            "time_end": "23:00",
+            "is_all_day": null,
+            "teaser": "<p>Proposé par Les Culturateurs&nbsp;</p><p>&nbsp;</p><p>2022 | 92 min | dès 12 ans&nbsp;</p><p>Carmen Jaquier, Suisse</p><p>&nbsp;</p><p>Été 1900, dans une vallée du sud de la Suisse. Elisabeth a dix-sept ans et s’apprête à faire ses vœux quand le décès brutal de sa sœur aînée l’oblige à retrouver sa famille et la vie de labeur qu’elle avait quitté cinq ans plus tôt pour entrer au couvent. Elisabeth n’est plus une enfant et les mystères entourant la mort de sa sœur vont la pousser à lutter pour son droit à l’expérience.</p>",
+            "createdAt": "2023-05-03T13:13:00.367Z",
+            "updatedAt": "2023-05-04T17:02:20.509Z",
+            "publishedAt": "2023-05-03T13:13:02.222Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 7,
+                        "attributes": {
+                            "name": "Projection",
+                            "slug": "pr",
+                            "createdAt": "2023-05-03T12:29:51.800Z",
+                            "updatedAt": "2023-05-03T12:29:53.446Z",
+                            "publishedAt": "2023-05-03T12:29:53.444Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 21,
+        "attributes": {
+            "date_start": "2023-06-22",
+            "date_end": "2023-06-22",
+            "title": "Yoga",
+            "subtitle": "Espace Yoga",
+            "slug": "yoga",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Hatha Yoga | Yoga Iyengar | Vinyasa | Relaxation&nbsp;</p><p>&nbsp;</p><p>Séances de yoga pour tous les niveaux.&nbsp;Amenez votre tapis !</p><p>&nbsp;</p><p>&nbsp;</p>",
+            "createdAt": "2023-05-04T17:06:30.388Z",
+            "updatedAt": "2023-05-04T17:08:11.412Z",
+            "publishedAt": "2023-05-04T17:06:32.432Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 23,
+        "attributes": {
+            "date_start": "2023-06-22",
+            "date_end": "2023-06-22",
+            "title": "Sortie en bateau solaire",
+            "subtitle": "Sol-à-flot",
+            "slug": "event-8",
+            "time_start": "18:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Rejoignez-nous pour une remontée de la Thièle à travers la ville, ou une découverte du bout du lac…&nbsp;</p><p>&nbsp;</p><p>Notre bateau électro-solaire, complètement autonome vous emmènera, certes lentement, mais sans bruit, sans émission pour une évasion… différente. L’occasion de parler de mobilité douce&nbsp;!&nbsp;</p><p>&nbsp;</p><p>Inscription dans la limite des places disponibles, à la buvette de La Dérivée, durant les heures d'ouverture du lieu.&nbsp;</p><p>&nbsp;</p><p>Le jour J, rassemblement des passagers à La Dérivée à 17h50 pour le départ à 18h00 ou à 18h50, pour le départ à 19h00. L’animation peut être annulée au moment du départ par le pilote à cause des conditions de navigation.&nbsp;</p><p>&nbsp;</p><p>Nous nous réjouissons de vous accueillir&nbsp;!<br>&nbsp;</p><p>Des gilets de sauvetages sont prêtés aux enfants par l'Association Sol-à-flots.</p>",
+            "createdAt": "2023-05-04T17:12:09.909Z",
+            "updatedAt": "2023-05-04T17:12:22.929Z",
+            "publishedAt": "2023-05-04T17:12:12.060Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 24,
+        "attributes": {
+            "date_start": "2023-06-22",
+            "date_end": "2023-06-22",
+            "title": "Danses urbaines",
+            "subtitle": "Initiation",
+            "slug": "event-9",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Un atelier découverte en danse, Aurore Mesot.&nbsp;</p><p>&nbsp;</p><p>Ne soyez pas gêné·e·x ! Il s'agit d'une initiation au hip hop, où nous explorerons ensemble la musique, le mouvement et la chorégraphie.</p>",
+            "createdAt": "2023-05-04T17:15:50.643Z",
+            "updatedAt": "2023-05-04T17:17:25.883Z",
+            "publishedAt": "2023-05-04T17:17:25.881Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 13,
+                        "attributes": {
+                            "name": "Soirée dansante",
+                            "slug": "soiree-dansante",
+                            "createdAt": "2023-05-03T12:31:23.657Z",
+                            "updatedAt": "2023-05-03T12:31:24.904Z",
+                            "publishedAt": "2023-05-03T12:31:24.902Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 26,
+        "attributes": {
+            "date_start": "2023-06-22",
+            "date_end": "2023-06-22",
+            "title": "Danses urbaines",
+            "subtitle": "Soirée dansante",
+            "slug": "event-10",
+            "time_start": "20:00",
+            "time_end": "23:30",
+            "is_all_day": null,
+            "teaser": "",
+            "createdAt": "2023-05-04T17:18:31.766Z",
+            "updatedAt": "2023-05-04T17:18:34.646Z",
+            "publishedAt": "2023-05-04T17:18:34.644Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 13,
+                        "attributes": {
+                            "name": "Soirée dansante",
+                            "slug": "soiree-dansante",
+                            "createdAt": "2023-05-03T12:31:23.657Z",
+                            "updatedAt": "2023-05-03T12:31:24.904Z",
+                            "publishedAt": "2023-05-03T12:31:24.902Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 28,
+        "attributes": {
+            "date_start": "2023-06-22",
+            "date_end": "2023-06-22",
+            "title": "Session grimpe en mixité choisie (FLINTA)",
+            "subtitle": "La Réglette",
+            "slug": "session-grimpe-en-mixite-choisie-flinta",
+            "time_start": "18:30",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Parce que le bloc d’escalade n’échappe pas aux comportements virilistes et sexistes et que nous souhaitons garantir un environnement bienveillant et accessible pour les personnes moins visibles dans ce sport.&nbsp;</p><p>&nbsp;</p><p>La Réglette souhaite, plusieurs fois dans l’été, inviter les FLINTA de tout niveau sportif à partager des moments d’escalade collectifs sans pression ni jugement, simplement amusants et bienveillants ! Ces séances n’ont pour but d’exclure personne mais bien de questionner un côté de la pratique de l’escalade.</p><p>&nbsp;</p><p>Ces moments s'inscrivent dans une démarche d'inclusivité envers les minorités de genre et d'orientation sexuelle et non à l'encontre des hommes cisgenres. L'objectif d'un tel moment d'escalade collectif est d'offrir un espace d'échange et de convivialité le plus safe possible aux personnes FLINTA.</p><p>&nbsp;</p><p>FLINTA - c'est-à-dire les personnes Femmes, Lesbiennes, Intersexes, Non-binaires, Transgenres et Agenres</p>",
+            "createdAt": "2023-05-04T17:26:30.332Z",
+            "updatedAt": "2023-05-04T17:26:55.588Z",
+            "publishedAt": "2023-05-04T17:26:55.586Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 31,
+        "attributes": {
+            "date_start": "2023-06-23",
+            "date_end": "2023-06-23",
+            "title": "Sérigraphie",
+            "subtitle": "La Dérivée sur le tissu de ton choix",
+            "slug": "serigraphie",
+            "time_start": "17:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Un stand éphémère de sérigraphie pour garder de manière permanente La Dérivée avec toi.&nbsp;</p><p>&nbsp;</p><p>Il te faut un t-shirt ou un sac en toile ou une veste à sérigraphier pour emmener La Dérivée avec toi ! &nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+            "createdAt": "2023-05-04T17:32:51.995Z",
+            "updatedAt": "2023-05-04T17:32:54.107Z",
+            "publishedAt": "2023-05-04T17:32:54.105Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 33,
+        "attributes": {
+            "date_start": "2023-06-23",
+            "date_end": "2023-06-23",
+            "title": "QUEER CHAOS ORACLE",
+            "subtitle": "Nico De Grandi",
+            "slug": "event-11",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p><strong>Exposition du 24 juin au 16 juillet 2023</strong>, proposée par le Centre Art Contemporain d'Yverdon-les-Bains<br>&nbsp;</p><p>Vernissage en présence de l’artiste sous la forme d’une conversation publique entre Nico De Grandi et Rolando Bassetti, directeur du CACY, suivie d’un apéritif.</p><p>&nbsp;</p><p>« <i>Je superpose les mondes surréalistes que je génère à ce que nous appelons communément le réel. On pourrait appeler cela des hallucinations, moi je les considère comme l’une de mes nombreuses réalités. Les questions sans réponse sont mes préférées. En passant d’un territoire à l’autre, je suis en éternel voyage. L’Oracle propose des formes changeantes, permettant de révéler avec fluidité des aspects de nos vies&nbsp;: secrets, mensonges, bonheurs, douleurs et guérisons.</i> »&nbsp;</p><p><br>Le <i>Queer Chaos Oracle</i> créé par Nico De Grandi est une représentation visuelle de ces errances traduites sous la forme d’un jeu de cartes symboliques.<br><br>&nbsp;</p>",
+            "createdAt": "2023-05-04T17:38:28.302Z",
+            "updatedAt": "2023-05-04T17:38:30.323Z",
+            "publishedAt": "2023-05-04T17:38:30.321Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 11,
+                        "attributes": {
+                            "name": "Exposition",
+                            "slug": "exposition",
+                            "createdAt": "2023-05-03T12:30:55.010Z",
+                            "updatedAt": "2023-05-03T12:30:56.151Z",
+                            "publishedAt": "2023-05-03T12:30:56.149Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 35,
+        "attributes": {
+            "date_start": "2023-06-23",
+            "date_end": "2023-06-23",
+            "title": "Nepthune",
+            "subtitle": "Rap | Slam",
+            "slug": "event-12",
+            "time_start": "21:00",
+            "time_end": "22:00",
+            "is_all_day": null,
+            "teaser": "<p>Il s'agit d'une prestation unique en son genre mélangeant émotion, rires et sensibilité.&nbsp;</p><p>&nbsp;</p><p>En effet, l'artiste Nepthune mise avant tout sur son aisance à entrer en contact avec le public en proposant un set énergique et tendre à la fois.&nbsp;</p><p>&nbsp;</p><p>Vous n'allez pas le regretter !</p>",
+            "createdAt": "2023-05-04T17:42:49.213Z",
+            "updatedAt": "2023-05-04T17:42:50.646Z",
+            "publishedAt": "2023-05-04T17:42:50.642Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 36,
+        "attributes": {
+            "date_start": "2023-06-23",
+            "date_end": "2023-06-23",
+            "title": "CHANTAL",
+            "subtitle": "Electro-pop kitsch",
+            "slug": "event-13",
+            "time_start": "22:00",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>Derrière ce prénom ringard se cache l’envie de danser sans se soucier de rien!</p><p>&nbsp;</p><p>Déjà adepte de La Dérivée en tant que l’une des Djettes Paillettes, CHANTAL vient seule cette fois et prend un tournant électro-pop avec une pointe de kitsch.&nbsp;</p><p>&nbsp;</p><p>Du kitsch toujours dansant et des chansons dans toutes les langues nationales (plus quelques pointes d’anglicismes) vous feront voyager tout en sautant sur place! Après avoir mixé dans les caves les plus insolites, CHANTAL arrive à La Dérivée pour vous ambiancer au soleil ! Alors sortez vos meilleures tenues colorées, allez chercher vos bières et dansons ensemble !</p>",
+            "createdAt": "2023-05-04T17:45:21.522Z",
+            "updatedAt": "2023-05-04T17:45:23.216Z",
+            "publishedAt": "2023-05-04T17:45:23.214Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 38,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "event-14",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T17:47:00.129Z",
+            "updatedAt": "2023-05-04T17:47:03.466Z",
+            "publishedAt": "2023-05-04T17:47:03.464Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 39,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "Volleyball",
+            "subtitle": "Avec PAIRES",
+            "slug": "event-15",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>Activité ouvert à toutes et tous !&nbsp;Rendez-vous à La Dérivée.&nbsp;</p><p>&nbsp;</p><p>Le projet PAIRES est une association à but non lucratif qui vise à l’inclusion des personnes issues de la migration en Suisse. Initiées avec le projet de création de binômes, les activités de l’association se sont depuis développées avec de nouvelles actions autour de ce projet initial.</p>",
+            "createdAt": "2023-05-04T17:48:09.299Z",
+            "updatedAt": "2023-05-04T17:48:10.775Z",
+            "publishedAt": "2023-05-04T17:48:10.773Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 40,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "Danse libre",
+            "subtitle": "Sophie Mayor",
+            "slug": "event-16",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>Danse libre sous les arbres face au lac.&nbsp;</p><p>&nbsp;</p><p>Tout âge et tout niveau bienvenu.&nbsp;</p><p>&nbsp;</p><p>Inspiré de la danse des 5 rythmes.</p>",
+            "createdAt": "2023-05-04T17:50:40.822Z",
+            "updatedAt": "2023-05-04T20:27:55.378Z",
+            "publishedAt": "2023-05-04T17:50:42.387Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 41,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "Art culinaire Bassa",
+            "subtitle": "Gastronomie camerounaise",
+            "slug": "event-17",
+            "time_start": "12:00",
+            "time_end": "14:00",
+            "is_all_day": null,
+            "teaser": "<p>Laetitia Booh vous propose de vous faire découvrir un pan de la richesse gastronomique camerounaise via l'art culinaire du pays Bassa, qui est sa culture d'origine.&nbsp;<span style=\"color:#000000;\">&nbsp;</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">Il s'agit d'un repas servi, composé de quelques mets typiques de la gastronomie traditionnelle du littoral camerounais, zone géographique bordant la province du Littoral, l'une des 10 régions de son pays d'origine le Cameroun.&nbsp;</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">C'est une manière pour elle de promouvoir autrement, et par son art culinaire, la culture camerounaise largement présente et bien accueillie en Suisse. Cela, en faisant connaitre à Yverdon-les-Bains la cuisine variée en menus familiaux, des mamans et grand-mamans Bassa, l'une des 300 cultures et langues autochtones du Cameroun.</span></p>",
+            "createdAt": "2023-05-04T17:53:48.619Z",
+            "updatedAt": "2023-05-04T17:54:16.511Z",
+            "publishedAt": "2023-05-04T17:53:50.207Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 43,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "Tarots & Oracles",
+            "subtitle": "Aude Tarot",
+            "slug": "event-18",
+            "time_start": "16:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Lecture des tarots de Marseille.&nbsp;</p><p>&nbsp;</p><p>Inscription sur place en début d'animation.</p>",
+            "createdAt": "2023-05-04T17:56:19.188Z",
+            "updatedAt": "2023-05-04T17:57:34.356Z",
+            "publishedAt": "2023-05-04T17:57:34.353Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": [
+                {
+                    "id": 6,
+                    "name": null,
+                    "url": null,
+                    "icon": null,
+                    "file": {
+                        "data": null
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 44,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "Iya Ko & The Guilty Pleasures",
+            "subtitle": "Soul",
+            "slug": "event-19",
+            "time_start": "20:00",
+            "time_end": "21:00",
+            "is_all_day": null,
+            "teaser": "<p>Iya Ko &amp; The Guilty Pleasures est une formation de groove et de soul francophone lausannoise.&nbsp;</p><p>&nbsp;</p><p>Leur univers, qui s’articule autour de la voix liquoreuse et envoûtante du chanteur Iya Ko, nous plonge dans une atmosphère de festin sonore et de commémoration sensuelle. C’est dans l’étroite union des mots et du groove que réside le secret de cette formation. Dès leur première année d’existence (2022), ils sont invités à se produire au Cully Jazz Festival et au Montreux Jazz Festival. Leur premier EP \"Velours\" est sorti en mars 2023.</p>",
+            "createdAt": "2023-05-04T17:58:54.361Z",
+            "updatedAt": "2023-05-04T17:59:13.083Z",
+            "publishedAt": "2023-05-04T17:59:13.081Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 46,
+        "attributes": {
+            "date_start": "2023-06-24",
+            "date_end": "2023-06-24",
+            "title": "SWIMALLNIGHT",
+            "subtitle": "Afro | Baile funk | Hip hop | Techouse",
+            "slug": "event-20",
+            "time_start": "22:00",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>Swimallnight est une jeune DJ, productrice de Lausanne. En 2017 elle co-fonde avec les DJs Tshitshi et Kali le collectif SND dont la proposition musicale alternative a apporté une plus-value en terme d’expérience festives dans toutes la suisse romande et au-delà.&nbsp;<br><br>En 2022 le collectif, Les Gracieuses de Kin naît. Lawmami, Jaguarr et Swimallnight en sont les protagonistes et cela n’est annonciateur d’un tournant.&nbsp;<br><br>Les set de Swimallnight n’auront cesse de faire vibrer les corps, le tout grâce à une sélection inédite de sons pioché dans une multitude de genre telle que: Afro, dancehall, hip hop, trap, funk, house et encore.</p>",
+            "createdAt": "2023-05-04T18:05:18.415Z",
+            "updatedAt": "2023-05-04T18:05:20.123Z",
+            "publishedAt": "2023-05-04T18:05:20.121Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 47,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Alex Like (Portes Noires)",
+            "subtitle": "Musique électronique",
+            "slug": "event-21",
+            "time_start": "00:00",
+            "time_end": "02:00",
+            "is_all_day": null,
+            "teaser": "<p>Embarquez pour un voyage à travers les diverses merveilles de la musique électronique, en vous immergeant dans un mélange unique de sons qui vous emmènera dans un voyage aventureux.&nbsp;</p><p>&nbsp;</p><p>Des atmosphères rêveuses aux atmosphères inquiétantes, laissez les rythmes captivants vous guider à travers des territoires musicaux inexplorés et élargissez vos horizons sonores.</p><p>&nbsp;</p><p><a href=\"https://www.facebook.com/alexandre.rui.3/\" target=\"_blank\" rel=\"noopener noreferrer\">Facebook</a> | <a href=\"https://soundcloud.com/alex-like-1\" target=\"_blank\" rel=\"noopener noreferrer\">Soundcloud</a></p>",
+            "createdAt": "2023-05-04T18:06:43.486Z",
+            "updatedAt": "2023-05-04T18:15:28.399Z",
+            "publishedAt": "2023-05-04T18:06:45.161Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 51,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Vinyasa Yoga",
+            "subtitle": "leSTUDIO nomad",
+            "slug": "vinyasa-yoga-1",
+            "time_start": "11:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>À la recherche d'un bon plan pour entamer ton dimanche au plein air?&nbsp;&nbsp;</p><p>&nbsp;</p><p>Rejoins-nous tous les dimanches à 11h00 pour un cours de Vinyasa Yoga. La recette assurée pour conclure la semaine sans stress, relaxé et heureux !&nbsp;</p><p>&nbsp;</p><p>Le cours Nomad Flow par leSTUDIO nomad est sur donation et ouvert à tous les niveaux. Pense à amener ton matelas si tu en as un.&nbsp;</p>",
+            "createdAt": "2023-05-04T18:20:15.186Z",
+            "updatedAt": "2023-05-04T18:20:31.068Z",
+            "publishedAt": "2023-05-04T18:20:17.180Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 52,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Méditation",
+            "subtitle": "Heartfulness",
+            "slug": "meditation",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>La méditation Heartfulness, une méditation sur le coeur.&nbsp;</p>",
+            "createdAt": "2023-05-04T18:21:16.316Z",
+            "updatedAt": "2023-05-04T18:21:25.840Z",
+            "publishedAt": "2023-05-04T18:21:25.838Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 54,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Oeuvre Collective",
+            "subtitle": "Vanmassa",
+            "slug": "event-23",
+            "time_start": "14:00",
+            "time_end": "16:00",
+            "is_all_day": null,
+            "teaser": "<p>Une oeuvre collective, créative, ouverte à toutes et tous.</p>",
+            "createdAt": "2023-05-04T18:22:59.287Z",
+            "updatedAt": "2023-05-04T18:23:00.958Z",
+            "publishedAt": "2023-05-04T18:23:00.956Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 14,
+                        "attributes": {
+                            "name": "Activité enfant",
+                            "slug": "activite-1",
+                            "createdAt": "2023-05-03T12:31:46.071Z",
+                            "updatedAt": "2023-05-03T12:31:48.181Z",
+                            "publishedAt": "2023-05-03T12:31:48.179Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 57,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Construction durable: le réemploi",
+            "subtitle": "La Ressourcerie | Coopérative 2401 | Haute école d'ingénierie et d'architecture de Fribourg",
+            "slug": "event-24",
+            "time_start": "14:00",
+            "time_end": "15:00",
+            "is_all_day": null,
+            "teaser": "<p>Pourquoi faire du réemploi de matériaux ? Quels avantages ? Quelles contraintes ?&nbsp;</p><p>&nbsp;</p><p>Au travers d'une discussion avec trois acteurs Romands du réemploi, nous tenterons de répondre à ces questions.</p><p>&nbsp;</p><p><a href=\"http://www.la-ressourcerie.ch\" target=\"_blank\" rel=\"noopener noreferrer\">La Ressourcerie</a> - Valerio Sartori</p><p><a href=\"https://2401.ch/\" target=\"_blank\" rel=\"noopener noreferrer\">La Coopérative 2401</a></p><p><a href=\"https://www.heia-fr.ch/fr/\" target=\"_blank\" rel=\"noopener noreferrer\">La Haute école d'ingénierie et d'architecture de Fribourg</a> - Hani Buri&nbsp;</p>",
+            "createdAt": "2023-05-04T18:29:08.622Z",
+            "updatedAt": "2023-05-04T18:29:30.202Z",
+            "publishedAt": "2023-05-04T18:29:30.200Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 4,
+                        "attributes": {
+                            "name": "Discussion",
+                            "slug": "discussion",
+                            "createdAt": "2023-05-03T12:28:42.622Z",
+                            "updatedAt": "2023-05-03T12:28:44.070Z",
+                            "publishedAt": "2023-05-03T12:28:44.067Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 58,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Ephémère",
+            "subtitle": "Compagnie Caractère",
+            "slug": "event-25",
+            "time_start": "15:30",
+            "time_end": "16:30",
+            "is_all_day": null,
+            "teaser": "<p>Rien n'est fixe, rien n'est attendu. La liberté du geste et de l'interprétation, la composition musicale, la participation indirecte ou directe du public, l'espace scénique, la structure de la pièce... Tout devient adaptable, modulable et se met au service de l'instant proposé.&nbsp;</p><p>&nbsp;</p><p>Les 3 danseurs interprètes évoluent sans contrainte, s’écoutent et communiquent, portés par des sonorités électroniques entraînantes. De cette rencontre naît une proposition artistique vivante, interactive et évolutive. Chaque représentation est une pièce différente dont l'existence même est vouée à rester éphémère. À l'instar d'une création de danse plus conventionnelle vouée à durer dans le temps, la Compagnie Caractère propose ici un instant soudain et singulier, guidé par la spontanéité et l'improvisation. Les danseurs se suivent, jouent, s'inspirent, communiquent entre eux, avec la musique, avec le public. Il s'agit ici d'une expérience libre dansée sur des sonorités électroniques.</p>",
+            "createdAt": "2023-05-04T18:31:02.808Z",
+            "updatedAt": "2023-05-04T18:31:04.516Z",
+            "publishedAt": "2023-05-04T18:31:04.513Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 5,
+                        "attributes": {
+                            "name": "Performance",
+                            "slug": "performance",
+                            "createdAt": "2023-05-03T12:29:13.586Z",
+                            "updatedAt": "2023-05-03T12:29:25.959Z",
+                            "publishedAt": "2023-05-03T12:29:25.957Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 61,
+        "attributes": {
+            "date_start": "2023-06-25",
+            "date_end": "2023-06-25",
+            "title": "Maryss",
+            "subtitle": "Pop-folk | Sonorités africaines",
+            "slug": "event-26",
+            "time_start": "17:00",
+            "time_end": "18:30",
+            "is_all_day": null,
+            "teaser": "<p>Chanteuse et auteure-compositrice originaire du Rwanda, Maryss chante en français, en anglais.</p><p>&nbsp;</p><p><a href=\"https://maryssofficial.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Site internet</a> | <a href=\"https://www.youtube.com/channel/UCpfmfuBv47tbTx8YAfD5m4Q\" target=\"_blank\" rel=\"noopener noreferrer\">Youtube</a> | <a href=\"https://www.instagram.com/maryss_official_/?hl=fr\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a> | <a href=\"https://www.facebook.com/maryss.official\" target=\"_blank\" rel=\"noopener noreferrer\">Facebook</a>&nbsp;</p>",
+            "createdAt": "2023-05-04T18:33:26.706Z",
+            "updatedAt": "2023-05-04T18:33:34.196Z",
+            "publishedAt": "2023-05-04T18:33:34.194Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 22,
+        "attributes": {
+            "date_start": "2023-06-29",
+            "date_end": "2023-06-29",
+            "title": "Yoga",
+            "subtitle": "Espace yoga",
+            "slug": "yoga-1",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": false,
+            "teaser": "<p>Hatha Yoga | Yoga Iyengar | Vinyasa | Relaxation</p><p><br>Séances de yoga pour tous les niveaux.&nbsp;Amenez votre tapis !</p>",
+            "createdAt": "2023-05-04T17:08:47.624Z",
+            "updatedAt": "2023-05-04T17:10:07.509Z",
+            "publishedAt": "2023-05-04T17:10:07.507Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 25,
+        "attributes": {
+            "date_start": "2023-06-29",
+            "date_end": "2023-06-29",
+            "title": "Danse folklorique suisse",
+            "subtitle": "Initiation",
+            "slug": "danse-folklorique-suisse",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": false,
+            "teaser": "<p>La Farandole de Courtepin est un groupe jeune et dynamique qui a pour but de faire connaître la danse populaire et les traditions suisses.</p><p>&nbsp;</p><p>Viens t’essayer à la danse folklorique suisse dans la joie et la bonne humeur ! Tu découvriras les costumes et les traditions de nos régions et surtout le plaisir de la valse, des polkas, des farandoles...&nbsp;</p><p>&nbsp;</p><p>Aucun pré-requis de danse nécessaire.</p>",
+            "createdAt": "2023-05-04T17:17:55.713Z",
+            "updatedAt": "2023-05-04T17:17:58.601Z",
+            "publishedAt": "2023-05-04T17:17:58.599Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 13,
+                        "attributes": {
+                            "name": "Soirée dansante",
+                            "slug": "soiree-dansante",
+                            "createdAt": "2023-05-03T12:31:23.657Z",
+                            "updatedAt": "2023-05-03T12:31:24.904Z",
+                            "publishedAt": "2023-05-03T12:31:24.902Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 27,
+        "attributes": {
+            "date_start": "2023-06-29",
+            "date_end": "2023-06-29",
+            "title": "Danse folklorique suisse ",
+            "subtitle": "Soirée dansante",
+            "slug": "danse-folklorique-suisse-1",
+            "time_start": "20:00",
+            "time_end": "23:30",
+            "is_all_day": false,
+            "teaser": "<p>La Farandole de Courtepin est un groupe jeune et dynamique qui a pour but de faire connaître la danse populaire et les traditions suisses.</p><p>&nbsp;</p><p>Viens t’essayer à la danse folklorique suisse dans la joie et la bonne humeur ! Tu découvriras les costumes et les traditions de nos régions et surtout le plaisir de la valse, des polkas, des farandoles...&nbsp;</p><p>&nbsp;</p><p>Aucun pré-requis de danse nécessaire.</p>",
+            "createdAt": "2023-05-04T17:19:05.588Z",
+            "updatedAt": "2023-05-04T17:20:02.281Z",
+            "publishedAt": "2023-05-04T17:20:02.279Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 13,
+                        "attributes": {
+                            "name": "Soirée dansante",
+                            "slug": "soiree-dansante",
+                            "createdAt": "2023-05-03T12:31:23.657Z",
+                            "updatedAt": "2023-05-03T12:31:24.904Z",
+                            "publishedAt": "2023-05-03T12:31:24.902Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 29,
+        "attributes": {
+            "date_start": "2023-06-30",
+            "date_end": "2023-06-30",
+            "title": "CMNV X La Dérivée",
+            "subtitle": "Ateliers du CMNV",
+            "slug": "cmnv-x-la-derivee",
+            "time_start": "18:00",
+            "time_end": "21:30",
+            "is_all_day": null,
+            "teaser": "<p>Les ateliers du CMNV sont des groupes de musiques qui sont formés par les élèves et qui travaillent durant toute l'année sur des thèmes variés (funk, jazz, pop, rock) sous l'égide d'un des professeurs du Conservatoire.</p>",
+            "createdAt": "2023-05-04T17:26:41.991Z",
+            "updatedAt": "2023-05-04T17:26:44.427Z",
+            "publishedAt": "2023-05-04T17:26:44.425Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 30,
+        "attributes": {
+            "date_start": "2023-06-30",
+            "date_end": "2023-06-30",
+            "title": "CMNV X La Dérivée",
+            "subtitle": "JAM SESSION du CMNV",
+            "slug": "cmnv-x-la-derivee-1",
+            "time_start": "21:30",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>Le Conservatoire propose à la suite de la prestation des ateliers, une nouvelle Jam Sessions ouverte à tous les musiciens et encadrée selon le besoin, par un trio de musiciens professionnels.&nbsp;</p><p>&nbsp;</p><p>Tous styles bienvenus, bien que tout de même principalement orienté jazz, Groove, funk. Backline à disposition (batterie, clavier et amplis.)&nbsp;</p><p>&nbsp;</p><p>Amenez vos instruments.</p>",
+            "createdAt": "2023-05-04T17:30:25.363Z",
+            "updatedAt": "2023-05-04T17:30:40.768Z",
+            "publishedAt": "2023-05-04T17:30:40.766Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 32,
+        "attributes": {
+            "date_start": "2023-07-01",
+            "date_end": "2023-07-01",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Par le GIN",
+            "slug": "improvisation-theatrale-1",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;&nbsp;Vous vous demandez comment est-ce qu’on fait ?&nbsp;</p><p>&nbsp;</p><p>Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T17:35:30.312Z",
+            "updatedAt": "2023-05-04T18:59:47.503Z",
+            "publishedAt": "2023-05-04T18:59:47.495Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 34,
+        "attributes": {
+            "date_start": "2023-07-01",
+            "date_end": "2023-07-01",
+            "title": "Natation en groupe",
+            "subtitle": "Avec PAIRE",
+            "slug": "natation-en-groupe",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>Activité ouvert à toutes et tous !&nbsp;Rendez-vous à La Dérivée.</p><p>&nbsp;</p><p>Le projet PAIRES est une association à but non lucratif qui vise à l’inclusion des personnes issues de la migration en Suisse. Initiées avec le projet de création de binômes, les activités de l’association se sont depuis développées avec de nouvelles actions autour de ce projet initial.</p>",
+            "createdAt": "2023-05-04T17:39:01.902Z",
+            "updatedAt": "2023-05-04T17:40:49.440Z",
+            "publishedAt": "2023-05-04T17:40:49.438Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 37,
+        "attributes": {
+            "date_start": "2023-07-01",
+            "date_end": "2023-07-01",
+            "title": "Danse libre",
+            "subtitle": "Sophie Mayor",
+            "slug": "danse-libre-1",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>Danse libre sous les arbres face au lac.&nbsp;</p><p>&nbsp;</p><p>Tout âge et tout niveau bienvenu.&nbsp;</p><p>&nbsp;</p><p>Inspiré de la danse des 5 rythmes.</p>",
+            "createdAt": "2023-05-04T17:46:10.313Z",
+            "updatedAt": "2023-05-04T20:25:55.674Z",
+            "publishedAt": "2023-05-04T17:48:28.865Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 42,
+        "attributes": {
+            "date_start": "2023-07-01",
+            "date_end": "2023-07-01",
+            "title": "Alleycat",
+            "subtitle": "Epreuve cycliste d'orientation",
+            "slug": "alleycat",
+            "time_start": "17:30",
+            "time_end": "21:00",
+            "is_all_day": null,
+            "teaser": "<p>La tant attendue Alleycat est de retour ! Désormais rendez-vous annuel dans le programme de la Dérivée, cette épreuve cycliste d'orientation ouverte à tous types de niveaux demandera aux participant·e·s d'éveiller leurs nombreuses facultés tout sauf sportive afin de réaliser au mieux les différentes activités/performances auxquelles iels seront amené·e·s à réaliser.</p><p>&nbsp;</p><p>Inscriptions sur place dès 16:30</p>",
+            "createdAt": "2023-05-04T17:53:58.883Z",
+            "updatedAt": "2023-05-04T17:54:00.588Z",
+            "publishedAt": "2023-05-04T17:54:00.586Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 45,
+        "attributes": {
+            "date_start": "2023-07-01",
+            "date_end": "2023-07-01",
+            "title": "Atelier de musique éléctrique",
+            "subtitle": "La Furtive",
+            "slug": "atelier-de-musique-electrique",
+            "time_start": "15:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>La Furtive est une association neuchâteloise qui organise des ateliers où tu peux venir expérimenter, apprendre, partager tes connaisances autour de la musique électronique . Nous avons le matériel de base pour mixer et faire de la production et que tu puisses tester plein de choses ! Nous tenons à créer un espace le plus insclusif possible pour tous-tes-x.</p><p>&nbsp;</p><p><a href=\"https://framaforms.org/ateliers-la-furtive-1632253482\"><span style=\"color:#1155cc;\"><u>https://framaforms.org/ateliers-la-furtive-1632253482</u></span></a></p>",
+            "createdAt": "2023-05-04T18:02:15.298Z",
+            "updatedAt": "2023-05-04T18:02:36.204Z",
+            "publishedAt": "2023-05-04T18:02:36.202Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": [
+                {
+                    "id": 7,
+                    "name": "Inscription",
+                    "url": "https://framaforms.org/ateliers-la-furtive-1632253482",
+                    "icon": "edit",
+                    "file": {
+                        "data": null
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 48,
+        "attributes": {
+            "date_start": "2023-07-01",
+            "date_end": "2023-07-02",
+            "title": "Afterparty ZRO21",
+            "subtitle": "En collaboration avec Urban Project",
+            "slug": "afterparty-zro-21",
+            "time_start": "21:00",
+            "time_end": "02:00",
+            "is_all_day": null,
+            "teaser": "<p>AFTER PARTY - ZRO21</p><p><br>DJ SET SANTO X MULAH&nbsp;</p><p><br>SHOWCASE SHAIM + ERREN SUN</p>",
+            "createdAt": "2023-05-04T18:11:46.381Z",
+            "updatedAt": "2023-05-04T18:11:48.367Z",
+            "publishedAt": "2023-05-04T18:11:48.365Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 49,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Vinyasa Yoga",
+            "subtitle": "leSTUDIO nomad",
+            "slug": "vinyasa-yoga",
+            "time_start": "11:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>À la recherche d'un bon plan pour entamer ton dimanche au plein air?&nbsp;&nbsp;Rejoins-nous tous les dimanches à 11h00 pour un cours de Vinyasa Yoga.&nbsp;&nbsp;La recette assurée pour conclure la semaine sans stress, relaxé et heureux! Le cours Nomad Flow par leSTUDIO nomad est sur donation et ouvert à tous les niveaux.&nbsp;</p><p>&nbsp;</p><p>Pense à amener ton matelas si tu en as un.&nbsp;</p>",
+            "createdAt": "2023-05-04T18:17:56.551Z",
+            "updatedAt": "2023-05-04T18:17:58.287Z",
+            "publishedAt": "2023-05-04T18:17:58.285Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 50,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Méditation",
+            "subtitle": "Heartfulness",
+            "slug": "event-22",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>La méditation Heartfulness, une méditation sur le coeur.&nbsp;</p>",
+            "createdAt": "2023-05-04T18:19:25.311Z",
+            "updatedAt": "2023-05-04T18:19:29.018Z",
+            "publishedAt": "2023-05-04T18:19:29.016Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 53,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Le coffre à histoire",
+            "subtitle": "Bibliothèque publique et scolaire d'Yverdon-les-Bains",
+            "slug": "le-coffre-a-histoire",
+            "time_start": "14:00",
+            "time_end": "16:00",
+            "is_all_day": null,
+            "teaser": "<p>Les enfants et leurs accompagnant·es ouvrent chaque semaine le couvercle du coffre à histoires avec des bibliothécaires...&nbsp;</p><p>&nbsp;</p><p>Aujourd'hui, c'est à la Dérivée que l'on entendra des histoires pendant une demi heure !</p>",
+            "createdAt": "2023-05-04T18:22:21.007Z",
+            "updatedAt": "2023-05-04T18:35:24.835Z",
+            "publishedAt": "2023-05-04T18:22:22.635Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 14,
+                        "attributes": {
+                            "name": "Activité enfant",
+                            "slug": "activite-1",
+                            "createdAt": "2023-05-03T12:31:46.071Z",
+                            "updatedAt": "2023-05-03T12:31:48.181Z",
+                            "publishedAt": "2023-05-03T12:31:48.179Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 55,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Les contes arc-en-ciel",
+            "subtitle": "Association Familles Arc-en-Ciel & VoGay",
+            "slug": "les-contes-arc-en-ciel",
+            "time_start": "15:00",
+            "time_end": "16:00",
+            "is_all_day": null,
+            "teaser": "<p>Venez découvrir des histoires émouvantes et joyeuses sur les différentes familles. Un moment pour les \"petits et les grands\", pour celles et ceux qui souhaitent se plonger dans un univers harmonieux, où toutes les façons de \"faire famille\" sont au rendez-vous.&nbsp;<br><br>Connaissez-vous des familles arc-en-ciel ? Venez découvrir leurs histoires.</p>",
+            "createdAt": "2023-05-04T18:26:31.842Z",
+            "updatedAt": "2023-05-04T18:35:36.904Z",
+            "publishedAt": "2023-05-04T18:26:33.293Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 14,
+                        "attributes": {
+                            "name": "Activité enfant",
+                            "slug": "activite-1",
+                            "createdAt": "2023-05-03T12:31:46.071Z",
+                            "updatedAt": "2023-05-03T12:31:48.181Z",
+                            "publishedAt": "2023-05-03T12:31:48.179Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 56,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Initiation au crochet",
+            "subtitle": "Collectif Brindille",
+            "slug": "initiation-au-crochet",
+            "time_start": "14:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>En complément à l'exposition visible dans les cabines téléphoniques du centre-ville d'Yverdon-les-Bains, le collectif Brindilles propose des permanences d'initiation au crochet à La Dérivée.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Le public est bienvenu à les rejoindre pour participer à la réalisation collective d'une pelote géante !</p>",
+            "createdAt": "2023-05-04T18:28:09.109Z",
+            "updatedAt": "2023-05-04T18:28:10.145Z",
+            "publishedAt": "2023-05-04T18:28:10.143Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 59,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Après-midi jeux",
+            "subtitle": "Par les jeux du tiroir",
+            "slug": "apres-midi-jeux",
+            "time_start": "15:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Tournoi, jeux en libre service et jeux de rôle.</p><p><br>Plus d'infos sur : www.laderivee.ch</p>",
+            "createdAt": "2023-05-04T18:31:03.100Z",
+            "updatedAt": "2023-05-04T18:31:04.356Z",
+            "publishedAt": "2023-05-04T18:31:04.355Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 60,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Duo Nativ",
+            "subtitle": "Bossa Nova | Samba",
+            "slug": "duo-nativ",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Hymne à la genèse, au commencement. Battement du pouls, cadence du pouce, balancement du corps, le rythme à l’origine de tout. Dualité et symbiose. Deux entités propres n’en forment plus qu’une unies par la musique. Ainsi naît le Duo Nativ en 2020, à Lausanne.</p><p><br>Le répertoire est original et s’axe autour de la Bossa Nova et Samba des années 1930 à nos jours. Deux voix, une guitare, un peu de percussion et vous voilà transportés de l’autre côté de l’océan.</p>",
+            "createdAt": "2023-05-04T18:32:55.518Z",
+            "updatedAt": "2023-05-04T18:32:56.588Z",
+            "publishedAt": "2023-05-04T18:32:56.586Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 62,
+        "attributes": {
+            "date_start": "2023-07-02",
+            "date_end": "2023-07-02",
+            "title": "Boucherie[s]",
+            "subtitle": "hitzAhitz",
+            "slug": "boucherie-s",
+            "time_start": "20:30",
+            "time_end": "21:45",
+            "is_all_day": null,
+            "teaser": "<p>Quelque part entre musique et théâtre, BOUCHERIE[s] est un conte cru qui vous emmène dans l'arrière boutique des métiers de la viande. Tissée à partir des oeuvres de Joseph Ponthus (\"À la ligne\"), Joy Sorman (\"Comme une bête\") et Beat Sterchi (\"La vache\"), cette pièce froide suit la chorégraphie des gestes qui relient l'animal vivant que l'on voit dans les champs au steak sous vide des grandes surfaces. On y croise notamment un apprenti boucher passionné, un intérimaire lessivé, un cochon tueur et un tueur de cochons. Il y est question de notre relation aux animaux, mais aussi à ce que l'industrie produit, dans nos comportements et sur les corps, humains ou non. Sans être un conte à morale, ce spectacle/concert propose de penser ensemble les coûts invisibilsés, mais bien réels, de nos habitudes alimentaires. Entrer dans BOUCHERIE[s], c'est traverser un univers où le son des mots et le sens des sons vous plongent dans une matière à danser autant qu'à penser.<br><br>Durée : 1h15<br><br>Conception et interprétation : Dominic Frey, Alexis Hanhart, Jonas Lambelet, Grégoire Quartier<br>Administration : Alexandra Nivon<br>Production : hitzAhitz</p>",
+            "createdAt": "2023-05-04T18:34:47.944Z",
+            "updatedAt": "2023-05-04T18:34:49.187Z",
+            "publishedAt": "2023-05-04T18:34:49.185Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 6,
+                        "attributes": {
+                            "name": "Arts-vivants",
+                            "slug": "arts-vivants",
+                            "createdAt": "2023-05-03T12:29:34.544Z",
+                            "updatedAt": "2023-05-03T13:09:48.414Z",
+                            "publishedAt": "2023-05-03T12:29:35.597Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 63,
+        "attributes": {
+            "date_start": "2023-07-06",
+            "date_end": "2023-07-06",
+            "title": "Cours de français à la plage",
+            "subtitle": "Service jeunesse et cohésion sociale & École Verso",
+            "slug": "event-27",
+            "time_start": "17:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Le français à la plage est de retour du 3 au 28 juillet 2023 sur le site de La Dérivée !&nbsp;<br><br>Du lundi au vendredi, le Service Jeunesse et cohésion sociale offre des cours de français gratuits pour adultes débutants, de 17h à 19h. Une halte-garderie est à disposition pour les enfants des élèves.&nbsp;</p><p>&nbsp;</p><p>Les inscriptions se font chaque jour sur place, dès 16h30, dans la limite des places disponibles.&nbsp;</p><p>&nbsp;</p><p>Informations : Secteur intégration, Rue de Neuchâtel 2, 1400 Yverdon-les-Bains, 024 423 69 44. integration@yverdon-les-bains.ch</p>",
+            "createdAt": "2023-05-04T18:36:47.564Z",
+            "updatedAt": "2023-05-04T18:38:07.439Z",
+            "publishedAt": "2023-05-04T18:38:07.437Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 12,
+                        "attributes": {
+                            "name": "Activité pédagogique",
+                            "slug": "activite-pedagogi",
+                            "createdAt": "2023-05-03T12:31:07.082Z",
+                            "updatedAt": "2023-05-03T12:31:08.190Z",
+                            "publishedAt": "2023-05-03T12:31:08.188Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 64,
+        "attributes": {
+            "date_start": "2023-07-06",
+            "date_end": "2023-07-06",
+            "title": "Yoga",
+            "subtitle": "Espace Yoga",
+            "slug": "event-28",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Hatha Yoga | Yoga Iyengar | Vinyasa | Relaxation&nbsp;</p><p>&nbsp;</p><p>Séances de yoga pour tous les niveaux.&nbsp;Amenez votre tapis !</p>",
+            "createdAt": "2023-05-04T18:39:18.562Z",
+            "updatedAt": "2023-05-04T18:39:20.129Z",
+            "publishedAt": "2023-05-04T18:39:20.127Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 65,
+        "attributes": {
+            "date_start": "2023-07-06",
+            "date_end": "2023-07-06",
+            "title": "Sortie en bateau solaire",
+            "subtitle": "Sol-à-flot",
+            "slug": "event-29",
+            "time_start": "18:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Rejoignez-nous pour une remontée de la Thièle à travers la ville, ou une découverte du bout du lac…&nbsp;&nbsp;</p><p>&nbsp;</p><p>Notre bateau électro-solaire, complètement autonome vous emmènera, certes lentement, mais sans bruit, sans émission pour une évasion… différente. L’occasion de parler de mobilité douce&nbsp;!&nbsp;&nbsp;</p><p>&nbsp;</p><p>Inscription dans la limite des places disponibles, à la buvette de La Dérivée, durant les heures d'ouverture du lieu.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Le jour J, rassemblement des passagers à La Dérivée à 17h50 pour le départ à 18h00 ou à 18h50, pour le départ à 19h00. L’animation peut être annulée au moment du départ par le pilote à cause des conditions de navigation.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Nous nous réjouissons de vous accueillir&nbsp;! &nbsp;</p><p>&nbsp;</p><p>Des gilets de sauvetages sont prêtés aux enfants par l'Association Sol-à-flots.</p>",
+            "createdAt": "2023-05-04T18:40:37.652Z",
+            "updatedAt": "2023-05-04T18:40:40.120Z",
+            "publishedAt": "2023-05-04T18:40:40.117Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 67,
+        "attributes": {
+            "date_start": "2023-07-06",
+            "date_end": "2023-07-06",
+            "title": "Les Oranges Vertes",
+            "subtitle": "Audrey Manfredi",
+            "slug": "event-30",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Exposition du 6 au 9 juillet&nbsp;</p><p>&nbsp;</p><p>Vernissage de l'exposition et conversation avec l'artiste.</p><p>&nbsp;</p><p>Les oranges vertes est un titre faisant référence au fait que le domaine de la peinture est nouveau pour l'artiste, et que les oeuvres exposées font partie de ses premières. Les peintures exposées sont les fruits d'une réflexion autour de la quête de sens, l'étonnante existence de nos vies, des liens entre les personnages de ses tableaux et ce qui les entoure, des secrets du monde cachés autour de nous et de la petite inconstance des éléments.</p><p>&nbsp;</p><p>Oeuvres picturales réalisée par l'artiste entre 2022 et 2023.</p>",
+            "createdAt": "2023-05-04T18:43:30.841Z",
+            "updatedAt": "2023-05-04T18:43:32.353Z",
+            "publishedAt": "2023-05-04T18:43:32.352Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 11,
+                        "attributes": {
+                            "name": "Exposition",
+                            "slug": "exposition",
+                            "createdAt": "2023-05-03T12:30:55.010Z",
+                            "updatedAt": "2023-05-03T12:30:56.151Z",
+                            "publishedAt": "2023-05-03T12:30:56.149Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 69,
+        "attributes": {
+            "date_start": "2023-07-06",
+            "date_end": "2023-07-06",
+            "title": "Le Band d'Eben-Hézer",
+            "subtitle": "Blues | Rock | Reggae | Gospel",
+            "slug": "event-31",
+            "time_start": "20:00",
+            "time_end": "21:30",
+            "is_all_day": null,
+            "teaser": "<p>Proposé par le Conseil des Seniors d'Yverdon-les-Bains (COSY)&nbsp;</p><p>&nbsp;</p><p>Le Band d’Eben-Hézer est un groupe de musique regroupant des résident·e·s du Centre de loisirs d’Eben-Hézer Lausanne. Il s’agit d’un atelier protégé qui, grâce à l’activité musicale semi-professionnelle, propose à des personnes en difficultés sociales un projet poursuivant plusieurs objectifs :&nbsp;</p><ul><li>Offrir à des adultes différents ou marginalisés un espace d’expression, de développement, de valorisation et de rencontres.&nbsp;</li><li>Permettre au grand public de rencontrer des musicien·ne·s différent·e·s et originaux·ales qui nous aident à changer notre regard.</li></ul>",
+            "createdAt": "2023-05-04T18:46:02.521Z",
+            "updatedAt": "2023-05-04T18:47:13.712Z",
+            "publishedAt": "2023-05-04T18:46:05.082Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 70,
+        "attributes": {
+            "date_start": "2023-07-07",
+            "date_end": "2023-07-07",
+            "title": "Cours de français à la plage",
+            "subtitle": "Service jeunesse et cohésion sociale & École Verso",
+            "slug": "event-32",
+            "time_start": "17:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Le français à la plage est de retour du 3 au 28 juillet 2023 sur le site de La Dérivée !&nbsp;&nbsp;</p><p>&nbsp;</p><p>Du lundi au vendredi, le Service Jeunesse et cohésion sociale offre des cours de français gratuits pour adultes débutants, de 17h à 19h. Une halte-garderie est à disposition pour les enfants des élèves.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Les inscriptions se font chaque jour sur place, dès 16h30, dans la limite des places disponibles.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Informations : Secteur intégration, Rue de Neuchâtel 2, 1400 Yverdon-les-Bains, 024 423 69 44. integration@yverdon-les-bains.ch</p>",
+            "createdAt": "2023-05-04T18:48:16.777Z",
+            "updatedAt": "2023-05-04T18:48:18.356Z",
+            "publishedAt": "2023-05-04T18:48:18.354Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 12,
+                        "attributes": {
+                            "name": "Activité pédagogique",
+                            "slug": "activite-pedagogi",
+                            "createdAt": "2023-05-03T12:31:07.082Z",
+                            "updatedAt": "2023-05-03T12:31:08.190Z",
+                            "publishedAt": "2023-05-03T12:31:08.188Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 71,
+        "attributes": {
+            "date_start": "2023-07-07",
+            "date_end": "2023-07-07",
+            "title": "Tarots & Oracles",
+            "subtitle": "Aude Tarot",
+            "slug": "event-33",
+            "time_start": "18:00",
+            "time_end": "22:00",
+            "is_all_day": null,
+            "teaser": "<p>Lecture des tarots de Marseille.&nbsp;</p><p>&nbsp;</p><p>Inscription sur place en début d'animation.</p>",
+            "createdAt": "2023-05-04T18:49:23.958Z",
+            "updatedAt": "2023-05-04T18:49:25.396Z",
+            "publishedAt": "2023-05-04T18:49:25.394Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 72,
+        "attributes": {
+            "date_start": "2023-07-07",
+            "date_end": "2023-07-07",
+            "title": "VELVET INK",
+            "subtitle": "Pop Jazz Fusion | Rock",
+            "slug": "event-34",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>VELVET INK est un groupe de Pop Jazz Fusion / Rock né de la rencontre entre les lausannoises Holsy Rose, guitariste, et Bélinda Bitz, chanteuse.&nbsp;</p><p>&nbsp;</p><p>Les compositions de VELVET INK s’inspirent des univers rock, jazz, funk et blues. Chaque morceau tente de retranscrire une émotion par sa musicalité et son texte, inspirés d’évènements vécus par les musiciennes. Le set et l’énergie sur scène sont pensés comme une palette colorée, un voyage sonore au cœur des émotions humaines. A travers sa musique qui se veut populaire, VELVET INK cherche à établir une connexion au-delà des mots, laissant passer la lumière dans les recoins les plus sombres.</p><p>&nbsp;</p><p><a href=\"https://www.instagram.com/velvetinkmusic/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a>&nbsp;</p>",
+            "createdAt": "2023-05-04T18:51:50.414Z",
+            "updatedAt": "2023-05-04T18:51:52.019Z",
+            "publishedAt": "2023-05-04T18:51:52.018Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 73,
+        "attributes": {
+            "date_start": "2023-07-07",
+            "date_end": "2023-07-07",
+            "title": "Saturnya",
+            "subtitle": "Electro instrumentale",
+            "slug": "event-35",
+            "time_start": "20:00",
+            "time_end": "21:00",
+            "is_all_day": null,
+            "teaser": "<p>Saturnya joue un répertoire inspiré de l'EDM, de la House, la Minimal et de la Jungle.&nbsp;</p><p>&nbsp;</p><p>Le mantra de ce power trio : transposer la danse et la transe electro d'un DJset aux instruments. La puissance de la basse et la pulsation sans faille de à la batterie soutiennent la richesse des sons des synthétiseurs. Leurs concerts s'articulent autour des compositions EDM d'Étienne Loupot et d'improvisations idiomatiques. Cette musique se joue la nuit et sans discontinuer. Elle est dansante, puissante, mystique et étrange. Elle provoque l'ivresse, la transe et évoque l'espace.</p><p>&nbsp;</p><p><a href=\"https://www.youtube.com/watch?v=BHIqD_HxoUk\" target=\"_blank\" rel=\"noopener noreferrer\">Youtube</a> | <a href=\"https://www.instagram.com/saturnyaofficial/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a> | <a href=\"https://www.facebook.com/saturnyaofficial\" target=\"_blank\" rel=\"noopener noreferrer\">Facebook</a></p>",
+            "createdAt": "2023-05-04T18:54:57.098Z",
+            "updatedAt": "2023-05-04T18:54:58.674Z",
+            "publishedAt": "2023-05-04T18:54:58.672Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 75,
+        "attributes": {
+            "date_start": "2023-07-07",
+            "date_end": "2023-07-07",
+            "title": "Bomboclit",
+            "subtitle": "Trap | Electro | Techno | Rnb",
+            "slug": "event-36",
+            "time_start": "22:00",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>Deux Chaux-de-Fonnières, deux ordinateurs et des splendides tracks de Trap, Witch Trap, Techno, RnB du future que tu n’as jamais ou pas assez entendues. Ça donne envie de serrer les dents, applaudir avec les fesses et danser très fort.&nbsp;</p><p>&nbsp;</p><p>La musique est engagée et/ou engageante d’une manière ou d’une autre et ça fait du bien !</p>",
+            "createdAt": "2023-05-04T18:56:17.975Z",
+            "updatedAt": "2023-05-04T18:56:20.635Z",
+            "publishedAt": "2023-05-04T18:56:20.633Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 78,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "event-37",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T18:59:45.369Z",
+            "updatedAt": "2023-05-04T18:59:46.873Z",
+            "publishedAt": "2023-05-04T18:59:46.871Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 79,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "Basketball",
+            "subtitle": "Avec PAIRES",
+            "slug": "event-38",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>Activité ouvert à toutes et tous !&nbsp;Rendez-vous à La Dérivée.&nbsp;</p><p>&nbsp;</p><p>Le projet PAIRES est une association à but non lucratif qui vise à l’inclusion des personnes issues de la migration en Suisse. Initiées avec le projet de création de binômes, les activités de l’association se sont depuis développées avec de nouvelles actions autour de ce projet initial.</p>",
+            "createdAt": "2023-05-04T19:03:42.523Z",
+            "updatedAt": "2023-05-04T19:03:44.025Z",
+            "publishedAt": "2023-05-04T19:03:44.023Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 80,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "Danse libre",
+            "subtitle": "Sophie Mayor",
+            "slug": "event-39",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>Danse libre sous les arbres face au lac.&nbsp;</p><p>&nbsp;</p><p>Tout âge et tout niveau bienvenu.&nbsp;</p><p>&nbsp;</p><p>Inspiré de la danse des 5 rythmes.</p>",
+            "createdAt": "2023-05-04T19:05:38.671Z",
+            "updatedAt": "2023-05-04T20:28:13.777Z",
+            "publishedAt": "2023-05-04T19:05:40.224Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 85,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "CULMINA x La Dérivée: Marché de créateur·ice·s ",
+            "subtitle": null,
+            "slug": "event-40",
+            "time_start": "15:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>CULMINA s'associe à La Dérivée cette année à l'occasion d'une collaboration unique. Ici, à Yverdon-Les-Bains et région, il y a du talent. Effectivement, Yverdon est trop souvent jugée et mise de côté quand il s'agit du monde artistique et culturel. La ville sera mise en lumière dans ce lieu culturel éphémère qui fait vivre les Rives du Lac. Nous accueillerons, en journée, des artistes et des artisan·ne·s locaux et locales qui viendront ravir nos oreilles et nos yeux. Préparez-vous à découvrir ce qui se cache dans les rues de notre belle ville !&nbsp;</p><p>&nbsp;</p><p>Créateur·ice·s présent·e·s:&nbsp;</p><p><br><a href=\"https://instagram.com/l2obaa?igshid=YmMyMTA2M2Y=\" target=\"_blank\" rel=\"noopener noreferrer\">Luba</a> | Nail Art, Tooth gems, Bijoux, Press on, Réalisation graphique&nbsp;</p><p>&nbsp;</p><p><a href=\"http://www.evidentielle.ch\" target=\"_blank\" rel=\"noopener noreferrer\">Evidentielle</a> | Cosmétiques naturels faits main</p><p>Evidentielle vous propose des cosmétiques naturels certifiés s'inspirant de la nature pour le respect de votre peau et de vos cheveux. Leurs produits sont fabriqués de manière artisanale dans notre laboratoire. La fabrication se fait en série limitée afin de privilégier la qualité. Leurs cosmétiques ne sont pas testés sur les animaux, ils sont sans paraben, alcool et paraffine. Pour le respect de l'environnement tous leurs cosmétiques sont vendus sans emballage inutile.<br><br><a href=\"https://instagram.com/_scaro?igshid=ZDdkNTZiNTM=\" target=\"_blank\" rel=\"noopener noreferrer\">Scaro</a> | Bijoux</p><p>Made by instinct est une collection de différents bijoux ayant tous comme point commun d'avoir été fait en travaillant à l'intuition. Sans croquis et sans idée fixe du résultat final, juste avec l'envie de créer sans contrainte liée à l'obligation de se tenir au schéma classique de créations de bijoux. Entièrement faite à la main, chaque pièce est différente et représente une vision unique. Bien qu'imparfait, ils reflètent bien l'authenticité avec laquelle Scaro les crée. Made by instinct, c'est littéralement ce qu'elle fait. Made by instinct, c'est sa vision</p><p>&nbsp;</p><p><a href=\"https://instagram.com/unfrip?igshid=YmMyMTA2M2Y=\" target=\"_blank\" rel=\"noopener noreferrer\">Unfrip</a> | Friperie</p><p>&nbsp;</p><p>Alia | Patrons</p><p>Ce n'est pas une expo dite d'art, mais plutôt une présentation de cours de patrons de vêtements. Avec des dessins, des patrons et des vêtements.<br>&nbsp;</p><p><a href=\"https://www.instagram.com/diegaldames/\" target=\"_blank\" rel=\"noopener noreferrer\">Masymas</a> | Ambiance musicale</p>",
+            "createdAt": "2023-05-04T19:16:19.589Z",
+            "updatedAt": "2023-05-04T19:25:13.094Z",
+            "publishedAt": "2023-05-04T19:16:22.620Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 88,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "CULMINA x La Dérivée : ASed",
+            "subtitle": "Hip hop | rap",
+            "slug": "event-41",
+            "time_start": "19:15",
+            "time_end": "20:15",
+            "is_all_day": null,
+            "teaser": "<p>CULMINA s'associe à La Dérivée cette année à l'occasion d'une collaboration unique. Ici, à Yverdon-Les-Bains et région, il y a du talent. Effectivement, Yverdon est trop souvent jugée et mise de côté quand il s'agit du monde artistique et culturel. La ville sera mise en lumière dans ce lieu culturel éphémère qui fait vivre les Rives du Lac. Nous accueillerons, en journée, des artistes et des artisan·ne·s locaux et locales qui viendront ravir nos oreilles et nos yeux. Préparez-vous à découvrir ce qui se cache dans les rues de notre belle ville !&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+            "createdAt": "2023-05-04T19:21:31.498Z",
+            "updatedAt": "2023-05-04T19:21:33.071Z",
+            "publishedAt": "2023-05-04T19:21:33.070Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 89,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "CULMINA x La Dérivée: Latek",
+            "subtitle": "Hip hop | Rap",
+            "slug": "event-42",
+            "time_start": "20:30",
+            "time_end": "21:30",
+            "is_all_day": null,
+            "teaser": "<p>CULMINA s'associe à La Dérivée cette année à l'occasion d'une collaboration unique. Ici, à Yverdon-Les-Bains et région, il y a du talent. Effectivement, Yverdon est trop souvent jugée et mise de côté quand il s'agit du monde artistique et culturel. La ville sera mise en lumière dans ce lieu culturel éphémère qui fait vivre les Rives du Lac. Nous accueillerons, en journée, des artistes et des artisan·ne·s locaux et locales qui viendront ravir nos oreilles et nos yeux. Préparez-vous à découvrir ce qui se cache dans les rues de notre belle ville !&nbsp;</p>",
+            "createdAt": "2023-05-04T19:22:30.814Z",
+            "updatedAt": "2023-05-04T19:22:57.354Z",
+            "publishedAt": "2023-05-04T19:22:32.391Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 91,
+        "attributes": {
+            "date_start": "2023-07-08",
+            "date_end": "2023-07-08",
+            "title": "CULMINA x La Dérivée: DJ LEOR",
+            "subtitle": "Afro-Tech | Afrobeat | Amapiano | Dancehall",
+            "slug": "event-43",
+            "time_start": "21:30",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>CULMINA s'associe à La Dérivée cette année à l'occasion d'une collaboration unique. Ici, à Yverdon-Les-Bains et région, il y a du talent. Effectivement, Yverdon est trop souvent jugée et mise de côté quand il s'agit du monde artistique et culturel. La ville sera mise en lumière dans ce lieu culturel éphémère qui fait vivre les Rives du Lac. Nous accueillerons, en journée, des artistes et des artisan·ne·s locaux et locales qui viendront ravir nos oreilles et nos yeux. Préparez-vous à découvrir ce qui se cache dans les rues de notre belle ville !&nbsp;</p><p>&nbsp;</p><p>Prêt à en découdre en ambiance très internationale rythmée par l’Afrique</p>",
+            "createdAt": "2023-05-04T19:27:24.073Z",
+            "updatedAt": "2023-05-04T19:28:17.038Z",
+            "publishedAt": "2023-05-04T19:28:17.036Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 94,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "CULMINA x La Dérivée: La Banda Party",
+            "subtitle": "Dancehall experimental | Afro Ghetto | Kuduro | Afrobeat",
+            "slug": "event-44",
+            "time_start": "00:00",
+            "time_end": "02:00",
+            "is_all_day": null,
+            "teaser": "<p>CULMINA s'associe à La Dérivée cette année à l'occasion d'une collaboration unique. Ici, à Yverdon-Les-Bains et région, il y a du talent. Effectivement, Yverdon est trop souvent jugée et mise de côté quand il s'agit du monde artistique et culturel. La ville sera mise en lumière dans ce lieu culturel éphémère qui fait vivre les Rives du Lac. Nous accueillerons, en journée, des artistes et des artisan·ne·s locaux et locales qui viendront ravir nos oreilles et nos yeux. Préparez-vous à découvrir ce qui se cache dans les rues de notre belle ville !&nbsp;</p><p>&nbsp;</p><p>La Banda Party a pour vision de représenter à travers sa musique et principalement leur DJs, la communauté afrodescendante ainsi que les minorités à faible visibilité. La musique jouée repose sur une composition électronique, dancehall expérimental et afro alte.</p>",
+            "createdAt": "2023-05-04T19:29:38.173Z",
+            "updatedAt": "2023-05-04T19:29:56.031Z",
+            "publishedAt": "2023-05-04T19:29:39.647Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 95,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "Vinyasa Yoga",
+            "subtitle": "leSTUDIO nomad",
+            "slug": "event-45",
+            "time_start": "11:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>À la recherche d'un bon plan pour entamer ton dimanche au plein air?&nbsp;&nbsp;Rejoins-nous tous les dimanches à 11h00 pour un cours de Vinyasa Yoga.&nbsp;&nbsp;La recette assurée pour conclure la semaine sans stress, relaxé et heureux!&nbsp;</p><p>&nbsp;</p><p>Le cours Nomad Flow par leSTUDIO nomad est sur donation et ouvert à tous les niveaux. Pense à amener ton matelas si tu en as un.&nbsp;</p>",
+            "createdAt": "2023-05-04T19:32:03.986Z",
+            "updatedAt": "2023-05-04T19:32:05.617Z",
+            "publishedAt": "2023-05-04T19:32:05.615Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 97,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "Méditation",
+            "subtitle": "Heartfulness",
+            "slug": "event-46",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>La méditation Heartfulness, une méditation sur le coeur.&nbsp;</p>",
+            "createdAt": "2023-05-04T19:33:09.409Z",
+            "updatedAt": "2023-05-04T19:33:10.966Z",
+            "publishedAt": "2023-05-04T19:33:10.964Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 98,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "Création collective de conte",
+            "subtitle": "Lucie Ponzetta",
+            "slug": "event-47",
+            "time_start": "14:00",
+            "time_end": "16:00",
+            "is_all_day": null,
+            "teaser": "",
+            "createdAt": "2023-05-04T19:34:10.274Z",
+            "updatedAt": "2023-05-04T19:34:11.869Z",
+            "publishedAt": "2023-05-04T19:34:11.867Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 14,
+                        "attributes": {
+                            "name": "Activité enfant",
+                            "slug": "activite-1",
+                            "createdAt": "2023-05-03T12:31:46.071Z",
+                            "updatedAt": "2023-05-03T12:31:48.181Z",
+                            "publishedAt": "2023-05-03T12:31:48.179Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 99,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "Case2Santé",
+            "subtitle": "Règles, endométriose et contraception",
+            "slug": "event-48",
+            "time_start": "17:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>Table ronde avec des expert·e·s de la santé autour des questions des règles, de l'endométriose et de la contraception.</p>",
+            "createdAt": "2023-05-04T19:35:36.350Z",
+            "updatedAt": "2023-05-04T19:35:37.872Z",
+            "publishedAt": "2023-05-04T19:35:37.870Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 4,
+                        "attributes": {
+                            "name": "Discussion",
+                            "slug": "discussion",
+                            "createdAt": "2023-05-03T12:28:42.622Z",
+                            "updatedAt": "2023-05-03T12:28:44.070Z",
+                            "publishedAt": "2023-05-03T12:28:44.067Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 100,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "Le GIN présente: ",
+            "subtitle": "Spectacle d'improvisation",
+            "slug": "event-49",
+            "time_start": "18:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Partant de rien, excepté de suggestions données par le public, les improvisateur·rice·s se plieront en quatre pour faire surgir des histoires inédites et spontanées. Un spectacle que vous n’avez jamais vu et que vous ne reverrez jamais !&nbsp;</p><p>&nbsp;</p><p>Proposé par la troupe d'impro du GIN (Groupe d'Impro du Nord)</p>",
+            "createdAt": "2023-05-04T19:36:58.385Z",
+            "updatedAt": "2023-05-04T19:37:00.110Z",
+            "publishedAt": "2023-05-04T19:37:00.108Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 6,
+                        "attributes": {
+                            "name": "Arts-vivants",
+                            "slug": "arts-vivants",
+                            "createdAt": "2023-05-03T12:29:34.544Z",
+                            "updatedAt": "2023-05-03T13:09:48.414Z",
+                            "publishedAt": "2023-05-03T12:29:35.597Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 103,
+        "attributes": {
+            "date_start": "2023-07-09",
+            "date_end": "2023-07-09",
+            "title": "L'Îlot",
+            "subtitle": "Tizian Büchi",
+            "slug": "event-50",
+            "time_start": "21:30",
+            "time_end": "23:30",
+            "is_all_day": null,
+            "teaser": "<p>Proposé par Les Culturateurs</p><p>&nbsp;</p><p>2022 | 106 min | dès 8 ans&nbsp;</p><p>Tizian Büchi, Suisse</p><p>&nbsp;</p><p>Dans la chaleur de l’été, deux vigiles sécurisent la rivière en contre-bas d’un quartier de Lausanne. Ammar est nouveau dans le métier, et Daniel partage avec lui son expérience. Au gré des rondes et des rencontres avec les habitants, on s’observe, on veille, des liens se tissent. Et une question résonne : qu’a-t-il bien pu se passer près de la rivière?</p>",
+            "createdAt": "2023-05-04T19:39:59.721Z",
+            "updatedAt": "2023-05-04T19:40:01.190Z",
+            "publishedAt": "2023-05-04T19:40:01.188Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 7,
+                        "attributes": {
+                            "name": "Projection",
+                            "slug": "pr",
+                            "createdAt": "2023-05-03T12:29:51.800Z",
+                            "updatedAt": "2023-05-03T12:29:53.446Z",
+                            "publishedAt": "2023-05-03T12:29:53.444Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 68,
+        "attributes": {
+            "date_start": "2023-07-13",
+            "date_end": "2023-07-13",
+            "title": "Yoga",
+            "subtitle": "Espace yoga",
+            "slug": "yoga-2",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Hatha Yoga | Yoga Iyengar | Vinyasa | Relaxation</p><p><br>Séances de yoga pour tous les niveaux.&nbsp;Amenez votre tapis !</p>",
+            "createdAt": "2023-05-04T18:45:36.506Z",
+            "updatedAt": "2023-05-04T18:45:37.897Z",
+            "publishedAt": "2023-05-04T18:45:37.895Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 74,
+        "attributes": {
+            "date_start": "2023-07-13",
+            "date_end": "2023-07-13",
+            "title": "Danses latines",
+            "subtitle": "Initiation par Alia Salsa School",
+            "slug": "danses-latines",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Initiation à la salsa cubaine puis soirée dansante latine avec animation</p>",
+            "createdAt": "2023-05-04T18:55:24.162Z",
+            "updatedAt": "2023-05-04T18:57:47.849Z",
+            "publishedAt": "2023-05-04T18:55:25.565Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 13,
+                        "attributes": {
+                            "name": "Soirée dansante",
+                            "slug": "soiree-dansante",
+                            "createdAt": "2023-05-03T12:31:23.657Z",
+                            "updatedAt": "2023-05-03T12:31:24.904Z",
+                            "publishedAt": "2023-05-03T12:31:24.902Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 76,
+        "attributes": {
+            "date_start": "2023-07-13",
+            "date_end": "2023-07-13",
+            "title": "Danses latines",
+            "subtitle": "Soirée dansante par Alia Salsa School",
+            "slug": "danses-latines-1",
+            "time_start": "20:00",
+            "time_end": "23:30",
+            "is_all_day": null,
+            "teaser": "<p>Soirée dansante latine avec animation</p>",
+            "createdAt": "2023-05-04T18:57:23.062Z",
+            "updatedAt": "2023-05-04T18:57:24.484Z",
+            "publishedAt": "2023-05-04T18:57:24.479Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 13,
+                        "attributes": {
+                            "name": "Soirée dansante",
+                            "slug": "soiree-dansante",
+                            "createdAt": "2023-05-03T12:31:23.657Z",
+                            "updatedAt": "2023-05-03T12:31:24.904Z",
+                            "publishedAt": "2023-05-03T12:31:24.902Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 109,
+        "attributes": {
+            "date_start": "2023-07-13",
+            "date_end": "2023-07-13",
+            "title": "Cours de français à la plage",
+            "subtitle": "Service jeunesse et cohésion sociale & École Verso",
+            "slug": "event-51",
+            "time_start": "17:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Le français à la plage est de retour du 3 au 28 juillet 2023 sur le site de La Dérivée !&nbsp;</p><p>&nbsp;</p><p>Du lundi au vendredi, le Service Jeunesse et cohésion sociale offre des cours de français gratuits pour adultes débutants, de 17h à 19h. Une halte-garderie est à disposition pour les enfants des élèves.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Les inscriptions se font chaque jour sur place, dès 16h30, dans la limite des places disponibles.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Informations : Secteur intégration, Rue de Neuchâtel 2, 1400 Yverdon-les-Bains, 024 423 69 44. integration@yverdon-les-bains.ch</p>",
+            "createdAt": "2023-05-04T19:52:30.077Z",
+            "updatedAt": "2023-05-04T19:52:31.594Z",
+            "publishedAt": "2023-05-04T19:52:31.593Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 12,
+                        "attributes": {
+                            "name": "Activité pédagogique",
+                            "slug": "activite-pedagogi",
+                            "createdAt": "2023-05-03T12:31:07.082Z",
+                            "updatedAt": "2023-05-03T12:31:08.190Z",
+                            "publishedAt": "2023-05-03T12:31:08.188Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 77,
+        "attributes": {
+            "date_start": "2023-07-14",
+            "date_end": "2023-07-14",
+            "title": "Cours de français à la plage",
+            "subtitle": "Service jeunesse et cohésion sociale & École Verso",
+            "slug": "cours-de-francais-a-la-plage-1",
+            "time_start": "17:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Le français à la plage est de retour du 3 au 28 juillet 2023 sur le site de La Dérivée !&nbsp;<br><br>Du lundi au vendredi, le Service Jeunesse et cohésion sociale offre des cours de français gratuits pour adultes débutants, de 17h à 19h. Une halte-garderie est à disposition pour les enfants des élèves.&nbsp;&nbsp;Les inscriptions se font chaque jour sur place, dès 16h30, dans la limite des places disponibles.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Informations : Secteur intégration, Rue de Neuchâtel 2, 1400 Yverdon-les-Bains, 024 423 69 44. integration@yverdon-les-bains.ch</p>",
+            "createdAt": "2023-05-04T18:59:27.439Z",
+            "updatedAt": "2023-05-04T18:59:35.527Z",
+            "publishedAt": "2023-05-04T18:59:35.525Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 12,
+                        "attributes": {
+                            "name": "Activité pédagogique",
+                            "slug": "activite-pedagogi",
+                            "createdAt": "2023-05-03T12:31:07.082Z",
+                            "updatedAt": "2023-05-03T12:31:08.190Z",
+                            "publishedAt": "2023-05-03T12:31:08.188Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 81,
+        "attributes": {
+            "date_start": "2023-07-14",
+            "date_end": "2023-07-14",
+            "title": "Deli Inka x La Dérivée",
+            "subtitle": "Stands: Habits en laine d'alpaca & Association Achaley",
+            "slug": "deli-inka-x-la-derivee",
+            "time_start": "17:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Stand de l’association Achalay qui soutient un foyer d’enfants défavorisés ainsi qu’un foyer d’adultes en situation de handicap au Pérou.</p>",
+            "createdAt": "2023-05-04T19:08:09.249Z",
+            "updatedAt": "2023-05-04T19:08:12.159Z",
+            "publishedAt": "2023-05-04T19:08:12.157Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 11,
+                        "attributes": {
+                            "name": "Exposition",
+                            "slug": "exposition",
+                            "createdAt": "2023-05-03T12:30:55.010Z",
+                            "updatedAt": "2023-05-03T12:30:56.151Z",
+                            "publishedAt": "2023-05-03T12:30:56.149Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 82,
+        "attributes": {
+            "date_start": "2023-07-14",
+            "date_end": "2023-07-14",
+            "title": "Deli Inka x La Dérivée",
+            "subtitle": "Performance de danses d'Amérique Latine par l'association Abya Yala",
+            "slug": "deli-inka-x-la-derivee-1",
+            "time_start": "19:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Fondée en 2019 par 3 passionnés de la danse , L’association Abya Yala vise à promouvoir et diffuser l’héritage folklorique de diverses cultures par le biais de ses deux principaux piliers: l’échange et le partage.<br>&nbsp;</p>",
+            "createdAt": "2023-05-04T19:11:04.128Z",
+            "updatedAt": "2023-05-04T19:11:05.596Z",
+            "publishedAt": "2023-05-04T19:11:05.594Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 5,
+                        "attributes": {
+                            "name": "Performance",
+                            "slug": "performance",
+                            "createdAt": "2023-05-03T12:29:13.586Z",
+                            "updatedAt": "2023-05-03T12:29:25.959Z",
+                            "publishedAt": "2023-05-03T12:29:25.957Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 83,
+        "attributes": {
+            "date_start": "2023-07-14",
+            "date_end": "2023-07-14",
+            "title": "Deli Inka x La Dérivée",
+            "subtitle": "El Swinka & La Pusanga",
+            "slug": "deli-inka-x-la-derivee-2",
+            "time_start": "20:00",
+            "time_end": "22:00",
+            "is_all_day": null,
+            "teaser": "<p>EL SWINKA &amp; LA PUSANGA</p><p>&nbsp;</p><p>Un mix de musique traditionnelle des andes, à la cumbia colombienne, sans oublier la guaracha, le son cubain et évidemment de petites touches de rock.</p><p>&nbsp;</p><p><br>&nbsp;</p>",
+            "createdAt": "2023-05-04T19:13:48.652Z",
+            "updatedAt": "2023-05-04T19:13:50.668Z",
+            "publishedAt": "2023-05-04T19:13:50.666Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 84,
+        "attributes": {
+            "date_start": "2023-07-14",
+            "date_end": "2023-07-14",
+            "title": "Deli Inka x La Dérivée",
+            "subtitle": "DJ Adu, Cumbiero y otros rumbo",
+            "slug": "deli-inka-x-la-derivee-3",
+            "time_start": "22:00",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>Dj Adu ramène ses disques et autres galettes !&nbsp;</p><p><br>Un petit tour d’Amérique latine où les son «&nbsp;Cumbiero y otros rumbo&nbsp;» font bouger, depuis des décennies, les gens du Pérou à la Colombie, des Andes aux caraïbes en passant par l’Amazonie.<br>Une jolie petite sélection dénichée lors de périples vous invitant au Voyage.</p>",
+            "createdAt": "2023-05-04T19:15:23.191Z",
+            "updatedAt": "2023-05-04T19:15:24.257Z",
+            "publishedAt": "2023-05-04T19:15:24.255Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 86,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "initiation-a-l-improvisation-theatrale",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;&nbsp;Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T19:18:30.508Z",
+            "updatedAt": "2023-05-04T19:18:33.502Z",
+            "publishedAt": "2023-05-04T19:18:33.500Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 87,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "Volleyball",
+            "subtitle": "Avec PAIRES",
+            "slug": "volleyball",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>Activité ouvert à toutes et tous !&nbsp;Rendez-vous à La Dérivée.&nbsp;Le projet PAIRES est une association à but non lucratif qui vise à l’inclusion des personnes issues de la migration en Suisse. Initiées avec le projet de création de binômes, les activités de l’association se sont depuis développées avec de nouvelles actions autour de ce projet initial.</p>",
+            "createdAt": "2023-05-04T19:19:50.144Z",
+            "updatedAt": "2023-05-04T19:19:51.756Z",
+            "publishedAt": "2023-05-04T19:19:51.753Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 90,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "Dégustation de bières artisanale",
+            "subtitle": null,
+            "slug": "degustation-de-bieres-artisanale",
+            "time_start": "14:00",
+            "time_end": "17:00",
+            "is_all_day": null,
+            "teaser": "<p>Inscription dans la limite des places disponibles à :</p><p><br>info.derivee@gmail.com</p>",
+            "createdAt": "2023-05-04T19:25:50.873Z",
+            "updatedAt": "2023-05-04T19:25:52.129Z",
+            "publishedAt": "2023-05-04T19:25:52.127Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 92,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "La sobriété énergétique en action",
+            "subtitle": "AlternatYv & Yverdon En Transition",
+            "slug": "la-sobriete-energetique-en-action",
+            "time_start": "15:00",
+            "time_end": "16:00",
+            "is_all_day": null,
+            "teaser": "",
+            "createdAt": "2023-05-04T19:28:42.518Z",
+            "updatedAt": "2023-05-04T19:28:43.606Z",
+            "publishedAt": "2023-05-04T19:28:43.605Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 4,
+                        "attributes": {
+                            "name": "Discussion",
+                            "slug": "discussion",
+                            "createdAt": "2023-05-03T12:28:42.622Z",
+                            "updatedAt": "2023-05-03T12:28:44.070Z",
+                            "publishedAt": "2023-05-03T12:28:44.067Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 93,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "Tarot & Oracles",
+            "subtitle": "Aude Tarot",
+            "slug": "tarot-and-oracles",
+            "time_start": "16:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Lecture des tarots de Marseille.&nbsp;</p><p>&nbsp;</p><p>Inscription sur place en début d'animation.</p>",
+            "createdAt": "2023-05-04T19:29:33.192Z",
+            "updatedAt": "2023-05-04T19:29:34.307Z",
+            "publishedAt": "2023-05-04T19:29:34.305Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 96,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "Paul Braz",
+            "subtitle": "Rap & Guitare",
+            "slug": "paul-braz",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Les mélodies chaleureuses et tristes font frémir l’âme. Paul Braz ouvre son cœur et nous laisse y entrevoir des failles tout en douceur. Il rappe ses mots avec une guitare classique. Munit d'un looper, il y ajoute parfois des drums et crée des boucles en direct.<br>Sans artifice, il propose un voyage sur un nuage teinté de hip hop, de bossa nova et de<br>reggae. Les mots se dévoilent tout devant, rappés comme des poèmes sur des créations<br>musicales « faites maison ». En avant la musique. Amoureux de hip hop et de musique brésilienne, Paul Braz est un rappeur originaire du Quartier Bon Son. Ce collectif de hip hop suisse-romand est actif depuis 2008 au travers d'une musique authentique et résolument positive.</p>",
+            "createdAt": "2023-05-04T19:32:41.703Z",
+            "updatedAt": "2023-05-04T19:32:43.245Z",
+            "publishedAt": "2023-05-04T19:32:43.243Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 1,
+                        "attributes": {
+                            "name": "Concert",
+                            "slug": "concert",
+                            "createdAt": "2023-05-03T12:11:18.852Z",
+                            "updatedAt": "2023-05-03T12:12:15.892Z",
+                            "publishedAt": "2023-05-03T12:12:15.889Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 101,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "MILLE4SAMPLES x La Dérivée: PanderGäst",
+            "subtitle": "Minimal",
+            "slug": "mille4samples-x-la-derivee-pander-gaest",
+            "time_start": "20:00",
+            "time_end": "21:30",
+            "is_all_day": null,
+            "teaser": "<p>MILLE4SAMPLES, c'est un collectif DJ et une association yverdonnoise qui oeuvre pour le développement de l'offre en matière de vie nocturne dans la région. Ses membres sont passionnés de musique électronique et proposent des sets explorant différents aspects de celle-ci.&nbsp;</p><p>&nbsp;</p>",
+            "createdAt": "2023-05-04T19:37:01.357Z",
+            "updatedAt": "2023-05-04T19:37:03.104Z",
+            "publishedAt": "2023-05-04T19:37:03.102Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 102,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "MILLE4SAMPLES x La Dérivée: Jin",
+            "subtitle": "House | UK garage | Break",
+            "slug": "mille-4-samples-x-la-derivee-jin",
+            "time_start": "21:30",
+            "time_end": "22:30",
+            "is_all_day": null,
+            "teaser": "<p>MILLE4SAMPLES, c'est un collectif DJ et une association yverdonnoise qui oeuvre pour le développement de l'offre en matière de vie nocturne dans la région. Ses membres sont passionnés de musique électronique et proposent des sets explorant différents aspects de celle-ci.</p>",
+            "createdAt": "2023-05-04T19:39:17.577Z",
+            "updatedAt": "2023-05-04T19:39:19.860Z",
+            "publishedAt": "2023-05-04T19:39:19.857Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 104,
+        "attributes": {
+            "date_start": "2023-07-15",
+            "date_end": "2023-07-15",
+            "title": "MILLE4SAMPLES x la Dérivée: CARBON NEGATIV",
+            "subtitle": "Live set Techno",
+            "slug": "mille-4-samples-x-la-derivee-carbon-negativ",
+            "time_start": "23:30",
+            "time_end": "02:00",
+            "is_all_day": null,
+            "teaser": "<p>MILLE4SAMPLES, c'est un collectif DJ et une association yverdonnoise qui oeuvre pour le développement de l'offre en matière de vie nocturne dans la région. Ses membres sont passionnés de musique électronique et proposent des sets explorant différents aspects de celle-ci.</p>",
+            "createdAt": "2023-05-04T19:40:43.490Z",
+            "updatedAt": "2023-05-04T19:40:45.444Z",
+            "publishedAt": "2023-05-04T19:40:45.441Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 2,
+                        "attributes": {
+                            "name": "DJ-set",
+                            "slug": "dj-set",
+                            "createdAt": "2023-05-03T12:12:50.646Z",
+                            "updatedAt": "2023-05-03T12:28:07.974Z",
+                            "publishedAt": "2023-05-03T12:28:07.972Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 105,
+        "attributes": {
+            "date_start": "2023-07-16",
+            "date_end": "2023-07-16",
+            "title": "Vinyasa Yoga",
+            "subtitle": "leSTUDIO nomad",
+            "slug": "vinyasa-yoga-2",
+            "time_start": "11:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>À la recherche d'un bon plan pour entamer ton dimanche au plein air?&nbsp;&nbsp;Rejoins-nous tous les dimanches à 11h00 pour un cours de Vinyasa Yoga.&nbsp;&nbsp;La recette assurée pour conclure la semaine sans stress, relaxé et heureux! Le cours Nomad Flow par leSTUDIO nomad est sur donation et ouvert à tous les niveaux.&nbsp;</p><p>&nbsp;</p><p>Pense à amener ton matelas si tu en as un.&nbsp;</p>",
+            "createdAt": "2023-05-04T19:42:14.904Z",
+            "updatedAt": "2023-05-04T19:42:16.042Z",
+            "publishedAt": "2023-05-04T19:42:16.040Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 106,
+        "attributes": {
+            "date_start": "2023-07-16",
+            "date_end": "2023-07-16",
+            "title": "Méditation",
+            "subtitle": "Heartfulness",
+            "slug": "meditation-1",
+            "time_start": "12:00",
+            "time_end": "13:00",
+            "is_all_day": null,
+            "teaser": "<p>La méditation Heartfulness, une méditation sur le coeur.&nbsp;</p>",
+            "createdAt": "2023-05-04T19:44:26.471Z",
+            "updatedAt": "2023-05-04T19:44:30.438Z",
+            "publishedAt": "2023-05-04T19:44:30.436Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 9,
+                        "attributes": {
+                            "name": "Bien-être",
+                            "slug": "bien-etre",
+                            "createdAt": "2023-05-03T12:30:18.051Z",
+                            "updatedAt": "2023-05-03T12:30:19.493Z",
+                            "publishedAt": "2023-05-03T12:30:19.491Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 107,
+        "attributes": {
+            "date_start": "2023-07-16",
+            "date_end": "2023-07-16",
+            "title": "Bricolages",
+            "subtitle": "Les mam'y",
+            "slug": "bricolages",
+            "time_start": "14:00",
+            "time_end": "16:00",
+            "is_all_day": null,
+            "teaser": "<p>Les enfants sont invités à venir bricoler en notre compagnie. Tout le matériel nécessaire est à disposition, et nous sommes présents pour un p’tit coup de main ou de ciseaux ! Les bricolages sont réalisés avec principalement des matériaux de recyclage, comme des gobelets de yaourts, des rouleaux de papier WC, des bouts de ficelle, … Mais surtout avec tout plein de créativité !</p>",
+            "createdAt": "2023-05-04T19:46:08.261Z",
+            "updatedAt": "2023-05-04T19:46:09.439Z",
+            "publishedAt": "2023-05-04T19:46:09.437Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 14,
+                        "attributes": {
+                            "name": "Activité enfant",
+                            "slug": "activite-1",
+                            "createdAt": "2023-05-03T12:31:46.071Z",
+                            "updatedAt": "2023-05-03T12:31:48.181Z",
+                            "publishedAt": "2023-05-03T12:31:48.179Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 108,
+        "attributes": {
+            "date_start": "2023-07-16",
+            "date_end": "2023-07-16",
+            "title": "Initiation au crochet",
+            "subtitle": "Collectif Brindille",
+            "slug": "initiation-au-crochet-1",
+            "time_start": "14:00",
+            "time_end": "18:00",
+            "is_all_day": null,
+            "teaser": "<p>En complément à l'exposition visible dans les cabines téléphoniques du centre-ville d'Yverdon-les-Bains, le collectif Brindilles propose des permanences d'initiation au crochet à La Dérivée.&nbsp;</p><p>&nbsp;</p><p>Le public est bienvenu à les rejoindre pour participer à la réalisation collective d'une pelote géante !</p>",
+            "createdAt": "2023-05-04T19:47:00.525Z",
+            "updatedAt": "2023-05-04T19:47:02.293Z",
+            "publishedAt": "2023-05-04T19:47:02.291Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 110,
+        "attributes": {
+            "date_start": "2023-07-16",
+            "date_end": "2023-07-16",
+            "title": "PONT.E",
+            "subtitle": "Soirée Bresilienne ",
+            "slug": "pont-e",
+            "time_start": "17:30",
+            "time_end": "00:00",
+            "is_all_day": null,
+            "teaser": "<p>Proposé par l'association le renversé</p><p>&nbsp;</p><p>17:30 | Capoeira, initiation et démonstration, Mestre Azul, Espace Makhuwas Yverdon<br>19:00 | Films du soir et association, présentation<br>19:30 | Concert, musique brésilienne<br>21:30 | Courts-métrages suisses et brésiliens</p><p><br>Plus d’informations sur www.laderivee.ch</p>",
+            "createdAt": "2023-05-04T19:52:51.943Z",
+            "updatedAt": "2023-05-04T19:52:56.194Z",
+            "publishedAt": "2023-05-04T19:52:56.192Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 66,
+        "attributes": {
+            "date_start": "2023-07-20",
+            "date_end": "2023-07-20",
+            "title": "Cours de français à la plage",
+            "subtitle": "Service jeunesse et cohésion sociale & École Verso",
+            "slug": "cours-de-francais-a-la-plage",
+            "time_start": "17:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Le français à la plage est de retour du 3 au 28 juillet 2023 sur le site de La Dérivée !&nbsp;<br><br>Du lundi au vendredi, le Service Jeunesse et cohésion sociale offre des cours de français gratuits pour adultes débutants, de 17h à 19h. Une halte-garderie est à disposition pour les enfants des élèves.&nbsp;&nbsp;Les inscriptions se font chaque jour sur place, dès 16h30, dans la limite des places disponibles.&nbsp;&nbsp;</p><p>&nbsp;</p><p>Informations : Secteur intégration, Rue de Neuchâtel 2, 1400 Yverdon-les-Bains, 024 423 69 44. integration@yverdon-les-bains.ch</p><p>&nbsp;</p>",
+            "createdAt": "2023-05-04T18:43:02.082Z",
+            "updatedAt": "2023-05-04T19:54:56.540Z",
+            "publishedAt": "2023-05-04T18:43:03.190Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 12,
+                        "attributes": {
+                            "name": "Activité pédagogique",
+                            "slug": "activite-pedagogi",
+                            "createdAt": "2023-05-03T12:31:07.082Z",
+                            "updatedAt": "2023-05-03T12:31:08.190Z",
+                            "publishedAt": "2023-05-03T12:31:08.188Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 111,
+        "attributes": {
+            "date_start": "2023-07-20",
+            "date_end": "2023-07-20",
+            "title": "Yoga",
+            "subtitle": "Espace yoga",
+            "slug": "event-52",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "",
+            "createdAt": "2023-05-04T19:53:26.359Z",
+            "updatedAt": "2023-05-04T20:14:20.651Z",
+            "publishedAt": "2023-05-04T20:14:20.649Z",
+            "tags": {
+                "data": []
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 115,
+        "attributes": {
+            "date_start": "2023-07-20",
+            "date_end": "2023-07-20",
+            "title": "Yoga",
+            "subtitle": "Espace yoga",
+            "slug": "yoga-3",
+            "time_start": "18:00",
+            "time_end": "19:00",
+            "is_all_day": null,
+            "teaser": "<p>Hatha Yoga | Yoga Iyengar | Vinyasa | Relaxation&nbsp;<br>Séances de yoga pour tous les niveaux.&nbsp;</p><p>&nbsp;</p><p>Amenez votre tapis !</p>",
+            "createdAt": "2023-05-05T14:38:01.912Z",
+            "updatedAt": "2023-05-05T14:38:02.951Z",
+            "publishedAt": "2023-05-05T14:38:02.947Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 8,
+                        "attributes": {
+                            "name": "Sport",
+                            "slug": "sport",
+                            "createdAt": "2023-05-03T12:30:05.783Z",
+                            "updatedAt": "2023-05-03T12:30:07.405Z",
+                            "publishedAt": "2023-05-03T12:30:07.403Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 116,
+        "attributes": {
+            "date_start": "2023-07-20",
+            "date_end": "2023-07-20",
+            "title": "Sortie en bateau solaire",
+            "subtitle": "Sol-à-flot",
+            "slug": "sortie-en-bateau-solaire",
+            "time_start": "18:00",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Rejoignez-nous pour une remontée de la Thièle à travers la ville, ou une découverte du bout du lac…&nbsp;&nbsp;Notre bateau électro-solaire, complètement autonome vous emmènera, certes lentement, mais sans bruit, sans émission pour une évasion… différente. L’occasion de parler de mobilité douce&nbsp;!&nbsp;&nbsp;</p><p>&nbsp;</p><p>Inscription dans la limite des places disponibles, à la buvette de La Dérivée, durant les heures d'ouverture du lieu.&nbsp;&nbsp;Le jour J, rassemblement des passagers à La Dérivée à 17h50 pour le départ à 18h00 ou à 18h50, pour le départ à 19h00. L’animation peut être annulée au moment du départ par le pilote à cause des conditions de navigation.&nbsp;&nbsp;Nous nous réjouissons de vous accueillir&nbsp;!<br>&nbsp;</p><p>Des gilets de sauvetages sont prêtés aux enfants par l'Association Sol-à-flots.</p>",
+            "createdAt": "2023-05-05T14:39:51.401Z",
+            "updatedAt": "2023-05-05T14:40:21.644Z",
+            "publishedAt": "2023-05-05T14:39:52.525Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 3,
+                        "attributes": {
+                            "name": "Animation",
+                            "slug": "animation",
+                            "createdAt": "2023-05-03T12:28:17.902Z",
+                            "updatedAt": "2023-05-03T12:28:31.808Z",
+                            "publishedAt": "2023-05-03T12:28:31.806Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 117,
+        "attributes": {
+            "date_start": "2023-07-20",
+            "date_end": "2023-07-20",
+            "title": "Session grimpe en mixité choisie (FLINTA)",
+            "subtitle": "La Réglette",
+            "slug": "session-grimpe-en-mixite-choisie-flinta-1",
+            "time_start": "18:30",
+            "time_end": "20:00",
+            "is_all_day": null,
+            "teaser": "<p>Parce que le bloc d’escalade n’échappe pas aux comportements virilistes et sexistes et que nous souhaitons garantir un environnement bienveillant et accessible pour les personnes moins visibles dans ce sport.&nbsp;&nbsp;La Réglette souhaite, plusieurs fois dans l’été, inviter les FLINTA de tout niveau sportif à partager des moments d’escalade collectifs sans pression ni jugement, simplement amusants et bienveillants ! Ces séances n’ont pour but d’exclure personne mais bien de questionner un côté de la pratique de l’escalade.&nbsp;Ces moments s'inscrivent dans une démarche d'inclusivité envers les minorités de genre et d'orientation sexuelle et non à l'encontre des hommes cisgenres. L'objectif d'un tel moment d'escalade collectif est d'offrir un espace d'échange et de convivialité le plus safe possible aux personnes FLINTA.&nbsp;FLINTA - c'est-à-dire les personnes Femmes, Lesbiennes, Intersexes, Non-binaires, Transgenres et Agenres</p>",
+            "createdAt": "2023-05-05T14:43:53.686Z",
+            "updatedAt": "2023-05-05T14:43:55.503Z",
+            "publishedAt": "2023-05-05T14:43:55.499Z",
+            "tags": {
+                "data": []
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 112,
+        "attributes": {
+            "date_start": "2023-07-22",
+            "date_end": "2023-07-22",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "initiation-a-l-improvisation-theatrale-1",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;</p><p>&nbsp;</p><p>Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T20:18:54.828Z",
+            "updatedAt": "2023-05-04T20:18:56.800Z",
+            "publishedAt": "2023-05-04T20:18:56.798Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 113,
+        "attributes": {
+            "date_start": "2023-07-29",
+            "date_end": "2023-07-29",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "initiation-a-l-improvisation-theatrale-2",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;</p><p>&nbsp;</p><p>Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T20:20:43.155Z",
+            "updatedAt": "2023-05-04T20:20:46.511Z",
+            "publishedAt": "2023-05-04T20:20:46.507Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    },
+    {
+        "id": 114,
+        "attributes": {
+            "date_start": "2023-08-05",
+            "date_end": "2023-08-05",
+            "title": "Initiation à l'improvisation théâtrale",
+            "subtitle": "Avec le GIN",
+            "slug": "initiation-a-l-improvisation-theatrale-3",
+            "time_start": "10:00",
+            "time_end": "12:00",
+            "is_all_day": null,
+            "teaser": "<p>En improvisation théâtrale, il n’y a pas de texte, pas de décor, pas d’idées préalables et pourtant, on arrive à raconter des histoires, faire rire et susciter des émotions.&nbsp;</p><p>&nbsp;</p><p>Vous vous demandez comment est-ce qu’on fait ? Pendant deux heures, venez découvrir les bases de l’improvisation théâtrale : jouer en groupe, créer des personnages, construire une histoire, poser un décor, développer l’écoute de l’autre, et bien plus encore !&nbsp;</p><p>&nbsp;</p><p>Aucune expérience préalable requise Atelier donné par les improvisateurices du GIN (Groupe d’Impro du Nord).</p>",
+            "createdAt": "2023-05-04T20:22:42.499Z",
+            "updatedAt": "2023-05-04T20:22:44.748Z",
+            "publishedAt": "2023-05-04T20:22:44.746Z",
+            "tags": {
+                "data": [
+                    {
+                        "id": 10,
+                        "attributes": {
+                            "name": "Atelier",
+                            "slug": "atelier",
+                            "createdAt": "2023-05-03T12:30:36.651Z",
+                            "updatedAt": "2023-05-03T12:30:44.235Z",
+                            "publishedAt": "2023-05-03T12:30:44.233Z",
+                            "locale": "en"
+                        }
+                    }
+                ]
+            },
+            "partners": {
+                "data": []
+            },
+            "buttons": []
+        }
+    }
+]
