@@ -2,15 +2,15 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import Tag from "../Tag"
-import "./Tags.scss";
+import Button from "../Button"
+import "./Buttons.scss";
 
 /*
 # Interface
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
-export interface TagsProps {
+export interface ButtonsProps {
   elements?: JSX.Element | JSX.Element[];
   align?: string | null;
 }
@@ -20,7 +20,7 @@ export interface TagsProps {
 /*
 # Class Components
 */
-/*const Tags: React.FC<TagsProps> = ({
+/*const Buttons: React.FC<ButtonsProps> = ({
   left_positive,
   left_negative,
   middle_positive,
@@ -34,28 +34,30 @@ export interface TagsProps {
   children
 }) => (
 */
-const Tags = ({
+const Buttons = ({
   elements,
   align
-}: TagsProps) => {
+}: ButtonsProps) => {
   return (
     <div
       className={`
-        tags-component
+        buttons-component
       `}
     >
       <div className={`
-        tags-component-inner
+        buttons-component-inner
         ${align === `center` ? `align-center` : ``}
         ${align === `left` ? `align-left` : ``}
         ${align === `right` ? `align-right` : ``}
       `}>
         {elements != null ? Object.keys(elements).map((key) => (
-          <Tag
+          <Button
             key={elements[key].attributes ? elements[key].attributes.slug : elements[key].slug}
-            id={elements[key].id}
-            name={elements[key].attributes ? elements[key].attributes.name : elements[key].name}
-            slug={elements[key].attributes ? elements[key].attributes.slug : elements[key].slug}
+            label={elements[key].attributes ? elements[key].attributes.name : elements[key].name}
+            icon={elements[key].attributes ? elements[key].attributes.icon : elements[key].icon}
+            mode={`default`}
+            color={`black`}
+            state={`default`}
           />
         )) : ``}
       </div>
@@ -66,4 +68,4 @@ const Tags = ({
 /*
 # Export
 */
-export default Tags;
+export default Buttons;

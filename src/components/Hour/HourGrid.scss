@@ -1,0 +1,83 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.hour-component-grid {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  clear: both;
+  
+  .hour-component-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border-top: 1px solid rgba(0,0,0,0.25);
+
+    .hour {
+      color: rgba(0,0,0,0.5);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      padding: 0 5px;
+    }
+    .content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .hour-component-grid {
+    .hour-component-inner {
+      .title {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .hour-component-grid {
+    .hour-component-inner {
+      .title {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .hour-component-grid {
+    .hour-component-inner {
+      .title {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

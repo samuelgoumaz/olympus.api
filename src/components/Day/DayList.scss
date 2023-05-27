@@ -8,12 +8,22 @@
 /*
 # document
 */
-.event-component {
-  position: absolute;
-  margin: 1px 0;
-  .event-component-inner {
-    .title {
-    }
+.day-component-list {
+  width: 100%;
+  display: block;
+  clear: both;
+  position: relative;
+  height: auto;
+  
+  .day-component-header {
+    padding-top: 30px;
+    text-align: center;
+  }
+  .day-component-fullday {
+  }
+  .day-component-content {
+  }
+  .day-component-afterday {
   }
 }
 
@@ -21,8 +31,8 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component {
-    .event-component-inner {
+  .day-component-list {
+    .day-component-inner {
       .title {
       }
     }
@@ -30,8 +40,8 @@
 }
 
 @media #{$medium-and-down} {
-  .event-component {
-    .event-component-inner {
+  .day-component-list {
+    .day-component-inner {
       .title {
       }
     }
@@ -39,8 +49,8 @@
 }
 
 @media #{$medium-and-up} {
-  .event-component {
-    .event-component-inner {
+  .day-component-list {
+    .day-component-inner {
       .title {
       }
     }

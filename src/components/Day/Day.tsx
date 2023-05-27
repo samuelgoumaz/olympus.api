@@ -1,8 +1,12 @@
 /*
 # Imports
 */
-import React, { useRef, useEffect, useState } from "react";
-import "./Day.scss";
+import React from "react";
+import moment from "moment";
+import "moment/locale/fr";
+
+import "./DayGrid.scss";
+import "./DayList.scss";
 
 /*
 # Interface
@@ -10,7 +14,8 @@ import "./Day.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface DayProps {
-  mode?: string; // <= grid or list
+  display?: string; // <= grid or list
+  id: string;
   dateStart?: Date;
   dateEnd?: Date;
   timeStart?: Time;
@@ -28,7 +33,7 @@ export interface DayProps {
 # Class Components
 */
 const Day: React.FC<DayProps> = ({
-  mode,
+  display,
   dateStart,
   dateEnd,
   timeStart,
@@ -39,16 +44,20 @@ const Day: React.FC<DayProps> = ({
   title,
   height
 }) => {
+  moment.locale("fr");
   return (
     <div 
-      className={`day-component`}
+      className={`
+        ${display === `grid` ? `day-component-grid` : ``}
+        ${display === `list` ? `day-component-list` : ``}
+      `}
       style={{
         height: height ? height : `auto`
       }}
     >
 
       {title && <div className={`day-component-header`}>
-        <h5>{title}</h5>
+        <h4>{moment(title).format("dddd DD MMM")}</h4>
       </div>}
 
       {fullday && <div className={`day-component-fullday`}>
@@ -57,9 +66,6 @@ const Day: React.FC<DayProps> = ({
 
       {content && <div className={`day-component-content`}>
         {content}
-      </div>}
-
-      {afterday && <div className={`day-component-afterday`}>
         {afterday}
       </div>}
 

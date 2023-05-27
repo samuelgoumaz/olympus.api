@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+/*
+# Importation */
+import React from "react";
+import Slider from "react-slick";
 import Hour from "../Hour";
 import Day from "../Day";
 import Event from "../Event";
@@ -10,16 +13,19 @@ import {
 import "./Calendar.scss";
 import "./CalendarGrid.scss";
 
+/*
+# Interface */
 export interface CalendarProps {
   position?: number;
+  slug?: string;
+  id?: number;
   dateStart?: Date;
   dateEnd?: Date;
-  timeStart?: number;
-  timeEnd?: number;
+  timeStart?: string;
+  timeEnd?: string;
   display?: string;
   elements?: JSX.Element | JSX.Element[];
-  children?: JSX.Element | JSX.Element[];
-  refSlider?: React.RefObject<HTMLDivElement>;
+  render?: (data: any) => any;
 }
 
 export interface CalendarData {
@@ -29,8 +35,12 @@ export interface CalendarData {
   elements_allday: any[];
 }
 
+/*
+# Export functions */
 const Calendar: React.FC<CalendarProps> = ({
   position,
+  id,
+  slug,
   dateStart,
   dateEnd,
   timeStart,
@@ -38,14 +48,20 @@ const Calendar: React.FC<CalendarProps> = ({
   display,
   elements,
   children,
-  refSlider,
+  render,
 }) => {
-  const [calendarData, setCalendarData] = useState<CalendarData[]>([]);
+
+  /*
+  # General */
+  let calendarData = [];
+  let nextId = [];
   let dateTraceDay = false;
   let dateCompareDay = false;
   let dateTraceHour = false;
   let dateCompareHour = false;
 
+  /*
+  # splitByDay */
   const splitByDay = (dataSortByEvent: boolean) => {
     if (dateTraceDay === false) {
       dateTraceDay = dataSortByEvent;
@@ -58,6 +74,8 @@ const Calendar: React.FC<CalendarProps> = ({
     }
   };
 
+  /*
+  # getNextId */
   const getNextId = (myData: any[], current: number) => {
     let myNextId = null;
     let dataKeys = Object.keys(myData);
@@ -80,11 +98,8 @@ const Calendar: React.FC<CalendarProps> = ({
     return myNextId;
   };
 
-  /**
-  Apply Range Calendar
-    timeStart = 6
-    timeEnd = 2
-  **/
+  /*
+  # applyRangeCalendar */
   function applyRangeCalendar(timeStart, timeEnd, myData) {
     let calendarKeys = Object.keys(myData);
     let nextDay = null;
@@ -96,14 +111,14 @@ const Calendar: React.FC<CalendarProps> = ({
       let currentRange = [];
       let nextRange = [];
 
-      if (timeStart) {
+      if (Number(timeStart)) {
         // set current Range
-        currentRange = timeStart;
+        currentRange = Number(timeStart);
       }
 
-      if (timeEnd) {
+      if (Number(timeEnd)) {
         // set current Range
-        nextRange = timeEnd;
+        nextRange = Number(timeEnd);
       }
 
       Object.keys(myData).map(
@@ -126,17 +141,16 @@ const Calendar: React.FC<CalendarProps> = ({
           if (nextDay != null) {
             if (
               nextDate.toLocaleDateString("en-US") ==
-              new Date(myData[nextDay].title).toLocaleDateString("en-US")
+              new Date(nextDay.title).toLocaleDateString("en-US")
             ) {
-              Object.keys(myData[nextDay].elements).map(
+              Object.keys(nextDay.elements).map(
                 // apply range for current day.
                 (incNextDayHour, i) =>
-                  incNextDayHour <= timeEnd &&
-                  (elements[incNextDayHour] =
-                    myData[nextDay].elements[incNextDayHour])
+                  incNextDayHour <= Number(timeEnd) &&
+                  (elements[incNextDayHour] = nextDay.elements[incNextDayHour])
               );
             } else {
-              for (let incHour = 0; incHour <= timeEnd; incHour++) {
+              for (let incHour = 0; incHour <= Number(timeEnd); incHour++) {
                 // for each hours
                 elements[incHour] = {
                   title: convertMinuteToString(convertNumberToMinute(incHour)),
@@ -162,6 +176,8 @@ const Calendar: React.FC<CalendarProps> = ({
     });
   }
 
+  /*
+  # pushCalendar */
   function pushCalendar(eventData: any, incDay: number) {
     splitByDay(eventData.attributes.date_start);
 
@@ -213,369 +229,154 @@ const Calendar: React.FC<CalendarProps> = ({
   }
 
   /*
-  Push events into calendarData useState */
+  # initCalendar */
   const initCalendar = () => {
     let result = [];
     elements.forEach((el, i) => {
-      result[i] = pushCalendar(el, el.id, calendarData);
+      const dataDay = pushCalendar(el, el.id, calendarData) ?? false;
+      if (dataDay) {
+        result[i] = dataDay;
+      }
     });
     return result;
   };
 
   /*
-  Push initCalendar result into calendarData useState */
-  useEffect(() => {
-    const fetchData = async () => {
-      const myCalendar = await initCalendar();
-      setCalendarData(myCalendar);
+  # fetchData */
+  const fetchData = () => {
+    let myCalendar = initCalendar();
 
-      /*if (timeStart > 0 && timeEnd > 0) {
-        const myCalendar = await initCalendar();
-        const range = await applyRangeCalendar(timeStart, timeEnd, myCalendar)
-        setCalendarData(range);
-      } else {
-        const myCalendar = await initCalendar();
-        setCalendarData(myCalendar);
-      }*/
-    };
-    fetchData();
-  }, [elements]);
+    if (Number(timeStart) > 0 && Number(timeEnd) > 0) {
+      myCalendar = applyRangeCalendar(timeStart, timeEnd, myCalendar);
+    }
+
+    return myCalendar;
+  };
 
   /*
-  For use slider */
-  function render(display: string) {
-    switch (display) {
-      case "grid":
-        <Slider ref={refSlider} {...settings}></Slider>;
-        break;
-      default:
-        break;
+  # myDisplay */
+  function myDisplay() {
+    calendarData = fetchData();
+    if (calendarData) {
+      return Object.keys(calendarData)
+        .sort(function (a, b) {
+          return (
+            new Date(calendarData[a].date) - new Date(calendarData[b].date)
+          );
+        })
+        .map((key, index) => (
+          <Day
+            key={`calendar-${index}`}
+            title={calendarData[key].title}
+            display={display}
+            fullday={
+              <>
+                {Object.keys(calendarData[key].elements_allday).map(
+                  (itemAllDay, i) => {
+                    console.log("itemAllDay > ", calendarData[key].elements_allday.length)
+                    return render(calendarData[key].elements_allday[itemAllDay], false, calendarData[key].elements_allday.length, i)
+                  }
+                )}
+              </>
+            }
+            content={
+              <>
+                {Object.keys(calendarData[key].elements).map(
+                  (itemHour, i) =>
+                    Number(itemHour) >= Number(timeStart) && (
+                      <Hour
+                        key={`calendar-${slug}-${itemHour}`}
+                        display={display}
+                        height={
+                          100 / Object.keys(calendarData[key].elements).length +
+                          `%`
+                        }
+                        content={calendarData[key].elements[itemHour].elements}
+                        name={calendarData[key].elements[itemHour].title}
+                        render={render}
+                      />
+                    )
+                )}
+                {Number(timeEnd) > 0 &&
+                  Object.keys(calendarData[key].elements).map(
+                    (itemHour, i) =>
+                      Number(itemHour) <= Number(timeEnd) && (
+                        <Hour
+                          key={`calendar-${slug}-${itemHour}`}
+                          display={display}
+                          height={
+                            100 /
+                              Object.keys(calendarData[key].elements).length +
+                            `%`
+                          }
+                          content={
+                            calendarData[key].elements[itemHour].elements
+                          }
+                          name={calendarData[key].elements[itemHour].title}
+                          render={render}
+                        />
+                      )
+                  )}
+              </>
+            }
+          />
+        ));
     }
   }
 
   /*
-  View return */
+  # Slider settings */
+  let sliderSettings = {
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    infinite: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1360,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: false,
+        },
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
+        },
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+        },
+      },
+    ],
+  };
+
+  /*
+  Render */
   return (
     <section
       className={`
-        ${display === `grid` ? `calendar-component-grid` : `calendar-component`}
-        panel
-      `}
+      ${display === `grid` ? `calendar-component-grid` : `calendar-component`}
+      panel
+    `}
+      id={`${id}`}
       style={{
         zIndex: position ?? 3,
       }}
     >
-      {display ? <h1>hello</h1> : <h1>null</h1>}
       <div className={`calendar-component-inner`}>
-        {console.log("calendarData > return ", calendarData)}
-
-        {Object.keys(calendarData)
-          .sort(function (a, b) {
-            return (
-              new Date(calendarData[a].date) - new Date(calendarData[b].date)
-            );
-          })
-          .map((key, index) => (
-            <Day
-              key={`calendar-${index}`}
-              title={calendarData[key].title}
-              fullday={
-                <>
-                  {Object.keys(calendarData[key].elements_allday).map(
-                    (itemAllDay, i) => (
-                      <>
-                        <Event
-                          key={itemAllDay}
-                          width={`100%`}
-                          height={`auto`}
-                          left={`0%`}
-                          top={`auto`}
-                          isAllDay={true}
-                          timeStart={convertMinuteToString(
-                            convertStringToMinute(
-                              calendarData[key].elements_allday[itemAllDay]
-                                .attributes.time_start
-                            )
-                          )}
-                          title={
-                            calendarData[key].elements_allday[itemAllDay]
-                              .attributes.title
-                          }
-                        />
-                      </>
-                    )
-                  )}
-                </>
-              }
-              content={
-                <>
-                  {Object.keys(calendarData[key].elements).map(
-                    (itemHour, i) =>
-                      Number(itemHour) >= Number(timeStart) && (
-                        <>
-                          <Hour
-                            key={itemHour}
-                            height={
-                              100 /
-                                Object.keys(calendarData[key].elements).length +
-                              `%`
-                            }
-                            name={calendarData[key].elements[itemHour].title}
-                          />
-                          {Object.keys(
-                            calendarData[key].elements[itemHour].elements
-                          ).map((itemEvent, i) => (
-                            <>
-                              <Event
-                                key={itemEvent}
-                                isAllDay={false}
-                                width={
-                                  calendarData[key].elements[itemHour].elements
-                                    .length > 1
-                                    ? 100 /
-                                        Number(
-                                          calendarData[key].elements[itemHour]
-                                            .elements.length
-                                        ) +
-                                      `%`
-                                    : `100%`
-                                }
-                                height={
-                                  convertStringToMinute(
-                                    calendarData[key].elements[itemHour]
-                                      .elements[itemEvent].attributes.time_start
-                                  ) -
-                                    convertStringToMinute(
-                                      calendarData[key].elements[itemHour]
-                                        .elements[itemEvent].attributes.time_end
-                                    ) +
-                                    convertStringToMinute(
-                                      calendarData[key].elements[itemHour]
-                                        .elements[itemEvent].attributes
-                                        .time_start
-                                    ) >
-                                  Object.keys(calendarData[key].elements)
-                                    .length *
-                                    60
-                                    ? Math.abs(
-                                        (convertStringToMinute(
-                                          calendarData[key].elements[itemHour]
-                                            .elements[itemEvent].attributes
-                                            .time_start
-                                        ) -
-                                          24 * 60) *
-                                          (100 /
-                                            (Object.keys(
-                                              calendarData[key].elements
-                                            ).length *
-                                              60))
-                                      ).toFixed(2) + `%`
-                                    : Math.abs(
-                                        (convertStringToMinute(
-                                          calendarData[key].elements[itemHour]
-                                            .elements[itemEvent].attributes
-                                            .time_start
-                                        ) -
-                                          convertStringToMinute(
-                                            calendarData[key].elements[itemHour]
-                                              .elements[itemEvent].attributes
-                                              .time_end
-                                          )) *
-                                          (100 /
-                                            (Object.keys(
-                                              calendarData[key].elements
-                                            ).length *
-                                              60))
-                                      ).toFixed(2) + `%`
-                                }
-                                left={
-                                  calendarData[key].elements[itemHour].elements
-                                    .length > 1
-                                    ? i > 0
-                                      ? Math.abs(
-                                          100 /
-                                            calendarData[key].elements[itemHour]
-                                              .elements.length
-                                        ) *
-                                          i +
-                                        `%`
-                                      : `0%`
-                                    : `0%`
-                                }
-                                top={
-                                  Number(
-                                    convertStringToMinute(
-                                      calendarData[key].elements[itemHour]
-                                        .elements[itemEvent].attributes
-                                        .time_start
-                                    )
-                                  ) != 0
-                                    ? Math.abs(
-                                        (100 /
-                                          (Object.keys(
-                                            calendarData[key].elements
-                                          ).length *
-                                            60)) *
-                                          (convertStringToMinute(
-                                            calendarData[key].elements[itemHour]
-                                              .elements[itemEvent].attributes
-                                              .time_start
-                                          ) -
-                                            timeStart * 60)
-                                      ) + `%`
-                                    : `0%`
-                                }
-                                timeStart={convertMinuteToString(
-                                  convertStringToMinute(
-                                    calendarData[key].elements[itemHour]
-                                      .elements[itemEvent].attributes.time_start
-                                  )
-                                )}
-                                title={
-                                  calendarData[key].elements[itemHour].elements[
-                                    itemEvent
-                                  ].attributes.title
-                                }
-                              />
-                            </>
-                          ))}
-                        </>
-                      )
-                  )}
-                </>
-              }
-              afterday={
-                <>
-                  {timeEnd > 0 &&
-                    Object.keys(calendarData[key].elements).map(
-                      (itemHour, i) =>
-                        Number(itemHour) <= Number(timeEnd) && (
-                          <>
-                            <Hour
-                              key={itemHour}
-                              height={
-                                100 /
-                                  Object.keys(calendarData[key].elements)
-                                    .length +
-                                `%`
-                              }
-                              name={calendarData[key].elements[itemHour].title}
-                            />
-
-                            {Number(timeEnd) > 0
-                              ? Object.keys(
-                                  calendarData[key].elements[itemHour].elements
-                                ).map(
-                                  (itemEvent, i) =>
-                                    Number(timeEnd) > 0 && (
-                                      <>
-                                        <Item
-                                          key={itemEvent}
-                                          width={
-                                            calendarData[key].elements[itemHour]
-                                              .elements.length > 1
-                                              ? 100 /
-                                                  Number(
-                                                    calendarData[key].elements[
-                                                      itemHour
-                                                    ].elements.length
-                                                  ) +
-                                                `%`
-                                              : `100%`
-                                          }
-                                          height={
-                                            Math.abs(
-                                              (convertStringToMinute(
-                                                calendarData[key].elements[
-                                                  itemHour
-                                                ].elements[itemEvent].attributes
-                                                  .time_start
-                                              ) -
-                                                convertStringToMinute(
-                                                  calendarData[key].elements[
-                                                    itemHour
-                                                  ].elements[itemEvent]
-                                                    .attributes.time_end
-                                                )) *
-                                                (100 /
-                                                  (Object.keys(
-                                                    calendarData[key].elements
-                                                  ).length *
-                                                    60))
-                                            ).toFixed(2) + `%`
-                                          }
-                                          left={
-                                            calendarData[key].elements[itemHour]
-                                              .elements.length > 1
-                                              ? i > 0
-                                                ? Math.abs(
-                                                    100 /
-                                                      calendarData[key]
-                                                        .elements[itemHour]
-                                                        .elements.length
-                                                  ) + `%`
-                                                : `0%`
-                                              : `0%`
-                                          }
-                                          top={
-                                            Number(
-                                              convertStringToMinute(
-                                                calendarData[key].elements[
-                                                  itemHour
-                                                ].elements[itemEvent].attributes
-                                                  .time_start
-                                              )
-                                            ) >= 0
-                                              ? (100 /
-                                                  Object.keys(
-                                                    calendarData[key].elements
-                                                  ).length) *
-                                                  (Object.keys(
-                                                    calendarData[key].elements
-                                                  ).length -
-                                                    (timeEnd + 1)) +
-                                                `%`
-                                              : Math.abs(
-                                                  (100 /
-                                                    (Object.keys(
-                                                      calendarData[key].elements
-                                                    ).length *
-                                                      60)) *
-                                                    (convertStringToMinute(
-                                                      calendarData[key]
-                                                        .elements[itemHour]
-                                                        .elements[itemEvent]
-                                                        .attributes.time_start
-                                                    ) -
-                                                      timeStart * 60)
-                                                ) + `%`
-                                          }
-                                          timeStart={convertMinuteToString(
-                                            convertStringToMinute(
-                                              calendarData[key].elements[
-                                                itemHour
-                                              ].elements[itemEvent].attributes
-                                                .time_start
-                                            )
-                                          )}
-                                          title={
-                                            calendarData[key].elements[itemHour]
-                                              .elements[itemEvent].attributes
-                                              .title
-                                          }
-                                        />
-                                      </>
-                                    )
-                                )
-                              : false}
-                          </>
-                        )
-                    )}
-                </>
-              }
-            />
-          ))}
-        {children && children}
+        {display === `grid` && (
+          <Slider {...sliderSettings}>{myDisplay()}</Slider>
+        )}
+        {display === `list` && myDisplay()}
       </div>
     </section>
   );
@@ -585,25 +386,3 @@ const Calendar: React.FC<CalendarProps> = ({
 # Export
 */
 export default Calendar;
-/*
-
-content={<>
-                {day.elements.map(
-                  (hour, i) => (
-                    <>
-                      {console.log("hour > ", new Date(hour))}
-                      <Hour 
-                        key={`hour-${i}`} 
-                        name={hour.title} 
-                        height={
-                          100 /
-                          Number(day.elements.length) +
-                          `%`
-                        }
-                      />
-                    </>
-                  )
-                )}
-              </>}
-
-              */

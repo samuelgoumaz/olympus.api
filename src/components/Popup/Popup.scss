@@ -1,0 +1,250 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# Canvas */
+.popup-component-bg {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 8888;
+}
+.popup-component {
+    &.dsp-open {
+        max-width: 900px;
+        position: fixed;
+        width: 50%;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+
+        .popup-component-inner {
+            display: block;
+            position: relative;
+            max-height: calc(100vh - 300px);
+            overflow: auto;
+
+            .popup-header {
+                width: 100%;
+                display: table;
+
+                .popup-header-col {
+                    vertical-align: middle;
+                    display: table-cell;
+
+                    &.title {
+                        padding-left: 60px;
+                    }
+
+                    &.action {
+                        text-align: right;
+
+                        button {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            .popup-content {
+                background: orange;
+
+                .popup-content-inner {
+                    padding: 60px;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+    .popup-component {
+        &.dsp-open {
+            max-width: auto;
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+
+            .popup-component-inner {
+                max-height: calc(100vh - 140px);
+
+                .popup-header {
+                    .popup-header-col {
+                        &.title {
+                            padding-left: 20px;
+                        }
+                        &.action {
+                            text-align: right;
+                        }
+                    }
+                }
+                .popup-content {
+                    background: orange;
+        
+                    .popup-content-inner {
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{$medium-and-down} {
+    .popup-component {
+        &.dsp-open {
+            max-width: 500px;
+            width: 100%;
+            
+            .popup-component-inner {
+                max-height: calc(100vh - 160px);
+                .popup-header {
+                    .popup-header-col {
+                        &.title {
+                            padding-left: 20px;
+                        }
+                        &.action {
+                            text-align: right;
+                        }
+                    }
+                }
+                .popup-content {
+                    background: orange;
+        
+                    .popup-content-inner {
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{$medium-and-up} {
+    .popup-component {
+        &.dsp-open {
+            max-width: 600px;
+            width: 80%;
+            .popup-component-inner {
+                max-height: calc(100vh - 180px);
+                .popup-header {
+                    .popup-header-col {
+                        &.title {
+                            padding-left: 30px;
+                        }
+                        &.action {
+                            text-align: right;
+                        }
+                    }
+                }
+                .popup-content {
+                    background: orange;
+        
+                    .popup-content-inner {
+                        padding: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{$large-and-up} {
+    .popup-component {
+        &.dsp-open {
+            max-width: 700px;
+            width: 70%;
+            .popup-component-inner {
+                max-height: calc(100vh - 220px);
+                .popup-header {
+                    .popup-header-col {
+                        &.title {
+                            padding-left: 40px;
+                        }
+                        &.action {
+                            text-align: right;
+                        }
+                    }
+                }
+                .popup-content {
+                    background: orange;
+        
+                    .popup-content-inner {
+                        padding: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{$extra-large-and-up} {
+    .popup-component {
+        &.dsp-open {
+            max-width: 800px;
+            width: 60%;
+            .popup-component-inner {
+                max-height: calc(100vh - 260px);
+                .popup-header {
+                    .popup-header-col {
+                        &.title {
+                            padding-left: 50px;
+                        }
+                        &.action {
+                            text-align: right;
+                        }
+                    }
+                }
+                .popup-content {
+                    background: orange;
+        
+                    .popup-content-inner {
+                        padding: 50px;
+                    }
+                }
+            }
+        }
+        &.dsp-close {
+            width: 100%;
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+    
+            .popup-component-inner {
+                .popup-header {
+                    .popup-header-col {
+                        &.title {
+                            padding-left: 50px;
+                        }
+                        &.action {
+                            button {
+                            }
+                        }
+                    }
+                }
+    
+                .popup-content {
+                    .popup-content-inner {
+                    }
+                }
+            }
+        }
+    }
+}

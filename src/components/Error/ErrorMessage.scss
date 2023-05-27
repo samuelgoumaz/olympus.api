@@ -8,11 +8,28 @@
 /*
 # document
 */
-.event-component {
-  position: absolute;
-  margin: 1px 0;
-  .event-component-inner {
-    .title {
+.error-component-message {
+  width: 100%;
+  background: red;
+
+  .error-component-inner {
+    .error-component-content {
+      .error-scene {
+        .icon {
+        }
+        .name {
+        }
+      }
+
+      .error-content {
+
+        .title {
+        }
+        .subtitle {
+        }
+        .content {
+        }
+      }
     }
   }
 }
@@ -21,30 +38,12 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
-  }
 }
 
 @media #{$medium-and-down} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
-  }
 }
 
 @media #{$medium-and-up} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
-  }
 }
 
 @media #{$large-and-up} {

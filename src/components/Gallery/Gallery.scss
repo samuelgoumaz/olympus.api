@@ -8,47 +8,37 @@
 /*
 # document
 */
-.event-component {
-  position: absolute;
-  margin: 1px 0;
-  .event-component-inner {
-    .title {
-    }
-  }
+.gallery-component {
 }
 
 /*
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
+  .gallery-component {
   }
+  
 }
 
 @media #{$medium-and-down} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
+  .gallery-component {
   }
+  
 }
 
 @media #{$medium-and-up} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
+  .gallery-component {
   }
+  
 }
 
 @media #{$large-and-up} {
+  .gallery-component {
+  }
+  
 }
 
 @media #{$extra-large-and-up} {
+  .gallery-component {
+  }
 }

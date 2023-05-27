@@ -4,6 +4,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Error.scss";
 import "./ErrorCover.scss";
+import "./ErrorMessage.scss";
 
 /*
 # Interface
@@ -73,8 +74,7 @@ const Error: React.FC<ErrorProps> = ({
           </svg>
         )
         break;
-
-      default:
+      case "wait":
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -95,6 +95,8 @@ const Error: React.FC<ErrorProps> = ({
           </svg>
         )
         break;
+      default:
+        break;
     }
   }
 
@@ -104,6 +106,7 @@ const Error: React.FC<ErrorProps> = ({
         ${!display ? 'error-component' : ''}
         ${display === 'inline' ? 'error-component-inline' : ''}
         ${display === 'cover' ? 'error-component-cover' : ''}
+        ${display === 'message' ? 'error-component-message' : ''}
         panel
       `}
       style={{

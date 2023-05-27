@@ -8,21 +8,22 @@
 /*
 # document
 */
-.hour-component {
-  width: 100%;
+.day-component-grid {
   display: block;
   clear: both;
   position: relative;
   border-top: 1px solid rgba(0,0,0,0.25);
   background: rgba(0,0,0,0.05);
+  height: 600px;
   
-  .hour-component-inner {
-    padding: 5px;
-
-    .hour {
-      color: rgba(0,0,0,0.5);
-      font-size: 13px;
-    }
+  .day-component-header {
+    text-align: center;
+  }
+  .day-component-fullday {
+  }
+  .day-component-content {
+  }
+  .day-component-afterday {
   }
 }
 
@@ -30,8 +31,8 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .hour-component {
-    .hour-component-inner {
+  .day-component-grid {
+    .day-component-inner {
       .title {
       }
     }
@@ -39,8 +40,8 @@
 }
 
 @media #{$medium-and-down} {
-  .hour-component {
-    .hour-component-inner {
+  .day-component-grid {
+    .day-component-inner {
       .title {
       }
     }
@@ -48,8 +49,8 @@
 }
 
 @media #{$medium-and-up} {
-  .hour-component {
-    .hour-component-inner {
+  .day-component-grid {
+    .day-component-inner {
       .title {
       }
     }
