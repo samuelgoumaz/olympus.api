@@ -33,19 +33,10 @@ const Template: ComponentStory<typeof Error> = (args) => <Error {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const Default = Template.bind({});
-Default.args = {
-  display: null,
-  title: 'My Title',
-  subtitle: 'My Subtitle',
+export const Install = Template.bind({});
+Install.args = {
+  title: 'My install title',
+  subtitle: 'My install subtitle',
   error: '500',
-};
-
-
-export const Cover = Template.bind({});
-Cover.args = {
-  display: 'cover',
-  title: 'My Title',
-  subtitle: 'My Subtitle',
-  error: '500',
+  icon: "install"
 };

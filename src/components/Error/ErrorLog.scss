@@ -8,23 +8,9 @@
 /*
 # document
 */
-.error-component {
-  width: 100%;
-  display: block;
-  padding: 10px;
-
+.error-component-log {
   .error-component-inner {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
-    background: #f2f2f2;
-    border-radius: 5px;
-    
     .error-component-content {
-      width: 100%;
-      padding: 20px;
-
       .error-scene {
         .icon {
           display: block;
@@ -38,27 +24,14 @@
           }
         }
         .name {
-          font-family: Monospace;
-          text-align: center;
         }
       }
       .error-content {
-        text-align: center;
         .title {
-          width: 100%;
-          margin: 0;
-          font-size: 2.5em;
-          color: inherit;
         }
         .subtitle {
-          width: 100%;
-          margin: 0;
-          font-size: 1.5em;
-          color: inherit;
         }
         .content {
-          padding: 20px 0;
-          color: inherit;
         }
         &:after {
           content: " ";
@@ -74,7 +47,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .error-component {
+  .error-component-log {
     .error-component-inner {
       .error-component-content {
         .error-scene {
@@ -100,12 +73,13 @@
 }
 
 @media #{$medium-and-down} {
-  .error-component {
+  .error-component-log {
     .error-component-inner {
       .error-component-content {
         .error-scene {
           .icon {
             svg {
+              max-width: 100px;
             }
           }
           .name {
@@ -125,12 +99,13 @@
 }
 
 @media #{$medium-and-up} {
-  .error-component {
+  .error-component-log {
     .error-component-inner {
       .error-component-content {
         .error-scene {
           .icon {
             svg {
+              max-width: 100px;
             }
           }
           .name {
@@ -150,12 +125,13 @@
 }
 
 @media #{$large-and-up} {
-  .error-component {
+  .error-component-log {
     .error-component-inner {
       .error-component-content {
         .error-scene {
           .icon {
             svg {
+              max-width: 100px;
             }
           }
           .name {
@@ -175,12 +151,13 @@
 }
 
 @media #{$extra-large-and-up} {
-  .error-component {
+  .error-component-log {
     .error-component-inner {
       .error-component-content {
         .error-scene {
           .icon {
             svg {
+              max-width: 100px;
             }
           }
           .name {

@@ -2,9 +2,10 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./Error.scss";
+import "./ErrorInline.scss";
 import "./ErrorCover.scss";
-import "./ErrorMessage.scss";
+import "./ErrorLog.scss";
+import "./Error.scss";
 
 /*
 # Interface
@@ -38,6 +39,27 @@ const Error: React.FC<ErrorProps> = ({
 
   function iconSwitcher (name) {
     switch (name) {
+      case "install":
+        return (
+          <svg version="1.1" x="0px" y="0px" viewBox="0 0 800 800">
+            <path fill={`black`} d={`M39.2,289.5c0-118,0-176.9,36.6-213.5c36.6-36.5,95.6-36.5,213.3-36.5h221.2c117.8,0,176.7,0,213.3,36.6
+              s36.6,95.5,36.6,213.3v221.2c0,117.8,0,176.7-36.6,213.3s-95.4,36.6-213.2,36.6H289.1c-117.8,0-176.7,0-213.3-36.6
+              s-36.6-95.5-36.6-213.3V289.4C39.2,289.4,39.2,289.5,39.2,289.5z`} />
+            <g>
+              <polygon fill={`white`} points={`279.1,283.8 229.6,283.8 180.2,283.8 130.7,283.8 130.7,333.3 180.2,333.3 229.6,333.3 279.1,333.3 
+                328.5,333.3 331.8,333.3 331.8,341.5 331.8,374.5 331.8,382.8 316.2,382.8 254.4,382.8 192.5,382.8 130.7,382.8 130.7,432.2 
+                192.5,432.2 254.4,432.2 316.2,432.2 331.8,432.2 331.8,481.7 316.2,481.7 254.4,481.7 192.5,481.7 130.7,481.7 130.7,531.2 
+                192.5,531.2 254.4,531.2 316.2,531.2 378,531.2 378,481.7 378,481.7 378,473.4 378,440.5 378,432.2 378,432.2 378,382.8 378,382.8 
+                378,374.5 378,341.5 378,333.3 378,333.3 378,283.8 328.5,283.8`} />
+              <polygon fill={`white`} points={`467.7,341.5 467.7,333.3 470.9,333.3 520.4,333.3 569.9,333.3 619.3,333.3 668.8,333.3 668.8,283.8 
+                421.5,283.8 421.5,333.3 421.5,333.3 421.5,341.5 421.5,374.5 421.5,382.8 421.5,407.5 421.5,432.2 483.3,432.2 545.1,432.2 
+                607,432.2 622.6,432.2 622.6,440.5 622.6,473.5 622.6,481.7 607,481.7 545.1,481.7 483.3,481.7 421.5,481.7 421.5,531.2 
+                483.3,531.2 545.1,531.2 607,531.2 668.8,531.2 668.8,506.4 668.8,506.4 668.8,407.5 668.8,407.5 668.8,382.8 607,382.8 
+                545.1,382.8 483.3,382.8 467.7,382.8 467.7,374.5`}/>
+            </g>
+          </svg>
+        )
+        break;
       case "loading":
         return (
           <svg
@@ -106,7 +128,7 @@ const Error: React.FC<ErrorProps> = ({
         ${!display ? 'error-component' : ''}
         ${display === 'inline' ? 'error-component-inline' : ''}
         ${display === 'cover' ? 'error-component-cover' : ''}
-        ${display === 'message' ? 'error-component-message' : ''}
+        ${display === 'log' ? 'error-component-log' : ''}
         panel
       `}
       style={{
@@ -121,9 +143,11 @@ const Error: React.FC<ErrorProps> = ({
             <div className={`icon`}>
               {iconSwitcher(icon)}
             </div>
+
             {error && <div className={`name`}>
-              {error ?? 404}
+              Error {error ?? 404}
             </div>}
+
           </div>
 
           <div className={`error-content`}>

@@ -9,62 +9,66 @@
 # document
 */
 .error-component-cover {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background: red;
-  display: table;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 9;
 
   .error-component-inner {
-    width: 100%;
+    width: 50%;
+    max-width: 600px;
+    position: fixed;
     height: auto;
-    position: relative;
-    display: table-cell;
-    vertical-align: middle;
-
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    background: #f2f2f2;
+    border-radius: 5px;
+    
     .error-component-content {
       width: 100%;
-      height: auto;
-      position: relative;
+      padding: 20px;
 
       .error-scene {
-        background: brown;
-        text-align: center;
-
         .icon {
-          background: turquoise;
-          padding: 10px 0;
+          display: block;
+          max-width: 80px;
+          max-height: 80px;
+          margin: 0 auto;
+          
+          svg {
+            width: 100%;
+            height: 100%;
+          }
         }
         .name {
-          display: inline;
+          font-family: Monospace;
           text-align: center;
-          font-size: 6em;
-          background: pink;
-          border-top: 1px solid rgba(0,0,0,0.25);
         }
       }
-
       .error-content {
-        background: cyan;
-        width: 50%;
-        margin: 0 auto;
         text-align: center;
-
         .title {
+          width: 100%;
           margin: 0;
-          display: block;
-          font-size: 2em;
+          font-size: 2.5em;
+          color: inherit;
         }
         .subtitle {
-          font-size: 0.875em;
-          font-family: monospace;
-          text-transform: uppercase;
-          margin: 1em 0 0 0;
-          display: block;
+          width: 100%;
+          margin: 0;
+          font-size: 1.5em;
+          color: inherit;
         }
         .content {
-          margin: 1em 0 0 0;
+          padding: 20px 0;
+          color: inherit;
         }
-
         &:after {
           content: " ";
           display: block;
@@ -80,32 +84,23 @@
 */
 @media #{$small-and-down} {
   .error-component-cover {
-    min-height: calc(100vh - 50px);
-
     .error-component-inner {
       .error-component-content {
         .error-scene {
           .icon {
-            padding: 10px 0;
+            svg {
+              max-width: 100px;
+            }
           }
           .name {
           }
         }
-
         .error-content {
-          width: 100%;
-
           .title {
           }
           .subtitle {
           }
           .content {
-          }
-
-          &:after {
-            content: " ";
-            display: block;
-            clear: both;
           }
         }
       }
@@ -114,13 +109,101 @@
 }
 
 @media #{$medium-and-down} {
+  .error-component-cover {
+    .error-component-inner {
+      .error-component-content {
+        .error-scene {
+          .icon {
+            svg {
+            }
+          }
+          .name {
+          }
+        }
+        .error-content {
+          .title {
+          }
+          .subtitle {
+          }
+          .content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .error-component-cover {
+    .error-component-inner {
+      .error-component-content {
+        .error-scene {
+          .icon {
+            svg {
+            }
+          }
+          .name {
+          }
+        }
+        .error-content {
+          .title {
+          }
+          .subtitle {
+          }
+          .content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .error-component-cover {
+    .error-component-inner {
+      .error-component-content {
+        .error-scene {
+          .icon {
+            svg {
+            }
+          }
+          .name {
+          }
+        }
+        .error-content {
+          .title {
+          }
+          .subtitle {
+          }
+          .content {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .error-component-cover {
+    .error-component-inner {
+      .error-component-content {
+        .error-scene {
+          .icon {
+            svg {
+            }
+          }
+          .name {
+          }
+        }
+        .error-content {
+          .title {
+          }
+          .subtitle {
+          }
+          .content {
+          }
+        }
+      }
+    }
+  }
 }
