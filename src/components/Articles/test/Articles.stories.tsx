@@ -35,6 +35,9 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const Default = Template.bind({});
 Default.args = {
+  render: function (data) {
+    return <h1>hello</h1>
+  },
   elements: [{
       "id": 4,
       "slug": "hybride",

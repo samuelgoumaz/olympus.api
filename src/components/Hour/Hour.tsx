@@ -10,6 +10,8 @@ import Event from "../Event";
 import Error from "../Error";
 import "./HourGrid.scss";
 import "./HourList.scss";
+import "./HourRow.scss";
+import "./HourCols.scss";
 
 /*
 # Interface
@@ -32,7 +34,6 @@ const Hour: React.FC<HourProps> = ({
   content,
   render,
 }) => {
-  const renderedElement = render && render("Hello World");
 
   /*
   # render */
@@ -41,6 +42,8 @@ const Hour: React.FC<HourProps> = ({
       className={`
         ${display === `grid` ? `hour-component-grid` : ``}
         ${display === `list` ? `hour-component-list` : ``}
+        ${display === `cols` ? `hour-component-cols` : ``}
+        ${display === `row` ? `hour-component-row` : ``}
       `}
     >
       <div
@@ -48,7 +51,7 @@ const Hour: React.FC<HourProps> = ({
         hour-component-inner
       `}
       >
-        {display === `grid` ? <div className={`hour`}>{name}</div> : ``}
+        {display === `cols` ? <div className={`hour`}>{name}</div> : ``}
         {content && content.length !== 0 ? (
           <div className={`content`}>
             {content.map((event, inc) => {

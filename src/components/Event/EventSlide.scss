@@ -8,31 +8,40 @@
 /*
 # document
 */
-.event-component-grid {
-  display: inline-block;
-  vertical-align: top;
-  width: 33.33%;
+.event-component-slide {
+  width: 100%;
+  @include aspect-ratio(2, 1);
+  display: block;
   position: relative;
 
   .fx {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .event-component-inner {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-  }
-  .event-component-inner {
-    position: relative;
-    z-index: 2;
+    display: table;
     
     .scene {
-      width: 100%;
-      @include aspect-ratio(1,1);
+      width: 50%;
+      display: table-cell;
+      position: relative;
+      z-index: 2;
     }
     .content {
-      text-align: center;
-      padding: 0 20px;
+      padding: 100px;
+      background: yellow;
+      vertical-align: middle;
+      width: 50%;
+      display: table-cell;
+      position: relative;
+      z-index: 3;
 
       .title {
         margin: 0.1em 0;
@@ -40,12 +49,6 @@
     }
     .action {
       margin-top: 1em;
-      .variant-component {
-        .variant-component-selector {
-          width: 100%;
-          padding-right: 0;
-        }
-      }
     }
   }
 }
@@ -54,7 +57,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component-grid {
+  .event-component-slide {
     .event-component-inner {
       .title {
       }
@@ -63,7 +66,7 @@
 }
 
 @media #{$medium-and-down} {
-  .event-component-grid {
+  .event-component-slide {
     .event-component-inner {
       .title {
       }
@@ -72,7 +75,7 @@
 }
 
 @media #{$medium-and-up} {
-  .event-component-grid {
+  .event-component-slide {
     .event-component-inner {
       .title {
       }

@@ -8,23 +8,40 @@
 /*
 # document
 */
-.hour-component-grid {
+.hour-component-cols {
   width: 100%;
+  height: 30px;
   position: relative;
   display: block;
+  padding: 0;
+  margin: 0;
+  clear: both;
   
   .hour-component-inner {
+    position: absolute;
     width: 100%;
-    position: relative;
-    display: block;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border-top: 1px solid rgba(0,0,0,0.25);
 
     .hour {
-      display: none;
+      color: rgba(0,0,0,0.5);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      padding: 0 5px;
     }
-
     .content {
-      position: relative;
+      position: absolute;
       width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
     }
   }
 }
@@ -33,7 +50,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .hour-component-grid {
+  .hour-component-cols {
     .hour-component-inner {
       .title {
       }
@@ -42,7 +59,7 @@
 }
 
 @media #{$medium-and-down} {
-  .hour-component-grid {
+  .hour-component-cols {
     .hour-component-inner {
       .title {
       }
@@ -51,7 +68,7 @@
 }
 
 @media #{$medium-and-up} {
-  .hour-component-grid {
+  .hour-component-cols {
     .hour-component-inner {
       .title {
       }

@@ -38,9 +38,9 @@ https://storybook.js.org/docs/react/writing-stories/args
 export const Default = Template.bind({});
 Default.args = {
   display: `grid`,
-  id: `myCalendar`,
-  timeStart: `14`,
-  timeEnd: `3`,
+  slug: `myCalendar`,
+  timeStart: `14:00`,
+  timeEnd: `03:00`,
   tags: [
     {
       id: 1,

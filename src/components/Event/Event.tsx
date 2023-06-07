@@ -14,11 +14,17 @@ import Partners from "../Partners";
 import Gallery from "../Gallery";
 import Popup, {createPopup} from "../Popup";
 import "./Event.scss";
-import "./EventGrid.scss";
-import "./EventGridAllday.scss";
+import "./EventSlide.scss";
+import "./EventPage.scss";
+import "./EventPopup.scss";
+import "./EventCols.scss";
+import "./EventColsAllday.scss";
 import "./EventList.scss";
 import "./EventListAllday.scss";
-import "./EventPopup.scss";
+import "./EventRow.scss";
+import "./EventRowAllday.scss";
+import "./EventGrid.scss";
+import "./EventGridAllday.scss";
 
 /*
 # Interface
@@ -63,6 +69,9 @@ export interface EventProps {
   buttons?: JSX.Element | JSX.Element[];
   partners?: JSX.Element | JSX.Element[];
   content?: any[];
+  fx?: JSX.Element | JSX.Element[];
+  scene?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
   onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -95,6 +104,9 @@ const Event: React.FC<EventProps> = ({
   buttons,
   images,
   content,
+  fx,
+  children,
+  scene
   onClick
 }) => {
 
@@ -153,8 +165,25 @@ const Event: React.FC<EventProps> = ({
   const handleClick = () => {
   };
 
+  /*
+  # selectToggle(event) */
+  function selectToggle (event) {
+    const parent = event.parentElement.parentElement;
+    const handle = parent.getElementsByClassName("event-component-handle")[0];
+    const container = parent.getElementsByClassName("event-component-container")[0];
+
+    if (container.classList.contains("dsp-open")) {
+      container.classList.add("dsp-close");
+      container.classList.remove("dsp-open");
+    } else {
+      container.classList.add("dsp-open");
+      container.classList.remove("dsp-close");
+    }
+  }
+
   switch (display) {
-    case 'grid':
+
+    case 'cols': // Cols
       return (
         <div 
         className={`
@@ -198,22 +227,8 @@ const Event: React.FC<EventProps> = ({
       );
       
       break;
-    case 'list':
-      /*
-      # selectToggle(event) */
-      function selectToggle (event) {
-        const parent = event.parentElement.parentElement;
-        const handle = parent.getElementsByClassName("event-component-handle")[0];
-        const container = parent.getElementsByClassName("event-component-container")[0];
 
-        if (container.classList.contains("dsp-open")) {
-          container.classList.add("dsp-close");
-          container.classList.remove("dsp-open");
-        } else {
-          container.classList.add("dsp-open");
-          container.classList.remove("dsp-close");
-        }
-      }
+    case 'list': // List
       return (
         <div 
         className={`
@@ -271,7 +286,7 @@ const Event: React.FC<EventProps> = ({
           
         </div>
       );
-    case 'popup':
+    case 'popup': // Popup
       /*
       # selectToggle(event) */
       return (
@@ -314,7 +329,104 @@ const Event: React.FC<EventProps> = ({
         </div>
       );
       break;
+    case 'page': // Page
+      return (
+        <div 
+        className={`
+          event-component-${display}
+          ${mode === `allday` ? `allday` : ``}
+        `}
+        id={`event-${slug}`}
+        >
+          <div className={`
+            event-component-inner
+          `}>
+
+            {timeStart && timeEnd ? <div className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</div> : ``}
+            {tags && <div className={`tags`}>
+            {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
+            </div>}
+            <div className="header">
+              <h5 className="title">{title}</h5>
+              {display === `list` ? <h6 className="subtitle">{subtitle}</h6> : ``}
+            </div>
+
+            {images && <div className="event-component-content-col image">{images}</div>}
+            {body && <div className="event-component-content-col content">
+              <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
+            </div>}
+            {buttons && <div className="event-component-content-col buttons">
+              {buttons && buttons}
+            </div>}
+            {partners && <div className="event-component-content-col partners">
+              {partners && partners}
+            </div>}
+
+            <div className="action">
+              <Button
+                icon={`expand_more`}
+              />
+            </div>
+
+          </div>
+          
+        </div>
+      );
+      break;
     default:
+      return (
+        <div 
+        className={`
+          event-component-${display}
+          ${mode === `allday` ? `allday` : ``}
+        `}
+        id={`event-${slug}`}
+        >
+          <div className={`fx`}>
+            {fx}
+          </div>
+
+          <div className={`
+            event-component-inner
+          `}>
+
+            <div className={`scene`}>
+              {scene}
+            </div>
+
+            <div className={`content`}>
+              {children ? children : <>
+                {timeStart && timeEnd && timeStart !== timeEnd ? <div className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</div> : ``}
+                {tags && <div className={`tags`}>
+                {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
+                </div>}
+                <div className="header">
+                  {display !== `cols` && <h3 className="title">{title}</h3>}
+                  {display === `cols` && <h5 className="title">{title}</h5>}
+                  {display === `list` ? <h6 className="subtitle">{subtitle}</h6> : ``}
+                </div>
+
+                {images && <div className="image">{images}</div>}
+                {body && <div className="body" dangerouslySetInnerHTML={{ __html: body }} />}
+                {buttons && <div className="buttons">
+                  {buttons && buttons}
+                </div>}
+                {partners && <div className="partners">
+                  {partners && partners}
+                </div>}
+
+                <div className="action">
+                  <Button
+                    icon={`expand_more`}
+                  />
+                </div>
+              </>}
+            </div>
+
+          </div>
+          
+        </div>
+      );
   }
 };
 

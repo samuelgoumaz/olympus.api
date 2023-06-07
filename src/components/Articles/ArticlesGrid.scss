@@ -8,20 +8,13 @@
 /*
 # document
 */
-.articles-component {
-  width: 100%;
-  display: block;
-  position: relative;
-
+.articles-component-grid {
   .articles-component-inner {
     &.align-left {
-      text-align: left;
     }
     &.align-center {
-      text-align: center;
     }
     &.align-right {
-      text-align: right;
     }
   }
 }

@@ -8,11 +8,21 @@
 /*
 # document
 */
-.event-component {
+.calendar-component-list {
+  width: 100%;
+  display: block;
   position: relative;
-  margin: 1px 0;
-  .event-component-inner {
-    .title {
+
+  .calendar-component-inner {
+
+    &.align-left {
+      text-align: left;
+    }
+    &.align-center {
+      text-align: center;
+    }
+    &.align-right {
+      text-align: right;
     }
   }
 }
@@ -21,30 +31,12 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
-  }
 }
 
 @media #{$medium-and-down} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
-  }
 }
 
 @media #{$medium-and-up} {
-  .event-component {
-    .event-component-inner {
-      .title {
-      }
-    }
-  }
 }
 
 @media #{$large-and-up} {

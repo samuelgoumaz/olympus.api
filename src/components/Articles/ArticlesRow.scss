@@ -8,21 +8,13 @@
 /*
 # document
 */
-.calendar-component {
-  width: 100%;
-  display: block;
-  position: relative;
-
-  .calendar-component-inner {
-
+.articles-component-row {
+  .articles-component-inner {
     &.align-left {
-      text-align: left;
     }
     &.align-center {
-      text-align: center;
     }
     &.align-right {
-      text-align: right;
     }
   }
 }

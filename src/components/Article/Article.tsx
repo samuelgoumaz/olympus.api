@@ -38,6 +38,7 @@ export interface ArticleProps {
   display: string | null;
   fx: JSX.Element | JSX.Element[];
   scene: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[];
   getProductFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -57,6 +58,7 @@ const Article = ({
   subtitle,
   fx,
   scene,
+  children,
   getProductFunc
 }: ArticleProps) => (
   <article
@@ -86,23 +88,26 @@ const Article = ({
       </div>
 
       <div className={`content`}>
-        {title != null ? <div className={`header`}>
-          {title != null ? <h3 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-          {subtitle != null ? <h5 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
-          {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
-        </div> : ``}
+        {children ? children : <>
+          
+          {title != null ? <div className={`header`}>
+            {title != null ? <h3 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+            {subtitle != null ? <h5 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+            {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+          </div> : ``}
 
-        {display === `slide` && tags ? <Tags elements={tags} align={`left`} /> : ``}
-        {display === `grid` && tags ? <Tags elements={tags} align={`center`} /> : ``}
-        {display === `row` && tags ? <Tags elements={tags} align={`left`} /> : ``}
+          {display === `slide` && tags ? <Tags elements={tags} align={`left`} /> : ``}
+          {display === `grid` && tags ? <Tags elements={tags} align={`center`} /> : ``}
+          {display === `row` && tags ? <Tags elements={tags} align={`left`} /> : ``}
 
-        <div className={`action`}>
-          <Button
-            icon={`arrow_forward`}
-            mode={`default`}
-          />
-        </div>
-
+          <div className={`action`}>
+            <Button
+              icon={`arrow_forward`}
+              mode={`default`}
+            />
+          </div>
+          
+        </>}
       </div>
 
     </div>

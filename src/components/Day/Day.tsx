@@ -7,6 +7,8 @@ import "moment/locale/fr";
 
 import "./DayGrid.scss";
 import "./DayList.scss";
+import "./DayRow.scss";
+import "./DayCols.scss";
 
 /*
 # Interface
@@ -50,6 +52,8 @@ const Day: React.FC<DayProps> = ({
       className={`
         ${display === `grid` ? `day-component-grid` : ``}
         ${display === `list` ? `day-component-list` : ``}
+        ${display === `row` ? `day-component-row` : ``}
+        ${display === `cols` ? `day-component-cols` : ``}
       `}
       style={{
         height: height ? height : `auto`

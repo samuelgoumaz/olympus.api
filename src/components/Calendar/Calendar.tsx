@@ -10,8 +10,11 @@ import {
   convertStringToMinute,
   convertMinuteToString,
 } from "./CalendarLib";
-import "./Calendar.scss";
 import "./CalendarGrid.scss";
+import "./CalendarRow.scss";
+import "./CalendarList.scss";
+import "./CalendarCols.scss";
+import "./CalendarSlide.scss";
 
 /*
 # Interface */
@@ -179,15 +182,15 @@ const Calendar: React.FC<CalendarProps> = ({
   /*
   # pushCalendar */
   function pushCalendar(eventData: any, incDay: number) {
-    splitByDay(eventData.attributes.date_start);
+    splitByDay(eventData.date_start);
 
     if (dateCompareDay === true) {
       // compare day
 
       const newCalendarData: CalendarData = {
         // push date group into class array.
-        title: eventData.attributes.date_start,
-        date: new Date(eventData.attributes.date_start).toLocaleDateString(
+        title: eventData.date_start,
+        date: new Date(eventData.date_start).toLocaleDateString(
           "en-US"
         ),
         elements: [],
@@ -200,12 +203,12 @@ const Calendar: React.FC<CalendarProps> = ({
         const query = elements.filter(
           // querying events related to the hour and day.
           (itemFilter) =>
-            itemFilter.attributes.date_start ===
-              eventData.attributes.date_start &&
+            itemFilter.date_start ===
+              eventData.date_start &&
             convertStringToMinute(
-              itemFilter.attributes.time_start.split(":")[0]
+              itemFilter.time_start.split(":")[0]
             ) === convertNumberToMinute(incHour) &&
-            itemFilter.attributes.is_all_day !== true
+            itemFilter.is_all_day !== true
         );
         newCalendarData.elements[incHour] = {
           // push event to the hours array.
@@ -218,9 +221,9 @@ const Calendar: React.FC<CalendarProps> = ({
       const queryAllDayLong = elements.filter(
         // querying events related to the day.
         (itemFilter) =>
-          itemFilter.attributes.date_start ===
-            eventData.attributes.date_start &&
-          itemFilter.attributes.is_all_day === true
+          itemFilter.date_start ===
+            eventData.date_start &&
+          itemFilter.is_all_day === true
       );
 
       newCalendarData.elements_allday = queryAllDayLong;
@@ -326,7 +329,7 @@ const Calendar: React.FC<CalendarProps> = ({
 
   /*
   # Slider settings */
-  let sliderSettings = {
+  let colsSettings = {
     slidesToShow: 4,
     slidesToScroll: 4,
     infinite: false,
@@ -360,12 +363,24 @@ const Calendar: React.FC<CalendarProps> = ({
   };
 
   /*
+  # Slider settings */
+  let sliderSettings = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    dots: false,
+  };
+
+  /*
   Render */
   return (
     <section
       className={`
-      ${display === `grid` ? `calendar-component-grid` : `calendar-component`}
-      panel
+      ${display === `grid` ? `calendar-component-grid` : ``}
+      ${display === `list` ? `calendar-component-list` : ``}
+      ${display === `row` ? `calendar-component-row` : ``}
+      ${display === `cols` ? `calendar-component-cols` : ``}
+      ${display === `slide` ? `calendar-component-slide` : ``}
     `}
       id={`${id}`}
       style={{
@@ -373,10 +388,17 @@ const Calendar: React.FC<CalendarProps> = ({
       }}
     >
       <div className={`calendar-component-inner`}>
-        {display === `grid` && (
-          <Slider {...sliderSettings}>{myDisplay()}</Slider>
+        {display === `cols` && (
+          <Slider {...colsSettings}>{myDisplay()}</Slider>
         )}
-        {display === `list` && myDisplay()}
+        {display === `slide` && (
+          <Slider {...sliderSettings}>{elements.map(
+            (item, inc) => {
+              return render(item, inc)
+            }
+          )}</Slider>
+        )}
+        {display !== `cols` && display !== `slide` && myDisplay()}
       </div>
     </section>
   );

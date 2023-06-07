@@ -8,7 +8,7 @@
 /*
 # document
 */
-.event-component-grid-allday {
+.event-component-row-allday {
   .event-component-inner {
     width: 100%;
     display: table;
@@ -107,7 +107,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component-grid-allday {
+  .event-component-row-allday {
     .event-component-inner {
       .event-component-handle {
 
@@ -158,7 +158,7 @@
 }
 
 @media #{$medium-and-down} {
-  .event-component-grid-allday {
+  .event-component-row-allday {
     .event-component-inner {
       .title {
       }
@@ -167,7 +167,7 @@
 }
 
 @media #{$medium-and-up} {
-  .event-component-grid-allday {
+  .event-component-row-allday {
     .event-component-inner {
       .title {
       }

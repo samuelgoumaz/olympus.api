@@ -8,44 +8,50 @@
 /*
 # document
 */
-.event-component-grid {
-  display: inline-block;
-  vertical-align: top;
-  width: 33.33%;
+.event-component-cols-allday {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  height: 0;
   position: relative;
+  display: table;
+  min-height: 30px;
 
-  .fx {
+  &::before {
+    content: " ";
+    display: block;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    background:rgba(0,0,0,0.25);
     z-index: 1;
+    border-radius: 5px;
   }
-  .event-component-inner {
-    position: relative;
-    z-index: 2;
-    
-    .scene {
-      width: 100%;
-      @include aspect-ratio(1,1);
-    }
-    .content {
-      text-align: center;
-      padding: 0 20px;
 
-      .title {
-        margin: 0.1em 0;
-      }
+  .event-component-inner {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    color: white;
+    z-index: 2;
+    padding: 1px 3px; 
+    line-height: 15px;
+    border-top: 3px solid white;
+    border-radius: 5px;
+
+    .time {
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      color: white;
+      display: none;
     }
-    .action {
-      margin-top: 1em;
-      .variant-component {
-        .variant-component-selector {
-          width: 100%;
-          padding-right: 0;
-        }
-      }
+    .title {
+      color: inherit;
+      font-size: 13px;
+      text-transform: none;
+      margin: 0.25em 0;
     }
   }
 }
@@ -54,7 +60,7 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .event-component-grid {
+  .event-component-cols-allday {
     .event-component-inner {
       .title {
       }
@@ -63,7 +69,7 @@
 }
 
 @media #{$medium-and-down} {
-  .event-component-grid {
+  .event-component-cols-allday {
     .event-component-inner {
       .title {
       }
@@ -72,7 +78,7 @@
 }
 
 @media #{$medium-and-up} {
-  .event-component-grid {
+  .event-component-cols-allday {
     .event-component-inner {
       .title {
       }
