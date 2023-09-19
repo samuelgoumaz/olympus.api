@@ -8,51 +8,113 @@
 /*
 # document
 */
-.variant-component {
-  .variant-component-selector {
-    position: relative;
-    z-index: 3;
-    display: inline-block;
-    vertical-align: top;
-    padding: 5px 5px 5px 0;
-  }
-  .variant-component-title {
-    position: relative;
-    z-index: 1;
-    line-height: 70px;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 15px;
-    border-radius: 35px;
-    font-size: 1.5em;
-    padding: 5px 5px 5px 0;
-  }
-  .variant-component-list {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    vertical-align: top;
+.variant-component-table {
+  width: 100%;
+  height: auto;
+  display: block;
+  clear: both;
 
-    .variant-component-row {
-      display: none;
+  .variant-inner {
 
-      &.dsp-active {
-        display: block;
+    /*
+    # selector */
+    .selector {
+      .selector-line {
+        .title {
+          
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
       }
+    }
 
-      .variant-component-col {
-        padding-left: 0;
-        display: inline-block;
-        vertical-align: top;
+    /*
+    # Unique */
+    .header {
+      .title {
+          
+      }
+      .date {
 
-        &.col-remove {
-        }
-        &.col-indicator {
-        }
-        &.col-add {
-        }
-        &.col-price {
+      }
+      .hour {
 
+      }
+      .price {
+
+      }
+    }
+
+    /*
+    # table */
+    .table {
+      width: 100%;
+      display: table;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      
+      .table-row {
+        width: 100%;
+        display: table-row;
+        position: relative;
+
+        .table-col {
+          display: table-cell;
+          padding: 0;
+          background: rgba(0,0,0,0.05);
+          border-top: 1px solid black;
+          vertical-align: middle;
+          min-height: 70px;
+          text-align: left;
+          padding: 0 15px;
+          font-size: 16px;
+          position: relative;
+
+          &.title {
+            font-weight: bold;
+          }
+          &.date {
+            width: 30%;
+            max-width: 30%;
+          }
+          &.hour {
+            width: 5%;
+            max-width: 5%;
+          }
+          &.price {
+            width: 10%;
+            max-width: 10%;
+          }
+          &.variants {
+            overflow: hidden;
+            min-width: 210px;
+            max-width: 210px;
+            width: 210px;
+            text-align: right;
+            padding: 0;
+
+            .variant-component-col {
+              display: inline;
+              button {
+                margin: 0;
+              }
+            }
+          }
+          &.action {
+            text-align: right;
+            padding: 0;
+            button {
+              margin: 0;
+              font-size: 16px;
+            }
+          }
         }
       }
     }
@@ -63,141 +125,347 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .variant-component {
-    .variant-component-selector {
-    }
-    .variant-component-title {
-      line-height: 50px;
-      border-radius: 25px;
-      font-size: 1em;
-    }
-    .variant-component-list {
-      .variant-component-row {
-        &.dsp-active {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
         }
-        .variant-component-col {
-          &.col-remove {
-          }
-          &.col-indicator {
-          }
-          &.col-add {
-          }
-          &.col-price {
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+  
+      /*
+      # table */
+      .table {
+        width: 100%;
+        border-spacing: 0 10px;
+        
+        .table-row {
+          width: 100%;
+  
+          .table-col {
+            min-height: 50px;
+            font-size: 12px;
+            padding: 0 7px;
+            
+  
+            &.title {
+            }
+            &.date {
+            }
+            &.hour {
+            }
+            &.price {
+            }
+            &.variants {
+              min-width: 50px;
+              max-width: 50px;
+              width: 50px;
+              .variant-component-col {
+                button {
+                }
+              }
+            }
+            &.action {
+              button {
+                font-size: 12px;
+              }
+            }
           }
         }
       }
     }
   }
+  
 }
 
 @media #{$medium-and-down} {
-  .variant-component {
-    .variant-component-selector {
-    }
-    .variant-component-title {
-      line-height: 56px;
-      border-radius: 28px;
-      font-size: 1.1em;
-    }
-    .variant-component-list {
-      .variant-component-row {
-        &.dsp-active {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
         }
-        .variant-component-col {
-          &.col-remove {
-          }
-          &.col-indicator {
-          }
-          &.col-add {
-          }
-          &.col-price {
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+  
+      /*
+      # table */
+      .table {
+        width: 100%;
+        border-spacing: 0 10px;
+        
+        .table-row {
+          width: 100%;
+  
+          .table-col {
+            min-height: 56px;
+            font-size: 13px;
+  
+            &.title {
+            }
+            &.date {
+            }
+            &.hour {
+            }
+            &.price {
+            }
+            &.variants {
+              min-width: 168px;
+              max-width: 168px;
+              width: 168px;
+              .variant-component-col {
+                button {
+                }
+              }
+            }
+            &.action {
+              button {
+                font-size: 13px;
+              }
+            }
           }
         }
       }
     }
   }
+  
 }
 
 @media #{$medium-and-up} {
-  .variant-component {
-    .variant-component-selector {
-    }
-    .variant-component-title {
-      border-radius: 30px;
-      line-height: 60px;
-      font-size: 1.2em;
-    }
-    .variant-component-list {
-      .variant-component-row {
-        &.dsp-active {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
         }
-        .variant-component-col {
-          &.col-remove {
-          }
-          &.col-indicator {
-          }
-          &.col-add {
-          }
-          &.col-price {
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+  
+      /*
+      # table */
+      .table {
+        width: 100%;
+        border-spacing: 0 10px;
+        
+        .table-row {
+          width: 100%;
+  
+          .table-col {
+            min-height: 60px;
+            font-size: 14px;
+  
+            &.title {
+            }
+            &.date {
+            }
+            &.hour {
+            }
+            &.price {
+            }
+            &.variants {
+              min-width: 180px;
+              max-width: 180px;
+              width: 180px;
+              .variant-component-col {
+                button {
+                }
+              }
+            }
+            &.action {
+              button {
+                font-size: 14px;
+              }
+            }
           }
         }
       }
     }
   }
+  
 }
 
 @media #{$large-and-up} {
-  .variant-component {
-    .variant-component-selector {
-    }
-    .variant-component-title {
-      border-radius: 33px;
-      line-height: 66px;
-      font-size: 1.3em;
-    }
-    .variant-component-list {
-      .variant-component-row {
-        &.dsp-active {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
         }
-        .variant-component-col {
-          &.col-remove {
-          }
-          &.col-indicator {
-          }
-          &.col-add {
-          }
-          &.col-price {
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+  
+      /*
+      # table */
+      .table {
+        width: 100%;
+        border-spacing: 0 10px;
+        
+        .table-row {
+          width: 100%;
+          font-size: 15px;
+  
+          .table-col {
+            min-height: 66px;
+  
+            &.title {
+            }
+            &.date {
+            }
+            &.hour {
+            }
+            &.price {
+            }
+            &.variants {
+              min-width: 198px;
+              max-width: 198px;
+              width: 198px;
+              .variant-component-col {
+                button {
+                }
+              }
+            }
+            &.action {
+              button {
+                font-size: 15px;
+              }
+            }
           }
         }
       }
     }
   }
+  
 }
 
 @media #{$extra-large-and-up} {
-  .variant-component {
-    .variant-component-selector {
-    }
-    .variant-component-title {
-      border-radius: 35px;
-      line-height: 70px;
-      font-size: 1.4em;
-    }
-    .variant-component-list {
-      .variant-component-row {
-        &.dsp-active {
-        }
-        .variant-component-col {
-          &.col-remove {
-          }
-          &.col-indicator {
-          }
-          &.col-add {
-          }
-          &.col-price {
-          }
-        }
-      }
-    }
-  }
+  
 }

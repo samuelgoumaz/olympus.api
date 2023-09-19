@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export function convertNumberToMinute(myHour: number): number {
     let minutes = 0;
   
@@ -15,7 +17,7 @@ export function convertNumberToMinute(myHour: number): number {
     let minutes = 0;
   
     if (String(myHour)) {
-      time = myHour.split(":");
+      time = moment(myHour).hour();
   
       if (Number(time[0])) {
         hours = Number(time[0]) * 60;

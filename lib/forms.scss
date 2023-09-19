@@ -1,0 +1,84 @@
+
+@import "./materialize/normalize.scss";
+@import "./materialize/mixin.scss";
+@import "./materialize/responsive.scss";
+$grey : #ccc;
+$red : red;
+/*
+# document
+*/
+.form-item {
+  margin: 0.5em 0;
+  font-size: inherit;
+  font-family: inherit;
+
+  label {
+    font-size: 0.875em;
+    letter-spacing: 0.01;
+    margin-top: 0.25em;
+
+    .required {
+      color: $red;
+    }
+  }
+  .form-item-input {
+    font-family: inherit;
+    display: block;
+    font-size: 1.5em;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+    .form-item {
+        label {
+        }
+        .form-item-input {
+            font-size: 1em;
+        }
+    }
+}
+
+@media #{$medium-and-down} {
+    .form-item {
+        label {
+        }
+        .form-item-input {
+            font-size: 1.125em;
+        }
+    }
+}
+
+@media #{$medium-and-up} {
+    .form-item {
+        label {
+        }
+        .form-item-input {
+            font-size: 1.25em;
+        }
+    }
+}
+
+@media #{$large-and-up} {
+    .form-item {
+        label {
+        }
+        .form-item-input {
+            font-size: 1.35em;
+        }
+    }
+}
+
+@media #{$extra-large-and-up} {
+    .form-item {
+        label {
+        }
+        .form-item-input {
+            font-size: 1.5em;
+        }
+    }
+}

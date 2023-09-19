@@ -17,10 +17,9 @@
     width: 100%;
     display: inline-block;
     padding: 0 0 0 20px;
-    border-radius: 35px;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    background: white;
+    background: lightgray;
     cursor: pointer;
 
     .dropdown-current {
@@ -115,11 +114,9 @@
   &.down {
     &.dsp-open {
       .dropdown-handler {
-        border-radius: 35px 35px 0 0;
       }
     }
     .dropdown-content {
-      border-radius: 0 0 35px 35px;
       top: 70px;
     }
   }
@@ -127,11 +124,9 @@
   &.up {
     &.dsp-open {
       .dropdown-handler {
-        border-radius: 0 0 35px 35px;
       }
     }
     .dropdown-content {
-      border-radius: 35px 35px 0 0;
       bottom: 70px;
     }
   }
@@ -148,7 +143,6 @@
   .dropdown-component-input {
     .dropdown-handler {
       padding: 0 0 0 10px;
-      border-radius: 25px;
 
       .dropdown-current {
         line-height: 50px;
@@ -176,7 +170,6 @@
 
     &.dsp-open {
       .dropdown-handler {
-        border-radius: 25px 25px 0 0;
       }
     }
     &.dsp-close {
@@ -187,11 +180,9 @@
     &.down {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 25px 25px 0 0;
         }
       }
       .dropdown-content {
-        border-radius: 0 0 25px 25px;
         top: 50px;
       }
     }
@@ -199,11 +190,9 @@
     &.up {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 0 0 25px 25px;
         }
       }
       .dropdown-content {
-        border-radius: 25px 25px 0 0;
         bottom: 50px;
       }
     }
@@ -216,7 +205,6 @@
   .dropdown-component-input {
     .dropdown-handler {
       padding: 0 0 0 15px;
-      border-radius: 28px;
 
       .dropdown-current {
         line-height: 56px;
@@ -244,7 +232,6 @@
 
     &.dsp-open {
       .dropdown-handler {
-        border-radius: 28px 28px 0 0;
       }
     }
     &.dsp-close {
@@ -254,11 +241,9 @@
     &.down {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 28px 28px 0 0;
         }
       }
       .dropdown-content {
-        border-radius: 0 0 28px 28px;
         top: 56px;
       }
     }
@@ -266,11 +251,9 @@
     &.up {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 0 0 28px 28px;
         }
       }
       .dropdown-content {
-        border-radius: 28px 28px 0 0;
         bottom: 56px;
       }
     }
@@ -283,7 +266,6 @@
   .dropdown-component-input {
     .dropdown-handler {
       padding: 0 0 0 20px;
-      border-radius: 30px;
 
       .dropdown-current {
         line-height: 60px;
@@ -311,7 +293,6 @@
 
     &.dsp-open {
       .dropdown-handler {
-        border-radius: 30px 30px 0 0;
       }
     }
     &.dsp-close {
@@ -321,11 +302,9 @@
     &.down {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 30px 30px 0 0;
         }
       }
       .dropdown-content {
-        border-radius: 0 0 30px 30px;
         top: 60px;
       }
     }
@@ -333,11 +312,9 @@
     &.up {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 0 0 30px 30px;
         }
       }
       .dropdown-content {
-        border-radius: 30px 30px 0 0;
         bottom: 60px;
       }
     }
@@ -350,7 +327,6 @@
   .dropdown-component-input {
     .dropdown-handler {
       padding: 0 0 0 20px;
-      border-radius: 33px;
 
       .dropdown-current {
         line-height: 66px;
@@ -378,7 +354,6 @@
 
     &.dsp-open {
       .dropdown-handler {
-        border-radius: 33px 33px 0 0;
       }
     }
     &.dsp-close {
@@ -388,11 +363,9 @@
     &.down {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 33px 33px 0 0;
         }
       }
       .dropdown-content {
-        border-radius: 0 0 33px 33px;
         top: 66px;
       }
     }
@@ -400,11 +373,9 @@
     &.up {
       &.dsp-open {
         .dropdown-handler {
-          border-radius: 0 0 33px 33px;
         }
       }
       .dropdown-content {
-        border-radius: 33px 33px 0 0;
         bottom: 66px;
       }
     }

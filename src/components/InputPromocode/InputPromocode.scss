@@ -1,0 +1,181 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+@import "../../../lib/forms.scss";
+$grey : #ccc;
+$red : red;
+
+/*
+# document
+*/
+.form-item-promocode {
+  width: 100%;
+
+  label {
+    .required {
+    }
+  }
+
+  .form-item-container {
+    width: 100%;
+    display: table;
+    background: rgba(0,0,0,0.05);
+    min-height: 70px;
+    padding: 0 30px;
+    margin: 0.5em 0;
+    
+    .form-item-col {
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+
+      &.price {
+        width: 95%;
+        font-size: 1.5em;
+      }
+      &.currency {
+        width: 5%;
+        font-size: 0.875em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .form-item-input {
+    &.form-item-input-hidden {
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .form-item-promocode {
+  
+    label {
+      .required {
+      }
+    }
+  
+    .form-item-container {
+      min-height: 50px;
+      padding: 0 10px;
+      
+      .form-item-col {
+        &.price {
+          width: 75%;
+          font-size: 1em;
+        }
+        &.currency {
+          width: 25%;
+          font-size: 0.875em;
+        }
+      }
+    }
+  
+    .form-item-input {
+      &.form-item-input-hidden {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .form-item-promocode {
+  
+    label {
+      .required {
+      }
+    }
+  
+    .form-item-container {
+      min-height: 56px;
+      padding: 0 16px;
+      
+      .form-item-col {
+        &.price {
+          width: 80%;
+          font-size: 1.125em;
+        }
+        &.currency {
+          width: 20%;
+          font-size: 0.875em;
+        }
+      }
+    }
+  
+    .form-item-input {
+      &.form-item-input-hidden {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .form-item-promocode {
+  
+    label {
+      .required {
+      }
+    }
+  
+    .form-item-container {
+      min-height: 60px;
+      padding: 0 20px;
+      
+      .form-item-col {
+        &.price {
+          width: 85%;
+          font-size: 1.25em;
+        }
+        &.currency {
+          width: 15%;
+          font-size: 0.875em;
+        }
+      }
+    }
+  
+    .form-item-input {
+      &.form-item-input-hidden {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .form-item-promocode {
+  
+    label {
+      .required {
+      }
+    }
+  
+    .form-item-container {
+      min-height: 66px;
+      padding: 0 26px;
+      
+      .form-item-col {
+        &.price {
+          width: 90%;
+          font-size: 1.35em;
+        }
+        &.currency {
+          width: 10%;
+          font-size: 0.875em;
+        }
+      }
+    }
+  
+    .form-item-input {
+      &.form-item-input-hidden {
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+}

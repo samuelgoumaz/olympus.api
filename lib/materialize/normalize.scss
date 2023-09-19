@@ -11,36 +11,23 @@
 
 // Form
 // ==========================================================================
-.form-item-label {
-  font-size: 1.5em;
-  font-weight: 900;
-  padding: 0.5em 0;
-  display: block;
-}
 
-.form-item-line {
-  label.form-item-label {
-    font-size: 1em;
-    font-weight: normal;
-    padding: 0;
-  }
-}
 
 // Title
 // ==========================================================================
 .body {
-  font-size: 1.5em;
-  line-height: 1.3;
-  font-weight: normal;
+  //font-size: 1.25em;
+  //line-height: 1.3;
+  //font-weight: normal;
 }
 
 sup {
-  font-size: 0.5em;
+  //font-size: 0.5em;
 }
 
-body {
+html body {
   h1 {
-    font-size: 5.5em;
+    font-size: 3.5em;
     line-height: 1.1;
     font-weight: bold;
     margin: 0;
@@ -48,7 +35,7 @@ body {
     margin-bottom: 1em;
   }
   h2 {
-    font-size: 4.5em;
+    font-size: 3.5em;
     line-height: 1.1;
     font-weight: bold;
     margin: 0;
@@ -56,7 +43,7 @@ body {
     margin-bottom: 1em;
   }
   h3 {
-    font-size: 3.5em;
+    font-size: 3em;
     line-height: 1.1;
     font-weight: bold;
     margin: 0;
@@ -94,43 +81,18 @@ body {
   .body {
     font-size: 0.875em;
   }
-  body {
+  html body {
     h1 {
-      font-size: 2.5em;
+      font-size: 2.875em;
     }
     h2 {
-      font-size: 2em;
+      font-size: 2.875em;
     }
     h3 {
-      font-size: 1.5em;
-    }
-    h4 {
-      font-size: 1em;
-    }
-    h5 {
-      font-size: 0.75em;
-    }
-    h6 {
-      font-size: 0.75em;
-    }
-  }
-}
-@media #{$medium-and-down} {
-  .body {
-    font-size: 0.9em;
-  }
-  body {
-    h1 {
-      font-size: 2.75em;
-    }
-    h2 {
       font-size: 2.25em;
     }
-    h3 {
-      font-size: 1.75em;
-    }
     h4 {
-      font-size: 1.25em;
+      font-size: 1.875em;
     }
     h5 {
       font-size: 0.875em;
@@ -140,47 +102,75 @@ body {
     }
   }
 }
-@media #{$medium-and-up} {
+
+@media #{$medium-and-down} {
   .body {
-    font-size: 1em;
+    font-size: 1.05em;
   }
-  body {
+  html body {
     h1 {
-      font-size: 3em;
+      font-size: 3.05em;
     }
     h2 {
-      font-size: 2.5em;
+      font-size: 3.05em;
     }
     h3 {
-      font-size: 2em;
+      font-size: 2.55em;
     }
     h4 {
-      font-size: 1.5em;
+      font-size: 2.05em;
     }
     h5 {
-      font-size: 1em;
+      font-size: 1.05em;
     }
     h6 {
-      font-size: 1em;
+      font-size: 1.05em;
     }
   }
 }
+
+@media #{$medium-and-up} {
+  .body {
+    font-size: 1.15em;
+  }
+  html body {
+    h1 {
+      font-size: 3.15em;
+    }
+    h2 {
+      font-size: 3.15em;
+    }
+    h3 {
+      font-size: 2.65em;
+    }
+    h4 {
+      font-size: 2.15em;
+    }
+    h5 {
+      font-size: 1.15em;
+    }
+    h6 {
+      font-size: 1.15em;
+    }
+  }
+}
+
 @media #{$large-and-up} {
   .body {
     font-size: 1.25em;
   }
-  body {
+  html body {
     h1 {
-      font-size: 4.5em;
+      font-size: 3.25em;
     }
     h2 {
-      font-size: 3.5em;
+      font-size: 3.25em;
     }
     h3 {
-      font-size: 2.5em;
+      font-size: 2.75em;
     }
     h4 {
-      font-size: 1.75em;
+      font-size: 2.25em;
     }
     h5 {
       font-size: 1.25em;
@@ -190,19 +180,20 @@ body {
     }
   }
 }
+
 @media #{$extra-large-and-up} {
   .body {
     font-size: 1.5em;
   }
-  body {
+  html body {
     h1 {
-      font-size: 5.5em;
+      font-size: 3.5em;
     }
     h2 {
-      font-size: 4.5em;
+      font-size: 3.5em;
     }
     h3 {
-      font-size: 3.5em;
+      font-size: 3em;
     }
     h4 {
       font-size: 2.5em;

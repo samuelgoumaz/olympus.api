@@ -33,9 +33,29 @@ const Template: ComponentStory<typeof Banner> = (args) => <Banner {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
+export const BannerDebug = Template.bind({});
+BannerDebug.args = {
+  debug: true,
+  scrollTo: true,
   title: 'My Banner title',
   subtitle: 'My Banner subtitle',
-  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  fx: [<h1>Fx elements</h1>],
+  scene: [<h1>Scene elements</h1>],
+  children: [<h1>Children elements</h1>],
+  align: "center"
+};
+
+export const FullscreenDebug = Template.bind({});
+FullscreenDebug.args = {
+  debug: true,
+  scrollTo: true,
+  display: 'fullscreen',
+  title: 'My Banner title',
+  subtitle: 'My Banner subtitle',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  fx: [<h1>Fx elements</h1>],
+  scene: [<h1>Scene elements</h1>],
+  children: [<h1>Children elements</h1>],
+  align: "center"
 };

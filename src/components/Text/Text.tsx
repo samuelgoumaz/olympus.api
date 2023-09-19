@@ -10,10 +10,14 @@ import "./Text.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface TextProps {
-  position?: number;
+  debug?: true | false;
+  position: number;
   body?: string;
   aside?: string;
-  children: JSX.Element | JSX.Element[];
+  fx?: JSX.Element | false;
+  scene?: JSX.Element | false;
+  children?: JSX.Element | false;
+  buttons?: JSX.Element | false;
 }
 
 
@@ -36,15 +40,19 @@ export interface TextProps {
 }) => (
 */
 const Text = ({
+  debug,
   position,
   body,
   aside,
-  children
-}: TextProps) => (
-  <section
+  fx,
+  scene,
+  children,
+  buttons
+}: TextProps) => {
+  return <section
     className={`
-      text-component
-      panel
+      text-component 
+      ${debug === true ? `debug` : ``}
     `}
     style={{
       position: `relative`,
@@ -52,21 +60,21 @@ const Text = ({
     }}
   >
 
-    <div className={`text-content`}>
-      {children}
-    </div>
+    {fx ? <div className={`fx`}>{fx}</div> : ``}
 
     <div className={`text-inner`}>
-      {body && <div className={`text-inner-content ${aside ? `hv-aside` : ``}`}>
+      {children ? children : <div className={`text-inner-content ${aside ? `hv-aside` : ``}`}>
+        {scene && <div className={`scene`}>{scene}</div>}
         {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
-      </div>}
-      {aside && <div className={`text-inner-aside`}>
         {aside && <div className={`aside`} dangerouslySetInnerHTML={{ __html: `${aside}` }} />}
+        {buttons && <div className="action">
+          {buttons && buttons}
+        </div>}
       </div>}
     </div>
-
+    
   </section>
-);
+};
 
 /*
 # Export

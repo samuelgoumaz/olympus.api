@@ -50,7 +50,9 @@ const InputEmail = ({
   <p
     className={"form-item"}
   >
-    {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
+    {label && label !== null ? <label className={"form-item-label"}>
+      {label}{required == true ? <span className={`required`}>*</span> : ``}
+    </label> : ``}
     <input
       className={"form-item-input form-item-input-text"}
       type="email"
@@ -58,7 +60,7 @@ const InputEmail = ({
       required={required == true ? `required` : ``}
       alt={label ? String(label) : placeholder ? String(placeholder) : ``}
       placeholder={
-        `${placeholder ?? ``}${required == true ? `*` : ``}`
+        `${placeholder+`${required === true && label === false ? `*` : ``}` ?? ``}`
       }
       onLoad={onLoad}
       onClick={onClick}

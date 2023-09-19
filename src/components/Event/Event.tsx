@@ -13,18 +13,19 @@ import Buttons from "../Buttons";
 import Partners from "../Partners";
 import Gallery from "../Gallery";
 import Popup, {createPopup} from "../Popup";
+import "./Debug.scss";
 import "./Event.scss";
 import "./EventSlide.scss";
 import "./EventPage.scss";
 import "./EventPopup.scss";
 import "./EventCols.scss";
-import "./EventColsAllday.scss";
 import "./EventList.scss";
-import "./EventListAllday.scss";
 import "./EventRow.scss";
-import "./EventRowAllday.scss";
 import "./EventGrid.scss";
-import "./EventGridAllday.scss";
+
+
+import moment from "moment";
+import "moment/locale/fr";
 
 /*
 # Interface
@@ -32,24 +33,21 @@ import "./EventGridAllday.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface EventProps {
-  id?: string;
+  debug?: true | false;
+  position: number;
   slug?: string;
-  position?: number;
-  count?: number;
-  hourGroup?: any;
-  display?: string | null;
-  mode?: string | null;
+  display?: string | null; // cols, grid, list, page, popup and row
+  mode?: string | null; // If is allday
+
   timeStart?: string | null;
   timeEnd?: string | null;
   dateStart?: string | null;
   dateEnd?: string | null;
-  width?: string | null;
   title?: string | null;
   subtitle?: string | null;
+  image?: string | null;
   body?: string | null;
-  height?: string | false;
-  top?: number | false;
-  left?: number | false;
+  color?: string;
   tags?: {
     id: number;
     slug: string | null;
@@ -65,13 +63,21 @@ export interface EventProps {
       name: string | null;
     };
   };
-  images?: JSX.Element | JSX.Element[];
   buttons?: JSX.Element | JSX.Element[];
   partners?: JSX.Element | JSX.Element[];
-  content?: any[];
+
+  count?: number; // Number of Event on same hour.
+  hourGroup?: any; // Require by func eventTop().
+
+  width?: string | null; // Require by func eventTop().  
+  height?: string | false;
+  top?: number | false;
+  left?: number | false;
+
   fx?: JSX.Element | JSX.Element[];
   scene?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
+  variants?: JSX.Element | JSX.Element[];
   onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -81,11 +87,12 @@ export interface EventProps {
 # Class Components
 */
 const Event: React.FC<EventProps> = ({
-  id,
-  slug,
+  debug,
   position,
+  slug,
   count,
   hourGroup,
+  color,
   display,
   mode,
   timeStart,
@@ -102,13 +109,13 @@ const Event: React.FC<EventProps> = ({
   tags,
   partners,
   buttons,
-  images,
-  content,
   fx,
   children,
-  scene
+  variants,
+  scene,
   onClick
 }) => {
+  moment.locale("fr");
 
 
   /*
@@ -183,56 +190,53 @@ const Event: React.FC<EventProps> = ({
 
   switch (display) {
 
+    /* 
+    # Component COLS */
     case 'cols': // Cols
       return (
         <div 
-        className={`
-          ${mode === `allday` ? `event-component-${display}-allday` : `event-component-${display}`}
-        `}
-        style={{
-          width: timeEnd && timeStart ? eventWidth() : `100%`,
-          top: hourGroup && timeEnd && timeStart ? eventTop(hourGroup, timeStart, timeEnd) : `auto`,
-          height: hourGroup && timeEnd && timeStart ? eventHeight(hourGroup, timeStart, timeEnd) : `auto`,
-          left: position && timeEnd && timeStart ? eventLeft(position) : `auto`,
-          zIndex: position ? position : 1
-        }}
-        onClick={(event: React.MouseEvent<HTMLElement>) => {
-          onClick()       
-        }}
+          className={`
+            event-component-cols
+            ${mode === `allday` ? `allday` : ``}
+            ${debug === true ? `debug` : ``}
+          `}
+          style={{
+            width: timeEnd && timeStart ? eventWidth() : `100%`,
+            top: hourGroup && timeEnd && timeStart ? eventTop(hourGroup, timeStart, timeEnd) : `auto`,
+            height: hourGroup && timeEnd && timeStart ? eventHeight(hourGroup, timeStart, timeEnd) : `auto`,
+            left: position && timeEnd && timeStart ? eventLeft(position) : `auto`,
+            zIndex: position ? position : 1
+          }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick !== false) { onClick() } }}
         >
-          <div className={`
-            event-component-inner
-          `}>
-    
-            <div className="event-component-handle">
-
-              {/* time */ timeStart && timeEnd ? <div className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</div> : ``}
-              {/* tags */ tags && <div className={`tags`}>
-                {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
-              </div>}
-
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
+          <div className={`event-component-inner`}>
+            {children ? children : <div className="event-component-handle">
+              {/* time */ timeStart && timeEnd ? <div className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd}</div> : ``}
               <div className="header">
                 <h5 className="title">{title}</h5>
-                {display === `list` ? <h6 className="subtitle">{subtitle}</h6> : ``}
+                {subtitle ? <h6 className="subtitle">{subtitle}</h6> : ``}
               </div>
+              {/* tags tags && <div className={`tags`}>
+                {tags ? <Tags elements={tags} align={`left`} /> : ``}
+              </div> */}
+            </div>}
 
-              <div className="actions"></div>
-            </div>
-  
-            <div className="event-component-content">
-            </div>
-                 
           </div>
         </div>
       );
       
       break;
-
-    case 'list': // List
+    
+    /* 
+    # Component LIST */
+    case 'list':
       return (
         <div 
         className={`
-          ${mode === `allday` ? `event-component-${display}-allday` : `event-component-${display}`}
+          event-component-list
+          ${mode === `allday` ? `allday` : ``}
+          ${debug === true ? `debug` : ``}
         `}
         id={`event-${slug}`}
         style={{
@@ -241,17 +245,121 @@ const Event: React.FC<EventProps> = ({
           top: top ? top : `auto`,
           left: left ? left : `auto`,
           zIndex: position ? position : 1
-        }}
+        }}>
+
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
+
+          <div className={`event-component-inner`}>
+
+              <table className="event-component-handle" onClick={(event: React.MouseEvent<HTMLElement>) => {
+                selectToggle(event.currentTarget)
+              }}>
+                <tbody>
+                  <tr>
+                    {timeStart && timeEnd ? <td className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</td> : ``}
+                    {tags && <td className={`tags`}><Tags elements={tags} align={`left`} /></td>}
+                    <td className="header">
+                      <h4 className="title">{title}</h4>
+                      <h6 className="subtitle">{subtitle}</h6>
+                    </td>
+                    <td className="action">
+                      {body || buttons || partners ? <Button
+                        icon={`expand_more`}
+                      /> : ``}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {body || buttons || partners ? <div className="event-component-container dsp-close">
+                {children ? children : <div className="event-component-container-inner">
+                  {scene && <div className="event-component-content-col scene">{scene}</div>}
+                  {body || variants || buttons || partners ? <div className="event-component-content-col content">
+                    {body && <div className="body" dangerouslySetInnerHTML={{ __html: body }} />}
+                    {variants ? <div className={`variants`}>{variants}</div> : ``}
+                    {buttons && <div className="buttons">
+                      {buttons && buttons}
+                    </div>}
+                    {partners && <div className="partners">
+                      {partners && partners}
+                    </div>}
+                  </div> : ``}
+                </div>}
+              </div> : ``}
+
+          </div>
+          
+        </div>
+      );
+
+    /* 
+    # Component POPUP */
+    case 'popup':
+      /*
+      # selectToggle(event) */
+      return (
+        <div 
+        className={`event-component-popup 
+        ${debug === true ? `debug` : ``}`}
+        style={{
+          width: width ? width : `100%`,
+          height: height ? height : `auto`,
+          top: top ? top : `auto`,
+          left: left ? left : `auto`,
+          zIndex: position ? position : 1
+        }}>
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
+          <div className={`
+            event-component-inner
+          `}>
+            {children ? children : <>
+              {subtitle ? <div className="subtitle">{subtitle}</div> : ``}
+              {dateStart ? <div className="date">{moment(dateStart).format("dddd DD MMM")}{dateEnd && dateEnd !== dateStart ? ` - ${moment(dateEnd).format("dddd DD MMM")}` : ``}</div> : ``}
+              {timeStart && timeEnd ? <div className="time">{timeStart}{timeEnd && timeEnd !== timeStart ? `-${timeEnd}` : ``}</div> : ``}
+
+              {scene && <div className="event-component-content-col scene">{scene}</div>}
+              {body && <div className="event-component-content-col content">
+                <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
+              </div>}
+
+              {tags && <div className={`tags`}>
+                {<Tags elements={tags} align={`left`} />}
+              </div>}
+              
+              {variants ? <div className={`variants`}>{variants}</div> : ``}
+
+              {buttons && <div className="event-component-content-col buttons">
+                {buttons && buttons}
+              </div>}
+
+              {partners && <div className="event-component-content-col partners">
+                {partners && partners}
+              </div>}
+            </>}
+          </div>
+        </div>
+      );
+      break;
+    
+    /* 
+    # Component PAGE */
+    case 'page': // Page
+      return (
+        <div 
+        className={`
+          event-component-${display}
+          ${mode === `allday` ? `allday` : ``}
+          ${debug === true ? `debug` : ``}
+        `}
+        id={`event-${slug}`}
         >
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
           <div className={`
             event-component-inner
           `}>
 
-            <div className="event-component-handle" onClick={
-                    (event: React.MouseEvent<HTMLElement>) => {
-                      selectToggle(event.currentTarget)
-                    }
-                  }>
+            {children ? children : <>
+              {scene && <div className="event-component-content-col image">{scene}</div>}
               {timeStart && timeEnd ? <div className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</div> : ``}
               {tags && <div className={`tags`}>
               {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
@@ -260,166 +368,83 @@ const Event: React.FC<EventProps> = ({
                 <h5 className="title">{title}</h5>
                 {display === `list` ? <h6 className="subtitle">{subtitle}</h6> : ``}
               </div>
+              {body && <div className="event-component-content-col content">
+                <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
+              </div>}
+              {variants ? <div className={`variants`}>{variants}</div> : ``}
+              {buttons && <div className="event-component-content-col buttons">
+                {buttons && buttons}
+              </div>}
+              {partners && <div className="event-component-content-col partners">
+                {partners && partners}
+              </div>}
+
               <div className="action">
                 <Button
                   icon={`expand_more`}
                 />
               </div>
-            </div>
-
-            <div className="event-component-container dsp-close">
-              <div className="event-component-container-inner">
-                {images && <div className="event-component-content-col image">{images}</div>}
-                {body && <div className="event-component-content-col content">
-                  <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
-                </div>}
-                {buttons && <div className="event-component-content-col buttons">
-                  {buttons && buttons}
-                </div>}
-                {partners && <div className="event-component-content-col partners">
-                  {partners && partners}
-                </div>}
-              </div>
-            </div>
-
-          </div>
-          
-        </div>
-      );
-    case 'popup': // Popup
-      /*
-      # selectToggle(event) */
-      return (
-        <div 
-        className={`event-component-popup`}
-        style={{
-          width: width ? width : `100%`,
-          height: height ? height : `auto`,
-          top: top ? top : `auto`,
-          left: left ? left : `auto`,
-          zIndex: position ? position : 1
-        }}
-        >
-          <div className={`
-            event-component-inner
-          `}>
-
-            {subtitle ? <div className="subtitle">{subtitle}</div> : ``}
-            {dateStart ? <div className="date">{dateStart}{dateEnd && dateEnd !== dateStart ? ` - ${dateEnd}` : ``}</div> : ``}
-            {timeStart && timeEnd ? <div className="time">{timeStart}{timeEnd && timeEnd !== timeStart ? `-${timeEnd}` : ``}</div> : ``}
-            {tags && <div className={`tags`}>
-            {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
-            </div>}
-
-            {images && <div className="event-component-content-col image">{images}</div>}
-            {body && <div className="event-component-content-col content">
-              <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
-            </div>}
-
-            {buttons && <div className="event-component-content-col buttons">
-              {buttons && buttons}
-            </div>}
-
-            {partners && <div className="event-component-content-col partners">
-              {partners && partners}
-            </div>}
-
+            </>}
           </div>
           
         </div>
       );
       break;
-    case 'page': // Page
-      return (
-        <div 
-        className={`
-          event-component-${display}
-          ${mode === `allday` ? `allday` : ``}
-        `}
-        id={`event-${slug}`}
-        >
-          <div className={`
-            event-component-inner
-          `}>
 
-            {timeStart && timeEnd ? <div className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</div> : ``}
-            {tags && <div className={`tags`}>
-            {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
-            </div>}
-            <div className="header">
-              <h5 className="title">{title}</h5>
-              {display === `list` ? <h6 className="subtitle">{subtitle}</h6> : ``}
-            </div>
-
-            {images && <div className="event-component-content-col image">{images}</div>}
-            {body && <div className="event-component-content-col content">
-              <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
-            </div>}
-            {buttons && <div className="event-component-content-col buttons">
-              {buttons && buttons}
-            </div>}
-            {partners && <div className="event-component-content-col partners">
-              {partners && partners}
-            </div>}
-
-            <div className="action">
-              <Button
-                icon={`expand_more`}
-              />
-            </div>
-
-          </div>
-          
-        </div>
-      );
-      break;
+    /* 
+    # Component DEFAULT */
     default:
       return (
         <div 
         className={`
           event-component-${display}
           ${mode === `allday` ? `allday` : ``}
+          ${debug === true ? `debug` : ``}
         `}
         id={`event-${slug}`}
         >
-          <div className={`fx`}>
-            {fx}
-          </div>
-
+          
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
           <div className={`
             event-component-inner
           `}>
 
-            <div className={`scene`}>
+            {scene && <div className={`scene`}>
               {scene}
-            </div>
+            </div>}
 
             <div className={`content`}>
               {children ? children : <>
-                {timeStart && timeEnd && timeStart !== timeEnd ? <div className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</div> : ``}
+                
+                {title && <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title">{title}</h3>}
+                {subtitle ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle">{subtitle}</h6> : ``}
+
                 {tags && <div className={`tags`}>
-                {display === `list` ? <Tags elements={tags} align={`left`} /> : ``}
+                  {tags ? <Tags elements={tags} align={display === "grid" ? "center" : "left"} /> : ``}
                 </div>}
-                <div className="header">
-                  {display !== `cols` && <h3 className="title">{title}</h3>}
-                  {display === `cols` && <h5 className="title">{title}</h5>}
-                  {display === `list` ? <h6 className="subtitle">{subtitle}</h6> : ``}
-                </div>
+                
+                <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("dddd DD MMM")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? ` — ${moment(dateEnd).format("dddd DD MMM")}` : ``}</div>
+                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd}</div> : ``}
 
-                {images && <div className="image">{images}</div>}
-                {body && <div className="body" dangerouslySetInnerHTML={{ __html: body }} />}
-                {buttons && <div className="buttons">
+                {body && <div className="body" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: body }} />}
+                
+                {/*buttons && <div className="buttons">
                   {buttons && buttons}
-                </div>}
-                {partners && <div className="partners">
-                  {partners && partners}
-                </div>}
+                 </div>*/}
 
-                <div className="action">
+                {variants && <div className={`variants`}>{variants}</div>}
+
+                {display !== "grid" ? <div className="partners">
+                  {partners && partners}
+                </div> : ``}
+
+                {onClick ? <div className="action">
+                  {buttons && buttons}
                   <Button
-                    icon={`expand_more`}
+                    icon={`arrow_forward`}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}
                   />
-                </div>
+                </div> : ``}
               </>}
             </div>
 

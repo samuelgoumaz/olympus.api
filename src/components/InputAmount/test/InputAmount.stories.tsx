@@ -33,8 +33,45 @@ const Template: ComponentStory<typeof InputAmount> = (args) => <InputAmount {...
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const Default = Template.bind({});
-Default.args = {
+export const Single = Template.bind({});
+Single.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  placeholder: 'Choose formule',
+  currency: 'chf',
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    }
+  ]
+};
+
+export const AutoSelect = Template.bind({});
+AutoSelect.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  placeholder: 'Choose formule',
+  autoselect: true,
+  currency: 'chf',
+  quantity: {
+    "min": 1,
+    "max": 15,
+    "default": 2
+  },
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    }
+  ]
+};
+
+
+export const Multiple = Template.bind({});
+Multiple.args = {
   name: 'myamount',
   label: 'My Amount',
   placeholder: 'Choose formule',
@@ -49,6 +86,149 @@ Default.args = {
       "id": 26,
       "price": 10.00,
       "name": "Standard donation"
+    },
+    {
+      "id": 27,
+      "price": 30.00,
+      "name": "Medium donation"
+    },
+    {
+      "id": 28,
+      "price": 60.00,
+      "name": "Strong donation"
+    }
+  ]
+};
+
+export const MultipleAutoSelect = Template.bind({});
+MultipleAutoSelect.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  placeholder: 'Choose formule',
+  autoselect: true,
+  currency: 'chf',
+  quantity: {
+    "min": 1,
+    "max": 15,
+    "default": 2
+  },
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    },
+    {
+      "id": 27,
+      "price": 30.00,
+      "name": "Medium donation"
+    },
+    {
+      "id": 28,
+      "price": 60.00,
+      "name": "Strong donation"
+    }
+  ]
+};
+
+export const SingleDisplaySelect = Template.bind({});
+SingleDisplaySelect.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  display: 'select',
+  placeholder: 'Choose formule',
+  currency: 'chf',
+  quantity: false,
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    }
+  ]
+};
+
+export const SingleAutoDisplaySelect = Template.bind({});
+SingleAutoDisplaySelect.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  display: 'select',
+  placeholder: 'Choose formule',
+  autoselect: true,
+  currency: 'chf',
+  quantity: {
+    "min": 1,
+    "max": 15,
+    "default": 2
+  },
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    }
+  ]
+};
+
+export const MultipleDisplaySelect = Template.bind({});
+MultipleDisplaySelect.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  display: 'select',
+  placeholder: 'Choose formule',
+  currency: 'chf',
+  quantity: {
+    "min": 1,
+    "max": 15,
+    "default": 2
+  },
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    },
+    {
+      "id": 27,
+      "price": 30.00,
+      "name": "Medium donation"
+    },
+    {
+      "id": 28,
+      "price": 60.00,
+      "name": "Strong donation"
+    }
+  ]
+};
+
+export const MultipleDisplayAutoSelect = Template.bind({});
+MultipleDisplayAutoSelect.args = {
+  name: 'myamount',
+  label: 'My Amount',
+  display: 'select',
+  autoselect: true,
+  placeholder: 'Choose formule',
+  currency: 'chf',
+  quantity: {
+    "min": 1,
+    "max": 15,
+    "default": 2
+  },
+  elements: [
+    {
+      "id": 26,
+      "price": 10.00,
+      "name": "Standard donation"
+    },
+    {
+      "id": 27,
+      "price": 30.00,
+      "name": "Medium donation"
+    },
+    {
+      "id": 28,
+      "price": 60.00,
+      "name": "Strong donation"
     }
   ]
 };

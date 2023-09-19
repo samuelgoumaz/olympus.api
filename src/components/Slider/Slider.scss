@@ -9,8 +9,9 @@
 # document
 */
 .slider-component {
-  background: red;
-
+  width: 100%;
+  display: block;
+  clear: both;
   .slider-inner {
     .slider-inner-col {
       &.col-left {

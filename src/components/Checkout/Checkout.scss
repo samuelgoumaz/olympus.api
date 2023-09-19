@@ -79,9 +79,10 @@
       }
     }
     &.col-form {
-      .checkout-component-fieldset {
-        .checkout-component-fieldset-content {
-          padding: 20px;
+      .form-component {
+        width: 100%;
+        .form-inner {
+          width: 100%;
         }
       }
     }

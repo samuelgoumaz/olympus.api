@@ -1,0 +1,270 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.variant-component-selector {
+  width: 100%;
+  height: auto;
+  display: block;
+  clear: both;
+  text-align: inherit;
+
+  .variant-inner {
+    margin: 1em 0;
+    text-align: inherit;
+
+    .selector {
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin: 0.5em 0;
+      z-index: 2;
+    }
+
+    /*
+    # selector */
+    .variant-component-list {
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      z-index: 1;
+      margin: 0.5em;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+
+      .variant-component-row {
+        position: relative;
+        display: none;
+        width: 100%;
+        text-align: inherit;
+        
+        &.dsp-active {
+          display: block;
+        }
+        .variant-component-col {
+          display: inline-block;
+          vertical-align: middle;
+
+          button {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    /*
+    # Unique */
+    .header {
+      .title {
+          
+      }
+      .date {
+
+      }
+      .hour {
+
+      }
+      .price {
+
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
+        }
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+    }
+  }
+  
+}
+
+@media #{$medium-and-down} {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
+        }
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+    }
+  }
+  
+}
+
+@media #{$medium-and-up} {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
+        }
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+    }
+  }
+  
+}
+
+@media #{$large-and-up} {
+  .variant-component-table {
+    width: 100%;
+  
+    .variant-inner {
+  
+      /*
+      # selector */
+      .selector {
+        .selector-line {
+          .title {
+            
+          }
+          .date {
+    
+          }
+          .hour {
+    
+          }
+          .price {
+    
+          }
+        }
+      }
+  
+      /*
+      # Unique */
+      .header {
+        .title {
+            
+        }
+        .date {
+  
+        }
+        .hour {
+  
+        }
+        .price {
+  
+        }
+      }
+    }
+  }
+  
+}
+
+@media #{$extra-large-and-up} {
+  
+}

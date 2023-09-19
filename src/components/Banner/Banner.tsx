@@ -6,7 +6,7 @@ import * as Scroll from 'react-scroll';
 import Button from "../Button"
 import "./Banner.scss";
 import "./BannerFullscreen.scss";
-import "./BannerSmall.scss";
+import "./BannerRatio.scss";
 import "./Parallax.scss";
 
 /*
@@ -15,6 +15,7 @@ import "./Parallax.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface BannerProps {
+  debug?: true | false;
   position?: number;
   title?: string | null;
   subtitle?: string | null;
@@ -22,8 +23,11 @@ export interface BannerProps {
   mode?: string | null;
   align?: string | null;
   display?: string | null;
-  scrollTo: boolean | false;
+  scrollTo?: true | false;
+  buttons?: any;
+  scene?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
+  fx?: JSX.Element | JSX.Element[];
 }
 
 
@@ -46,6 +50,7 @@ export interface BannerProps {
 }) => (
 */
 const Banner = ({
+  debug,
   position,
   title,
   subtitle,
@@ -54,6 +59,9 @@ const Banner = ({
   align,
   scrollTo,
   display,
+  buttons,
+  scene,
+  fx,
   children
 }: BannerProps) => (
   <>
@@ -62,27 +70,36 @@ const Banner = ({
       ${display === `fullscreen` ? `banner-component-fullscreen` : ``}
       ${display === `small` ? `banner-component-small` : ``}
       ${display === null || !display ? `banner-component` : ``}
-      panel
+      ${debug === true ? `debug` : ``}
       `}
       style={{
         position: `relative`,
         zIndex: position ?? 2
       }}
     >
+      {fx && <div className={`fx`}>
+        {fx}
+      </div>}
+
       <div className={`banner-inner`}>
 
-        <div className={`fx_content`}>
-          {children}
+       {scene && <div className={`scene`}>
+          {scene}
+        </div>}
+
+        <div className={`banner-content`}>
+          <div className={`banner-content-inner ${align === `center` ? `align-center` : ``} ${align === `right` ? `align-right` : ``}`}>
+          {children ? children : <>
+            {title != null ? <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+            {body != null ? <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+            {buttons && <div className="action">
+              {buttons && buttons}
+            </div>}
+          </>}
+          </div>
         </div>
 
-        {title != false || body != false || subtitle != false ? <div className={`banner-content`}>
-          <div className={`banner-content-inner`}>
-            {title != null ? <h2 className={`title ${align === `center` ? `align-center` : ``}`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-            {body != null ? <div className={`body ${align === `center` ? `align-center` : ``}`} dangerouslySetInnerHTML={{ __html: body }} /> : ``}
-          </div>
-        </div> : ``}
-
-        {scrollTo && <div className={`banner-action ${align === `center` ? `align-center` : ``}`}>
+        {scrollTo && <div className={`banner-action ${align === `center` ? `align-center` : ``} ${align === `right` ? `align-right` : ``}`}>
           <Scroll.Link
             to={`banner-component-${position ?? 0}`}
             spy={true}

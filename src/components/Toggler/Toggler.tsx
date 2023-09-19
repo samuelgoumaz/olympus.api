@@ -86,7 +86,8 @@ const Toggler = ({
       {fx_status === true && children ? <div className={`
         toggler-container
         ${display === `fullscreen` ? `fullscreen` : ``}
-        ${display === `aside` ? `aside` : ``}
+        ${display === `right` ? `right` : ``}
+        ${display === `left` ? `left` : ``}
         ${display === `popup` ? `popup` : ``}
         ${display === `dropdown` ? `dropdown` : ``}
         ${display === `inline` ? `inline` : ``}

@@ -56,30 +56,33 @@ const InputSelect = ({
   <p
     className={"form-item form-item-select"}
   >
-    {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
-    <select
-      className={"form-item-input form-item-input-select"}
-      id={`form-item-${String(name)}`}
-      name={String(name)}
-      alt={label ? label : placeholder ? placeholder : ``}
-      required={required == true ? `required` : ``}
-      onLoad={onLoad}
-      onClick={onClick}
-      onChange={onChange}
-    >
-      {placeholder && <option value="" disabled selected>{placeholder}</option>}
-      {
-        elements && elements.map(
-          (item, index) => (
-            <option key={`input-select-option-${String(name)}-${index}`} value={item.key}>{item.value.replaceAll(/<\/?[^>]+(>|$)/gi, "")}</option>
+    
+    {label && label !== null ? <label className={"form-item-label"}>
+      {label}{required == true ? <span className={`required`}>*</span> : ``}
+    </label> : ``}
+    
+    <div className={`form-item-container`}>
+      <select
+        className={"form-item-input form-item-input-select"}
+        id={`form-item-${String(name)}`}
+        name={String(name)}
+        alt={label ? label : name ? name : ``}
+        required={required == true ? `required` : ``}
+        onLoad={onLoad}
+        onClick={onClick}
+        onChange={onChange}
+      >
+        {placeholder && <option value="" disabled selected>{placeholder}</option>}
+        {
+          elements && elements.map(
+            (item, index) => (
+              <option key={`input-select-option-${String(name)}-${index}`} value={item.key}>{item.value.replaceAll(/<\/?[^>]+(>|$)/gi, "")}</option>
+            )
           )
-        )
-      }
-    </select>
-
-    <label htmlFor={`form-item-${String(name)}`} className={`form-item-input-select-handle material-icons`}>
-      menu
-    </label>
+        }
+      </select>
+      <label htmlFor={`form-item-${String(name)}`} className={`form-item-input-select-handle material-icons`}>menu</label>
+    </div>
   </p>
 );
 

@@ -48,12 +48,6 @@ const Partner = ({
           backgroundRepeat: `no-repeat`,
         }}
       />}
-
-      <div className={`content`}>
-        <div className={`action`}>
-        </div>
-      </div>
-
     </div>
   </article>
 );

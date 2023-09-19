@@ -35,5 +35,7 @@ https://storybook.js.org/docs/react/writing-stories/args
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
-  title: 'Hello world!'
+  label: 'My Label',
+  name: 'my-hello',
+  required: true
 };

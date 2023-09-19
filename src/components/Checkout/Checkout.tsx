@@ -77,7 +77,9 @@ const Checkout = ({
       </div>
     </div>
 
-    {form}
+    {form ? <div className={`checkout-component-col col-form`}>
+      {form}
+    </div> : ``}
 
     {/** <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} /> **/}
 

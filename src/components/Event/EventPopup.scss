@@ -12,30 +12,37 @@
   .event-component-inner {
 
     .subtitle {
-      border-bottom: 1px solid rgba(0,0,0,0.15);
-      padding: 10px 0;
+      margin: 1em 0;
     }
     .date {
       width: 50%;
       display: inline-block;
-      border-right: 1px solid rgba(0,0,0,0.15);
-      padding: 10px 0;
+      margin: 0.5em 0;
+      vertical-align: top;
     }
     .time {
       width: 50%;
       display: inline-block;
-      padding: 10px 0;
-      padding-left: 10px;
+      margin: 0.5em 0;
+      vertical-align: top;
+    }
+    .scene {
+      @include aspect-ratio(4,3);
+      display: block;
+      position: relative;
+      margin: 1em 0;
     }
     .body {
-      border-top: 0;
-      padding: 20px 0;
+      margin: 1em 0;
     }
     .tags {
-      
+      margin: 0.5em 0;
     }
-    .buttons {
-      padding: 20px 0;
+    .partners {      
+      margin: 0.5em 0;
+    }
+    .buttons {      
+      margin: 0.5em 0;
     }
   }
 }

@@ -10,14 +10,13 @@ import "./InputCheckbox.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface InputCheckboxProps {
-  label?: string | null;
+  label?: string;
   name: string | null;
   required?: string | null;
   placeholder?: string | null;
   elements?: {
-    id: number;
-    key: string | null;
-    value: string | null;
+    id?: number;
+    value?: string;
   };
   onChange?: (event: React.MouseEvent<HTMLDivElement>) => void;
   onLoad?: (event: React.MouseEvent<HTMLDivElement>) => void;
@@ -52,38 +51,50 @@ const InputCheckbox = ({
   onChange,
   onLoad,
   onClick
-}: InputCheckboxProps) => (
-  <div className={"form-item form-item-checkbox"}>
+}: InputCheckboxProps) => {
+  const convertToSlug = (str) => {
+    return str.toLowerCase().trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  };
+  return (
+    <div className={"form-item form-item-checkbox"}>
+      
+      {label && label !== null ? <label className={"form-item-label"}>
+        {label}{required == true ? <span className={`required`}>*</span> : ``}
+      </label> : ``}
 
-    {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
-    {elements && elements.map(
-        (item, index) => (
-          <div className={"form-item-line"}>
-            <div className={"form-item-input-container"}>
-              <input
-                className={"form-item-input form-item-input-checkbox"}
-                type={`checkbox`}
-                id={`form-item-checkbox-${String(name)}-${String(index)}`}
-                name={String(name) ?? `errorName`}
-                alt={label ? label : placeholder ? placeholder : name}
-                required={required == true ? `required` : ``}
-                value={item.value}
-                onLoad={onLoad}
-                onClick={onClick}
-                onChange={onChange}
-              />
+      {elements && elements.map(
+          (item, index) => (
+            <div className={"form-item-line"}>
+              <div className={"form-item-input-container"}>
+                <input
+                  className={"form-item-input form-item-input-checkbox"}
+                  type={`checkbox`}
+                  id={`form-item-checkbox-${convertToSlug(String(item.value))}-${String(index)}`}
+                  name={convertToSlug(String(item.value)) ?? `errorKey`}
+                  alt={item.value ? item.value : label ? label : String(name) ?? `errorName`}
+                  //required={required == true ? `required` : ``}
+                  value={item.value ?? true}
+                  onLoad={onLoad}
+                  onClick={onClick}
+                  onChange={onChange}
+                />
+              </div>
+
+              <label
+                for={`form-item-checkbox-${convertToSlug(String(item.value))}-${String(index)}`}
+                className={"form-item-label"}
+                dangerouslySetInnerHTML={{ __html: String(item.value) ?? `errorKey` }}
+              >{}</label>
             </div>
-
-            <label
-              for={`form-item-checkbox-${String(item.key)}`}
-              className={"form-item-label"}
-            >{item.value.replaceAll(/<\/?[^>]+(>|$)/gi, "")}</label>
-          </div>
+          )
         )
-      )
-    }
-  </div>
-);
+      }
+    </div>
+  );
+}
 
 /*
 # Export

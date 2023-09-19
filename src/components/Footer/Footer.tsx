@@ -3,6 +3,7 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import Icon from '../Icon';
+import Partners from '../Partners';
 import "./Footer.scss";
 
 /*
@@ -46,6 +47,7 @@ export interface FooterProps {
   address?: string;
   delivery?: string;
   payment?: string;
+  partners: JSX.Element | JSX.Element[];
   navigation: JSX.Element | JSX.Element[];
 }
 
@@ -78,7 +80,8 @@ const Footer = ({
   address,
   delivery,
   payment,
-  navigation
+  navigation,
+  partners
 }: FooterProps) => {
 
 
@@ -127,6 +130,11 @@ const Footer = ({
           </div> : ``}
 
           <div className={`footer-component-col`}>
+            
+            {partners && <div className="partners">
+              {partners}
+            </div>}
+
             <ul className={`social`}>
               {instagram && <li><a href={instagram} target={`blank`}><Icon name={`instagram`} /></a></li>}
               {facebook && <li><a href={facebook} target={`blank`}><Icon name={`facebook`} /></a></li>}

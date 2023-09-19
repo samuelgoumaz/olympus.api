@@ -43,6 +43,10 @@ $grey : #ccc;
         text-align: center;
         vertical-align: middle;
 
+        &.title {
+          padding: 0 20px;
+        }
+
         &.checkbox {
           width: 70px;
           height: 70px;

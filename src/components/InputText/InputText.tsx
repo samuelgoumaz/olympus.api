@@ -48,9 +48,11 @@ const InputText = ({
   onClick
 }: InputTextProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-text"}
   >
-    {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
+    {label && label !== null ? <label className={"form-item-label"}>
+      {label}{required == true ? <span className={`required`}>*</span> : ``}
+    </label> : ``}
     <input
       className={"form-item-input form-item-input-text"}
       type="text"
@@ -58,7 +60,7 @@ const InputText = ({
       alt={label ? String(label) : placeholder ? String(placeholder) : ``}
       required={required == true ? `required` : ``}
       placeholder={
-        `${placeholder+`${required == true ? `*` : ``}` ?? ``}`
+        `${placeholder+`${required === true && label === false ? `*` : ``}` ?? ``}`
       }
       onLoad={onLoad}
       onClick={onClick}

@@ -9,11 +9,15 @@ import Introduction from "../Introduction";
 # Test
 */
 describe("Introduction", () => {
-  test("renders the Button component", () => {
+  test("renders the Introduction component", () => {
     render(
       <Introduction
-        label="Hello world!"
-        positive="http://localhost:1337/uploads/branding_85acfc9546.svg"
+        position={2}
+        debug={false}
+        body={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+        fx={false}
+        children={false}
+        scene={false}
       />
     );
   });

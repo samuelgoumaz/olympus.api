@@ -40,7 +40,6 @@ const Breadcrumb = ({
   <section
     className={`
       breadcrumb-component
-      panel
     `}
     style={{
       position: `relative`,

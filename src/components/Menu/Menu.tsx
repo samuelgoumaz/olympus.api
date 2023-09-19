@@ -42,7 +42,6 @@ const Menu = ({
     e.preventDefault();
 
     if (onClickFunc) {
-      console.log(`openItem`, url);
       onClickFunc(url);
     }
   }
@@ -69,16 +68,18 @@ const Menu = ({
                 <span
                   onClick={(
                     event: React.MouseEvent<HTMLElement>) => {
-                      if (onClickFunc)
-                        if (menu[menuKey].url) {
-                          openItem(event, menu[menuKey].url)
-                        }
-                        if (menu[menuKey].page.slug) {
+                      if (onClickFunc) {
+                        if (menu[menuKey].page && menu[menuKey].page.slug) {
                           openItem(event, `/page/${menu[menuKey].page.slug}`)
+                        } else {
+                          if (menu[menuKey].url) {
+                            openItem(event, menu[menuKey].url)
+                          }
                         }
+                      }
                     }
                   }
-                  className={`menu-item`}
+                  className={`menu-item ${display === `list` && menu[menuKey].submenu && menu[menuKey].submenu === true ? `hv_submenu` : ``}`}
                 >{menu[menuKey].name ?? null}</span>
               </li>
             )

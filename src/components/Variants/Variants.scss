@@ -1,0 +1,181 @@
+/*
+# Imports
+*/
+@import "../../../lib/colors.scss";
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# Component */
+.variants-component {
+  width: 100%;
+  display: block;
+  position: relative;
+  background: turquoise;
+  padding: 0;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: yellow;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .variants-inner {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 100px;
+    position: relative;
+    z-index: 2;
+
+    .content {
+
+      .scene {
+      }
+      .body {
+      }
+      .aside {
+      }
+    }
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:before {
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      variants-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2;
+      &:before {
+        content: "fx";
+        color: $color-debug-2;
+        font-family: monospace;
+        variants-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .variants-inner {
+      border: 4px solid $color-debug-3;
+      &:before {
+        content: "children";
+        color: $color-debug-3;
+        font-family: monospace;
+        variants-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
+    }
+  }
+}
+
+/*
+# Responsive */
+@media #{$small-and-down} {
+  .variants-component {
+    .variants-content {
+    }
+    .variants-inner {
+      .content {
+        padding: 20px;
+        
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .variants-component {
+    .variants-content {
+    }
+    .variants-inner {
+      .content {
+        padding: 30px;
+
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .variants-component {
+    .variants-content {
+    }
+    .variants-inner {
+      .content {
+        padding: 40px;
+
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .variants-component {
+    .variants-content {
+    }
+    .variants-inner {
+      .content {
+        padding: 60px;
+
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .variants-component {
+    .variants-content {
+    }
+    .variants-inner {
+      .content {
+        padding: 80px;
+
+        .body {
+        }
+      }
+    }
+  }
+}

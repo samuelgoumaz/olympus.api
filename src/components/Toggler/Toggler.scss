@@ -19,7 +19,8 @@
     height: 100px;
     display: block;
     position: relative;
-    z-index: 2;
+    z-index: 2 !important;
+    cursor: pointer;
 
     &.dsp-active {
       color: inherit;
@@ -81,7 +82,7 @@
   .toggler-container {
     height: calc(var(--vh, 1vh) * 100);
     position: fixed;
-    z-index: 1;
+    z-index: 1 !important;
     display: block;
     top: 0;
     left: 0;
@@ -135,7 +136,7 @@
       position: absolute;
     }
 
-    &.aside {
+    &.right, &.left {
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       overflow: auto;
       width: 25vw;
@@ -152,6 +153,12 @@
         }
       }
     }
+
+    &.left {
+      left: 0;
+      right: auto;
+    }
+    
 
     &.popup {
       width: 50vw;
@@ -206,17 +213,23 @@
     .toggler-container {
 
       &.default {
-        width: 100vw;
+        width: calc(100vw - 50px);
       }
 
       &.fullscreen {
         width: 100vw;
       }
 
-      &.aside {
-        width: 100vw;
+      &.right {
+        width: calc(100vw - 50px);
         left: auto;
         right: 0;
+      }
+
+      &.left {
+        width: calc(100vw - 50px);
+        left: 0;
+        right: auto;
       }
 
       &.popup {
@@ -291,10 +304,16 @@
         width: 100vw;
       }
 
-      &.aside {
+      &.right {
         width: 75vw;
         left: auto;
         right: 0;
+      }
+
+      &.left {
+        width: 75vw;
+        left: 0;
+        right: auto;
       }
 
       &.popup {
@@ -367,10 +386,16 @@
         width: 100vw;
       }
 
-      &.aside {
+      &.right {
         width: 40vw;
         left: auto;
         right: 0;
+      }
+
+      &.left {
+        width: 40vw;
+        left: 0;
+        right: auto;
       }
 
       &.popup {
@@ -444,10 +469,16 @@
         width: 100vw;
       }
 
-      &.aside {
+      &.right {
         width: 35vw;
         left: auto;
         right: 0;
+      }
+
+      &.left {
+        width: 35vw;
+        left: 0;
+        right: auto;
       }
 
       &.popup {
@@ -521,10 +552,16 @@
         width: 100vw;
       }
 
-      &.aside {
+      &.right {
         width: 30vw;
         left: auto;
         right: 0;
+      }
+
+      &.left {
+        width: 30vw;
+        left: 0;
+        right: auto;
       }
 
       &.popup {

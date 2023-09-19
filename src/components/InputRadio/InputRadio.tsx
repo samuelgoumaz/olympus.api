@@ -16,7 +16,6 @@ export interface InputRadioProps {
   placeholder?: string | null;
   elements?: {
     id: number;
-    key: string | null;
     value: string | null;
   };
   onChange?: (event: React.MouseEvent<HTMLDivElement>) => void;
@@ -52,36 +51,48 @@ const InputRadio = ({
   onChange,
   onLoad,
   onClick
-}: InputRadioProps) => (
-  <div className={"form-item form-item-radio"}>
-    {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
-    {elements && elements.map(
-      (item) => (
-        <div className={"form-item-line"} key={`input-radio-${String(name)}-${item.key}`}>
-          <div className={"form-item-input-container"}>
-            <input
-              className={"form-item-input form-item-input-radio"}
-              type="radio"
-              id={`form-item-radio-${String(item.key)}`}
-              name={String(name) ?? `errorName`}
-              alt={String(item.value) ?? ``}
-              required={required == true ? `required` : ``}
-              value={String(item.key)}
-              onLoad={onLoad}
-              onClick={onClick}
-              onChange={onChange}
-            />
-          </div>
+}: InputRadioProps) => {
 
-          <label
-            htmlFor={`form-item-radio-${String(item.key)}`}
-            className={"form-item-label"}
-          >{item.value.replaceAll(/<\/?[^>]+(>|$)/gi, "")}</label>
-        </div>
-      )
-    )}
-  </div>
-);
+  const convertToSlug = (str) => {
+    return str.toLowerCase().trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  };
+  return (
+    <div className={"form-item form-item-radio"}>
+
+      {label && label !== null ? <label className={"form-item-label"}>
+        {label}{required == true ? <span className={`required`}>*</span> : ``}
+      </label> : ``}
+
+      {elements && elements.map(
+        (item) => (
+          <div className={"form-item-line"} key={`input-radio-${String(name)}-${item.key}`}>
+            <div className={"form-item-input-container"}>
+              <input
+                className={"form-item-input form-item-input-radio"}
+                type="radio"
+                id={`form-item-radio-${convertToSlug(String(item.value))}`}
+                name={convertToSlug(String(name)) ?? `errorKey`}
+                required={required == true ? `required` : ``}
+                alt={item.value ? item.value : label ? label : String(name) ?? `errorName`}
+                value={item.value ?? true}
+                onLoad={onLoad}
+                onClick={onClick}
+                onChange={onChange}
+              />
+            </div>
+            <label
+              htmlFor={`form-item-radio-${convertToSlug(String(item.value))}`}
+              className={"form-item-label"}
+            >{item.value.replaceAll(/<\/?[^>]+(>|$)/gi, "")}</label>
+          </div>
+        )
+      )}
+    </div>
+  );
+}
 
 /*
 # Export

@@ -50,11 +50,13 @@ const InputTextarea = ({
   <p
     className={"form-item"}
   >
-    {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
+    {label && label !== null ? <label className={"form-item-label"}>
+      {label}{required == true ? <span className={`required`}>*</span> : ``}
+    </label> : ``}
 
     <textarea
       placeholder={
-        `${placeholder ?? ``}${required == true ? `*` : ``}`
+        `${placeholder+`${required === true && label === false ? `*` : ``}` ?? ``}`
       }
       required={required == true ? `required` : ``}
       className={"form-item-input form-item-input-textarea"}

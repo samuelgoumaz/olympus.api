@@ -14,10 +14,11 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface InputSubmitPaymentProps {
   label?: string | null;
   name: string | null;
+  title?: string | null;
   placeholder?: string | null;
   cards?: string | null;
   //onValidate?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  //onSubmit?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onChange?: (event: React.MouseEvent<HTMLDivElement>) => void;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -43,8 +44,10 @@ export interface InputSubmitPaymentProps {
 const InputSubmitPayment = ({
   label,
   name,
+  title,
   placeholder,
   cards,
+  onChange,
   children
 }: InputSubmitPaymentProps) => {
 
@@ -57,6 +60,7 @@ const InputSubmitPayment = ({
       if (item.checked === true) {
         el.classList.add("dsp-open");
         el.classList.remove("dsp-close");
+        onChange(name);
       } else {
         el.classList.add("dsp-close");
         el.classList.remove("dsp-open");
@@ -88,6 +92,13 @@ const InputSubmitPayment = ({
               }
             />
           </li>
+          {title ? <li className={`title`} onClick={
+            (event: React.MouseEvent<HTMLElement>) => {
+              selectToggle(event.currentTarget)
+            }
+          }>
+            {title}
+          </li> : ``}
           {cards && cards.split(",").map(
             (key, index) => (
               <li

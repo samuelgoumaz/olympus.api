@@ -4,8 +4,12 @@
 import React, { useRef, useEffect, useState } from "react";
 import Dropdown from "../Dropdown"
 import Button from "../Button"
-import "./VariantDefault.scss";
+import "./VariantTable.scss";
 import "./VariantSmart.scss";
+import "./VariantSelector.scss";
+
+import moment from "moment";
+import "moment/locale/fr";
 
 /*
 # Interface
@@ -17,21 +21,36 @@ export interface VariantProps {
   currency?: string | false;
   currencyRate?: number | false;
   display?: string | false;
+  mode?: string | false;
+  primary?: string | false;
+  secondary?: string | false;
   variants?: {
-    id: number;
-    sku: string | null;
-    title: string | null;
-    subtitle: string | null;
-    description: string | null;
-    price_default: number;
-    price_promotion: number;
-    stock_disponibility: boolean | null;
-    stock_limited: number;
-    parent_id: number;
-    parent_title: number;
-    clone: string | null;
-    quantity: number;
-    selected: boolean | false;
+    id?: number;
+    title?: string;
+    subtitle?: string;
+    sku?: string;
+    locale?: string;
+    action?: {
+      title?: string;
+      url?: string;
+      in_cart?: true | false;
+    } | false;
+    date?: {
+      date_start?: string;
+      date_end?: string;
+      hour_start?: string;
+      hour_end?: string;
+    } | false;
+    price?: {
+      price?: number;
+      price_strike?: number;
+    } | false;
+    stock?: {
+      limit?: number;
+    } | false;
+    formular?: any | false;
+    event?: any | false;
+    parent?: any | false;
   };
   selectItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
   addItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
@@ -50,7 +69,7 @@ export interface VariantProps {
   price_promotion: number,
   stock_disponibility: boolean | null,
   stock_limited: number,
-  parent_id: number,
+  parent.id: number,
   parent_title: number,
   selected: boolean | false
 } {
@@ -64,7 +83,7 @@ export interface VariantProps {
     price_promotion: "",
     stock_disponibility: "",
     stock_limited: "",
-    parent_id: "",
+    parent.id: "",
     parent_title: "",
     selected: ""
   };
@@ -79,6 +98,8 @@ export interface VariantProps {
 const Variant: React.FC<VariantProps> = ({
   api,
   display,
+  primary,
+  secondary,
   variants,
   currency,
   currencyRate,
@@ -88,12 +109,13 @@ const Variant: React.FC<VariantProps> = ({
   checkQuantityFunc,
   children
 }: VariantProps) => {
+  moment.locale("fr");
   let selectedData = [];
 
   function selectItem (container, parentId, elementId) {
     let myElement = container.parentNode.parentNode.parentNode.parentNode.getElementsByClassName(`ref-variant-${parentId}-${elementId}`)[0];
-
     let otherElement = container.parentNode.parentNode.parentNode.parentNode.getElementsByClassName(`variant-component-row`);
+    container.classList.add(`dsp-active`);
 
     Object.keys(otherElement).map((key) => {
       otherElement[key].classList.remove(`dsp-active`)
@@ -112,8 +134,7 @@ const Variant: React.FC<VariantProps> = ({
       fxButton.setAttribute("data-state", "loading")
     }
 
-    let myVariant = variants.find(variantItem => variantItem.id === elementId);
-
+    let myVariant = variants.length > 0 ? variants.find(variantItem => variantItem.id === elementId) : variants;
     let myClone =
       myVariant.clone ?
         myVariant.clone :
@@ -168,7 +189,7 @@ const Variant: React.FC<VariantProps> = ({
       fxButton.setAttribute("data-state", "loading")
     }
 
-    let myVariant = variants.find(variantItem => variantItem.id === elementId);
+    let myVariant = variants.length > 0 ? variants.find(variantItem => variantItem.id === elementId) : variants;
     let myClone =
       myVariant.clone ?
         myVariant.clone :
@@ -234,103 +255,315 @@ const Variant: React.FC<VariantProps> = ({
   }
 
   try {
-    return (
-      <div
-        className={`
-          ${display == `smart` ? `variant-component-smart` : `variant-component`}
-        `}
-      >
-        {Object.keys(variants).length > 1 ? <div className={`variant-component-selector`}>
-          <Dropdown
-            direction={`up`}
-          >
+    switch (display) {
+      case "smart":
+        return (
+          <div
+          className={`variant-component-smart`}
+        >
+          {<div className={`variant-inner`}>
+
+            {/** 
+            # Content **/}
+            <div className={`content`}>
+              
+              {variants.title ? <div className={`title`} style={{ color: secondary ? secondary : `black`}}>
+                {variants.title}
+              </div> : ``}
+
+              {variants.subtitle ? <div className={`subtitle`} style={{ color: secondary ? secondary : `grey`}}>
+                {variants.subtitle}
+              </div> : ``}
+
+              {variants.date ? <div className={`date`} style={{ color: secondary ? secondary : `grey`}}>
+                {moment(variants.date.date_start).format("dd DD MMM")}
+                {moment(variants.date.date_end).format("YYYY") !== moment(variants.date.date_start).format("YYYY") ? ` ${moment(variants.date.date_start).format("YY")}` : ``}&nbsp;
+                {variants.date.date_end && variants.date.date_end !== variants.date.date_start ? moment(variants.date.date_end).format("dd DD MMM YY") : ``}
+              </div> : ``}
+
+              {variants.date && moment(variants.date.hour_start) || variants.date && moment(variants.date.hour_end) ? <div className={`time`} style={{ color: secondary ? secondary : `grey`}}>
+                {variants.date.hour_start ? moment(variants.date.hour_start, "HH:mm:ss").format("HH:mm") : ``}&nbsp;
+                {variants.date.hour_end && variants.date.hour_end !== variants.date.hour_start ? moment(variants.date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
+              </div> : ``}
+
+              {variants.price !== null ? <div className={`price`} style={{ color: secondary ? secondary : `black`}}>
+                {Number(variants.price.price) && priceFormatter(variants.price.price) !== null ? priceFormatter(variants.price.price) : "Free"}&nbsp;
+                {Number(variants.price.price) && currency !== "null" ? <span className={`currency`}>{currency}</span> : ``}
+              </div> : ``}
+
+            </div>
+
+            {/** 
+            # Action **/}
+            <div className={`action`}>
+              {variants.in_cart === true ? <div
+                className={`variant-component-row table-col variants ref-variant-${variants.event ? variants.event.id : variants.product ? variants.product.id : `0`}-${variants.id} ${`dsp-active`}`}
+                key={`variant-component-key-${variants.id}`}
+                style={{ borderColor: secondary ? secondary : `red`}}>
+                {variants.in_cart === true ? <div className={`variant-component-col col-remove`}>
+                    {variants.quantity > 0 ? <Button
+                      icon={`remove`}
+                      mode={`default`}
+                      color={`white`}
+                      onClick={
+                        (event: React.MouseEvent<HTMLElement>) => {
+                          let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                          if (
+                            myEl.getAttribute("data-state") != "loading" &&
+                            myEl.getAttribute("data-state") != "error" &&
+                            myEl.getAttribute("data-state") != "complete"
+                          ) removeItem(variants.parent.id, variants.id, myEl);
+                        }
+                      }
+                    /> : ``}
+                  </div> : ``}
+
+                  {variants.in_cart === true ? <div className={`variant-component-col col-indicator`}>
+                    {variants.quantity > 0 ? <Button
+                      label={`${variants.quantity}`}
+                      mode={`indicator`}
+                    /> : ``}
+                  </div> : ``}
+
+                  {variants.in_cart === true ? <div className={`variant-component-col col-add`}>
+                    <Button
+                      icon={`add`}
+                      mode={`default`}
+                      color={`white`}
+                      onClick={
+                        (event: React.MouseEvent<HTMLElement>) => {
+                          let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                          if (
+                            myEl.getAttribute("data-state") != "loading" &&
+                            myEl.getAttribute("data-state") != "error" &&
+                            myEl.getAttribute("data-state") != "complete"
+                          ) addItem(variants.parent.id, variants.id, myEl)
+                        }
+                      }
+                    />
+                  </div> : ``}
+                </div> : ``}
+            </div>
+          </div>}
+        </div>  
+        );
+        break;
+      
+      /*
+      # Table Display */
+      case "table":
+        return (
+          <div className={`variant-component-table`}>
+            <div className={`variant-inner`}>
+              <div className={`table`}>
+                {Object.keys(variants).map((key) => (
+                  <div className={`table-row`}>
+  
+                    {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `red`}}>
+                      {variants[key].title}
+                    </span> : ``}
+  
+                    {/* <span style={{ borderColor: secondary ? secondary : `red`}} className={`table-col void`}></span> */}
+  
+                    {variants[key].date ? <span className={`table-col date`} style={{ borderColor: secondary ? secondary : `red`}}>
+                      {moment(variants[key].date.date_start).format("dd DD MMM")}
+                      {moment(variants[key].date.date_end).format("YYYY") !== moment(variants[key].date.date_start).format("YYYY") ? ` ${moment(variants[key].date.date_start).format("YY")}` : ``}<br />
+                      {variants[key].date.date_end && variants[key].date.date_end !== variants[key].date.date_start ? moment(variants[key].date.date_end).format("dd DD MMM YY") : ``}
+                    </span> : ``}
+  
+                    {variants[key].date && moment(variants[key].date.hour_start) || variants[key].date && moment(variants[key].date.hour_end) ? <span className={`table-col hour`} style={{ borderColor: secondary ? secondary : `red`}}>
+                      {variants[key].date.hour_start ? moment(variants[key].date.hour_start, "HH:mm:ss").format("HH:mm") : ``}<br />
+                      {variants[key].date.hour_end && variants[key].date.hour_end !== variants[key].date.hour_start ? moment(variants[key].date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
+                    </span> : ``}
+  
+                    {variants[key].subtitle ? <span className={`table-col subtitle`} style={{ borderColor: secondary ? secondary : `red`}}>
+                      {variants[key].subtitle}
+                    </span> : ``}
+  
+                    {variants[key].price !== null ? <span className={`table-col price`} style={{ borderColor: secondary ? secondary : `red`}}>
+                      {Number(variants[key].price.price) && priceFormatter(variants[key].price.price) !== null ? priceFormatter(variants[key].price.price) : "Free"}&nbsp;
+                      {Number(variants[key].price.price) && currency !== "null" ? <span className={`currency`}>{currency}</span> : ``}
+                    </span> : ``}
+  
+                    {variants[key].action ? <div
+                      key={`api_variants_${key}`}
+                      className={` table-col action ${key == 0 ? `dsp-active` : ``}`}
+                      style={{ borderColor: secondary ? secondary : `red`}}
+                    >
+                      {variants[key].action && variants[key].action.url ? <Button
+                          label={variants[key].action && variants[key].action.title ? variants[key].action.title : `Booking`}
+                          href={variants[key].action.url}
+                          style={{ 
+                            color: primary ? primary : `white`,
+                            background: secondary ? secondary : `red`
+                          }}
+                        /> : ``}
+                      
+                      {/**<div className={`variant-component-col col-price`}>
+                        {variants[key].price_default != null ? variants[key].price_default : ""}
+                        {variants[key].price_promotion != null ? variants[key].price_promotion : ""}
+                      </div>**/}
+                    </div> : ``}
+  
+                    {variants[key].in_cart === true ? <span
+                    className={`variant-component-row table-col variants ref-variant-${variants[key].event ? variants[key].event.id : variants[key].product ? variants[key].product.id : `0`}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
+                    key={`variant-component-key-${key}`}
+                    style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].in_cart === true ? <div className={`variant-component-col col-remove`}>
+                        {variants[key].quantity > 0 ? <Button
+                          icon={`remove`}
+                          mode={`default`}
+                          color={`white`}
+                          onClick={
+                            (event: React.MouseEvent<HTMLElement>) => {
+                              let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                              if (
+                                myEl.getAttribute("data-state") != "loading" &&
+                                myEl.getAttribute("data-state") != "error" &&
+                                myEl.getAttribute("data-state") != "complete"
+                              ) removeItem(variants[key].parent.id, variants[key].id, myEl);
+                            }
+                          }
+                        /> : ``}
+                      </div> : ``}
+  
+                      {variants[key].in_cart === true ? <div className={`variant-component-col col-indicator`}>
+                        {variants[key].quantity > 0 ? <Button
+                          label={`${variants[key].quantity}`}
+                          mode={`indicator`}
+                        /> : ``}
+                      </div> : ``}
+  
+                      {variants[key].in_cart === true ? <div className={`variant-component-col col-add`}>
+                        <Button
+                          icon={`add`}
+                          mode={`default`}
+                          color={`white`}
+                          onClick={
+                            (event: React.MouseEvent<HTMLElement>) => {
+                              let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                              if (
+                                myEl.getAttribute("data-state") != "loading" &&
+                                myEl.getAttribute("data-state") != "error" &&
+                                myEl.getAttribute("data-state") != "complete"
+                              ) addItem(variants[key].parent.id, variants[key].id, myEl)
+                            }
+                          }
+                        />
+                      </div> : ``}
+                    </span> : ``}
+  
+  
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>  
+        );
+        break;
+      
+      {/** 
+      # Selector **/}
+      case "selector":
+        return (
+          <div className={`variant-component-selector`}>
+  
+          {/** 
+          # SELECTOR **/}
+          {<div className={`variant-inner`}>
+            {<div className={`selector`}>
+              <Dropdown
+                direction={`down`}
+                selected={true}
+              >
+                {Object.keys(variants).map((key) => (
+                  <div className={`selector-line`} onClick={(event: React.MouseEvent<HTMLElement>) => {
+                    //if (selectItemFunc)
+                      selectItem(event.currentTarget, variants[key].parent.id, variants[key].id)
+                  }}>
+  
+                    {variants[key].title ? variants[key].title : ``}
+  
+                    {/*variants[key].date && variants[key].date.date_start || variants[key].date.date_end ? <span className={`date`}>
+                      {moment(variants[key].date.date_start).format("dd DD MMM")}
+                      {moment(variants[key].date.date_end).format("YYYY") !== moment(variants[key].date.date_start).format("YYYY") ? ` ${moment(variants[key].date.date_start).format("YY")}` : ``}
+                      {variants[key].date.date_end && variants[key].date.date_end !== variants[key].date.date_start ? " au "+moment(variants[key].date.date_end).format("dd DD MMM YY") : ``}
+                    </span> : ``*/}
+  
+                    {/*variants[key].date && moment(variants[key].date.hour_start) || variants[key].date && moment(variants[key].date.hour_end) ? <span className={`hour`}>
+                      &nbsp; — &nbsp;{moment(variants[key].date.hour_start, "HH:mm:ss").format("HH:mm")}
+                      {variants[key].date.hour_end && variants[key].date.hour_end !== variants[key].date.hour_start ? "/"+moment(variants[key].date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
+                    </span> : ``*/}
+  
+                    {variants[key].price !== null ? `${priceFormatter(variants[key].price.price) != null ? " for " : " for "} ${priceFormatter(variants[key].price.price) != null ? priceFormatter(variants[key].price.price) : "Free"} ${currency && ` `+currency}` : ``}
+                    
+                  </div>
+                ))}
+              </Dropdown>
+            </div>}
+  
+          <div className={`variant-component-list`}>
             {Object.keys(variants).map((key) => (
-              <div onClick={(event: React.MouseEvent<HTMLElement>) => {
-                if (selectItemFunc)
-                  selectItem(event.currentTarget, variants[key].parent_id, variants[key].id)
-              }}>
-                {variants[key].title != null ? variants[key].title : ""}
-                {variants[key].subtitle != null ? variants[key].subtitle : ""}
-                {priceFormatter(variants[key].price_default) != null ? " for " : " for "}
-                {priceFormatter(variants[key].price_default) != null ? priceFormatter(variants[key].price_default) : ""}
-                {currency ? ` ${currency}` : ""}
+              <div
+                key={`api_variants_${key}`}
+                className={`variant-component-row ref-variant-${variants[key].parent.id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
+                key={`variant-component-key-${key}`}
+              >
+                {console.log("myKey >", key)}
+                <div className={`variant-component-col col-remove`}>
+                  {variants[key].quantity > 0 ? <Button
+                    icon={`remove`}
+                    mode={`default`}
+                    color={`white`}
+                    onClick={
+                      (event: React.MouseEvent<HTMLElement>) => {
+                        let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                        if (
+                          myEl.getAttribute("data-state") != "loading" &&
+                          myEl.getAttribute("data-state") != "error" &&
+                          myEl.getAttribute("data-state") != "complete"
+                        ) removeItem(variants[key].parent.id, variants[key].id, myEl);
+                      }
+                    }
+                  /> : ``}
+                </div>
+                <div className={`variant-component-col col-indicator`}>
+                  {variants[key].quantity > 0 ? <Button
+                    label={`${variants[key].quantity}`}
+                    mode={`indicator`}
+                  /> : ``}
+                </div>
+                <div className={`variant-component-col col-add`}>
+                  <Button
+                    icon={`add`}
+                    mode={`default`}
+                    color={`white`}
+                    onClick={
+                      (event: React.MouseEvent<HTMLElement>) => {
+                        let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                        if (
+                          myEl.getAttribute("data-state") != "loading" &&
+                          myEl.getAttribute("data-state") != "error" &&
+                          myEl.getAttribute("data-state") != "complete"
+                        ) addItem(variants[key].parent.id, variants[key].id, myEl)
+                      }
+                    }
+                  />
+                </div>
+                {/**<div className={`variant-component-col col-price`}>
+                  {variants[key].price_default != null ? variants[key].price_default : ""}
+                  {variants[key].price_promotion != null ? variants[key].price_promotion : ""}
+                </div>**/}
               </div>
             ))}
-          </Dropdown>
-        </div>
-          :
-        <div className={`variant-component-title`}>
-          {variants[0].title != null ? variants[0].title : ""}
-          {variants[0].subtitle != null ? variants[0].subtitle : ""}
-          {priceFormatter(variants[0].price_default) != null ? " for " : " for "}
-          {priceFormatter(variants[0].price_default) != null ? priceFormatter(variants[0].price_default) : ""}
-          {currency ? ` ${currency}` : ""}
-        </div>
-        }
-
-        <div className={`variant-component-list`}>
-          {Object.keys(variants).map((key) => (
-            <div
-              key={`api_variants_${key}`}
-              className={`variant-component-row ref-variant-${variants[key].parent_id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
-              key={`variant-component-key-${key}`}
-            >
-              <div className={`variant-component-col col-remove`}>
-                {variants[key].quantity > 0 ? <Button
-                  icon={`remove`}
-                  mode={`default`}
-                  color={`white`}
-                  onClick={
-                    (event: React.MouseEvent<HTMLElement>) => {
-                      let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
-                      if (
-                        myEl.getAttribute("data-state") != "loading" &&
-                        myEl.getAttribute("data-state") != "error" &&
-                        myEl.getAttribute("data-state") != "complete"
-                      ) removeItem(variants[key].parent_id, variants[key].id, myEl);
-                    }
-                  }
-                /> : ``}
-              </div>
-              <div className={`variant-component-col col-indicator`}>
-                {variants[key].quantity > 0 ? <Button
-                  label={`${variants[key].quantity}`}
-                  mode={`indicator`}
-                /> : ``}
-              </div>
-              <div className={`variant-component-col col-add`}>
-                <Button
-                  icon={`add`}
-                  mode={`default`}
-                  color={`white`}
-                  onClick={
-                    (event: React.MouseEvent<HTMLElement>) => {
-                      let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
-                      if (
-                        myEl.getAttribute("data-state") != "loading" &&
-                        myEl.getAttribute("data-state") != "error" &&
-                        myEl.getAttribute("data-state") != "complete"
-                      ) addItem(variants[key].parent_id, variants[key].id, myEl)
-                    }
-                  }
-                />
-              </div>
-              {/**<div className={`variant-component-col col-price`}>
-                {variants[key].price_default != null ? variants[key].price_default : ""}
-                {variants[key].price_promotion != null ? variants[key].price_promotion : ""}
-              </div>**/}
-            </div>
-          ))}
-        </div>
-
-      </div>  
-    )
-  }
-
-  catch {
-    return (
-      <h1>no variants</h1>
-    )
+          </div>
+          </div>}
+        </div>  
+        );
+        break;
+    }
+  } catch {
+    
   }
 };
 

@@ -11,6 +11,10 @@ import "./Partners.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface PartnersProps {
+  debug?: true | false;
+  position: number;
+  title?: string;
+  subtitle?: string;
   elements?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
   align?: string | null;
@@ -36,6 +40,11 @@ export interface PartnersProps {
 }) => (
 */
 const Partners = ({
+  debug,
+  position,
+  title,
+  subtitle,
+  align,
   children,
   elements,
 }: PartnersProps) => {
@@ -49,6 +58,11 @@ const Partners = ({
       <div className={`
         partners-component-inner
       `}>
+
+        {title || subtitle ? <div className="content">
+          {title != null ? <h5 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+          {subtitle != null ? <h6 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+        </div> : ``}
 
         {elements != null ? Object.keys(elements).map((key) => (
           <Partner

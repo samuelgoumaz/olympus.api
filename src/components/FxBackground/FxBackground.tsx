@@ -13,7 +13,8 @@ export interface FxBackgroundProps {
   position: number;
   cover?: string | null;
   align?: string | null;
-  background: string | null;
+  image: string | null;
+  background?: string | null;
   opacity: string | null;
   mixBlendMode: string | null;
   children: JSX.Element | JSX.Element[];
@@ -41,6 +42,7 @@ export interface FxBackgroundProps {
 const FxBackground = ({
   position,
   cover,
+  image,
   background,
   opacity,
   mixBlendMode,
@@ -56,7 +58,7 @@ const FxBackground = ({
       height: `100%`,
       top: 0,
       left: 0,
-      background: background ?? `black`,
+      background: background ? background : image ? `url(${image})` : `black`,
       backgroundSize: cover ? cover : `cover`,
       backgroundPosition: align ? align : `center`,
       backgroundRepeat: `no-repeat`,

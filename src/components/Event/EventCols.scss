@@ -1,6 +1,7 @@
 /*
 # Imports
 */
+@import "../../../lib/colors.scss";
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
@@ -13,6 +14,15 @@
   position: absolute;
   padding: 0;
   height: 0;
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 
   &::before {
     content: " ";
@@ -43,9 +53,67 @@
       font-size: 10px;
       color: white;
     }
+    .subtitle {
+      color: inherit;
+      text-transform: none;
+      margin-bottom: 0;
+      font-size: 0.875em;
+    }
     .title {
       color: inherit;
       text-transform: none;
+      margin-bottom: 0;
+    }
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:after {
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2;
+      &:after {
+        content: "fx";
+        color: $color-debug-2;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .event-component-inner {
+      border: 4px solid $color-debug-4;
+      &:after {
+        content: "children";
+        color: $color-debug-4;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
     }
   }
 }

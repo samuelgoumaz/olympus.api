@@ -10,7 +10,7 @@ import "./FxImage.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxImageProps {
-  position: number;
+  position?: number;
   cover?: true | false;
   padding?: true | false;
   display?: string | null;

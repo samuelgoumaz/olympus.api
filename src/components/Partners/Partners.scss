@@ -12,9 +12,10 @@
   width: 100%;
   display: block;
   position: relative;
+  text-align: inherit;
 
   .partners-component-inner {
-    text-align: center;
+    text-align: inherit;
 
     &.align-left {
       text-align: left;

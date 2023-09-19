@@ -48,3 +48,13 @@ import {Header, Button, International} from "@samuelgoumaz/olympus.api"
 ## 2. Components
 
 [Banner](./support/banner.md)
+
+# 1. Responsive sizes
+
+| Label        | `default` | `small-and-down` | `medium-and-down` | `medium-and-up` | `large-and-up` | `extra-large-and-up` |
+| ------------ | --------- | ---------------- | ----------------- | --------------- | -------------- | -------------------- |
+| Height/Width | 70px      | 50px             | 56px              | 60px            | 66px           | none                 |
+| Padding      | 20px      | 10px             | 13px              | 15px            | 18px           | none                 |
+| Margin       | 0.5em     | 0.5em            | 0.5em             | 0.5em           | 0.5em          | 0.5em                |
+| Font Size    | 1.5em     | 1em              | 1.125em           | 1.25em          | 1.35em         | 1.5em                |
+| Radio        |           |                  |                   |                 |                |                      |

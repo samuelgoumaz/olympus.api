@@ -29,6 +29,7 @@
       .cartprice-element {
 
         .cartprice-element-inner {
+          padding: 0 20px;
 
           .icon {
             width: 60px;
@@ -64,10 +65,8 @@
       }
       &.col-promocode {
         font-size: 1em;
-        border-top: 1px solid rgba(0,0,0,0.15);
         .cartprice-element {
           background: rgba(0,0,0,0.05);
-          border-bottom: 1px solid rgba(0,0,0,0.15);
 
           .cartprice-element-inner {
             .icon {
@@ -81,11 +80,9 @@
       }
       &.col-price {
         font-size: 1em;
-        border-top: 1px solid rgba(0,0,0,0.15);
         .cartprice-element {
           .cartprice-element-inner {
             .price {
-              padding: 0 20px;
               line-height: 60px;
               margin: 0;
               font-size: 2em;

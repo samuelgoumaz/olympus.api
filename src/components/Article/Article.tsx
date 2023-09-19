@@ -4,6 +4,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Button from "../Button"
 import Tags from "../Tags"
+import FxBackground from "../FxBackground"
 import "./ArticleGrid.scss";
 import "./ArticleSlide.scss";
 import "./ArticleRow.scss";
@@ -14,12 +15,13 @@ import "./ArticleRow.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ArticleProps {
-  position?: number | null;
-  title: string | null;
-  subtitle: string | null;
-  height?: string | null;
-  body: string | null;
+  debug?: true | false;
+  position: number;
   slug: string | null;
+  title?: string | null;
+  subtitle?: string | null;
+  image?: string | null;
+  body?: string | null;
   tags: {
     id: number;
     slug: string | null;
@@ -35,11 +37,15 @@ export interface ArticleProps {
       name: string | null;
     };
   };
+  height?: string | null;
   display: string | null;
   fx: JSX.Element | JSX.Element[];
   scene: JSX.Element | JSX.Element[];
   children: JSX.Element | JSX.Element[];
-  getProductFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  variants: JSX.Element | JSX.Element[];
+  buttons: JSX.Element | JSX.Element[];
+  color?: string | false;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void | false;
 }
 
 
@@ -48,71 +54,185 @@ export interface ArticleProps {
 # Class Components
 */
 const Article = ({
+  debug,
   position,
-  title,
-  height,
-  body,
   slug,
-  tags,
-  display,
+  title,
   subtitle,
+  body,
+  image,
+  tags,
+  height,
+  display,
   fx,
   scene,
   children,
-  getProductFunc
-}: ArticleProps) => (
-  <article
-    //onClick={getProductFunc}
-    className={`
-      ${display === `slide` ? `article-component-slide` : ``}
-      ${display === `grid` ? `article-component-grid` : ``}
-      ${display === `row` ? `article-component-row` : ``}
-    `}
-    style={{
-      zIndex: position,
-      position: `relative`,
-      height: height != null ? height : `auto`
-    }}
-  >
+  variants,
+  color,
+  buttons,
+  onClick
+}: ArticleProps) => {
+  switch (display) {
+    case "slide":
+      return (
+        <article
+          //onClick={onClick ? onClick : function () { return false }}
+          className={`article-component-slide ${debug === true ? `debug` : ``}`}
+          style={{
+            zIndex: position,
+            position: `relative`,
+            height: height != null ? height : `auto`
+          }}
+        >
 
-    <div className={`fx`}>
-      {fx}
-    </div>
+          {/* Fx render */ fx ? <div className={`fx`}>{fx}</div> : ``}
 
-    <div className={`
-      article-inner
-    `}>
+          <div className={`
+            article-component-inner
+          `}>
 
-      <div className={`scene`}>
-        {scene}
-      </div>
+            {/* Scene Render */ scene || image ? <div className={`scene`}>
+              <div className={`scene-inner`}>
+                {scene ? scene : image ? <FxBackground image={image} /> : ``}
+              </div>
+            </div> : ``}
 
-      <div className={`content`}>
-        {children ? children : <>
-          
-          {title != null ? <div className={`header`}>
-            {title != null ? <h3 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-            {subtitle != null ? <h5 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
-            {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
-          </div> : ``}
+            {<div className={`content`}>
+                {children ? children : <>
+                  {title != null ? <div className={`header`}>
+                  {title != null ? <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+                  {subtitle != null ? <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
 
-          {display === `slide` && tags ? <Tags elements={tags} align={`left`} /> : ``}
-          {display === `grid` && tags ? <Tags elements={tags} align={`center`} /> : ``}
-          {display === `row` && tags ? <Tags elements={tags} align={`left`} /> : ``}
+                  {tags ? <div className={`tags`}>
+                    <Tags elements={tags} align={`left`} />
+                  </div> : ``}
+                  {body != null ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+                  {variants && <div className={`variants`}>{variants}</div>}
 
-          <div className={`action`}>
-            <Button
-              icon={`arrow_forward`}
-              mode={`default`}
-            />
+                </div> : ``}
+                {onClick || buttons ? <div className={`action`}>
+                  {buttons && buttons}
+                  {onClick ? <Button
+                    icon={`arrow_forward`}
+                    mode={`default`}
+                    color={color && color !== false && color !== `false` ? color : `inherit`}
+                    onClick={onClick ? onClick : function () { return false }}
+                  /> : ``}
+                </div> : ``}
+              </>}
+            </div>}
+
           </div>
-          
-        </>}
-      </div>
+        </article>
+      )
+      break;
+    case "grid":
+      return (
+        <article
+          //onClick={onClick ? onClick : function () { return false }}
+          className={`
+            ${display === `slide` ? `article-component-slide` : ``}
+            ${display === `grid` ? `article-component-grid` : ``}
+            ${display === `row` ? `article-component-row` : ``}
+            ${debug === true ? `debug` : ``}
+          `}
+          style={{
+            zIndex: position,
+            position: `relative`,
+            height: height != null ? height : `auto`
+          }}
+        >
+      
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
+      
+          <div className={`
+            article-inner
+          `}>
+      
+            {scene || image ? <div className={`scene`}>
+              <div className={`scene-inner`}>
+                {scene ? scene : image ? <FxBackground image={image} /> : ``}
+              </div>
+            </div> : ``}
+      
+            {<div className={`content`}>
+              {children ? children : <>
 
-    </div>
-  </article>
-);
+                {title != null ? <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+                {subtitle != null ? <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                {tags ? <div className={`tags`}>
+                  <Tags elements={tags} align={`center`} />
+                </div> : ``}
+                {body != null ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+                {variants && <div className={`variants`}>{variants}</div>}
+
+                {onClick || buttons ? <div className={`action`}>
+                  {buttons && buttons}
+                  {onClick ? <Button
+                    icon={`arrow_forward`}
+                    mode={`default`}
+                    color={color && color !== false && color !== `false` ? color : `inherit`}
+                    onClick={onClick ? onClick : function () { return false }}
+                  /> : ``}
+                </div> : ``}
+              </>}
+            </div>}
+      
+          </div>
+        </article>
+        )
+      break;
+    case "row": 
+      return (
+        <article
+          onClick={onClick ? onClick : function () { return false }}
+          className={`article-component-row ${debug === true ? `debug` : ``}`}
+          style={{
+            zIndex: position,
+            position: `relative`,
+            height: height != null ? height : `auto`
+          }}
+        >
+
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
+
+          <div className={`
+            article-component-inner
+          `}>
+
+            {scene || image ? <div className={`scene`}>
+              <div className={`scene-inner`}>
+                {scene ? scene : image ? <FxBackground image={image} /> : ``}
+              </div>
+            </div> : ``}
+
+            {<div className={`content`}>
+                {children ? children : <>
+                  {title != null ? <div className={`header`}>
+                  {title != null ? <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+                  {subtitle != null ? <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                  {body != null ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
+                  {tags ? <div className="tags"><Tags elements={tags} align={`left`} /></div> : ``}
+                </div> : ``}
+                {<div className={`action`}>
+                  {variants}
+                  {onClick ? <Button
+                    icon={`arrow_forward`}
+                    mode={`default`}
+                    color={color && color !== false && color !== `false` ? color : `inherit`}
+                  /> : ``}
+                </div>}
+              </>}
+            </div>}
+
+          </div>
+        </article>
+      )
+      break;
+    default:
+      break;
+  }
+}
 
 /*
 # Export

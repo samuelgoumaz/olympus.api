@@ -3,7 +3,7 @@
 */
 import React from "react";
 import Slider from "react-slick";
-import Article from "../Article"
+import Article from "../Article";
 import Error from "../Error";
 import "./ArticlesRow.scss";
 import "./ArticlesGrid.scss";
@@ -21,6 +21,7 @@ export interface ArticlesProps {
   display?: string;
   elements?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
+  filter?: JSX.Element | JSX.Element[];
   render?: (data: any, inc: number) => any;
 }
 
@@ -36,6 +37,7 @@ const Articles: React.FC<ArticlesProps> = ({
   display,
   children,
   elements,
+  filter,
   render
 }) => {
 
@@ -45,7 +47,7 @@ const Articles: React.FC<ArticlesProps> = ({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: false,
-    dots: false
+    adaptiveHeight: true
   };
 
   /*
@@ -65,9 +67,11 @@ const Articles: React.FC<ArticlesProps> = ({
         ${display === `row` ? `articles-component-row` : ``}
       `}
     >
+      {filter && filter}
       <div className={`
         articles-component-inner
       `}>
+        
         {display === `slide` && <Slider {...sliderSettings}>
           {elements.map((article, inc) => {
             return render ? (

@@ -7,14 +7,40 @@
   width: auto;
   min-width: 70px;
   height: 70px;
-  border-radius: 35px;
+  border-radius: 0;
   border: 0;
   display: inline-block;
   text-align: center;
-  background: #f2f2f2;
   position: relative;
   margin: 5px;
   overflow: hidden;
+
+  background: lightgray;
+  color: white;
+
+  &:hover {
+    background: black;
+    span {
+      color: white;
+    }
+    svg {
+      fill: white;
+      circle {
+        stroke: white;
+      }
+    }
+  }
+
+  &:active{
+    background: blue;
+    span {
+      color: white;
+    }
+  }
+
+  &.hv-radius {
+    border-radius: 35px;
+  }
 
   &.hv-label {
     padding: 0 20px;
@@ -27,6 +53,12 @@
 
   &.hv-icon {
     padding: 0;
+    &.hv-label {
+      .fxIcon-button {
+        border-right: 1px solid rgba(0,0,0,0.1);
+        margin-right: 15px;
+      }
+    }
     .icon {
       svg {
         width: 70px;
@@ -57,10 +89,14 @@
     width: auto;
     min-width: 50px;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 0;
     border: 0;
     display: inline-block;
     text-align: center;
+
+    &.hv-radius {
+      border-radius: 25px;
+    }
 
     &.hv-label {
       padding: 0 10px;
@@ -93,10 +129,14 @@
     width: auto;
     min-width: 56px;
     height: 56px;
-    border-radius: 28px;
+    border-radius: 0px;
     border: 0;
     display: inline-block;
     text-align: center;
+
+    &.hv-radius {
+      border-radius: 28px;
+    }
 
     &.hv-label {
       padding: 0 13px;
@@ -129,10 +169,14 @@
     width: auto;
     min-width: 60px;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 0px;
     border: 0;
     display: inline-block;
     text-align: center;
+
+    &.hv-radius {
+      border-radius: 30px;
+    }
 
     &.hv-label {
       padding: 0 15px;
@@ -165,10 +209,14 @@
     width: auto;
     min-width: 66px;
     height: 66px;
-    border-radius: 33px;
+    border-radius: 0px;
     border: 0;
     display: inline-block;
     text-align: center;
+
+    &.hv-radius {
+      border-radius: 33px;
+    }
 
     &.hv-label {
       padding: 0 18px;

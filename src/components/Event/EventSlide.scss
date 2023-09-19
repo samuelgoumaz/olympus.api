@@ -1,6 +1,7 @@
 /*
 # Imports
 */
+@import "../../../lib/colors.scss";
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
@@ -10,7 +11,6 @@
 */
 .event-component-slide {
   width: 100%;
-  @include aspect-ratio(2, 1);
   display: block;
   position: relative;
 
@@ -23,32 +23,121 @@
   .event-component-inner {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     display: table;
+    z-index: 2;
     
     .scene {
-      width: 50%;
+      width: 35%;
       display: table-cell;
       position: relative;
       z-index: 2;
+      @include aspect-ratio(1, 1);
     }
     .content {
+      width: 65%;
       padding: 100px;
-      background: yellow;
       vertical-align: middle;
-      width: 50%;
       display: table-cell;
       position: relative;
       z-index: 3;
 
+      .body {
+        margin: 1em 0;
+        text-align:justify;
+        text-align-last:left;
+        word-wrap: break-word;
+        text-justify: inter-word;
+        hyphens: auto;
+      }
       .title {
         margin: 0.1em 0;
       }
+      .tags {
+        margin: 0.5em 0;
+      }
+      .date, .time {
+        margin: 0.5em 0;
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .variants {
+        margin: 0.5em 0;
+        text-align: left;
+      }
+      .action {
+        margin-top: 0.5em;
+      }
     }
-    .action {
-      margin-top: 1em;
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1 !important;
+    &:after {
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2 !important;
+      &:after {
+        content: "fx";
+        color: $color-debug-2;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .content {
+      border: 4px solid $color-debug-4 !important;
+      &:after {
+        content: "children";
+        color: $color-debug-4;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
+    }
+    .scene {
+      border: 4px solid $color-debug-3 !important;
+      &:after {
+        content: "scene";
+        color: $color-debug-3;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
     }
   }
 }
@@ -58,8 +147,23 @@
 */
 @media #{$small-and-down} {
   .event-component-slide {
+    .fx {
+    }
     .event-component-inner {
-      .title {
+      
+      .scene {
+        width: 100%;
+        display: block;
+      }
+      .content {
+        width: 100%;
+        display: block;
+        padding: 20px;
+  
+        .title {
+        }
+      }
+      .action {
       }
     }
   }
@@ -67,8 +171,21 @@
 
 @media #{$medium-and-down} {
   .event-component-slide {
+    .fx {
+    }
     .event-component-inner {
-      .title {
+      
+      .scene {
+        width: 25%;
+      }
+      .content {
+        width: 75%;
+        padding: 40px;
+  
+        .title {
+        }
+      }
+      .action {
       }
     }
   }
@@ -76,15 +193,66 @@
 
 @media #{$medium-and-up} {
   .event-component-slide {
+    .fx {
+    }
     .event-component-inner {
-      .title {
+      
+      .scene {
+        width: 35%;
+      }
+      .content {
+        width: 65%;
+        padding: 60px;
+  
+        .title {
+        }
+      }
+      .action {
       }
     }
   }
 }
 
 @media #{$large-and-up} {
+  .event-component-slide {
+    .fx {
+    }
+    .event-component-inner {
+      
+      .scene {
+        width: 35%;
+      }
+      .content {
+        width: 65%;
+        padding: 80px;
+  
+        .title {
+        }
+      }
+      .action {
+      }
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .event-component-slide {
+    .fx {
+    }
+    .event-component-inner {
+      
+      .scene {
+        width: 35%;
+      }
+      .content {
+        width: 65%;
+        padding: 90px;
+  
+        .title {
+        }
+      }
+      .action {
+      }
+    }
+  }
 }

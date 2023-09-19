@@ -41,7 +41,7 @@ const Popup = ({
       <div className="popup-component dsp-open" id={`popup-${slug}`}>
       <div className="popup-component-inner">
         <div className="popup-header">
-          <div className="popup-header-col title">{name ?? `message`}</div>
+          <div className="popup-header-col title"><h5>{name ?? `Notification`}</h4></div>
           <div className="popup-header-col action">
               {/**<Button
                 icon={`remove`}

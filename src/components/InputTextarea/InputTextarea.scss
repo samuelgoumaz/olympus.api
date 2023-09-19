@@ -4,30 +4,25 @@
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
+@import "../../../lib/forms.scss";
 $grey : #ccc;
+$red : red;
 
 /*
 # document
 */
 .form-item {
-
+  label {
+    .required {
+    }
+  }
   .form-item-input {
-
     &.form-item-input-textarea {
-
-      /* dimensions */
       width: 100%;
-      min-height: 150px;
+      height: 70px;
+      padding: 20px;
       display: block;
-
-      /* margin */
-      padding: 30px;
-      border-radius: 10px;
-
-      /* styling */
-      border: 1px solid $grey;
-      font-size: 1.5em;
-
+      background: rgba(0,0,0,0.05);
     }
   }
 }
@@ -36,15 +31,55 @@ $grey : #ccc;
 # Responsive
 */
 @media #{$small-and-down} {
+  .form-item {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-textarea {
+        min-height: 100px;
+        padding: 10px;
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .form-item {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-textarea {
+        min-height: 112px;
+        padding: 13px;
+      }
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .form-item {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-textarea {
+        min-height: 120px;
+        padding: 15px;
+      }
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .form-item {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-textarea {
+        min-height: 132px;
+        padding: 18px;
+      }
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {

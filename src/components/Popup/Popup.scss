@@ -44,6 +44,9 @@
 
                     &.title {
                         padding-left: 60px;
+                        h5 {
+                            margin-bottom: 0;
+                        }
                     }
 
                     &.action {
@@ -58,7 +61,6 @@
             }
 
             .popup-content {
-                background: orange;
 
                 .popup-content-inner {
                     padding: 60px;

@@ -3,6 +3,7 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import "./Section.scss";
+import FxBackground from "../FxBackground";
 
 /*
 # Interface
@@ -10,13 +11,17 @@ import "./Section.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface SectionProps {
-  title: string;
-  subtitle: string;
-  position?: number | false;
-  body: string;
-  display: string;
-  scene: JSX.Element | JSX.Element[];
-  fx: JSX.Element | JSX.Element[];
+  debug?: true | false;
+  position: number;
+  title?: string;
+  subtitle?: string;
+  body?: string;
+  display?: string;
+  image?: string;
+  fx?: JSX.Element | false;
+  scene?: JSX.Element | false;
+  children?: JSX.Element | false;
+  buttons?: JSX.Element | JSX.Element[];
 }
 
 
@@ -39,13 +44,17 @@ export interface SectionProps {
 }) => (
 */
 const Section = ({
+  debug,
+  position,
   title,
   subtitle,
-  position,
   body,
   display,
+  image,
+  fx,
   scene,
-  fx
+  children,
+  buttons
 }: SectionProps) => (
   <section
     className={`
@@ -53,34 +62,33 @@ const Section = ({
       ${display == `left` || display == null ? `alignLeft` : ``}
       ${display == `middle` ? `alignMiddle` : ``}
       ${display == `right` ? `alignRight` : ``}
-      panel
+      ${debug === true ? `debug` : ``}
     `}
     style={{
       position: `relative`,
-      zIndex: position != false ? position : 1
+      zIndex: position != false ? position : 2
     }}
   >
-    {fx && <div className={`fx`}>
-      {fx}
-    </div>}
-
+    {fx ? <div className={`fx`}>{fx}</div> : ``}
+    
     <div className={`section-inner`}>
 
       {/*
       # Col scene */}
       <div className={`section-inner-col col-scene`}>
-        {scene && <div className={`scene`}>
-          {scene}
-        </div>}
+        {scene || image ? <div className={`scene`}>{scene ? {scene} : image ? <FxBackground image={image} /> : ``}</div> : ``}
       </div>
 
       {/*
       # Col content */}
       <div className={`section-inner-col col-content`}>
-        <div className={`content`}>
-          <h2 className="section-title" dangerouslySetInnerHTML={{ __html: title }} />
-          <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
-        </div>
+        {children ? children : <div className={`col-content-inner`}>
+          <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} />
+          <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />
+          {buttons && <div className="action">
+            {buttons && buttons}
+          </div>}
+        </div>}
       </div>
 
     </div>
