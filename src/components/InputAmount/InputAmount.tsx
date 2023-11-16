@@ -11,6 +11,7 @@ import "./InputAmount.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface InputAmountProps {
+  mediaAPI : string | false;
   label?: string | null;
   name: string | null;
   min?: number | false;
@@ -47,6 +48,7 @@ export interface InputAmountProps {
 }) => (
 */
 const InputAmount = ({
+  mediaAPI,
   label,
   name,
   autoselect,
@@ -75,7 +77,11 @@ const InputAmount = ({
   function onChangeAmount (e) {
     const inputQuantity = document.querySelector(`#input-quantity-${String(name)}`);
     const inputAmount = e.currentTarget;
-    inputAmount.value = priceFormatter(e.currentTarget.value);
+    try {
+      inputAmount.value = priceFormatter(e.currentTarget.value);
+      onChangeFunc()
+    } catch {
+    }
   }
 
   /**
@@ -84,7 +90,12 @@ const InputAmount = ({
     const inputQuantity = e.currentTarget;
     const inputPrices = document.querySelector(`input[name="${name}"]:checked`);
     const inputAmount = document.querySelector(`#input-amount-${String(name)}`);
-    inputAmount.value = priceFormatter(Number(inputPrices.value) * Number(inputQuantity.value));
+    
+    try {
+      inputAmount.value = priceFormatter(Number(inputPrices.value) * Number(inputQuantity.value));
+      onChangeFunc()
+    } catch {
+    }
   }
 
   function quantityOptions (min, max, initial) {
@@ -182,8 +193,6 @@ const InputAmount = ({
         } else {
           return priceFormatter(0);
         }
-      } else {
-        return priceFormatter(0);
       }
     } catch {
       return priceFormatter(0)
@@ -247,10 +256,30 @@ const InputAmount = ({
                     onChange={onChange}
                   />
                 </span>
+
+                {/**
+                # Title **/}
                 <label
                   id={`form-item-radio-${String(name)}-${index}`}
                   className={"form-item-label"}
-                >{`${priceFormatter(item.price)} ${currency ? currency.toUpperCase() : ``} ${item.name.replaceAll(/<\/?[^>]+(>|$)/gi, "")}`}</label>
+                >{`${item.name.replaceAll(/<\/?[^>]+(>|$)/gi, "")}`}</label>
+
+                {/**
+                # Price **/}
+                {item.price > 0 ? <label
+                  id={`form-item-radio-${String(name)}-${index}`}
+                  className={`form-item-price ${item.image ? `hv-image` : ``}`}
+                >{`${priceFormatter(item.price)} ${currency ? currency.toUpperCase() : ``}`}</label> : ``}
+
+                {/**
+                # Image **/}
+                {item.image ? <label 
+                  className={`form-item-image`}
+                  htmlFor={`form-item-radio-${String(name)}-${index}`}
+                >
+                  <img src={mediaAPI ? mediaAPI+item.image.url : item.image.url} />
+                </label> : ``}
+
               </span>
             )
           )}
@@ -260,7 +289,7 @@ const InputAmount = ({
 
       {/**
       # Custom component **/}
-      <p className={"form-item form-item-checkbox"}>
+      {custom && <p className={"form-item form-item-checkbox"}>
         <span className={`form-item-inner`}>
           {custom && <span className={"form-item-line"}>
             <span className={"form-item-input-container"}>
@@ -280,11 +309,11 @@ const InputAmount = ({
             <label
               id={`form-item-radio-custom-${String(Math.round(elements.length+1))}`}
               className={"form-item-label"}
-            >Personnalisé</label>
+            >Custom</label>
           </span>}
           
         </span>
-      </p>
+      </p>}
 
       {/**
       # Quantity component **/}

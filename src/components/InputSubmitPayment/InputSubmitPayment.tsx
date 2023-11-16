@@ -74,6 +74,7 @@ const InputSubmitPayment = ({
       className={"form-item form-item-submit-payment"}
     >
       {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
+
       <span className={`form-item-handler`}>
         <ul>
           <li className={`checkbox`}>
@@ -117,9 +118,11 @@ const InputSubmitPayment = ({
           )}
         </ul>
       </span>
+
       {children && <span id={`submit-content-${name}`} className={`form-item-container dsp-close`}>
         {children}
       </span>}
+      
     </div>
   )
 };

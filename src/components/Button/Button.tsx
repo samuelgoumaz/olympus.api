@@ -12,7 +12,8 @@ export interface ButtonProps {
   label?: string | null; // title button
   icon?: string | null; // material icon
   mode?: string | null; 
-  color?: string | null;
+  primary?: string | null;
+  secondary?: string | null;
   state?: string | null;
   href?: string | null;
   radius?: boolean | false;
@@ -23,7 +24,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   label,
   icon,
   mode,
-  color,
+  primary,
+  secondary,
   state,
   href,
   radius,
@@ -102,11 +104,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
           ${radius === true ? `hv-radius` : ``}
         `}
         style={{
-          color: color ? color : `inherit`,
-          border: mode == `border` ? `2px solid ${color ? color : `black`}` : `none`,
+          color: primary ? primary : `black`,
+          backgroundColor: secondary ? secondary : `#f2f2f2`,
+          border: mode == `border` ? `2px solid ${secondary ? secondary : `black`}` : `none`,
           cursor: `pointer`
         }}
-        onClick={onClick ? onClick : () => false}
+        onClick={href ? function () {
+          try {
+            window.open(href, "_blank")
+          } catch {
+            window.location.href = String(href);
+          }
+        } : onClick ? onClick : () => false}
       >
   
         {/**
@@ -154,7 +163,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
                   cx={50}
                   cy={50}
                   fill={`none`}
-                  stroke={color ? color : `black`}
+                  stroke={primary ? primary : `black`}
                   strokeWidth={10}
                   r={35}
                   strokeDasharray={`164.93361431346415 56.97787143782138`}

@@ -52,21 +52,21 @@ const InputDelivery = ({
   onClick
 }: InputDeliveryProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-delivery"}
   >
     {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
     <input
-      className={"form-item-input form-item-input-cart"}
+      className={"form-item-input form-item-input-delivery"}
       type="hidden"
-      name={String(`cart`)}
+      name={String(`delivery`)}
       alt={label ? String(label) : placeholder ? String(placeholder) : ``}
       required={required == true ? `required` : ``}
       value={value ?? null}
     />
     <input
-      className={"form-item-input form-item-input-cart"}
+      className={"form-item-input form-item-input-delivery"}
       type="number"
-      name={String(`input-amount-cart`)}
+      name={String(`input-amount-delivery`)}
       alt={label ? String(label) : placeholder ? String(placeholder) : ``}
       required={required == true ? `required` : ``}
       value={total ?? null}

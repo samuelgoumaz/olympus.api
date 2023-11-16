@@ -48,7 +48,7 @@ const InputFile = ({
   onClick
 }: InputFileProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-file"}
   >
     {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
     <input

@@ -48,11 +48,11 @@ const InputDate = ({
   onClick
 }: InputDateProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-date"}
   >
     {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
     <input
-      className={"form-item-input form-item-input-text"}
+      className={"form-item-input form-item-input-date"}
       type="text"
       name={String(name) ?? `errorName`}
       required={required == true ? `required` : ``}

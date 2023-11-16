@@ -15,21 +15,58 @@ $red : red;
 .form-input-amount {
 
   .form-item-radio {
+    position: relative;
+  }
+
+  .form-item-image {
+    width: 70px;
+    height: 70px;
+    display: block;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  .form-item-price {
+    display: block;
+    line-height: 70px;
+    position: absolute;
+    width: auto;
+    padding: 0 20px;
+    right: 0;
+    font-size: 0.75em;
+    margin: 0;
+
+    &.hv-image {
+      right: 70px
+    }
   }
   
   .form-item-quantity {
-    padding-right: 15px;
+    margin: 0;
+    margin-top: -0.5em;
+    padding-right: 5px;
     display: inline-block;
     width: 25%;
     vertical-align: top;
   }
   
   .form-item-total {
+    margin: 0;
+    margin-top: -0.5em;
     display: inline-block;
     vertical-align: top;
 
     &.hv_quantity {
-      padding-left: 15px;
+      padding-left: 5px;
       width: 75%;
     }
   }
@@ -42,6 +79,21 @@ $red : red;
 @media #{$small-and-down} {
   .form-input-amount {
     .form-item-radio {
+    }
+    .form-item-image {
+      width: 50px;
+      height: 50px;
+      img {
+      }
+    }
+    .form-item-price {
+      line-height: 50px;
+      padding: 0 5px;
+      font-size: 0.75em;
+
+      &.hv-image {
+        right: 50px
+      }
     }
     .form-item-quantity {
       padding-right: 5px;
@@ -60,13 +112,28 @@ $red : red;
   .form-input-amount {
     .form-item-radio {
     }
+    .form-item-image {
+      width: 56px;
+      height: 56px;
+      img {
+      }
+    }
+    .form-item-price {
+      line-height: 56px;
+      padding: 0 5px;
+      font-size: 0.75em;
+
+      &.hv-image {
+        right: 56px
+      }
+    }
     .form-item-quantity {
-      padding-right: 8px;
+      padding-right: 5px;
       width: 25%;
     }
     .form-item-total {
       &.hv_quantity {
-        padding-left: 8px;
+        padding-left: 5px;
         width: 75%;
       }
     }
@@ -77,13 +144,28 @@ $red : red;
   .form-input-amount {
     .form-item-radio {
     }
+    .form-item-image {
+      width: 60px;
+      height: 60px;
+      img {
+      }
+    }
+    .form-item-price {
+      line-height: 60px;
+      padding: 0 10px;
+      font-size: 0.75em;
+
+      &.hv-image {
+        right: 60px
+      }
+    }
     .form-item-quantity {
-      padding-right: 10px;
+      padding-right: 5px;
       width: 20%;
     }
     .form-item-total {
       &.hv_quantity {
-        padding-left: 10px;
+        padding-left: 5px;
         width: 80%;
       }
     }
@@ -94,13 +176,28 @@ $red : red;
   .form-input-amount {
     .form-item-radio {
     }
+    .form-item-image {
+      width: 66px;
+      height: 66px;
+      img {
+      }
+    }
+    .form-item-price {
+      line-height: 66px;
+      padding: 0 15px;
+      font-size: 0.75em;
+
+      &.hv-image {
+        right: 66px
+      }
+    }
     .form-item-quantity {
-      padding-right: 15px;
+      padding-right: 5px;
       width: 15%;
     }
     .form-item-total {
       &.hv_quantity {
-        padding-left: 15px;
+        padding-left: 5px;
         width: 85%;
       }
     }
@@ -112,12 +209,12 @@ $red : red;
     .form-item-radio {
     }
     .form-item-quantity {
-      padding-right: 15px;
+      padding-right: 5px;
       width: 10%;
     }
     .form-item-total {
       &.hv_quantity {
-        padding-left: 15px;
+        padding-left: 5px;
         width: 90%;
       }
     }

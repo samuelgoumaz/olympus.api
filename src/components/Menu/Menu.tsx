@@ -58,9 +58,10 @@ const Menu = ({
       {
         menu && Object.keys(menu).length > 0 &&
           Object.keys(menu).map(
-            menuKey => menu[menuKey].id && (
+            (menuKey) => menu[menuKey].id && (
               <li
                 className={`menu-line`}
+                key={`menu-${menu[menuKey].id}-li-${menuKey}`}
                 style={{
                   width: display === `inline` ? `${Math.floor(100/Object.keys(menu).length)}%` : `auto`
                 }}

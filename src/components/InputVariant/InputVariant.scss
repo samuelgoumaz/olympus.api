@@ -1,0 +1,63 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+@import "../../../lib/forms.scss";
+$grey : #ccc;
+$red : red;
+
+/*
+# document
+*/
+.form-item-variant {
+  .marker {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .content {
+    width: 100%;
+    display: block;
+    padding: 20px;
+    background: rgba(0,0,0,0.03);
+
+    .title {
+    }
+
+    .formular {
+
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .form-item-variant {
+    
+  }
+}
+
+@media #{$medium-and-down} {
+  .form-item-variant {
+    
+  }
+}
+
+@media #{$medium-and-up} {
+  .form-item-variant {
+    
+  }
+}
+
+@media #{$large-and-up} {
+  .form-item-variant {
+    
+  }
+}
+
+@media #{$extra-large-and-up} {
+}

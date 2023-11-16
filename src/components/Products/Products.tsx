@@ -5,6 +5,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Slider from "react-slick";
 import Product from "../Product"
 import Error from "../Error";
+import Title from "../Title";
 import "./Products.scss";
 
 /*
@@ -14,36 +15,20 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ProductsProps {
   position?: number;
+  title: string | null;
+  subtitle: string | null;
   padding?: true | false;
   display?: string;
   children: JSX.Element | JSX.Element[];
   elements?: JSX.Element | JSX.Element[];
-  children?: JSX.Element | JSX.Element[];
   filter?: JSX.Element | JSX.Element[];
   render?: (data: any, inc: number) => any;
 }
 
-
-
-/*
-# Class Components
-*/
-/*const Products: React.FC<ProductsProps> = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
-  title,
-  subtitle,
-  children
-}) => (
-*/
 const Products = ({
   position,
+  title,
+  subtitle,
   padding,
   display,
   children,
@@ -60,7 +45,12 @@ const Products = ({
     dots: false
   };
 
-  return (
+  return (<>
+    {title || subtitle ? <Title
+      position={position}
+      title={title ?? null}
+      subtitle={subtitle ?? null}
+    /> : ``}
     <section
       className={`
         ${display === `slide` ? `products-component-slide` : ``}
@@ -93,7 +83,7 @@ const Products = ({
         </>}
       </div>
     </section>
-  )
+  </>)
 }
 
 /*

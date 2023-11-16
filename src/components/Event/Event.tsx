@@ -48,6 +48,8 @@ export interface EventProps {
   image?: string | null;
   body?: string | null;
   color?: string;
+  primary?: string;
+  secondary?: string;
   tags?: {
     id: number;
     slug: string | null;
@@ -93,6 +95,8 @@ const Event: React.FC<EventProps> = ({
   count,
   hourGroup,
   color,
+  primary,
+  secondary,
   display,
   mode,
   timeStart,
@@ -117,7 +121,6 @@ const Event: React.FC<EventProps> = ({
 }) => {
   moment.locale("fr");
 
-
   /*
   # eventHeight() */
   const eventHeight = (name: string, start: any, end: any) => {
@@ -131,12 +134,10 @@ const Event: React.FC<EventProps> = ({
       if (myH < 0) {
         myH = Math.abs((myStart - (24 * 60) - myEnd).toFixed(2) * (100 / (count * 60)));
       }
-
     } else {
       const myEnd = convertStringToMinute(end);
       myH = myEnd/60*100
     }
-
     return myH+`%`;
   };
 
@@ -256,15 +257,17 @@ const Event: React.FC<EventProps> = ({
               }}>
                 <tbody>
                   <tr>
-                    {timeStart && timeEnd ? <td className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd}</td> : ``}
+                    {timeStart ? <td className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd ? timeEnd : ``}</td> : ``}
                     {tags && <td className={`tags`}><Tags elements={tags} align={`left`} /></td>}
                     <td className="header">
-                      <h4 className="title">{title}</h4>
+                      <h5 className="title">{title}</h5>
                       <h6 className="subtitle">{subtitle}</h6>
                     </td>
                     <td className="action">
                       {body || buttons || partners ? <Button
                         icon={`expand_more`}
+                        primary={primary ?? "black"}
+                        secondary={secondary ?? "white"}
                       /> : ``}
                     </td>
                   </tr>
@@ -382,6 +385,8 @@ const Event: React.FC<EventProps> = ({
               <div className="action">
                 <Button
                   icon={`expand_more`}
+                  primary={primary ?? "black"}
+                  secondary={secondary ?? "white"}
                 />
               </div>
             </>}
@@ -419,12 +424,12 @@ const Event: React.FC<EventProps> = ({
                 {title && <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title">{title}</h3>}
                 {subtitle ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle">{subtitle}</h6> : ``}
 
+                <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("dddd DD MMM")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? ` — ${moment(dateEnd).format("dddd DD MMM")}` : ``}</div>
+                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd}</div> : ``}
+                
                 {tags && <div className={`tags`}>
                   {tags ? <Tags elements={tags} align={display === "grid" ? "center" : "left"} /> : ``}
                 </div>}
-                
-                <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("dddd DD MMM")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? ` — ${moment(dateEnd).format("dddd DD MMM")}` : ``}</div>
-                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd}</div> : ``}
 
                 {body && <div className="body" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: body }} />}
                 
@@ -438,13 +443,16 @@ const Event: React.FC<EventProps> = ({
                   {partners && partners}
                 </div> : ``}
 
-                {onClick ? <div className="action">
+                <div className="action">
                   {buttons && buttons}
-                  <Button
+                  {onClick ? <Button
                     icon={`arrow_forward`}
+                    primary={primary ?? "black"}
+                    secondary={secondary ?? "white"}
                     onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}
-                  />
-                </div> : ``}
+                  /> : ``}
+                </div>
+                
               </>}
             </div>
 

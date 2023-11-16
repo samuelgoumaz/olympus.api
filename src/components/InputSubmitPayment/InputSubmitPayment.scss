@@ -9,12 +9,13 @@ $grey : #ccc;
 /*
 # document */
 .form-item-submit-payment {
+  width: 100%;
+  
   .form-item-container {
+    width: 100%;
     margin: 0.5em 0;
-    border: 1px solid $grey;
-    border-radius: 5px;
-    background: white;
-    padding: 1em;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding: 1em 0;
 
     &.dsp-open {
       display: block !important;
@@ -24,8 +25,7 @@ $grey : #ccc;
     }
   }
   .form-item-handler {
-    border: 1px solid $grey;
-    border-radius: 5px;
+    background: rgba(0,0,0,0.05);
     display: block;
 
     ul {
@@ -51,11 +51,11 @@ $grey : #ccc;
           width: 70px;
           height: 70px;
           vertical-align: middle;
-          border-right: 1px solid $grey;
+          border-right: 1px solid rgba(0,0,0,0.05);
 
-          input[type="checkbox"] {
-            height: 30px;
-            width: 30px;
+          input[type="radio"] {
+            height: 20px;
+            width: 20px;
             border-radius: 5px;
             display: inline;
             //accent-color: green;
@@ -63,8 +63,12 @@ $grey : #ccc;
         }
 
         &.card {
-          border-left: 15px solid transparent;
+          padding-left: 10px;
 
+          label {
+            display: inline;
+          }
+          
           .icon {
             width: 70px;
             display: block;
@@ -74,8 +78,6 @@ $grey : #ccc;
 
       }
     }
-  }
-  .form-item-container {
   }
 }
 

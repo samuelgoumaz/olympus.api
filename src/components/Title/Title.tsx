@@ -14,6 +14,7 @@ export interface TitleProps {
   title: string | null;
   subtitle: string | null;
   children: JSX.Element | JSX.Element[];
+  display: string | null;
 }
 
 
@@ -39,32 +40,41 @@ const Title = ({
   position,
   title,
   subtitle,
+  display,
   children
-}: TitleProps) => (
-  <section
-    className={`
-      title-component
-      panel
-    `}
-    style={{
-      position: `relative`,
-      zIndex: position ?? 2
-    }}
-  >
-
-    <div className={`fx-content`}>
-      {children}
-    </div>
-
-    <div className={`title-content`}>
-      <div className={`title-inner-content`}>
-        {title != null ? <h2 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-        {subtitle != null ? <h3 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
-      </div>
-    </div>
-
-  </section>
-);
+}: TitleProps) => {
+  switch (display) {
+    case "component":
+      break;
+    
+    default:
+      return (
+        <section
+          className={`
+            title-component
+          `}
+          style={{
+            position: `relative`,
+            zIndex: position ?? 2
+          }}
+        >
+      
+          <div className={`fx-content`}>
+            {children}
+          </div>
+      
+          <div className={`title-content`}>
+            <div className={`title-inner-content`}>
+              {title != null ? <h3 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+              {subtitle != null ? <h5 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+            </div>
+          </div>
+      
+        </section>
+      );
+      break;
+  }
+}
 
 /*
 # Export

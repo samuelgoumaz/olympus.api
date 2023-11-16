@@ -75,7 +75,7 @@ const Article = ({
   switch (display) {
     case "slide":
       return (
-        <article
+        <div
           //onClick={onClick ? onClick : function () { return false }}
           className={`article-component-slide ${debug === true ? `debug` : ``}`}
           style={{
@@ -123,12 +123,12 @@ const Article = ({
             </div>}
 
           </div>
-        </article>
+        </div>
       )
       break;
     case "grid":
       return (
-        <article
+        <div
           //onClick={onClick ? onClick : function () { return false }}
           className={`
             ${display === `slide` ? `article-component-slide` : ``}
@@ -179,12 +179,12 @@ const Article = ({
             </div>}
       
           </div>
-        </article>
+        </div>
         )
       break;
     case "row": 
       return (
-        <article
+        <div
           onClick={onClick ? onClick : function () { return false }}
           className={`article-component-row ${debug === true ? `debug` : ``}`}
           style={{
@@ -226,7 +226,7 @@ const Article = ({
             </div>}
 
           </div>
-        </article>
+        </div>
       )
       break;
     default:

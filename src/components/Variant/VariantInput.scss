@@ -1,0 +1,160 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.variant-component-input {
+  width: 100%;
+  position: relative;
+  display: block;
+  background: rgba(0,0,0,0.05);
+
+  .variant-inner {
+    width: 100%;
+    display: block;
+
+    .content {
+      width: calc(100% - 210px);
+      display: inline-table;
+      text-align: left;
+      vertical-align: middle;
+      font-size: 1em;
+
+      td {
+        padding-left: 20px;
+      }
+
+      .title {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+      .subtitle {
+        margin: 0;
+        padding: 0;
+      }
+      .date {
+        margin: 0;
+        padding: 0;
+      }
+      .time {
+
+      }
+      .price {
+        font-weight: bold;
+      }
+    }
+    .action {
+      text-align: right;
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 210px;
+      max-width: 210px;
+
+      .variant-component-col {
+        display: inline-block;
+        vertical-align: middle;
+        button {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .variant-component-input {
+    height: 50px;
+    .variant-inner {
+      .content {
+        width: calc(100% - 150px);
+        font-size: 0.75em;
+
+        td {
+          padding-left: 10px;
+        }
+      }
+      .action {
+        min-width: 150px;
+        max-width: 150px;
+        .variant-component-col {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .variant-component-input {
+    height: 56px;
+    .variant-inner {
+      .content {
+        width: calc(100% - 168px);
+        font-size: 0.8125em;
+
+        td {
+          padding-left: 13px;
+        }
+      }
+      .action {
+        min-width: 168px;
+        max-width: 168px;
+        .variant-component-col {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .variant-component-input {
+    height: 60px;
+    .variant-inner {
+      .content {
+        width: calc(100% - 180px);
+        font-size: 0.875em;
+
+        td {
+          padding-left: 15px;
+        }
+      }
+      .action {
+        min-width: 180px;
+        max-width: 180px;
+        .variant-component-col {
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .variant-component-input {
+    .variant-inner {
+      .content {
+        width: calc(100% - 198px);
+        font-size: 0.875em;
+
+      }
+      .action {
+        min-width: 198px;
+        max-width: 198px;
+        .variant-component-col {
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  
+}

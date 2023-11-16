@@ -38,6 +38,8 @@ Default.args = {
   render: function (data) {
     return <h1>hello</h1>
   },
+  title: `Title`,
+  subtitle: `Subtitle`,
   elements: [{
       "id": 4,
       "slug": "hybride",

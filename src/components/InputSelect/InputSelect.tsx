@@ -61,7 +61,7 @@ const InputSelect = ({
       {label}{required == true ? <span className={`required`}>*</span> : ``}
     </label> : ``}
     
-    <div className={`form-item-container`}>
+    <span className={`form-item-container`}>
       <select
         className={"form-item-input form-item-input-select"}
         id={`form-item-${String(name)}`}
@@ -82,7 +82,7 @@ const InputSelect = ({
         }
       </select>
       <label htmlFor={`form-item-${String(name)}`} className={`form-item-input-select-handle material-icons`}>menu</label>
-    </div>
+    </span>
   </p>
 );
 

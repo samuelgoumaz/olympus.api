@@ -3,6 +3,7 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import "./InputPromocode.scss";
+import InputTotal from "../InputTotal";
 
 /*
 # Interface
@@ -13,6 +14,7 @@ export interface InputPromocodeProps {
   label?: string | null;
   name: string | null;
   promocode: string | null;
+  currency: string | false;
   total: number | null;
   discount: any;
   required?: boolean | false;
@@ -45,6 +47,7 @@ const InputPromocode = ({
   label,
   name,
   promocode,
+  currency,
   total,
   discount,
   required,
@@ -71,12 +74,12 @@ const InputPromocode = ({
     return Number(Math.trunc(Math.floor(Number(number).toFixed(2)*100))/100).toFixed(2)
   }
 
-  return (
+  return (<>
     <p className={"form-item form-item-promocode"}>
       
-      {label && label !== null ? <label className={"form-item-label"}>
+      {/** label && label !== null ? <label className={"form-item-label"}>
         {label}{required == true ? <span className={`required`}>*</span> : ``}
-      </label> : ``}
+      </label> : `` **/}
 
       {discount && discount.percent ? <span className={`form-item-container`}>
         {discount.percent && <span className={`form-item-col discount`}>{priceFormatter(Number(discount.percent))}%</span>}
@@ -88,29 +91,30 @@ const InputPromocode = ({
         {discount.amount && total ? <span className={`form-item-col subtotal`}>-{priceFormatter(Number(discount.amount))}</span> : ``}
       </span> : ``}
 
-      {<span className={`form-item-container`}>
-        <span className={`form-item-col type`}>Total</span>
+      {/**<span className={`form-item-container`}>
+        <span className={`form-item-col type`}>{currency ? currency : ``}</span>
         {total && <span className={`form-item-col price`}>{priceFormatter(getTotal()) ?? `Error`}</span>}
-      </span>}
+      </span>**/}
 
       <input
-        className={"form-item-input form-item-input-promocode"}
-        type="hidden"
-        name={String(`promocode`)}
-        alt={label ? String(label) : placeholder ? String(placeholder) : `Promocode`}
-        required={required == true ? `required` : ``}
-        value={promocode ?? null}
-      />
-
-      <input
-        className={"form-item-input form-item-input-promocode"}
+        className={"form-item-input form-item-input-hidden form-item-input-promocode"}
         type="hidden"
         name={String(`input-amount-promocode`)}
-        alt={label ? String(label) : placeholder ? String(placeholder) : ``}
-        required={required == true ? `required` : ``}
-        value={priceFormatter(getTotal()) ?? null}
+        id={String(`input-amount-promocode`)}
+        alt={`Total promocode`}
+        value={Number(priceFormatter(getTotal()) ?? 0)}
       />
+
     </p>
+
+      {/** <InputTotal
+        alt={label ? String(label) : name ? String(name) : placeholder ? String(placeholder) : ``}
+        name={`promocode`}
+        total={priceFormatter(getTotal()) ?? priceFormatter(0)}
+        currency={currency ?? `NOT FOUND`}
+        required={required == true ? `required` : ``}
+      /> **/}
+    </>
   )
 }
 

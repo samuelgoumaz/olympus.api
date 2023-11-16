@@ -76,7 +76,7 @@ const Section = ({
       {/*
       # Col scene */}
       <div className={`section-inner-col col-scene`}>
-        {scene || image ? <div className={`scene`}>{scene ? {scene} : image ? <FxBackground image={image} /> : ``}</div> : ``}
+        {scene || image ? <div className={`scene`}>{scene ? {scene} : image ? <FxBackground cover={true} image={image} /> : ``}</div> : ``}
       </div>
 
       {/*

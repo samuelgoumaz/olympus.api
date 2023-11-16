@@ -64,22 +64,19 @@ const InputTotal = ({
         {label}{required == true ? <span className={`required`}>*</span> : ``}
       </label> : ``}
   
-      <div className={`form-item-container`}>
-        {currency && <div className={`form-item-col currency`}>{currency}</div>}
-        {total && <div className={`form-item-col price`}>{priceFormatter(total) ?? `Error`}</div>}
-      </div>
+      <span className={`form-item-container`}>
+        {currency && <span className={`form-item-col currency`}>{currency}</span>}
+        {total && <span className={`form-item-col price`}>{priceFormatter(total) ?? `Error`}</span>}
+      </span>
   
       <input
-        className={"form-item-input form-item-input-hidden"}
+        className={`form-item-input form-item-input-hidden form-item-input-${String(name) ?? `error`}`}
         type="hidden"
         name={`input-amount-${String(name) ?? `error`}`}
         id={`input-amount-${String(name) ?? `error`}`}
-        alt={`Total ${label ? String(label) : placeholder ? String(placeholder) : ``}`}
+        alt={`Total ${label ? String(label) : name ? String(name) : ``}`}
         required={required == true ? `required` : ``}
-        placeholder={
-          `${placeholder+`${required === true && label === false ? `*` : ``}` ?? ``}`
-        }
-        value={priceFormatter(total)}
+        value={Number(priceFormatter(total))}
         onLoad={onLoad}
         onClick={onClick}
         onChange={onChange}

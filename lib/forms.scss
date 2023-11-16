@@ -15,12 +15,18 @@ $red : red;
   label {
     font-size: 0.875em;
     letter-spacing: 0.01;
-    margin-top: 0.25em;
+    display: block;
+    margin: 1em 0 0.5em 0;
 
     .required {
       color: $red;
     }
   }
+
+  sup {
+    font-size: 0.65em;
+  }
+
   .form-item-input {
     font-family: inherit;
     display: block;

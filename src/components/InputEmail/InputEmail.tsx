@@ -48,13 +48,13 @@ const InputEmail = ({
   onClick
 }: InputEmailProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-email"}
   >
     {label && label !== null ? <label className={"form-item-label"}>
       {label}{required == true ? <span className={`required`}>*</span> : ``}
     </label> : ``}
     <input
-      className={"form-item-input form-item-input-text"}
+      className={"form-item-input form-item-input-email"}
       type="email"
       name={String(name) ?? `errorName`}
       required={required == true ? `required` : ``}

@@ -1,0 +1,81 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+@import "../../../lib/forms.scss";
+$grey : #ccc;
+$red : red;
+
+/*
+# document
+*/
+.form-item-content {
+  margin: 1em 0;
+  .title {
+  }
+  .subtitle {
+  }
+  .body {
+    margin: 0.5em 0;
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .form-item-content {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-text {
+        height: 50px;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .form-item-content {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-text {
+        height: 56px;
+        padding: 0 13px;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .form-item-content {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-text {
+        height: 60px;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .form-item-content {
+    label {
+    }
+    .form-item-input {
+      &.form-item-input-text {
+        height: 66px;
+        padding: 0 18px;
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+}

@@ -11,7 +11,7 @@ $red : red;
 /*
 # document
 */
-.form-item {
+.form-item-textarea {
   label {
     .required {
     }
@@ -31,7 +31,7 @@ $red : red;
 # Responsive
 */
 @media #{$small-and-down} {
-  .form-item {
+  .form-item-textarea {
     label {
     }
     .form-item-input {
@@ -44,7 +44,7 @@ $red : red;
 }
 
 @media #{$medium-and-down} {
-  .form-item {
+  .form-item-textarea {
     label {
     }
     .form-item-input {
@@ -57,7 +57,7 @@ $red : red;
 }
 
 @media #{$medium-and-up} {
-  .form-item {
+  .form-item-textarea {
     label {
     }
     .form-item-input {
@@ -70,7 +70,7 @@ $red : red;
 }
 
 @media #{$large-and-up} {
-  .form-item {
+  .form-item-textarea {
     label {
     }
     .form-item-input {

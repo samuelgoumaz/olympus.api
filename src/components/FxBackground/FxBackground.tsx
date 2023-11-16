@@ -11,7 +11,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FxBackgroundProps {
   position: number;
-  cover?: string | null;
+  cover?: true | false;
   align?: string | null;
   image: string | null;
   background?: string | null;
@@ -51,15 +51,16 @@ const FxBackground = ({
 }: FxBackgroundProps) => (
   <div
     className={`
-      fx-item fx-background
+      fx-item fx-background ${cover ? `cover` : `contain`}
     `}
     style={{
       width: `100%`,
       height: `100%`,
       top: 0,
       left: 0,
-      background: background ? background : image ? `url(${image})` : `black`,
-      backgroundSize: cover ? cover : `cover`,
+      backgroundColor: background ? background : `transparent`,
+      backgroundImage: image ? `url(${image})` : ``,
+      backgroundSize: cover ? `cover` : `contain`,
       backgroundPosition: align ? align : `center`,
       backgroundRepeat: `no-repeat`,
       opacity: opacity ?? 1,

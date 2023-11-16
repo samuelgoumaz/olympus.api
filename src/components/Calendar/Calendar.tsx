@@ -6,6 +6,7 @@ import Hour from "../Hour";
 import Day from "../Day";
 import Event from "../Event";
 import moment from "moment";
+import Title from "../Title";
 import {
   convertNumberToMinute,
   convertStringToMinute,
@@ -22,6 +23,8 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 # Interface */
 export interface CalendarProps {
   position?: number;
+  title: string | null;
+  subtitle: string | null;
   slug?: string;
   dateStart?: Date;
   dateEnd?: Date;
@@ -38,17 +41,12 @@ export interface CalendarProps {
   render?: (data: any) => any;
 }
 
-export interface CalendarData {
-  title: string;
-  date: string;
-  elements: any[];
-  elements_allday: any[];
-}
-
 /*
 # Export functions */
 const Calendar: React.FC<CalendarProps> = ({
   position,
+  title,
+  subtitle,
   slug,
   dateStart,
   dateEnd,
@@ -112,7 +110,6 @@ const Calendar: React.FC<CalendarProps> = ({
   /*
   # applyRangeCalendar */
   function applyRangeCalendar(timeStart, timeEnd, myData) {
-    console.log("applyRangeCalendar > ", timeStart, timeEnd, myData)
     let calendarKeys = Object.keys(myData);
     let nextDay = null;
     let editCalendar = [...myData];
@@ -258,7 +255,6 @@ const Calendar: React.FC<CalendarProps> = ({
     if (Number(timeStart) > 0 || Number(timeEnd) > 0) {
       myCalendar = applyRangeCalendar(timeStart, timeEnd, myCalendar);
     }
-    console.log("fetchData > ", myCalendar)
     return myCalendar;
   };
 
@@ -266,7 +262,6 @@ const Calendar: React.FC<CalendarProps> = ({
   # myDisplay */
   function myDisplay() {
     calendarData = fetchData();
-    console.log("myDisplay > calendarData ", calendarData)
     if (calendarData) {
       return Object.keys(calendarData)
         .sort(function (a, b) {
@@ -283,7 +278,6 @@ const Calendar: React.FC<CalendarProps> = ({
               <>
                 {Object.keys(calendarData[key].elements_allday).map(
                   (itemAllDay, i) => {
-                    console.log("itemAllDay > ", calendarData[key].elements_allday.length)
                     return render(calendarData[key].elements_allday[itemAllDay], false, calendarData[key].elements_allday.length, i)
                   }
                 )}
@@ -335,7 +329,6 @@ const Calendar: React.FC<CalendarProps> = ({
   }
 
   function defaultDisplay() {
-    console.log("defaultDisplay > calendarData ", elements)
     return display === `row` || display === `grid` ? elements.map(
       (item, inc) => {
         return render(item, inc)
@@ -390,8 +383,12 @@ const Calendar: React.FC<CalendarProps> = ({
 
   /*
   Render */
-  console.log("CALENDAR", elements, display)
-  return (
+  return (<>
+    {title || subtitle ? <Title
+      position={position}
+      title={title ?? null}
+      subtitle={subtitle ?? null}
+    /> : ``}
     <section
       className={`
       ${display === `grid` ? `calendar-component-grid` : ``}
@@ -422,7 +419,7 @@ const Calendar: React.FC<CalendarProps> = ({
         {display === `row` || display === `grid` ? defaultDisplay() : ``}
       </div>
     </section>
-  );
+  </>);
 };
 
 /*

@@ -4,6 +4,7 @@
 import React from "react";
 import Slider from "react-slick";
 import Article from "../Article";
+import Title from "../Title";
 import Error from "../Error";
 import "./ArticlesRow.scss";
 import "./ArticlesGrid.scss";
@@ -16,6 +17,8 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ArticlesProps {
   position?: number;
+  title: string | null;
+  subtitle: string | null;
   slug?: string;
   id?: number;
   display?: string;
@@ -32,6 +35,8 @@ export interface ArticlesProps {
 */
 const Articles: React.FC<ArticlesProps> = ({
   position,
+  title,
+  subtitle,
   slug,
   id,
   display,
@@ -60,39 +65,48 @@ const Articles: React.FC<ArticlesProps> = ({
 
 
   return (
-    <section
+    <>
+      {title || subtitle ? <Title
+        position={position}
+        title={title ?? null}
+        subtitle={subtitle ?? null}
+      /> : ``}
+
+      <section
       className={`
         ${display === `slide` ? `articles-component-slide` : ``}
         ${display === `grid` ? `articles-component-grid` : ``}
         ${display === `row` ? `articles-component-row` : ``}
       `}
-    >
-      {filter && filter}
-      <div className={`
-        articles-component-inner
-      `}>
-        
-        {display === `slide` && <Slider {...sliderSettings}>
-          {elements.map((article, inc) => {
-            return render ? (
-              render(article, inc)
-            ) : (
-              <Error key={`error-content-${article.id}`} display={`message`}><strong>no event render</strong></Error>
-            )
-          })}
-        </Slider>}
+      >
 
-        {display !== `slide` && <>
-          {elements.map((article, inc) => {
-            return render ? (
-              render(article, inc)
-            ) : (
-              <Error key={`error-content-${article.id}`} display={`message`}><strong>no event render</strong></Error>
-            )
-          })}
-        </>}
-      </div>
-    </section>
+        {filter && filter}
+        <div className={`
+          articles-component-inner
+        `}>
+          
+          {display === `slide` && <Slider {...sliderSettings}>
+            {elements.map((article, inc) => {
+              return render ? (
+                render(article, inc)
+              ) : (
+                <Error key={`error-content-${article.id}`} display={`message`}><strong>no event render</strong></Error>
+              )
+            })}
+          </Slider>}
+
+          {display !== `slide` && <>
+            {elements.map((article, inc) => {
+              return render ? (
+                render(article, inc)
+              ) : (
+                <Error key={`error-content-${article.id}`} display={`message`}><strong>no event render</strong></Error>
+              )
+            })}
+          </>}
+        </div>
+      </section>
+    </>
   );
 };
 

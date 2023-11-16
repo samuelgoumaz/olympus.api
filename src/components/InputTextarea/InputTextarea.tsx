@@ -48,7 +48,7 @@ const InputTextarea = ({
   onClick
 }: InputTextareaProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-textarea"}
   >
     {label && label !== null ? <label className={"form-item-label"}>
       {label}{required == true ? <span className={`required`}>*</span> : ``}

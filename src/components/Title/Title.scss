@@ -22,17 +22,29 @@
 
   .title-content {
     width: 100%;
-    padding: 80px;
+    padding: 1em 80px;
     display: block;
     position: relative;
     z-index: 3;
 
     .title-inner-content {
+      text-align: left;
+
       .title {
+        width: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0 !important;
+        margin: 0;
         //font-size: 7em;
         //margin-bottom: 0;
       }
       .subtitle {
+        width: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0 !important;
+        margin: 0;
         //font-size: 3.5em;
         //margin-bottom: 0;
       }
@@ -50,7 +62,6 @@
     .fx-content {
     }
     .title-content {
-      padding: 30px;
       .title-inner-content {
         .title {
           //font-size: 2em;
@@ -70,7 +81,6 @@
     .fx-content {
     }
     .title-content {
-      padding: 40px;
       .title-inner-content {
         .title {
           //font-size: 3em;
@@ -90,7 +100,6 @@
     .fx-content {
     }
     .title-content {
-      padding: 50px;
       .title-inner-content {
         .title {
           //font-size: 4em;
@@ -110,7 +119,6 @@
     .fx-content {
     }
     .title-content {
-      padding: 60px;
       .title-inner-content {
         .title {
           //font-size: 5em;
@@ -130,7 +138,6 @@
     .fx-content {
     }
     .title-content {
-      padding: 70px;
       .title-inner-content {
         .title {
           //font-size: 6em;

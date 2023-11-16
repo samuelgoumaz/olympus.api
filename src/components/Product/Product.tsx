@@ -78,7 +78,7 @@ const Product = ({
   switch (display) {
     case "grid":
       return (
-        <article
+        <div
           //onClick={onClick ? onClick : function () { return false }}
           className={`product-component-grid ${debug === true ? `debug` : ``}`}
           style={{
@@ -126,7 +126,7 @@ const Product = ({
             </div>
 
           </div>
-        </article>
+        </div>
       )
       break;
     
@@ -134,7 +134,7 @@ const Product = ({
     # Row display */
     case "row":
       return (
-        <article
+        <div
           //onClick={onClick ? onClick : function () { return false }}
           className={`product-component-row ${debug === true ? `debug` : ``}`}
           style={{
@@ -177,12 +177,12 @@ const Product = ({
             </div>
 
           </div>
-        </article>
+        </div>
       )
       break;
     case "slide":
       return (
-        <article
+        <div
           //onClick={onClick ? onClick : function () { return false }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
@@ -233,12 +233,12 @@ const Product = ({
             </div>
 
           </div>
-        </article>
+        </div>
       )
       break;
     case "card":
       return (
-        <article
+        <div
           onClick={onClick ? onClick : function () { return false }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
@@ -295,12 +295,12 @@ const Product = ({
             </div>
 
           </div>
-        </article>
+        </div>
       )
       break;
     case "checkout":
       return (
-        <article
+        <div
           onClick={onClick ? onClick : function () { return false }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
@@ -357,12 +357,12 @@ const Product = ({
             </div>
 
           </div>
-        </article>
+        </div>
       )
       break;
     case "banner":
       return (
-        <article
+        <div
           onClick={onClick ? onClick : function () { return false }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
@@ -420,7 +420,7 @@ const Product = ({
             </div>
 
           </div>
-        </article>
+        </div>
       )
       break;
     default:

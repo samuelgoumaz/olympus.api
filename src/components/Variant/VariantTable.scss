@@ -35,7 +35,7 @@
           background: rgba(0,0,0,0.05);
           border-top: 1px solid black;
           vertical-align: middle;
-          min-height: 70px;
+          height: 70px;
           text-align: left;
           padding: 0 15px;
           font-size: 16px;
@@ -104,7 +104,7 @@
           width: 100%;
   
           .table-col {
-            min-height: 50px;
+            height: 50px;
             font-size: 12px;
             padding: 0 7px;
             
@@ -161,7 +161,7 @@
           width: 100%;
   
           .table-col {
-            min-height: 56px;
+            height: 56px;
             font-size: 13px;
   
             &.title {
@@ -217,7 +217,7 @@
           width: 100%;
   
           .table-col {
-            min-height: 60px;
+            height: 60px;
             font-size: 14px;
   
             &.title {
@@ -267,7 +267,7 @@
           font-size: 15px;
   
           .table-col {
-            min-height: 66px;
+            height: 66px;
   
             &.title {
             }

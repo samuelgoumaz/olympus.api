@@ -67,8 +67,8 @@ const InputRadio = ({
       </label> : ``}
 
       {elements && elements.map(
-        (item) => (
-          <div className={"form-item-line"} key={`input-radio-${String(name)}-${item.key}`}>
+        (item, i) => (
+          <div className={"form-item-line"} key={`input-radio-${convertToSlug(String(name))}-${i}`}>
             <div className={"form-item-input-container"}>
               <input
                 className={"form-item-input form-item-input-radio"}

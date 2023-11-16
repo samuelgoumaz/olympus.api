@@ -7,6 +7,7 @@ import Button from "../Button"
 import "./VariantTable.scss";
 import "./VariantSmart.scss";
 import "./VariantSelector.scss";
+import "./VariantInput.scss";
 
 import moment from "moment";
 import "moment/locale/fr";
@@ -28,6 +29,7 @@ export interface VariantProps {
     id?: number;
     title?: string;
     subtitle?: string;
+    in_cart?: boolean;
     sku?: string;
     locale?: string;
     action?: {
@@ -286,7 +288,7 @@ const Variant: React.FC<VariantProps> = ({
                 {variants.date.hour_end && variants.date.hour_end !== variants.date.hour_start ? moment(variants.date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
               </div> : ``}
 
-              {variants.price !== null ? <div className={`price`} style={{ color: secondary ? secondary : `black`}}>
+              {variants.price && variants.price.price ? <div className={`price`} style={{ color: secondary ? secondary : `black`}}>
                 {Number(variants.price.price) && priceFormatter(variants.price.price) !== null ? priceFormatter(variants.price.price) : "Free"}&nbsp;
                 {Number(variants.price.price) && currency !== "null" ? <span className={`currency`}>{currency}</span> : ``}
               </div> : ``}
@@ -304,9 +306,11 @@ const Variant: React.FC<VariantProps> = ({
                     {variants.quantity > 0 ? <Button
                       icon={`remove`}
                       mode={`default`}
-                      color={`white`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
                       onClick={
                         (event: React.MouseEvent<HTMLElement>) => {
+                          event.preventDefault();
                           let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
                           if (
                             myEl.getAttribute("data-state") != "loading" &&
@@ -321,6 +325,8 @@ const Variant: React.FC<VariantProps> = ({
                   {variants.in_cart === true ? <div className={`variant-component-col col-indicator`}>
                     {variants.quantity > 0 ? <Button
                       label={`${variants.quantity}`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
                       mode={`indicator`}
                     /> : ``}
                   </div> : ``}
@@ -329,9 +335,116 @@ const Variant: React.FC<VariantProps> = ({
                     <Button
                       icon={`add`}
                       mode={`default`}
-                      color={`white`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
                       onClick={
                         (event: React.MouseEvent<HTMLElement>) => {
+                          event.preventDefault();
+                          let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                          if (
+                            myEl.getAttribute("data-state") != "loading" &&
+                            myEl.getAttribute("data-state") != "error" &&
+                            myEl.getAttribute("data-state") != "complete"
+                          ) addItem(variants.parent.id, variants.id, myEl)
+                        }
+                      }
+                    />
+                  </div> : ``}
+                </div> : ``}
+            </div>
+          </div>}
+        </div>  
+        );
+        break;
+      
+      case "input":
+        return (
+          <div
+          className={`variant-component-input`}
+        >
+          {<div className={`variant-inner`}>
+
+            {/** 
+            # Content **/}
+            <table className={`content`}>
+              
+              <td>
+                {variants.title ? <div className={`title`} style={{ color: secondary ? secondary : `black`}}>
+                  {variants.title}
+                </div> : ``}
+
+                {variants.subtitle ? <div className={`subtitle`} style={{ color: secondary ? secondary : `grey`}}>
+                  {variants.subtitle}
+                </div> : ``}
+              </td>
+
+              <td>
+                {variants.date ? <div className={`date`} style={{ color: secondary ? secondary : `grey`}}>
+                  {moment(variants.date.date_start).format("dd DD MMM")}
+                  {moment(variants.date.date_end).format("YYYY") !== moment(variants.date.date_start).format("YYYY") ? ` ${moment(variants.date.date_start).format("YY")}` : ``}&nbsp;
+                  {variants.date.date_end && variants.date.date_end !== variants.date.date_start ? moment(variants.date.date_end).format("dd DD MMM YY") : ``}
+                </div> : ``}
+
+                {variants.date && moment(variants.date.hour_start) || variants.date && moment(variants.date.hour_end) ? <div className={`time`} style={{ color: secondary ? secondary : `grey`}}>
+                  {variants.date.hour_start ? moment(variants.date.hour_start, "HH:mm:ss").format("HH:mm") : ``}&nbsp;
+                  {variants.date.hour_end && variants.date.hour_end !== variants.date.hour_start ? moment(variants.date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
+                </div> : ``}
+              </td>
+
+              <td>
+                {variants.price && variants.price.price ? <div className={`price`} style={{ color: secondary ? secondary : `black`}}>
+                  {Number(variants.price.price) && priceFormatter(variants.price.price) !== null ? priceFormatter(variants.price.price) : "Free"}&nbsp;
+                  {Number(variants.price.price) && currency !== "null" ? <span className={`currency`}>{currency}</span> : ``}
+                </div> : ``}
+              </td>
+
+            </table>
+
+            {/** 
+            # Action **/}
+            <div className={`action`}>
+              {variants.in_cart === true ? <div
+                className={`variant-component-row table-col variants ref-variant-${variants.event ? variants.event.id : variants.product ? variants.product.id : `0`}-${variants.id} ${`dsp-active`}`}
+                key={`variant-component-key-${variants.id}`}
+                style={{ borderColor: secondary ? secondary : `red`}}>
+                {variants.in_cart === true ? <div className={`variant-component-col col-remove`}>
+                    {variants.quantity > 0 ? <Button
+                      icon={`remove`}
+                      mode={`default`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
+                      onClick={
+                        (event: React.MouseEvent<HTMLElement>) => {
+                          event.preventDefault();
+                          let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
+                          if (
+                            myEl.getAttribute("data-state") != "loading" &&
+                            myEl.getAttribute("data-state") != "error" &&
+                            myEl.getAttribute("data-state") != "complete"
+                          ) removeItem(variants.parent.id, variants.id, myEl);
+                        }
+                      }
+                    /> : ``}
+                  </div> : ``}
+
+                  {variants.in_cart === true ? <div className={`variant-component-col col-indicator`}>
+                    {variants.quantity > 0 ? <Button
+                      label={`${variants.quantity}`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
+                      mode={`indicator`}
+                    /> : ``}
+                  </div> : ``}
+
+                  {variants.in_cart === true ? <div className={`variant-component-col col-add`}>
+                    <Button
+                      icon={`add`}
+                      mode={`default`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
+                      onClick={
+                        (event: React.MouseEvent<HTMLElement>) => {
+                          event.preventDefault();
                           let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
                           if (
                             myEl.getAttribute("data-state") != "loading" &&
@@ -380,7 +493,7 @@ const Variant: React.FC<VariantProps> = ({
                       {variants[key].subtitle}
                     </span> : ``}
   
-                    {variants[key].price !== null ? <span className={`table-col price`} style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].price && variants[key].price.price ? <span className={`table-col price`} style={{ borderColor: secondary ? secondary : `red`}}>
                       {Number(variants[key].price.price) && priceFormatter(variants[key].price.price) !== null ? priceFormatter(variants[key].price.price) : "Free"}&nbsp;
                       {Number(variants[key].price.price) && currency !== "null" ? <span className={`currency`}>{currency}</span> : ``}
                     </span> : ``}
@@ -390,8 +503,10 @@ const Variant: React.FC<VariantProps> = ({
                       className={` table-col action ${key == 0 ? `dsp-active` : ``}`}
                       style={{ borderColor: secondary ? secondary : `red`}}
                     >
-                      {variants[key].action && variants[key].action.url ? <Button
-                          label={variants[key].action && variants[key].action.title ? variants[key].action.title : `Booking`}
+                      {variants[key].action.url ? <Button
+                          label={variants[key].action && variants[key].action.title ? variants[key].action.title : `Réserver`}
+                          primary={primary ?? "black"}
+                          secondary={secondary ?? "white"}
                           href={variants[key].action.url}
                           style={{ 
                             color: primary ? primary : `white`,
@@ -413,9 +528,11 @@ const Variant: React.FC<VariantProps> = ({
                         {variants[key].quantity > 0 ? <Button
                           icon={`remove`}
                           mode={`default`}
-                          color={`white`}
+                          primary={primary ?? "black"}
+                          secondary={secondary ?? "white"}
                           onClick={
                             (event: React.MouseEvent<HTMLElement>) => {
+                              event.preventDefault();
                               let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
                               if (
                                 myEl.getAttribute("data-state") != "loading" &&
@@ -430,6 +547,8 @@ const Variant: React.FC<VariantProps> = ({
                       {variants[key].in_cart === true ? <div className={`variant-component-col col-indicator`}>
                         {variants[key].quantity > 0 ? <Button
                           label={`${variants[key].quantity}`}
+                          primary={primary ?? "black"}
+                          secondary={secondary ?? "white"}
                           mode={`indicator`}
                         /> : ``}
                       </div> : ``}
@@ -438,9 +557,11 @@ const Variant: React.FC<VariantProps> = ({
                         <Button
                           icon={`add`}
                           mode={`default`}
-                          color={`white`}
+                          primary={primary ?? "black"}
+                          secondary={secondary ?? "white"}
                           onClick={
                             (event: React.MouseEvent<HTMLElement>) => {
+                              event.preventDefault();
                               let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
                               if (
                                 myEl.getAttribute("data-state") != "loading" &&
@@ -495,7 +616,7 @@ const Variant: React.FC<VariantProps> = ({
                       {variants[key].date.hour_end && variants[key].date.hour_end !== variants[key].date.hour_start ? "/"+moment(variants[key].date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
                     </span> : ``*/}
   
-                    {variants[key].price !== null ? `${priceFormatter(variants[key].price.price) != null ? " for " : " for "} ${priceFormatter(variants[key].price.price) != null ? priceFormatter(variants[key].price.price) : "Free"} ${currency && ` `+currency}` : ``}
+                    {variants[key].price && variants[key].price.price ? `${priceFormatter(variants[key].price.price) != null ? " for " : " for "} ${priceFormatter(variants[key].price.price) != null ? priceFormatter(variants[key].price.price) : "Free"} ${currency && ` `+currency}` : ``}
                     
                   </div>
                 ))}
@@ -503,20 +624,21 @@ const Variant: React.FC<VariantProps> = ({
             </div>}
   
           <div className={`variant-component-list`}>
-            {Object.keys(variants).map((key) => (
+            {Object.keys(variants).map((key) => variants[key].in_cart === true ? (
               <div
                 key={`api_variants_${key}`}
                 className={`variant-component-row ref-variant-${variants[key].parent.id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
                 key={`variant-component-key-${key}`}
               >
-                {console.log("myKey >", key)}
                 <div className={`variant-component-col col-remove`}>
                   {variants[key].quantity > 0 ? <Button
                     icon={`remove`}
                     mode={`default`}
-                    color={`white`}
+                    primary={primary ?? "black"}
+                    secondary={secondary ?? "white"}
                     onClick={
                       (event: React.MouseEvent<HTMLElement>) => {
+                        event.preventDefault();
                         let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
                         if (
                           myEl.getAttribute("data-state") != "loading" &&
@@ -530,6 +652,8 @@ const Variant: React.FC<VariantProps> = ({
                 <div className={`variant-component-col col-indicator`}>
                   {variants[key].quantity > 0 ? <Button
                     label={`${variants[key].quantity}`}
+                    primary={primary ?? "black"}
+                    secondary={secondary ?? "white"}
                     mode={`indicator`}
                   /> : ``}
                 </div>
@@ -537,9 +661,11 @@ const Variant: React.FC<VariantProps> = ({
                   <Button
                     icon={`add`}
                     mode={`default`}
-                    color={`white`}
+                    primary={primary ?? "black"}
+                    secondary={secondary ?? "white"}
                     onClick={
                       (event: React.MouseEvent<HTMLElement>) => {
+                        event.preventDefault();
                         let myEl = event.target.closest('.button-component').getElementsByClassName('fxIcon-button')[0]; // get FxButton
                         if (
                           myEl.getAttribute("data-state") != "loading" &&
@@ -555,7 +681,7 @@ const Variant: React.FC<VariantProps> = ({
                   {variants[key].price_promotion != null ? variants[key].price_promotion : ""}
                 </div>**/}
               </div>
-            ))}
+            ) : ``)}
           </div>
           </div>}
         </div>  
