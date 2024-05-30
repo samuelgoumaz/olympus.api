@@ -33,7 +33,28 @@ const Template: ComponentStory<typeof Video> = (args) => <Video {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  title: 'Hello world!'
+export const Default = Template.bind({});
+Default.args = {
+  fullscreen: false,
+  controls: [<h1>controls</h1>],
+  header: [<h1>header</h1>],
+  children: [<h1>video</h1>]
+};
+
+export const Debug = Template.bind({});
+Debug.args = {
+  debug: true,
+  fullscreen: false,
+  controls: [<h1>controls</h1>],
+  header: [<h1>header</h1>],
+  children: [<h1>video</h1>]
+};
+
+export const Fullscreen = Template.bind({});
+Fullscreen.args = {
+  debug: true,
+  fullscreen: true,
+  controls: [<h1>controls</h1>],
+  header: [<h1>header</h1>],
+  children: [<h1>video</h1>]
 };

@@ -10,11 +10,9 @@ import "./Main.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface MainProps {
-  layout_margin: false | true;
-  fx_aside: false | true;
-  fx_negative: false | true;
-  fx_top: false | true;
-  fx_pinned: true | false;
+  blur?: false | true;
+  negative?: false | true;
+  marginTop?: true | false;
   position?: number | null;
   children: JSX.Element | JSX.Element[];
 }
@@ -39,22 +37,18 @@ export interface MainProps {
 }) => (
 */
 const Main = ({
-  layout_margin,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
+  blur,
+  negative,
+  marginTop,
   position,
   children
 }: MainProps) => (
   <main
     className={`
       main-container
-      ${layout_margin === true ? `layout_margin` : ``}
-      ${fx_aside === true ? `fx_aside` : ``}
-      ${fx_negative === true ? `fx_negative` : ``}
-      ${fx_top === true ? `fx_top` : ``}
-      ${fx_pinned === true ? `fx_pinned` : ``}
+      ${blur === true ? `hv_blur` : ``}
+      ${negative === true ? `hv_negative` : ``}
+      ${marginTop === true ? `hv_top` : ``}
     `}
     style={{
       zIndex: position != null ? position : 1

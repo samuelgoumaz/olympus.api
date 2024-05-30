@@ -38,6 +38,7 @@ export interface CalendarProps {
   };
   elements?: JSX.Element | JSX.Element[];
   filter?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
   render?: (data: any) => any;
 }
 
@@ -138,10 +139,10 @@ const Calendar: React.FC<CalendarProps> = ({
           let nextDate = new Date(myData[incDay].title);
           nextDate.setDate(nextDate.getDate() + 1);
 
+          // apply range for current day.
           Object.keys(myData[incDay].elements).map(
-            // apply range for current day.
             (incCurrentDayHour, i) =>
-              incCurrentDayHour >= timeStart &&
+              incCurrentDayHour >= Number(timeStart/60) &&
               (elements[incCurrentDayHour] =
                 myData[incDay].elements[incCurrentDayHour])
           );
@@ -155,11 +156,11 @@ const Calendar: React.FC<CalendarProps> = ({
               Object.keys(nextDay.elements).map(
                 // apply range for current day.
                 (incNextDayHour, i) =>
-                  incNextDayHour <= Number(timeEnd) &&
+                  incNextDayHour <= Number(timeEnd/60) &&
                   (elements[incNextDayHour] = nextDay.elements[incNextDayHour])
               );
             } else {
-              for (let incHour = 0; incHour <= Number(timeEnd); incHour++) {
+              for (let incHour = 0; incHour <= Number(timeEnd/60); incHour++) {
                 // for each hours
                 elements[incHour] = {
                   title: convertMinuteToString(convertNumberToMinute(incHour)),
@@ -193,7 +194,7 @@ const Calendar: React.FC<CalendarProps> = ({
     if (dateCompareDay === true) {
       // compare day
 
-      const newCalendarData: CalendarData = {
+      let newCalendarData = {
         // push date group into class array.
         title: eventData.date_start,
         date: new Date(eventData.date_start).toLocaleDateString(
@@ -209,10 +210,9 @@ const Calendar: React.FC<CalendarProps> = ({
         const query = elements.filter(
           // querying events related to the hour and day.
           (itemFilter) =>
-            itemFilter.date_start ===
-              eventData.date_start &&
-            convertStringToMinute(moment(itemFilter.time_start).hour()) === convertNumberToMinute(incHour) &&
-            itemFilter.is_all_day !== true
+            itemFilter.date_start === eventData.date_start &&
+            convertStringToMinute(itemFilter.time_start) === convertNumberToMinute(incHour) &&
+            itemFilter.is_all_day !== true ? true : false
         );
         newCalendarData.elements[incHour] = {
           // push event to the hours array.
@@ -252,16 +252,17 @@ const Calendar: React.FC<CalendarProps> = ({
   # fetchData */
   const fetchData = () => {
     let myCalendar = initCalendar();
-    if (Number(timeStart) > 0 || Number(timeEnd) > 0) {
-      myCalendar = applyRangeCalendar(timeStart, timeEnd, myCalendar);
+    if (convertNumberToMinute(timeStart) > 0 || convertNumberToMinute(timeEnd) > 0) {
+      myCalendar = applyRangeCalendar(convertNumberToMinute(timeStart), convertNumberToMinute(timeEnd), myCalendar);
     }
     return myCalendar;
   };
 
   /*
   # myDisplay */
-  function myDisplay() {
+  function colsDisplay() {
     calendarData = fetchData();
+    
     if (calendarData) {
       return Object.keys(calendarData)
         .sort(function (a, b) {
@@ -269,76 +270,93 @@ const Calendar: React.FC<CalendarProps> = ({
             new Date(calendarData[a].date) - new Date(calendarData[b].date)
           );
         })
-        .map((key, index) => (
-          <Day
-            key={`calendar-${index}`}
-            title={calendarData[key].title}
-            display={display}
-            fullday={
-              <>
-                {Object.keys(calendarData[key].elements_allday).map(
-                  (itemAllDay, i) => {
-                    return render(calendarData[key].elements_allday[itemAllDay], false, calendarData[key].elements_allday.length, i)
-                  }
-                )}
-              </>
+        .map((key, index) => {
+          let countAllDay = calendarData[key].elements_allday.length ?? 0;
+          let countElements = 0;
+
+          Object.keys(calendarData[key].elements).map(
+            (itemHour, i) => {
+              if (Number(itemHour) >= Number(timeStart)) {
+                countElements += calendarData[key]?.elements[itemHour]?.elements?.length ?? 0;
+              }
             }
-            content={
-              <>
-                {Object.keys(calendarData[key].elements).map(
-                  (itemHour, i) =>
-                    Number(itemHour) >= Number(timeStart) && (
-                      <Hour
-                        key={`calendar-${slug}-${itemHour}`}
-                        display={display}
-                        height={
-                          100 / Object.keys(calendarData[key].elements).length +
-                          `%`
-                        }
-                        content={calendarData[key].elements[itemHour].elements}
-                        name={calendarData[key].elements[itemHour].title}
-                        render={render}
-                      />
-                    )
-                )}
-                {Number(timeEnd) > 0 ?
-                  Object.keys(calendarData[key].elements).map(
+          )
+
+          if (Number(timeEnd) > 0) {
+            Object.keys(calendarData[key].elements).map(
+              (itemHour, i) => {
+                if (Number(itemHour) <= Number(timeEnd)) {
+                  let countNextEls = getNextId(calendarData, key) ? calendarData[key].elements[itemHour].elements : []
+                  countElements += countNextEls.length ?? 0;
+                }
+              }
+            )
+          }
+
+          if (countAllDay > 0 || countElements > 0) {
+            return <Day
+              key={`calendar-${index}`}
+              title={calendarData[key].title}
+              display={display}
+              fullday={
+                <>
+                  {Object.keys(calendarData[key].elements_allday).map(
+                    (itemAllDay, i) => {
+                      return render(calendarData[key].elements_allday[itemAllDay], false, calendarData[key].elements_allday.length, i)
+                    }
+                  )}
+                </>
+              }
+              content={
+                <>
+                  {Object.keys(calendarData[key].elements).map(
                     (itemHour, i) =>
-                      Number(itemHour) <= Number(timeEnd) && (
+                      Number(itemHour) >= Number(timeStart) && (
                         <Hour
                           key={`calendar-${slug}-${itemHour}`}
                           display={display}
                           height={
-                            100 /
-                              Object.keys(calendarData[key].elements).length +
+                            100 / Object.keys(calendarData[key].elements).length +
                             `%`
                           }
-                          content={
-                            getNextId(calendarData, key) ? calendarData[key].elements[itemHour].elements : []
-                          }
+                          content={calendarData[key].elements[itemHour].elements}
                           name={calendarData[key].elements[itemHour].title}
                           render={render}
                         />
                       )
-                  ) : ``}
-              </>
-            }
-          />
-        ));
+                  )}
+                  {Number(timeEnd) > 0 ?
+                    Object.keys(calendarData[key].elements).map(
+                      (itemHour, i) =>
+                        Number(itemHour) <= Number(timeEnd) && (
+                          <Hour
+                            key={`calendar-${slug}-${itemHour}`}
+                            display={display}
+                            height={
+                              100 /
+                                Object.keys(calendarData[key].elements).length +
+                              `%`
+                            }
+                            content={
+                              getNextId(calendarData, key) ? calendarData[key].elements[itemHour].elements : []
+                            }
+                            name={calendarData[key].elements[itemHour].title}
+                            render={render}
+                          />
+                        )
+                    ) : ``}
+                </>
+              }
+            />
+          }
+        });
     }
-  }
-
-  function defaultDisplay() {
-    return display === `row` || display === `grid` ? elements.map(
-      (item, inc) => {
-        return render(item, inc)
-      }
-    ) : ``
   }
 
   /*
   # Slider settings */
   let colsSettings = {
+    initialSlide: 0,
     slidesToShow: 4,
     slidesToScroll: 4,
     infinite: false,
@@ -382,6 +400,92 @@ const Calendar: React.FC<CalendarProps> = ({
   };
 
   /*
+  # Manage Date */
+  let prevDay = false;
+
+  function dspDay (current) {
+    let myDate = new Date(current);
+    let dspDate = false;
+    if (prevDay === moment(myDate).format("dddd")) {
+      dspDate = false;
+    } else {
+      dspDate = moment(myDate).format("dddd");
+      prevDay = moment(myDate).format("dddd");
+    }
+    if (dspDate && group && group.day) return <Title title={dspDate} display={`day`} />;
+  };
+
+  let prevMonth = false;
+  function dspMonth (current) {
+    let myDate = new Date(current);
+    let dspDate = false;
+    if (prevMonth === moment(myDate).format("MMMM")) {
+      dspDate = false;
+    } else {
+      dspDate = moment(myDate).format("MMMM");
+      prevMonth = moment(myDate).format("MMMM");
+    }
+    if (dspDate && group && group.month) return <Title title={dspDate} display={`month`} />;
+  };
+
+  let prevYear = false;
+  function dspYear (current) {
+    let myDate = new Date(current);
+    let dspDate = false;
+    if (prevYear === moment(myDate).format("YYYY")) {
+      dspDate = false;
+    } else {
+      dspDate = moment(myDate).format("YYYY");
+      prevYear = moment(myDate).format("YYYY");
+    }
+    if (dspDate && group && group.year) return <Title title={dspDate} display={`year`} />;
+  };
+
+  /*
+  # Calendar Display */
+  function calendarDisplayRender (type) {
+
+    switch (type) {
+      case `cols`:
+        return colsDisplay() ?? false;
+        break;
+      default:
+        return elements.sort(function (a, b) {
+          const dateA = new Date(a.date?.date_start || a.date_start);
+          const dateB = new Date(b.date?.date_start || b.date_start);
+        
+          if (dateA - dateB !== 0) {
+            return dateA - dateB;
+          }
+        
+          // If the dates are the same, compare the time_start
+          const timeA = a.date?.time_start || a.time_start || "00:00";
+          const timeB = b.date?.time_start || b.time_start || "00:00";
+          const [hoursA, minutesA] = timeA.split(':').map(Number);
+          const [hoursB, minutesB] = timeB.split(':').map(Number);
+        
+          const dateWithTimeA = new Date(dateA);
+          dateWithTimeA.setHours(hoursA, minutesA);
+        
+          const dateWithTimeB = new Date(dateB);
+          dateWithTimeB.setHours(hoursB, minutesB);
+        
+          return dateWithTimeA - dateWithTimeB;
+        }).map(
+          (item, inc) => {
+            return (<>
+              {dspYear(item.date?.date_start ? item.date?.date_start : item.date_start ?? false)}
+              {dspMonth(item.date?.date_start ? item.date?.date_start : item.date_start ?? false)}
+              {dspDay(item.date?.date_start ? item.date?.date_start : item.date_start ?? false)}
+              {render(item, inc)}
+            </>);
+          }
+        )
+        break;
+    }
+  };
+
+  /*
   Render */
   return (<>
     {title || subtitle ? <Title
@@ -406,17 +510,14 @@ const Calendar: React.FC<CalendarProps> = ({
       <div className={`calendar-component-inner`}>
         
         {display === `cols` && (
-          <Slider {...colsSettings}>{myDisplay()}</Slider>
+          <Slider {...colsSettings}>{colsDisplay()}</Slider>
         )}
+        
         {display === `slide` && (
-          <Slider {...sliderSettings}>{elements.map(
-            (item, inc) => {
-              return render(item, inc)
-            }
-          )}</Slider>
+          <Slider {...sliderSettings}>{calendarDisplayRender(display)}</Slider>
         )}
-        {display === `list` && myDisplay()}
-        {display === `row` || display === `grid` ? defaultDisplay() : ``}
+        {display === `list` && calendarDisplayRender(display)}
+        {display === `row` || display === `grid` ? calendarDisplayRender(display) : ``}
       </div>
     </section>
   </>);

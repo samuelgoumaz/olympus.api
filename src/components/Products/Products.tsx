@@ -39,10 +39,33 @@ const Products = ({
   /*
   # Slider settings */
   let sliderSettings = {
-    slidesToShow: 1,
+    slidesToShow: display === `panel` ? 3 : 1,
     slidesToScroll: 1,
     infinite: false,
-    dots: false
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1360,
+        settings: {
+          slidesToShow: display === `panel` ? 3 : 1,
+          slidesToScroll: display === `panel` ? 3 : 1
+        },
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: display === `panel` ? 2 : 1,
+          slidesToScroll: display === `panel` ? 2 : 1
+        },
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ]
   };
 
   return (<>
@@ -54,6 +77,7 @@ const Products = ({
     <section
       className={`
         ${display === `slide` ? `products-component-slide` : ``}
+        ${display === `panel` ? `products-component-panel` : ``}
         ${display === `grid` ? `products-component-grid` : ``}
         ${display === `row` ? `products-component-row` : ``}
       `}
@@ -62,7 +86,7 @@ const Products = ({
       <div className={`
         products-component-inner
       `}>
-        {display === `slide` && <Slider {...sliderSettings}>
+        {display === `slide` || display === `panel` ? <Slider {...sliderSettings}>
           {elements.map((product, inc) => {
             return render ? (
               render(product, inc)
@@ -70,17 +94,15 @@ const Products = ({
               <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
             )
           })}
-        </Slider>}
+        </Slider> : ``}
 
-        {display !== `slide` && <>
-          {elements.map((product, inc) => {
+        {display !== `slide` && display !== `panel` ? elements.map((product, inc) => {
             return render ? (
               render(product, inc)
             ) : (
               <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
             )
-          })}
-        </>}
+          }) : ``}
       </div>
     </section>
   </>)

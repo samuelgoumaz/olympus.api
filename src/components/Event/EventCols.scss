@@ -15,6 +15,10 @@
   padding: 0;
   height: 0;
 
+  &.allday {
+    position: relative;
+  }
+
   .fx {
     width: 100%;
     height: 100%;
@@ -58,11 +62,15 @@
       text-transform: none;
       margin-bottom: 0;
       font-size: 0.875em;
+      padding-top: 0.25em;
+      line-height: 1;
     }
     .title {
       color: inherit;
       text-transform: none;
       margin-bottom: 0;
+      font-size: 1.25em;
+      line-height: 1;
     }
   }
 

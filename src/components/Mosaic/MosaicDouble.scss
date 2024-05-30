@@ -39,6 +39,7 @@
 */
 @media #{$small-and-down} {
   .mosaic-component-double {
+    width: 100%;
     .mosaic-inner {
       .scene {
       }
@@ -52,6 +53,7 @@
 
 @media #{$medium-and-down} {
   .mosaic-component-double {
+    width: 100%;
     .mosaic-inner {
       .scene {
       }

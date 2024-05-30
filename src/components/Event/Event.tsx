@@ -1,18 +1,23 @@
-/*
-# Imports
-*/
+// Import
 import React from "react";
+
+// Lib
+import moment from "moment";
 import {
   convertNumberToMinute,
   convertStringToMinute,
   convertMinuteToString,
 } from "../Calendar/CalendarLib";
+
+// Components
 import Tags from "../Tags";
 import Button from "../Button";
 import Buttons from "../Buttons";
 import Partners from "../Partners";
 import Gallery from "../Gallery";
 import Popup, {createPopup} from "../Popup";
+
+// Styles
 import "./Debug.scss";
 import "./Event.scss";
 import "./EventSlide.scss";
@@ -23,8 +28,7 @@ import "./EventList.scss";
 import "./EventRow.scss";
 import "./EventGrid.scss";
 
-
-import moment from "moment";
+// Locale
 import "moment/locale/fr";
 
 /*
@@ -32,12 +36,15 @@ import "moment/locale/fr";
 # react children with-typescript :
 https://www.carlrippon.com/react-children-with-typescript/
 */
+
 export interface EventProps {
   debug?: true | false;
   position: number;
   slug?: string;
   display?: string | null; // cols, grid, list, page, popup and row
   mode?: string | null; // If is allday
+  href?: boolean | false; // If is allday
+  accordeon?: boolean | false; // If is allday
 
   timeStart?: string | null;
   timeEnd?: string | null;
@@ -80,10 +87,8 @@ export interface EventProps {
   scene?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
   variants?: JSX.Element | JSX.Element[];
-  onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onClickFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
-
-
 
 /*
 # Class Components
@@ -117,6 +122,8 @@ const Event: React.FC<EventProps> = ({
   children,
   variants,
   scene,
+  href,
+  accordeon,
   onClick
 }) => {
   moment.locale("fr");
@@ -138,6 +145,7 @@ const Event: React.FC<EventProps> = ({
       const myEnd = convertStringToMinute(end);
       myH = myEnd/60*100
     }
+    //console.log("eventHeight > ", myH+`%`)
     return myH+`%`;
   };
 
@@ -161,11 +169,13 @@ const Event: React.FC<EventProps> = ({
   /*
   # eventTop() */
   const eventTop = (name: string, start: any, end: any) => {
-    if (convertStringToMinute(name) && convertStringToMinute(start) && convertStringToMinute(end)) {
-      const myCurrent = convertStringToMinute(name)
-      const myStart = convertStringToMinute(start);
+    if (convertStringToMinute(moment(name).hour()) && convertStringToMinute(moment(start).hour())) {
+      const myCurrent = convertStringToMinute(moment(name).hour())
+      const myStart = convertStringToMinute(moment(start).hour());
+      //console.log("eventTop1> ", myCurrent, myStart, (myStart - myCurrent)/60*100+`%`);
       return (myStart - myCurrent)/60*100+`%`
     } else {
+      //console.log("eventTop2 > ", convertStringToMinute(name), convertStringToMinute(start))
       return `auto`
     }
   };
@@ -226,7 +236,6 @@ const Event: React.FC<EventProps> = ({
           </div>
         </div>
       );
-      
       break;
     
     /* 
@@ -234,47 +243,66 @@ const Event: React.FC<EventProps> = ({
     case 'list':
       return (
         <div 
-        className={`
-          event-component-list
-          ${mode === `allday` ? `allday` : ``}
-          ${debug === true ? `debug` : ``}
-        `}
-        id={`event-${slug}`}
-        style={{
-          width: width ? width : `100%`,
-          height: height ? height : `auto`,
-          top: top ? top : `auto`,
-          left: left ? left : `auto`,
-          zIndex: position ? position : 1
+          className={`
+            event-component-list
+            ${mode === `allday` ? `allday` : ``}
+            ${debug === true ? `debug` : ``}
+          `}
+          id={`event-${slug}`}
+          style={{
+            width: width ? width : `100%`,
+            height: height ? height : `auto`,
+            top: top ? top : `auto`,
+            left: left ? left : `auto`,
+            zIndex: position ? position : 1
         }}>
 
           {fx ? <div className={`fx`}>{fx}</div> : ``}
 
           <div className={`event-component-inner`}>
-
               <table className="event-component-handle" onClick={(event: React.MouseEvent<HTMLElement>) => {
-                selectToggle(event.currentTarget)
+                if (accordeon === true && href === false) { 
+                  selectToggle(event.currentTarget) 
+                } else {
+                  if (href === false && onClick && onClick !== false) { 
+                    onClick()
+                  }
+                }
               }}>
                 <tbody>
                   <tr>
-                    {timeStart ? <td className="time">{timeStart}{display === `grid` ? `-` : <br />}{timeEnd ? timeEnd : ``}</td> : ``}
+                    {dateStart ? <td className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>
+                      {moment(dateStart).format("ll")} {display === `grid` ? `-` : <br />}
+                      {dateEnd && dateEnd !== dateStart ? moment(dateEnd).format("ll") : ``}
+                    </td> : ``}
+                    {timeStart ? <td className="time" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{timeStart}{display === `grid` ? `-` : <br />}{timeEnd ? timeEnd : ``}</td> : ``}
                     {tags && <td className={`tags`}><Tags elements={tags} align={`left`} /></td>}
                     <td className="header">
-                      <h5 className="title">{title}</h5>
-                      <h6 className="subtitle">{subtitle}</h6>
+                      <h5 className="title" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{title}</h5>
+                      <h6 className="subtitle" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{subtitle}</h6>
                     </td>
                     <td className="action">
-                      {body || buttons || partners ? <Button
+                      {accordeon === false ? buttons && buttons : ``}
+                      {href === false && (body || buttons || partners) ? <Button
                         icon={`expand_more`}
                         primary={primary ?? "black"}
                         secondary={secondary ?? "white"}
+                      /> : href ? <Button
+                        icon={`chevron_right`}
+                        primary={primary ?? "black"}
+                        secondary={secondary ?? "white"}
+                        onClick={(event: React.MouseEvent<HTMLElement>) => {
+                          if (onClick && onClick !== false) { 
+                            onClick()
+                          }
+                        }}
                       /> : ``}
                     </td>
                   </tr>
                 </tbody>
               </table>
 
-              {body || buttons || partners ? <div className="event-component-container dsp-close">
+              {href === false && (body || buttons || partners) ? <div className="event-component-container dsp-close">
                 {children ? children : <div className="event-component-container-inner">
                   {scene && <div className="event-component-content-col scene">{scene}</div>}
                   {body || variants || buttons || partners ? <div className="event-component-content-col content">
@@ -282,6 +310,16 @@ const Event: React.FC<EventProps> = ({
                     {variants ? <div className={`variants`}>{variants}</div> : ``}
                     {buttons && <div className="buttons">
                       {buttons && buttons}
+                      {href && <Button
+                        icon={`visibility`}
+                        primary={primary ?? "black"}
+                        secondary={secondary ?? "white"}
+                        onClick={(event: React.MouseEvent<HTMLElement>) => {
+                          if (onClick && onClick !== false) { 
+                            onClick()
+                          }
+                        }}
+                      />}
                     </div>}
                     {partners && <div className="partners">
                       {partners && partners}
@@ -289,11 +327,10 @@ const Event: React.FC<EventProps> = ({
                   </div> : ``}
                 </div>}
               </div> : ``}
-
           </div>
-          
         </div>
       );
+      break;
 
     /* 
     # Component POPUP */
@@ -317,7 +354,7 @@ const Event: React.FC<EventProps> = ({
           `}>
             {children ? children : <>
               {subtitle ? <div className="subtitle">{subtitle}</div> : ``}
-              {dateStart ? <div className="date">{moment(dateStart).format("dddd DD MMM")}{dateEnd && dateEnd !== dateStart ? ` - ${moment(dateEnd).format("dddd DD MMM")}` : ``}</div> : ``}
+              {dateStart ? <div className="date">{moment(dateStart).format("ddd DD MMM YY")}{dateEnd && dateEnd !== dateStart ? ` - ${moment(dateEnd).format("ddd DD MMM YY")}` : ``}</div> : ``}
               {timeStart && timeEnd ? <div className="time">{timeStart}{timeEnd && timeEnd !== timeStart ? `-${timeEnd}` : ``}</div> : ``}
 
               {scene && <div className="event-component-content-col scene">{scene}</div>}
@@ -414,18 +451,18 @@ const Event: React.FC<EventProps> = ({
             event-component-inner
           `}>
 
-            {scene && <div className={`scene`}>
+            {scene && <div className={`scene`} onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}>
               {scene}
             </div>}
 
-            <div className={`content`}>
+            <div className={`content`} onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}>
               {children ? children : <>
                 
                 {title && <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title">{title}</h3>}
                 {subtitle ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle">{subtitle}</h6> : ``}
 
-                <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("dddd DD MMM")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? ` — ${moment(dateEnd).format("dddd DD MMM")}` : ``}</div>
-                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd}</div> : ``}
+                <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("ddd DD MMM YY")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? `${dateEnd ? ` — `+moment(dateEnd).format("ddd DD MMM YY") : ``}` : ``}</div>
+                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd ? timeEnd : ``}</div> : ``}
                 
                 {tags && <div className={`tags`}>
                   {tags ? <Tags elements={tags} align={display === "grid" ? "center" : "left"} /> : ``}

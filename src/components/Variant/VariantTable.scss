@@ -66,6 +66,14 @@
 
             .variant-component-col {
               display: inline;
+
+              &.col-remove {
+                float: left;
+              }
+              &.col-add {
+                float: right;
+              }
+              
               button {
                 margin: 0;
               }

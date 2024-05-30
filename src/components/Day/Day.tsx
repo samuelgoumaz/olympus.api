@@ -59,20 +59,16 @@ const Day: React.FC<DayProps> = ({
         height: height ? height : `auto`
       }}
     >
-
       {title && <div className={`day-component-header`}>
         <h4>{moment(title).format("dddd DD MMM")}</h4>
       </div>}
-
       {fullday && <div className={`day-component-fullday`}>
         {fullday}
       </div>}
-
       {content && <div className={`day-component-content`}>
         {content}
         {afterday}
       </div>}
-
     </div>
   );
 };

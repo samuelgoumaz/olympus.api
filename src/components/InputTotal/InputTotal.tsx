@@ -76,7 +76,7 @@ const InputTotal = ({
         id={`input-amount-${String(name) ?? `error`}`}
         alt={`Total ${label ? String(label) : name ? String(name) : ``}`}
         required={required == true ? `required` : ``}
-        value={Number(priceFormatter(total))}
+        value={total > 0 ? Number(priceFormatter(total)) : 0}
         onLoad={onLoad}
         onClick={onClick}
         onChange={onChange}

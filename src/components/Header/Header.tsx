@@ -10,10 +10,10 @@ import "./Header.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface HeaderProps {
-  fx_aside: false | true;
-  fx_top: false | true;
-  fx_pinned: true | false;
+  hv_menu: true | false;
+  hv_home: true | false;
   position?: number | null;
+  aside?: JSX.Element | JSX.Element[];
   left?: JSX.Element | JSX.Element[];
   middle?: JSX.Element | JSX.Element[];
   right?: JSX.Element | JSX.Element[];
@@ -39,19 +39,18 @@ export interface HeaderProps {
 }) => (
 */
 const Header = ({
-  fx_aside,
-  fx_top,
-  fx_pinned,
+  hv_menu,
+  hv_home,
   position,
+  aside,
   left,
   middle,
   right
 }: HeaderProps) => (
   <header
     className={`header-component
-      ${fx_aside === true ? `fx_aside` : ``}
-      ${fx_top === true ? `fx_top` : ``}
-      ${fx_pinned === true ? `fx_pinned` : ``}
+      ${hv_menu === true ? `hv_menu` : ``}
+      ${hv_home === true ? `hv_home` : ``}
     `}
     style={{
       zIndex: position != null ? position : 1
@@ -63,25 +62,31 @@ const Header = ({
       </div>
     **/}
 
+    {aside ? <div className={`header-aside`}>
+      <div className={`header-aside-inner`}>
+        {aside && aside}
+      </div>
+    </div> : ``}
+
     <div className={`header-inner`}>
 
-      {left && <div className={`header-inner-col col-left`}>
+      {left ? <div className={`header-inner-col col-left`}>
         <div className={`header-inner-col-content`}>
-          {left}
+          {left && left}
         </div>
-      </div>}
+      </div> : ``}
 
-      {middle && <div className={`header-inner-col col-middle`}>
+      {middle ? <div className={`header-inner-col col-middle`}>
         <div className={`header-inner-col-content`}>
-          {middle}
+          {middle && middle}
         </div>
-      </div>}
+      </div> : ``}
 
-      {right && <div className={`header-inner-col col-right`}>
+      {right ? <div className={`header-inner-col col-right`}>
         <div className={`header-inner-col-content`}>
-          {right}
+          {right && right}
         </div>
-      </div>}
+      </div> : ``}
 
     </div>
   </header>

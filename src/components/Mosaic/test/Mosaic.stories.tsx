@@ -36,27 +36,27 @@ https://storybook.js.org/docs/react/writing-stories/args
 export const One = Template.bind({});
 One.args = {
   alt: `alt title`,
-  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
+  image: `https://plus.unsplash.com/premium_photo-1675724711188-7b39232974af?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
   display: `one`,
 };
 
 export const Double = Template.bind({});
 Double.args = {
   alt: `alt title`,
-  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
+  image: `https://plus.unsplash.com/premium_photo-1675724711188-7b39232974af?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
   display: `double`,
 };
 
 export const Quadruple = Template.bind({});
 Quadruple.args = {
   alt: `alt title`,
-  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
+  image: `https://plus.unsplash.com/premium_photo-1675724711188-7b39232974af?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
   display: `quadruple`,
 };
 
 export const Triple = Template.bind({});
 Triple.args = {
   alt: `alt title`,
-  image: `http://0.0.0.0:1337/uploads/doctype_1300x1080_ateliertt_b9d5a44a9e.jpg`,
+  image: `https://plus.unsplash.com/premium_photo-1675724711188-7b39232974af?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
   display: `triple`,
 };

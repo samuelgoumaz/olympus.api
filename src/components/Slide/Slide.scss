@@ -43,7 +43,7 @@
   .slide-component-inner {
     width: 100%;
     height: 100%;
-    display: table;
+    display: block;
     position: absolute;
     z-index: 2;
     color: white;
@@ -51,11 +51,17 @@
     left: 0;
 
     .content {
-      display: table-cell;
+      width: 100%;
+      height: 100%;
+      display: table;
       vertical-align: bottom;
       //background: linear-gradient(transparent, rgba(0,0,0,0.5));
 
       .content-inner {
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
         padding: 100px;
 
         .title {

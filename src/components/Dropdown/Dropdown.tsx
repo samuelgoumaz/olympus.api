@@ -14,9 +14,13 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface DropdownProps {
   direction?: string;
   display: string | null;
+  icon?: string | false,
+  label?: string | false,
+  current?: true | false,
   width?: string;
   selected?: true | false;
   children: JSX.Element | JSX.Element[];
+  onHandler?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 
@@ -26,9 +30,13 @@ export interface DropdownProps {
 const Dropdown = ({
   direction,
   display,
+  icon,
+  label,
+  current,
   width,
   selected,
-  children
+  children,
+  onHandler
 }: DropdownProps) => {
 
   /*
@@ -81,7 +89,14 @@ const Dropdown = ({
       }}
       onClick={
         (event: React.MouseEvent<HTMLElement>) => {
-          selectToggle(event.currentTarget)
+          if (onHandler) {
+            let myHandler = onHandler(event.currentTarget);
+            if (myHandler === true) {
+              selectToggle(event.currentTarget);
+            }
+          } else {
+            selectToggle(event.currentTarget);
+          };
         }
       }
     >
@@ -91,9 +106,15 @@ const Dropdown = ({
           width: width ? `100%` : `auto`
         }}
       >
-        <div className={`dropdown-current`}>{initData(children)}</div>
-        <div className={`dropdown-icon dsp-close material-icons`}>{`expand_less`}</div>
-        <div className={`dropdown-icon dsp-open material-icons`}>{`expand_more`}</div>
+        {children && current !== false && !label || !icon ? <div className={`dropdown-current`}>
+          {initData(children)}
+        </div> : ``}
+
+        {label ? <span className={`label`}>{label}</span> : ``}
+        {icon ? <span className={`icon material-icons`}>{icon}</span> : ``}
+
+        {!icon && <div className={`dropdown-icon dsp-close material-icons`}>{`expand_less`}</div>}
+        {!icon && <div className={`dropdown-icon dsp-open material-icons`}>{`expand_more`}</div>}
       </div>
 
       <div

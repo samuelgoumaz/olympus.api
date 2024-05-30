@@ -13,6 +13,7 @@ export interface FxBackgroundProps {
   position: number;
   cover?: true | false;
   align?: string | null;
+  hover?: true | false;
   image: string | null;
   background?: string | null;
   opacity: string | null;
@@ -43,6 +44,7 @@ const FxBackground = ({
   position,
   cover,
   image,
+  hover,
   background,
   opacity,
   mixBlendMode,
@@ -51,7 +53,7 @@ const FxBackground = ({
 }: FxBackgroundProps) => (
   <div
     className={`
-      fx-item fx-background ${cover ? `cover` : `contain`}
+      fx-item fx-background ${cover ? `cover` : `contain`} ${hover === true ? `hv_hover` : ``}
     `}
     style={{
       width: `100%`,
@@ -63,7 +65,7 @@ const FxBackground = ({
       backgroundSize: cover ? `cover` : `contain`,
       backgroundPosition: align ? align : `center`,
       backgroundRepeat: `no-repeat`,
-      opacity: opacity ?? 1,
+      opacity: opacity ?? ``,
       mixBlendMode: mixBlendMode ?? `normal`,
       position: `absolute`,
       zIndex: position ?? 1

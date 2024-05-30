@@ -13,6 +13,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface FooterProps {
   position: number;
+  debug?: true | false;
 
   /*
   # icon */
@@ -47,13 +48,15 @@ export interface FooterProps {
   address?: string;
   delivery?: string;
   payment?: string;
-  partners: JSX.Element | JSX.Element[];
-  navigation: JSX.Element | JSX.Element[];
+  partners?: JSX.Element | false;
+  navigation?: JSX.Element | false;
+  scene?: JSX.Element | false;
 }
 
 /*
 # Class Components */
 const Footer = ({
+  debug,
   american_express,
   position,
   facebook,
@@ -81,61 +84,82 @@ const Footer = ({
   delivery,
   payment,
   navigation,
-  partners
+  partners,
+  scene
 }: FooterProps) => {
 
 
 
   return (
-    <footer className={`footer-component panel`}>
-
-      <div className={`fx`}></div>
-
+    <footer className={`footer-component panel ${debug === true ? `debug` : ``}`}>
+      {scene && <div className={`scene`}>{scene}</div>}
       <div className={`footer-component-inner`}>
 
         {/*
         # Display delivery and payment method */}
         {delivery || payment ? <div className={`footer-component-row shop-row`}>
-          <div className={`footer-component-col`}>
-            {delivery && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${delivery}` }} />}
-            <ul className={`social`}>
+
+          <div className={`footer-component-col delivery`}>
+            <div className="content">
+              {delivery && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${delivery}` }} />}
+            </div>
+            <ul className={`list`}>
               {dhl && <li><Icon name={`dhl`} /></li>}
               {ups && <li><Icon name={`ups`} /></li>}
               {fedex && <li><Icon name={`fedex`} /></li>}
               {poste_switzerland && <li><Icon name={`poste_switzerland`} /></li>}
             </ul>
           </div>
-          <div className={`footer-component-col`}>
-            {payment && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${payment}` }} />}
-            <ul className={`social`}>
-              {americanexpress && <li><Icon name={`americanexpress`} /></li>}
-              {postfinance && <li><Icon name={`postfinance`} /></li>}
-              {mastercard && <li><Icon name={`mastercard`} /></li>}
-              {maestro && <li><Icon name={`maestro`} /></li>}
-              {payrexx && <li><Icon name={`payrexx`} /></li>}
-              {twint && <li><Icon name={`twint`} /></li>}
-              {visa && <li><Icon name={`visa`} /></li>}
-            </ul>
+
+          <div className={`footer-component-col payment`}>
+            <div className="content">
+              {payment && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${payment}` }} />}
+              <ul className={`list`}>
+                {americanexpress && <li><Icon name={`americanexpress`} /></li>}
+                {postfinance && <li><Icon name={`postfinance`} /></li>}
+                {mastercard && <li><Icon name={`mastercard`} /></li>}
+                {maestro && <li><Icon name={`maestro`} /></li>}
+                {payrexx && <li><Icon name={`payrexx`} /></li>}
+                {twint && <li><Icon name={`twint`} /></li>}
+                {visa && <li><Icon name={`visa`} /></li>}
+              </ul>
+            </div>
           </div>
+
         </div> : ``}
 
         {/*
         # Display address, contact and social */}
         <div className={`footer-component-row contact-row`}>
 
-          {address || contact || navigation ? <div className={`footer-component-col`}>
-            {address !== null && <div className={`body address`} dangerouslySetInnerHTML={{ __html: `${address}` }} />}
-            {contact !== null && <div className={`body contact`} dangerouslySetInnerHTML={{ __html: `${contact}` }} />}
-            {navigation && <div className={`body navigation`}>{navigation}</div>}
+          {address ? <div className={`footer-component-col address`}>
+            <div className="content">
+              {address !== null && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${address}` }} />}
+            </div>
           </div> : ``}
 
-          <div className={`footer-component-col`}>
-            
-            {partners && <div className="partners">
-              {partners}
-            </div>}
+          {contact ? <div className={`footer-component-col contact`}>
+            <div className="content">
+              {contact !== null && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${contact}` }} />}
+            </div>
+          </div> : ``}
 
-            <ul className={`social`}>
+          {navigation ? <div className={`footer-component-col navigation`}>
+            <div className="content">
+              <div className={`body`}>
+                {navigation && navigation}
+              </div>
+            </div>
+          </div> : ``}
+
+          {partners ? <div className={`footer-component-col partners`}>
+            <div className="content">
+              {partners && partners}
+            </div>
+          </div> : ``}
+
+          <div className={`footer-component-col social`}>
+            <ul className={`list`}>
               {instagram && <li><a href={instagram} target={`blank`}><Icon name={`instagram`} /></a></li>}
               {facebook && <li><a href={facebook} target={`blank`}><Icon name={`facebook`} /></a></li>}
               {linkedin && <li><a href={linkedin} target={`blank`}><Icon name={`linkedin`} /></a></li>}

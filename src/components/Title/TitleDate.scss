@@ -8,10 +8,12 @@
 /*
 # document
 */
-.title-component {
+.title-component-day, .title-component-month, .title-component-year {
   width: 100%;
   position: relative;
   display: block;
+  font-size: 0.75em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 
   .fx-content {
     width: 100%;
@@ -22,7 +24,7 @@
 
   .title-content {
     width: 100%;
-    padding: 1em 80px;
+    padding: 1em;
     display: block;
     position: relative;
     z-index: 3;
@@ -56,20 +58,17 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .title-component {
+  .title-component-day, .title-component-month, .title-component-year {
     &:after {
     }
     .fx-content {
     }
     .title-content {
-      padding: 1em 20px;
       .title-inner-content {
         .title {
-          width: 66.66%;
           //font-size: 2em;
         }
         .subtitle {
-          width: 33.33%;
           //font-size: 1em;
         }
       }
@@ -78,20 +77,17 @@
 }
 
 @media #{$medium-and-down} {
-  .title-component {
+  .title-component-day, .title-component-month, .title-component-year {
     &:after {
     }
     .fx-content {
     }
     .title-content {
-      padding: 1em 40px;
       .title-inner-content {
         .title {
-          width: 66.66%;
           //font-size: 3em;
         }
         .subtitle {
-          width: 33.33%;
           //font-size: 1.5em;
         }
       }
@@ -100,13 +96,12 @@
 }
 
 @media #{$medium-and-up} {
-  .title-component {
+  .title-component-day, .title-component-month, .title-component-year {
     &:after {
     }
     .fx-content {
     }
     .title-content {
-      padding: 1em 50px;
       .title-inner-content {
         .title {
           //font-size: 4em;
@@ -120,13 +115,12 @@
 }
 
 @media #{$large-and-up} {
-  .title-component {
+  .title-component-day, .title-component-month, .title-component-year {
     &:after {
     }
     .fx-content {
     }
     .title-content {
-      padding: 1em 60px;
       .title-inner-content {
         .title {
           //font-size: 5em;
@@ -140,13 +134,12 @@
 }
 
 @media #{$extra-large-and-up} {
-  .title-component {
+  .title-component-day, .title-component-month, .title-component-year {
     &:after {
     }
     .fx-content {
     }
     .title-content {
-      padding: 1em 70px;
       .title-inner-content {
         .title {
           //font-size: 6em;

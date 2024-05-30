@@ -33,8 +33,26 @@ const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
+export const DefaultTitle = Template.bind({});
+DefaultTitle.args = {
   title: 'My Title',
   subtitle: 'My Subtitle',
+};
+
+export const DayTitle = Template.bind({});
+DayTitle.args = {
+  title: 'Lundi',
+  display: 'day'
+};
+
+export const MonthTitle = Template.bind({});
+DayTitle.args = {
+  title: 'Décembre',
+  display: 'month'
+};
+
+export const YearTitle = Template.bind({});
+YearTitle.args = {
+  title: '2004',
+  display: 'year'
 };

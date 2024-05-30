@@ -3,6 +3,7 @@
 */
 import React, { useRef, useEffect, useState } from "react";
 import "./Title.scss";
+import "./TitleDate.scss";
 
 /*
 # Interface
@@ -13,6 +14,8 @@ export interface TitleProps {
   position: number;
   title: string | null;
   subtitle: string | null;
+  date: string | false;
+  time: string | false;
   children: JSX.Element | JSX.Element[];
   display: string | null;
 }
@@ -40,6 +43,8 @@ const Title = ({
   position,
   title,
   subtitle,
+  date,
+  time,
   display,
   children
 }: TitleProps) => {
@@ -50,9 +55,7 @@ const Title = ({
     default:
       return (
         <section
-          className={`
-            title-component
-          `}
+          className={display != null ? `title-component-${display}` : `title-component`}
           style={{
             position: `relative`,
             zIndex: position ?? 2
@@ -63,12 +66,19 @@ const Title = ({
             {children}
           </div>
       
-          <div className={`title-content`}>
+          {title || subtitle ? <div className={`title-content header`}>
             <div className={`title-inner-content`}>
               {title != null ? <h3 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
               {subtitle != null ? <h5 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
             </div>
-          </div>
+          </div> : ``}
+
+          {date !== null || time !== null ? <div className={`title-content datetime`}>
+            <div className={`title-inner-content`}>
+              {date != null ? <div className={`date`} dangerouslySetInnerHTML={{ __html: date }} /> : ``}
+              {time != null ? <div className={`time`} dangerouslySetInnerHTML={{ __html: time }} /> : ``}
+            </div>
+          </div> : ``}
       
         </section>
       );

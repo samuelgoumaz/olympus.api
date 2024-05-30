@@ -38,16 +38,16 @@ Default.args = {
   elements: [{
       "id": 1,
       "title": "ETD",
-      "image": "http://localhost:1337/uploads/branding_doctype_backend_monogram_positive_06cb043b27.svg?updated_at=2023-03-23T13:08:33.417Z",
+      "image": "https://backend.tellingdeath.ch/uploads/fns_10213dbddb.png",
     },
     {
       "id": 2,
       "title": "ETD",
-      "image": "http://localhost:1337/uploads/branding_doctype_backend_monogram_positive_06cb043b27.svg?updated_at=2023-03-23T13:08:33.417Z",
+      "image": "https://backend.tellingdeath.ch/uploads/fns_10213dbddb.png",
     },
     {
       "id": 3,
       "title": "ETD",
-      "image": "http://localhost:1337/uploads/branding_doctype_backend_monogram_positive_06cb043b27.svg?updated_at=2023-03-23T13:08:33.417Z",
+      "image": "https://backend.tellingdeath.ch/uploads/fns_10213dbddb.png",
     }]
 };

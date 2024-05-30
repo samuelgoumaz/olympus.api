@@ -95,6 +95,192 @@ ColsDebug.args = {
   "buttons": []
 };
 
+export const VariantDebug = Template.bind({});
+VariantDebug.args = {
+  debug: true,
+  position: 2,
+  display: `variant`,
+  mode: `allday`,
+  locale: "en",
+  id: 26,
+  title: "La Grange au Lac, Evian",
+  subtitle: "À venir",
+  sku: "variant-25",
+  createdAt: "2023-06-20T01:12:56.713Z",
+  updatedAt: "2023-06-28T12:31:05.268Z",
+  publishedAt: "2023-06-20T01:12:57.432Z",
+  in_cart: null,
+  action: null,
+  date: {
+    id: 24,
+    date_start: "2024-07-01",
+    date_end: null,
+    hour_start: null,
+    hour_end: null
+  },
+  price: null,
+  stock: null,
+  product: null,
+  event: {
+      "id": 10,
+      "title": "Requiem de Fauré",
+      "subtitle": null,
+      "slug": "requiem-de-faure",
+      "date_start": "2024-06-19",
+      "date_end": "2024-07-01",
+      "is_all_day": null,
+      "time_start": "00:00",
+      "time_end": "00:00",
+      "teaser": "",
+      "createdAt": "2023-06-20T00:51:46.511Z",
+      "updatedAt": "2023-06-29T14:09:26.180Z",
+      "publishedAt": "2023-06-20T00:52:08.123Z",
+      "locale": "fr",
+      "theme": {
+          "id": 9,
+          "title": "Requiem de Fauré",
+          "slug": "requiem-de-faure",
+          "primary": "#1f214e",
+          "secondary": "#d8b3bf",
+          "createdAt": "2023-06-20T00:18:54.542Z",
+          "updatedAt": "2023-06-20T00:18:55.027Z"
+      },
+      "images": [
+          {
+              "id": 26,
+              "name": "10_Faure.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 772,
+              "height": 1036,
+              "formats": {
+                  "thumbnail": {
+                      "name": "thumbnail_10_Faure.jpg",
+                      "hash": "thumbnail_10_Faure_29a75072e2",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 116,
+                      "height": 156,
+                      "size": 4.21,
+                      "url": "/uploads/thumbnail_10_Faure_29a75072e2.jpg"
+                  },
+                  "medium": {
+                      "name": "medium_10_Faure.jpg",
+                      "hash": "medium_10_Faure_29a75072e2",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 559,
+                      "height": 750,
+                      "size": 51.96,
+                      "url": "/uploads/medium_10_Faure_29a75072e2.jpg"
+                  },
+                  "small": {
+                      "name": "small_10_Faure.jpg",
+                      "hash": "small_10_Faure_29a75072e2",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 373,
+                      "height": 500,
+                      "size": 27.17,
+                      "url": "/uploads/small_10_Faure_29a75072e2.jpg"
+                  },
+                  "large": {
+                      "name": "large_10_Faure.jpg",
+                      "hash": "large_10_Faure_29a75072e2",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 745,
+                      "height": 1000,
+                      "size": 81.14,
+                      "url": "/uploads/large_10_Faure_29a75072e2.jpg"
+                  }
+              },
+              "hash": "10_Faure_29a75072e2",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 85.8,
+              "url": "/uploads/10_Faure_29a75072e2.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "folderPath": "/1/2",
+              "createdAt": "2023-06-26T09:41:57.404Z",
+              "updatedAt": "2023-06-26T09:41:57.404Z"
+          },
+          {
+              "id": 12,
+              "name": "EVL_PourquoiCeConcert_23:249.png",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1488,
+              "height": 1996,
+              "formats": {
+                  "thumbnail": {
+                      "name": "thumbnail_EVL_PourquoiCeConcert_23:249.png",
+                      "hash": "thumbnail_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 116,
+                      "height": 156,
+                      "size": 5.75,
+                      "url": "/uploads/thumbnail_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4.png"
+                  },
+                  "medium": {
+                      "name": "medium_EVL_PourquoiCeConcert_23:249.png",
+                      "hash": "medium_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 559,
+                      "height": 750,
+                      "size": 49.31,
+                      "url": "/uploads/medium_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4.png"
+                  },
+                  "small": {
+                      "name": "small_EVL_PourquoiCeConcert_23:249.png",
+                      "hash": "small_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 373,
+                      "height": 500,
+                      "size": 28.7,
+                      "url": "/uploads/small_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4.png"
+                  },
+                  "large": {
+                      "name": "large_EVL_PourquoiCeConcert_23:249.png",
+                      "hash": "large_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 745,
+                      "height": 1000,
+                      "size": 70.77,
+                      "url": "/uploads/large_EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4.png"
+                  }
+              },
+              "hash": "EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 18.27,
+              "url": "/uploads/EVL_Pourquoi_Ce_Concert_23_249_a5d49e3dc4.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "folderPath": "/1/2",
+              "createdAt": "2023-06-20T00:24:47.897Z",
+              "updatedAt": "2023-06-26T09:42:17.701Z"
+          }
+      ]
+  },
+  article: null
+};
+
 export const ListDebug = Template.bind({});
 ListDebug.args = {
   debug: true,

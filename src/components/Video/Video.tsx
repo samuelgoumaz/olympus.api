@@ -2,7 +2,8 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
-import "./Video.scss";
+import "./Video.absolute.scss";
+import "./Video.relative.scss";
 
 /*
 # Interface
@@ -10,8 +11,17 @@ import "./Video.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface VideoProps {
-  body: string | null;
-  children: JSX.Element | JSX.Element[];
+  debug?: true | false;
+  position: number;
+  absolute?: true | false;
+  fullscreen?: true | false;
+  controls: JSX.Element | false;
+  header: JSX.Element | false;
+  children: JSX.Element | false;
+  scene?: JSX.Element | false;
+  content?: JSX.Element | false;
+  onHover?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onLeave?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 
@@ -34,60 +44,50 @@ export interface VideoProps {
 }) => (
 */
 const Video = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
-  title,
-  subtitle,
-  children
+  debug,
+  position,
+  absolute,
+  fullscreen,
+  children,
+  controls,
+  header,
+  scene,
+  content,
+  onHover,
+  onLeave
 }: VideoProps) => (
-  <section
+  <div 
     className={`
       video-component
-      ${fx_aside === true && `fx_aside`}
-      ${fx_negative === true && `fx_negative`}
-      ${fx_top === true && `fx_top`}
-      ${fx_pinned === true && `fx_pinned`}
-      panel
-
+      ${fullscreen === true ? `fullscreen` : `default`}
+      ${absolute === true  ? `absolute` : `relative`}
+      ${debug === true ? `debug` : ``}
     `}
-  >
-    <div className={`video-inner`}>
-
-      <div className={`video-inner-col col-left`}>
-        {left_positive != null && left_negative != null && <img
-          className={"branding"}
-          width="auto"
-          height="100%"
-          src={fx_negative == true ? left_negative : left_positive}
-        />}
-      </div>
-
-      <div className={`video-inner-col col-middle`}>
-        {
-          middle_positive != null && middle_negative != null ?
-            <img
-              className={"branding"}
-              width="auto"
-              height="100%"
-              src={fx_negative == true ? middle_negative : middle_positive}
-            />
-          :
-            <h1 className="video-title" dangerouslySetInnerHTML={{ __html: title }} />
+    style={{
+      position: `relative`,
+      zIndex: position ?? 2
+    }}
+    onMouseOver={
+      (event: React.MouseEvent<HTMLElement>) => {
+        event.preventDefault();
+        onHover && onHover(event);
       }
-      </div>
-
-      <div className={`video-inner-col col-right`}>
-        {children}
-      </div>
-
-    </div>
-  </section>
+    }
+    onMouseLeave={
+      (event: React.MouseEvent<HTMLElement>) => {
+        event.preventDefault();
+        onLeave && onLeave(event);
+      }
+    }
+  >
+    {!scene ? <div className={`video-inner`}>
+      {children && <div className={`video`}>{children}</div>}
+      {controls && <div className={`controls`}>{controls}</div>}
+      {header && <div className={`header`}>{header}</div>}
+      {content && <div className={`content`}>{content}</div>}
+    </div> 
+    : <div className={`video-inner`}>{scene}</div>}
+  </div>
 );
 
 /*

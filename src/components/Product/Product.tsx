@@ -13,6 +13,7 @@ import "./ProductBanner.scss";
 import "./ProductDetail.scss";
 import "./ProductSlide.scss";
 import "./ProductCheckout.scss";
+import "./ProductPanel.scss";
 
 /*
 # Interface
@@ -172,6 +173,56 @@ const Product = ({
                     color={color && color !== false && color !== `false` ? color : `inherit`}
                     onClick={onClick ? onClick : function () { return false }}
                   /> : ``}
+                </div>}
+              </>}
+            </div>
+
+          </div>
+        </div>
+      )
+      break;
+    case "panel":
+      return (
+        <div
+          //onClick={onClick ? onClick : function () { return false }}
+          className={`
+            ${display === `panel` ? `product-component-panel` : ``}
+          `}
+          style={{
+            zIndex: position,
+            position: `relative`,
+            height: height != null ? height : `auto`
+          }}
+        >
+
+          {fx ? <div className={`fx`}>{fx}</div> : ``}
+
+          <div className={`
+            product-inner
+          `}>
+
+            {scene || image ? <div className={`scene`}>
+              <div className={`scene-inner`}>
+                {scene ? scene : image ? <FxBackground image={image} /> : ``}
+              </div>
+            </div> : ``}
+
+            <div className={`content`}>
+              {children ? children : <>
+                {<div className={`content-inner`}>
+                  {title != null ? <h2 className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
+                  {subtitle != null ? <h6 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle.toString() }} /> : ``}
+                  {display === `slide` && tags ? <div className="tags"><Tags elements={tags} align={`left`} /></div> : ``}
+                  {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
+                  {onClick ? <Button
+                    icon={`arrow_forward`}
+                    mode={`default`}
+                    color={color && color !== false && color !== `false` ? color : `inherit`}
+                    onClick={onClick ? onClick : function () { return false }}
+                  /> : ``}
+                </div>}
+                {<div className={`action`}>
+                  {variants && <div className="tags">{variants}</div>}
                 </div>}
               </>}
             </div>

@@ -84,3 +84,5 @@ export { default as Action } from "./Action";
 export { default as Show } from "./Show";
 export { default as Icon } from "./Icon";
 export { default as Submenu } from "./Submenu";
+export { default as Film } from "./Film";
+export { default as Feedback } from "./Feedback";

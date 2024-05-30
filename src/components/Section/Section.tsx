@@ -4,6 +4,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Section.scss";
 import FxBackground from "../FxBackground";
+import FxVideo from "../FxVideo";
 
 /*
 # Interface
@@ -18,6 +19,7 @@ export interface SectionProps {
   body?: string;
   display?: string;
   image?: string;
+  video?: JSX.Element | false;
   fx?: JSX.Element | false;
   scene?: JSX.Element | false;
   children?: JSX.Element | false;
@@ -51,6 +53,7 @@ const Section = ({
   body,
   display,
   image,
+  video,
   fx,
   scene,
   children,
@@ -76,7 +79,10 @@ const Section = ({
       {/*
       # Col scene */}
       <div className={`section-inner-col col-scene`}>
-        {scene || image ? <div className={`scene`}>{scene ? {scene} : image ? <FxBackground cover={true} image={image} /> : ``}</div> : ``}
+        {scene || image || video ? <div className={`scene`}>
+          {!scene ? image ? <FxBackground position={2} cover={video ? false : true} image={image} hover={video ? true : false} /> : `` : ``}
+          {scene ? scene : video ? video : ``}
+        </div> : ``}
       </div>
 
       {/*

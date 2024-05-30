@@ -8,8 +8,9 @@
 
 /*
 # Component */
-.introduction-component {
+.film-component {
   width: 100%;
+  display: block;
   position: relative;
 
   &:after {
@@ -19,7 +20,7 @@
     clear: both;
   }
 
-  .scene {
+  .fx {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -27,21 +28,23 @@
     left: 0;
   }
 
-  .introduction-inner {
+  .film-inner {
     width: 100%;
-    position: relative;
+    height: auto;
     display: block;
 
-    .introduction-inner-content {
-      position: relative;
+    .film-inner-content {
       width: 50%;
       margin: 0 auto;
-      padding: 100px 0;
+      padding: 100px;
+      position: relative;
+      z-index: 2;
 
+      .scene {
+      }
       .body {
       }
-      .action {
-        margin-top: 1em;
+      .aside {
       }
     }
   }
@@ -54,7 +57,7 @@
       content: "render";
       color: $color-debug-1;
       font-family: monospace;
-      text-transform: uppercase;
+      film-transform: uppercase;
       display: block;
       line-height: 1;
       padding: 5px;
@@ -69,7 +72,7 @@
         content: "fx";
         color: $color-debug-2;
         font-family: monospace;
-        text-transform: uppercase;
+        film-transform: uppercase;
         display: block;
         line-height: 1;
         padding: 5px;
@@ -79,13 +82,13 @@
         z-index: 999;
       }
     }
-    .introduction-inner-content {
+    .film-inner-content {
       border: 4px solid $color-debug-3;
       &:before {
         content: "inner";
         color: $color-debug-3;
         font-family: monospace;
-        text-transform: uppercase;
+        film-transform: uppercase;
         display: block;
         line-height: 1;
         padding: 5px;
@@ -101,14 +104,14 @@
 /*
 # Responsive */
 @media #{$small-and-down} {
-  .introduction-component {
-    .introduction-content {
+  .film-component {
+    .film-content {
     }
-    .introduction-inner {
-      .introduction-inner-content {
+    .film-inner {
+      .film-inner-content {
         width: 100%;
         padding: 20px;
-
+        
         .body {
         }
       }
@@ -117,11 +120,11 @@
 }
 
 @media #{$medium-and-down} {
-  .introduction-component {
-    .introduction-content {
+  .film-component {
+    .film-content {
     }
-    .introduction-inner {
-      .introduction-inner-content {
+    .film-inner {
+      .film-inner-content {
         width: 100%;
         padding: 30px;
 
@@ -133,11 +136,11 @@
 }
 
 @media #{$medium-and-up} {
-  .introduction-component {
-    .introduction-content {
+  .film-component {
+    .film-content {
     }
-    .introduction-inner {
-      .introduction-inner-content {
+    .film-inner {
+      .film-inner-content {
         width: 80%;
         padding: 40px;
 
@@ -149,11 +152,11 @@
 }
 
 @media #{$large-and-up} {
-  .introduction-component {
-    .introduction-content {
+  .film-component {
+    .film-content {
     }
-    .introduction-inner {
-      .introduction-inner-content {
+    .film-inner {
+      .film-inner-content {
         width: 70%;
         padding: 60px;
 
@@ -165,11 +168,11 @@
 }
 
 @media #{$extra-large-and-up} {
-  .introduction-component {
-    .introduction-content {
+  .film-component {
+    .film-content {
     }
-    .introduction-inner {
-      .introduction-inner-content {
+    .film-inner {
+      .film-inner-content {
         width: 60%;
         padding: 80px;
 

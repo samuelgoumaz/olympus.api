@@ -86,8 +86,8 @@ const Card = ({
         {title !== null || subtitle !== null || body !== null ? <div className={`header`}>
           {title !== null ? <h5 className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
           {subtitle !== null ? <h6 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
-          {body !== null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         </div> : ``}
+        {body !== null ? <div className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
         <div className={`action`}>
           {/**<Button
             label={null}

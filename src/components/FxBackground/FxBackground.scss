@@ -16,6 +16,15 @@
   overflow: hidden;
   background-repeat: no-repeat;
 
+  &.hv_hover {
+    opacity: 1;
+    @include transition(1s linear);
+    
+    &:hover {
+      opacity: 0;
+    }
+  }
+
   &.cover {
     background-size: cover;
   }

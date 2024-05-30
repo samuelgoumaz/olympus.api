@@ -39,7 +39,7 @@ const Partner = ({
     <div className={`
       partner-inner
     `}>
-      {image && <div
+      {image ? <div
         className={`image`}
         style={{
           background: `url(${image})`,
@@ -47,7 +47,9 @@ const Partner = ({
           backgroundPosition: `center`,
           backgroundRepeat: `no-repeat`,
         }}
-      />}
+      /> : <div className={`label`}>
+        {title && <span className="name">{title}</span>}
+      </div>}
     </div>
   </article>
 );

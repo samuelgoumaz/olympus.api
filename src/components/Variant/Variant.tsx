@@ -61,39 +61,6 @@ export interface VariantProps {
   children?: JSX.Element | JSX.Element[];
 }
 
-/** function createCurrent(config: VariantProps): {
-  id: number,
-  sku: number,
-  title: string | null,
-  subtitle: string | null,
-  description: string | null,
-  price_default: number,
-  price_promotion: number,
-  stock_disponibility: boolean | null,
-  stock_limited: number,
-  parent.id: number,
-  parent_title: number,
-  selected: boolean | false
-} {
-  let newCurrent = {
-    id: 1,
-    sku: "number",
-    title: config.title,
-    subtitle: "",
-    description: "",
-    price_default: "",
-    price_promotion: "",
-    stock_disponibility: "",
-    stock_limited: "",
-    parent.id: "",
-    parent_title: "",
-    selected: ""
-  };
-
-  newCurrent = config.current;
-  return newCurrent;
-} **/
-
 /*
 # Class Components
 */
@@ -301,7 +268,7 @@ const Variant: React.FC<VariantProps> = ({
               {variants.in_cart === true ? <div
                 className={`variant-component-row table-col variants ref-variant-${variants.event ? variants.event.id : variants.product ? variants.product.id : `0`}-${variants.id} ${`dsp-active`}`}
                 key={`variant-component-key-${variants.id}`}
-                style={{ borderColor: secondary ? secondary : `red`}}>
+                style={{ borderColor: secondary ? secondary : `transparent`}}>
                 {variants.in_cart === true ? <div className={`variant-component-col col-remove`}>
                     {variants.quantity > 0 ? <Button
                       icon={`remove`}
@@ -406,7 +373,7 @@ const Variant: React.FC<VariantProps> = ({
               {variants.in_cart === true ? <div
                 className={`variant-component-row table-col variants ref-variant-${variants.event ? variants.event.id : variants.product ? variants.product.id : `0`}-${variants.id} ${`dsp-active`}`}
                 key={`variant-component-key-${variants.id}`}
-                style={{ borderColor: secondary ? secondary : `red`}}>
+                style={{ borderColor: secondary ? secondary : `transparent`}}>
                 {variants.in_cart === true ? <div className={`variant-component-col col-remove`}>
                     {variants.quantity > 0 ? <Button
                       icon={`remove`}
@@ -472,28 +439,28 @@ const Variant: React.FC<VariantProps> = ({
                 {Object.keys(variants).map((key) => (
                   <div className={`table-row`}>
   
-                    {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {variants[key].title}
                     </span> : ``}
   
-                    {/* <span style={{ borderColor: secondary ? secondary : `red`}} className={`table-col void`}></span> */}
+                    {/* <span style={{ borderColor: secondary ? secondary : `transparent`}} className={`table-col void`}></span> */}
   
-                    {variants[key].date ? <span className={`table-col date`} style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].date ? <span className={`table-col date`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {moment(variants[key].date.date_start).format("dd DD MMM")}
                       {moment(variants[key].date.date_end).format("YYYY") !== moment(variants[key].date.date_start).format("YYYY") ? ` ${moment(variants[key].date.date_start).format("YY")}` : ``}<br />
                       {variants[key].date.date_end && variants[key].date.date_end !== variants[key].date.date_start ? moment(variants[key].date.date_end).format("dd DD MMM YY") : ``}
                     </span> : ``}
   
-                    {variants[key].date && moment(variants[key].date.hour_start) || variants[key].date && moment(variants[key].date.hour_end) ? <span className={`table-col hour`} style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].date && moment(variants[key].date.hour_start) || variants[key].date && moment(variants[key].date.hour_end) ? <span className={`table-col hour`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {variants[key].date.hour_start ? moment(variants[key].date.hour_start, "HH:mm:ss").format("HH:mm") : ``}<br />
                       {variants[key].date.hour_end && variants[key].date.hour_end !== variants[key].date.hour_start ? moment(variants[key].date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
                     </span> : ``}
   
-                    {variants[key].subtitle ? <span className={`table-col subtitle`} style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].subtitle ? <span className={`table-col subtitle`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {variants[key].subtitle}
                     </span> : ``}
   
-                    {variants[key].price && variants[key].price.price ? <span className={`table-col price`} style={{ borderColor: secondary ? secondary : `red`}}>
+                    {variants[key].price && variants[key].price.price ? <span className={`table-col price`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {Number(variants[key].price.price) && priceFormatter(variants[key].price.price) !== null ? priceFormatter(variants[key].price.price) : "Free"}&nbsp;
                       {Number(variants[key].price.price) && currency !== "null" ? <span className={`currency`}>{currency}</span> : ``}
                     </span> : ``}
@@ -501,7 +468,7 @@ const Variant: React.FC<VariantProps> = ({
                     {variants[key].action ? <div
                       key={`api_variants_${key}`}
                       className={` table-col action ${key == 0 ? `dsp-active` : ``}`}
-                      style={{ borderColor: secondary ? secondary : `red`}}
+                      style={{ borderColor: secondary ? secondary : `transparent`}}
                     >
                       {variants[key].action.url ? <Button
                           label={variants[key].action && variants[key].action.title ? variants[key].action.title : `Réserver`}
@@ -510,7 +477,7 @@ const Variant: React.FC<VariantProps> = ({
                           href={variants[key].action.url}
                           style={{ 
                             color: primary ? primary : `white`,
-                            background: secondary ? secondary : `red`
+                            background: secondary ? secondary : `transparent`
                           }}
                         /> : ``}
                       
@@ -523,7 +490,7 @@ const Variant: React.FC<VariantProps> = ({
                     {variants[key].in_cart === true ? <span
                     className={`variant-component-row table-col variants ref-variant-${variants[key].event ? variants[key].event.id : variants[key].product ? variants[key].product.id : `0`}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
                     key={`variant-component-key-${key}`}
-                    style={{ borderColor: secondary ? secondary : `red`}}>
+                    style={{ borderColor: secondary ? secondary : `transparent`}}>
                     {variants[key].in_cart === true ? <div className={`variant-component-col col-remove`}>
                         {variants[key].quantity > 0 ? <Button
                           icon={`remove`}

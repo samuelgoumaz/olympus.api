@@ -11,7 +11,7 @@
 */
 .banner-component {
   width: 100%;
-  @include aspect-ratio(1920, 1080);
+  height: calc(var(--vh, 1vh) * 90);
   position: relative;
   display: block;
   overflow: hidden;
@@ -90,7 +90,7 @@
         .body {
           width: 20%;
           display: inline-block;
-          padding-top: 60px;
+          padding-top: 1em;
           text-align: inherit;
         }
       }
@@ -180,7 +180,7 @@
           padding: 0 20px;
 
           .body {
-            width: 100%;
+            width: 80%;
           }
         }
       }
@@ -201,7 +201,7 @@
           padding: 0 40px;
 
           .body {
-            width: 75%;
+            width: 60%;
           }
         }
       }

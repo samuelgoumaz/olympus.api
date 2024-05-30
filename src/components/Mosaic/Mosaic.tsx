@@ -15,8 +15,10 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface MosaicProps {
   position?: number | null;
   alt?: string | null;
+  body?: string | false;
   height?: string | null;
   image?: string | null;
+  video?: JSX.Element | false;
   display: string | null;
 }
 
@@ -30,6 +32,8 @@ const Mosaic = ({
   alt,
   height,
   image,
+  body,
+  video,
   display
 }: MosaicProps) => (
   <section
@@ -50,12 +54,13 @@ const Mosaic = ({
       mosaic-inner
     `}>
 
-      <div className={`scene`}>
+      {video ? video : <div className={`scene`}>
         <img className={`image`} src={image} />
-      </div>
+      </div>}
 
       <div className={`content`}>
         {alt != null ? <h5 className="title" dangerouslySetInnerHTML={{ __html: alt }} /> : ``}
+        {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />}
       </div>
 
     </div>

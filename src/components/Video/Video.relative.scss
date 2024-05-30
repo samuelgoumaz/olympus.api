@@ -1,0 +1,226 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.video-component.relative {
+  
+  &.default {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  &.fullscreen {
+    width: 100%;
+    height: 100vh;
+    display: block;
+  }
+
+  &.debug {
+  }
+  
+  .video-inner {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+
+    .video {
+      width: 100%;
+      height: auto;
+      position: relative;
+      display: block;
+      top: 0;
+      left: 0;
+
+      video {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        
+      }
+    }
+    .content {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      background: linear-gradient(transparent, black);
+      left: 0;
+      bottom: 0;
+      padding: 80px;
+      color: white;
+    }
+    .controls {
+      position: absolute;
+      z-index: 3;
+      background: green;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
+    .header {
+      position: absolute;
+      z-index: 4;
+      background: pink;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .video-component {
+    &.default {
+    }
+    
+    &.fullscreen {
+      height: 100vh;
+    }
+  
+    &.debug {
+    }
+    
+    .video-inner {
+      .video {
+        video {
+        }
+      }
+      .content {
+        padding: 40px;
+      }
+      .controls {
+      }
+      .header {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .video-component {
+    &.default {
+    }
+    
+    &.fullscreen {
+      height: 100vh;
+    }
+  
+    &.debug {
+    }
+    
+    .video-inner {
+      .video {
+        video {
+        }
+      }
+      .content {
+        padding: 50px;
+      }
+      .controls {
+      }
+      .header {
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .video-component {
+    &.default {
+    }
+    
+    &.fullscreen {
+      height: 100vh;
+    }
+  
+    &.debug {
+    }
+    
+    .video-inner {
+      .video {
+        video {
+        }
+      }
+      .content {
+        padding: 60px;
+      }
+      .controls {
+      }
+      .header {
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .video-component {
+    &.default {
+    }
+    
+    &.fullscreen {
+      height: 100vh;
+    }
+  
+    &.debug {
+    }
+    
+    .video-inner {
+      .video {
+        video {
+        }
+      }
+      .content {
+        padding: 70px;
+      }
+      .controls {
+      }
+      .header {
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .video-component {
+    &.default {
+    }
+    
+    &.fullscreen {
+      height: 100vh;
+    }
+  
+    &.debug {
+    }
+    
+    .video-inner {
+      .video {
+        video {
+        }
+      }
+      .content {
+        padding: 80px;
+      }
+      .controls {
+      }
+      .header {
+      }
+    }
+  }
+}
