@@ -169,13 +169,13 @@ const Event: React.FC<EventProps> = ({
   /*
   # eventTop() */
   const eventTop = (name: string, start: any, end: any) => {
-    if (convertStringToMinute(moment(name).hour()) && convertStringToMinute(moment(start).hour())) {
-      const myCurrent = convertStringToMinute(moment(name).hour())
-      const myStart = convertStringToMinute(moment(start).hour());
-      //console.log("eventTop1> ", myCurrent, myStart, (myStart - myCurrent)/60*100+`%`);
+    if (convertStringToMinute(name) && convertStringToMinute(start)) {
+      const myCurrent = convertStringToMinute(name)
+      const myStart = convertStringToMinute(start);
+      //console.log("eventTop1> ", myCurrent, myStart, (myStart - myCurrent)/60*100+`%`, (myStart - myCurrent)/60*100+`%`);
       return (myStart - myCurrent)/60*100+`%`
     } else {
-      //console.log("eventTop2 > ", convertStringToMinute(name), convertStringToMinute(start))
+      //console.log("eventTop2 > ", name, start, convertStringToMinute(name), convertStringToMinute(start))
       return `auto`
     }
   };
@@ -283,11 +283,11 @@ const Event: React.FC<EventProps> = ({
                     </td>
                     <td className="action">
                       {accordeon === false ? buttons && buttons : ``}
-                      {href === false && (body || buttons || partners) ? <Button
+                      {href === false && accordeon === true && (body || buttons || partners) ? <Button
                         icon={`expand_more`}
                         primary={primary ?? "black"}
                         secondary={secondary ?? "white"}
-                      /> : href ? <Button
+                      /> : href && accordeon === true ? <Button
                         icon={`chevron_right`}
                         primary={primary ?? "black"}
                         secondary={secondary ?? "white"}

@@ -13,6 +13,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface TogglerProps {
   display: string | null;
   icon: string | null;
+  id: string | false;
   close: string | null;
   label: string | null;
   fx_status: false | true;
@@ -43,6 +44,7 @@ export interface TogglerProps {
 const Toggler = ({
   display,
   icon,
+  id,
   close,
   label,
   fx_status,
@@ -50,11 +52,14 @@ const Toggler = ({
   children,
   onClick
 }: TogglerProps) => {
+  
   return (
     <div
       className={`
         toggler-component
+        ${fx_status === true ? `dsp-open` : `dsp-close`}
       `}
+      id={id ? id : ``}
     >
       {/*
       Handler */}
@@ -66,7 +71,26 @@ const Toggler = ({
           ${display === `inline` ? `float` : ``}
           `
         }
-        onClick={onClick}
+        onClick={(event: React.MouseEvent<HTMLElement>) => {
+          event.preventDefault();
+          if (onClick) { onClick(); } else {
+
+          }
+          if (event.currentTarget.parentElement?.classList.contains(`dsp-open`)) {
+            event.currentTarget.parentElement?.classList.remove(`dsp-open`);
+            event.currentTarget.parentElement?.classList.add(`dsp-close`);
+            if (event.currentTarget.classList?.contains(`dsp-active`)) {
+              event.currentTarget.classList.remove(`dsp-active`);
+            }
+          } else {
+            event.currentTarget.parentElement?.classList.remove(`dsp-close`);
+            event.currentTarget.parentElement?.classList.add(`dsp-open`);
+            if (!event.currentTarget.classList?.contains(`dsp-active`)) {
+              event.currentTarget.classList.add(`dsp-active`);
+            }
+          }
+          
+        }}
       >
 
         <div className={`icon`}>
@@ -83,7 +107,7 @@ const Toggler = ({
 
       {/*
       Content */}
-      {fx_status === true && children ? <div className={`
+      {children ? <div className={`
         toggler-container
         ${display === `fullscreen` ? `fullscreen` : ``}
         ${display === `right` ? `right` : ``}
@@ -92,6 +116,7 @@ const Toggler = ({
         ${display === `dropdown` ? `dropdown` : ``}
         ${display === `inline` ? `inline` : ``}
         ${display == null ? `default` : ``}
+        ${fx_status === true ? `dsp-active` : ``}
       `}>
 
         {fx_children ? <div className={`toggler-fx`}>

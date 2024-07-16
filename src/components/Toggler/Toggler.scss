@@ -77,6 +77,12 @@
     }
   }
 
+  &.dsp-close {
+    .toggler-container {
+      display: none !important;
+    }
+  }
+
   /*
   content */
   .toggler-container {
@@ -152,6 +158,15 @@
           vertical-align: top;
         }
       }
+    }
+
+    &.dropdown {
+      width: 280px;
+      top: auto;
+      left: auto;
+      right: 0px;
+      height: auto;
+      position: absolute !important;
     }
 
     &.left {

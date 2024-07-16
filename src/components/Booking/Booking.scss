@@ -1,0 +1,179 @@
+/*
+# Imports
+*/
+@import "../../../lib/colors.scss";
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# Component */
+.booking-component {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .booking-inner {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    .booking-inner-content {
+      width: 50%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      padding: 0;
+
+      .scene {
+      }
+      .body {
+      }
+      .aside {
+      }
+    }
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:before {
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2;
+      &:before {
+        content: "fx";
+        color: $color-debug-2;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .booking-inner-content {
+      border: 4px solid $color-debug-3;
+      &:before {
+        content: "inner";
+        color: $color-debug-3;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
+    }
+  }
+}
+
+/*
+# Responsive */
+@media #{$small-and-down} {
+  .booking-component {
+    .booking-content {
+    }
+    .booking-inner {
+      .booking-inner-content {
+        width: 100%;
+        
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .booking-component {
+    .booking-content {
+    }
+    .booking-inner {
+      .booking-inner-content {
+        width: 100%;
+
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .booking-component {
+    .booking-content {
+    }
+    .booking-inner {
+      .booking-inner-content {
+        width: 80%;
+
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .booking-component {
+    .booking-content {
+    }
+    .booking-inner {
+      .booking-inner-content {
+        width: 70%;
+
+        .body {
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .booking-component {
+    .booking-content {
+    }
+    .booking-inner {
+      .booking-inner-content {
+        width: 60%;
+
+        .body {
+        }
+      }
+    }
+  }
+}

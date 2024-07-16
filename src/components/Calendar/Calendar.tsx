@@ -211,7 +211,7 @@ const Calendar: React.FC<CalendarProps> = ({
           // querying events related to the hour and day.
           (itemFilter) =>
             itemFilter.date_start === eventData.date_start &&
-            convertStringToMinute(itemFilter.time_start) === convertNumberToMinute(incHour) &&
+            convertStringToMinute(String(itemFilter.time_start).split(":")[0]) === convertNumberToMinute(incHour) &&
             itemFilter.is_all_day !== true ? true : false
         );
         newCalendarData.elements[incHour] = {
@@ -403,14 +403,20 @@ const Calendar: React.FC<CalendarProps> = ({
   # Manage Date */
   let prevDay = false;
 
-  function dspDay (current) {
+  function dspDay (current, hour) {
     let myDate = new Date(current);
     let dspDate = false;
-    if (prevDay === moment(myDate).format("dddd")) {
+    let myHour = hour ? hour.split(":")[0] : false;
+    /*if (myHour && timeEnd && timeEnd > 0 && myHour < timeEnd) {
+      console.log("hour >>> ", myHour, timeEnd, hour);
+    } else {
+      console.log("alter hour", myHour, timeEnd, hour);
+    }*/
+    if (prevDay === moment(myDate).format("dddd DD")) {
       dspDate = false;
     } else {
-      dspDate = moment(myDate).format("dddd");
-      prevDay = moment(myDate).format("dddd");
+      dspDate = moment(myDate).format("dddd DD");
+      prevDay = moment(myDate).format("dddd DD");
     }
     if (dspDate && group && group.day) return <Title title={dspDate} display={`day`} />;
   };
@@ -469,14 +475,22 @@ const Calendar: React.FC<CalendarProps> = ({
         
           const dateWithTimeB = new Date(dateB);
           dateWithTimeB.setHours(hoursB, minutesB);
-        
+
+          /*
+          if (timeA === "00:00" && timeB !== "00:00" && !a.is_all_day) {
+            return 1; // move `a` to the end
+          } else if (timeA !== "00:00" && timeB === "00:00" && !b.is_all_day) {
+            return -1; // move `b` to the end
+          }*/
+
           return dateWithTimeA - dateWithTimeB;
         }).map(
           (item, inc) => {
+            //console.log("CHECK >>> ", item.date?.time_start ? item.date?.time_start : item.time_start ?? false)
             return (<>
               {dspYear(item.date?.date_start ? item.date?.date_start : item.date_start ?? false)}
               {dspMonth(item.date?.date_start ? item.date?.date_start : item.date_start ?? false)}
-              {dspDay(item.date?.date_start ? item.date?.date_start : item.date_start ?? false)}
+              {dspDay(item.date?.date_start ? item.date?.date_start : item.date_start ?? false, item.date?.time_start ? item.date?.time_start : item.time_start ?? false)}
               {render(item, inc)}
             </>);
           }

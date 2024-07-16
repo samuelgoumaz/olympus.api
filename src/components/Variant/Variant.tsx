@@ -439,9 +439,7 @@ const Variant: React.FC<VariantProps> = ({
                 {Object.keys(variants).map((key) => (
                   <div className={`table-row`}>
   
-                    {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `transparent`}}>
-                      {variants[key].title}
-                    </span> : ``}
+                    {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `transparent`}} dangerouslySetInnerHTML={{__html: variants[key].title }} /> : ``}
   
                     {/* <span style={{ borderColor: secondary ? secondary : `transparent`}} className={`table-col void`}></span> */}
   
@@ -456,9 +454,7 @@ const Variant: React.FC<VariantProps> = ({
                       {variants[key].date.hour_end && variants[key].date.hour_end !== variants[key].date.hour_start ? moment(variants[key].date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
                     </span> : ``}
   
-                    {variants[key].subtitle ? <span className={`table-col subtitle`} style={{ borderColor: secondary ? secondary : `transparent`}}>
-                      {variants[key].subtitle}
-                    </span> : ``}
+                    {variants[key].subtitle ? <span className={`table-col subtitle`} style={{ borderColor: secondary ? secondary : `transparent`}} dangerouslySetInnerHTML={{__html: variants[key].subtitle }} /> : ``}
   
                     {variants[key].price && variants[key].price.price ? <span className={`table-col price`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {Number(variants[key].price.price) && priceFormatter(variants[key].price.price) !== null ? priceFormatter(variants[key].price.price) : "Free"}&nbsp;

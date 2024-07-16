@@ -48,12 +48,12 @@ const InputSubmit = ({
   onClick
 }: InputSubmitProps) => (
   <p
-    className={"form-item"}
+    className={"form-item form-item-submit"}
   >
     {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
     <input
       className={"form-item-input form-item-input-submit"}
-      type="text"
+      type="submit"
       name={String(name) ?? `errorName`}
       required={required == true ? `required` : ``}
       placeholder={

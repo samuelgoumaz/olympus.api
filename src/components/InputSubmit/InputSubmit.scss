@@ -9,43 +9,72 @@ $grey : #ccc;
 /*
 # document
 */
-.form-item {
+.form-item-submit {
+  label {
+  }
+  .form-item-input-submit {
 
-  .form-item-input {
+    /* dimensions */
+    width: 100%;
+    height: 70px;
+    display: inline-block;
 
-    &.form-item-input-submit {
+    /* margin */
+    padding: 0 30px;
+    border-radius: 10px;
 
-      /* dimensions */
-      width: 100%;
-      height: 70px;
-      display: block;
-
-      /* margin */
-      padding: 0 30px;
-      border-radius: 10px;
-
-      /* styling */
-      border: 1px solid $grey;
-      font-size: 1.5em;
-
-    }
-
+    /* styling */
+    border: 1px solid $grey;
+    font-size: 1.5em;
   }
 }
+
 
 /*
 # Responsive
 */
 @media #{$small-and-down} {
+  .form-item-submit {
+    label {
+    }
+    .form-item-input-submit {
+      height: 50px;
+      padding: 0 10px;
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .form-item-submit {
+    label {
+    }
+    .form-item-input-submit {
+      height: 56px;
+      padding: 0 13px;
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .form-item-submit {
+    label {
+    }
+    .form-item-input-submit {
+      height: 60px;
+      padding: 0 15px;
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .form-item-submit {
+    label {
+    }
+    .form-item-input-submit {
+      height: 66px;
+      padding: 0 18px;
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {

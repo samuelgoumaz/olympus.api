@@ -80,7 +80,7 @@ const Product = ({
     case "grid":
       return (
         <div
-          //onClick={onClick ? onClick : function () { return false }}
+          onClick={onClick ? onClick : function () { return false }}
           className={`product-component-grid ${debug === true ? `debug` : ``}`}
           style={{
             zIndex: position,

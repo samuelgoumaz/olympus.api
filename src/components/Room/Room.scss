@@ -1,0 +1,252 @@
+/*
+# Imports
+*/
+@import "../../../lib/colors.scss";
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# Component */
+.room-component {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .room-inner {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 100px;
+    position: relative;
+    z-index: 2;
+
+    &:after {
+      content: " ";
+      width: 100%;
+      display: block;
+      clear: both;
+    }
+
+    .room-inner-col {
+      display: inline-block;
+      vertical-align: top;
+
+      .scene {
+        margin-bottom: 1em;
+      }
+
+      .variants {
+        margin-bottom: 1em;
+      }
+
+      .tags {
+        margin-bottom: 1em;
+        .tag-component {
+          width: 100%;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+
+          .tag-component-inner {
+            background: none !important;
+            border-radius: 0 !important;
+            padding: 0.5em 0 !important;
+            text-align: left !important;
+          }  
+        }
+      }
+
+      .action {
+        margin-bottom: 1em;
+        .button-component {
+          width: 100% !important;
+          margin: 0.5em 0 !important;
+        }
+      }
+
+      &.left {
+        width: 65%;
+        padding-right: 40px;
+      }
+      &.right {
+        width: 35%;
+      }
+    }
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:before {
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      show-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2;
+      &:before {
+        content: "fx";
+        color: $color-debug-2;
+        font-family: monospace;
+        show-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .room-inner-content {
+      border: 4px solid $color-debug-3;
+      &:before {
+        content: "inner";
+        color: $color-debug-3;
+        font-family: monospace;
+        show-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
+    }
+  }
+}
+
+/*
+# Responsive */
+@media #{$small-and-down} {
+  .room-component {
+  
+    .fx {
+    }
+  
+    .room-inner {
+      padding: 20px;
+  
+      .room-inner-col {
+
+        .scene {
+          margin-top: 1em;
+        }
+
+        &.left {
+          width: 100%;
+          padding-right: 0px;
+        }
+        &.right {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .room-component {
+  
+    .fx {
+    }
+  
+    .room-inner {
+      padding: 30px;
+  
+      .room-inner-col {
+        &.left {
+          width: 60%;
+          padding-right: 20px;
+        }
+        &.right {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .room-component {
+  
+    .fx {
+    }
+  
+    .room-inner {
+      padding: 60px;
+  
+      .room-inner-col {
+        &.left {
+          width: 65%;
+          padding-right: 30px;
+        }
+        &.right {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .room-component {
+  
+    .fx {
+    }
+  
+    .room-inner {
+      padding: 70px;
+  
+      .room-inner-col {
+        &.left {
+          width: 65%;
+          padding-right: 35px;
+        }
+        &.right {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .room-component {
+  
+    .fx {
+    }
+  
+    .room-inner {
+      padding: 80px;
+  
+      .room-inner-col {
+        &.left {
+          width: 65%;
+          padding-right: 40px;
+        }
+        &.right {
+          width: 35%;
+        }
+      }
+    }
+  }
+}

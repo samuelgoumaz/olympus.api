@@ -86,3 +86,5 @@ export { default as Icon } from "./Icon";
 export { default as Submenu } from "./Submenu";
 export { default as Film } from "./Film";
 export { default as Feedback } from "./Feedback";
+export { default as Booking } from "./Booking";
+export { default as Room } from "./Room";

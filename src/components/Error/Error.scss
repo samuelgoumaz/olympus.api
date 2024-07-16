@@ -76,6 +76,9 @@
 @media #{$small-and-down} {
   .error-component {
     .error-component-inner {
+      width: 100%;
+      max-width: auto;
+      
       .error-component-content {
         .error-scene {
           .icon {
