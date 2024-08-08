@@ -15,6 +15,10 @@
 
   .calendar-component-inner {
 
+    .event-component-grid {
+      width: 100% !important;
+    }
+
     &.align-left {
       text-align: left;
     }

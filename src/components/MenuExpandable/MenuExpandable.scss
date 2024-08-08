@@ -1,0 +1,96 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.menu-container {
+
+  .menu-line {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .menu-item {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .submenu {
+      cursor: pointer;
+      &.dsp-close {
+        display: none;
+      }
+      &.dsp-open {
+        display: block;
+      }
+    }
+  }
+
+  &.dsp-list {
+    .menu_expandable-line {
+      .menu_expandable-item {
+      }
+    }
+  }
+
+  &.dsp-line {
+    width: 100%;
+    margin: 0.75em 0;
+
+    .menu_expandable-line {
+      width: auto;
+      display: inline-block;
+      vertical-align: top;
+      float: none;
+      margin-left: -0.75em;
+
+      .menu_expandable-item {
+        padding: 0 0.75em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.dsp-inline {
+    width: 100%;
+    display: table;
+
+    .menu_expandable-line {
+      display: inline-table;
+      float: none;
+
+      .menu_expandable-item {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        display: table-cell;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+}
+
+@media #{$medium-and-down} {
+}
+
+@media #{$medium-and-up} {
+}
+
+@media #{$large-and-up} {
+}
+
+@media #{$extra-large-and-up} {
+}

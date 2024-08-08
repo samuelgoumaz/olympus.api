@@ -17,22 +17,9 @@ FxCube */
   .back,
   .done,
   .cancel {
-    width: 140%;
-    height: 100%;
-    margin-left: -20%;
-    padding: 0 20%;
-    display: table;
-    position: absolute;
     @include transition(all 1s);
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    opacity: 1;
 
     .inner {
-      width: 100%;
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
 
       /*
       OnClick */

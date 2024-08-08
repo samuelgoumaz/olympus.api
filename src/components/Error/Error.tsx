@@ -1,7 +1,7 @@
 /*
 # Imports
 */
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import "./ErrorInline.scss";
 import "./ErrorCover.scss";
 import "./ErrorLog.scss";
@@ -13,13 +13,15 @@ import "./Error.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ErrorProps {
+  debug?: true | false;
   position: number;
-  display: number | null;
+  display?: string | null;
   icon?: string | null;
   error?: number | null;
   title?: string | null;
   subtitle?: string | null;
-  children: JSX.Element | JSX.Element[];
+  body?: string | null;
+  children?: JSX.Element | JSX.Element[];
 }
 
 
@@ -28,12 +30,14 @@ export interface ErrorProps {
 # Class Components
 */
 const Error: React.FC<ErrorProps> = ({
+  debug,
   position,
   icon,
   error,
   display, // <= cover, inline
   title,
   subtitle,
+  body,
   children
 }) => {
 
@@ -122,45 +126,121 @@ const Error: React.FC<ErrorProps> = ({
     }
   }
 
-  return (
-    <section
-      className={`
-        ${!display ? 'error-component' : ''}
-        ${display === 'inline' ? 'error-component-inline' : ''}
-        ${display === 'cover' ? 'error-component-cover' : ''}
-        ${display === 'log' ? 'error-component-log' : ''}
-        panel
-      `}
-      style={{
-        position: `relative`,
-        zIndex: position ?? 2
-      }}
-    >
-      <div className={`error-component-inner`}>
-        <div className={`error-component-content`}>
+  const styles = `
+  `;
 
-          <div className={`error-scene`}>
-            <div className={`icon`}>
-              {iconSwitcher(icon)}
+  switch (display) {
+    case 'page':
+      break;
+    case 'inline':
+      break;
+    case 'cover':
+      return (
+        <section
+          className={`
+            error-component-cover
+            ${debug === true ? `debug` : ``}
+          `}
+          style={{
+            position: "relative",
+            width: "100vw",
+            height: "100vh",
+            display: "table",
+            top: 0,
+            left: "auto",
+            right: "auto",
+            zIndex: position ?? 2
+          }}
+        >
+          <div 
+            className={`error-component-inner`}
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "table-cell",
+              verticalAlign: "middle"
+            }}
+          >
+            <div 
+              className={`error-component-content`} 
+              style={{
+                width: "100%",
+                maxWidth: "600px",
+                margin: "0 auto",
+                padding: "20px"
+              }}
+            >
+              <div className={`error-scene`}>
+                <div 
+                  className={`icon`}
+                  style={{
+                    display: "block",
+                    maxWidth: "80px",
+                    minWidth: "80px",
+                    margin: "0 auto"
+                  }}
+                >
+                  {iconSwitcher(icon)}
+                </div>
+                {error && <div className={`name`}  style={{ textAlign: `center` }}>
+                  Error {error ?? 404}
+                </div>}
+              </div>
+
+              <div className={`error-content`} style={{ textAlign: `center` }}>
+                {title != null ? <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} style={{display:`block`}} /> : ``}
+                {subtitle != null ? <span className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} style={{display:`block`}} /> : ``}
+                {body != null ? <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} style={{display:`block`}} /> : ``}
+                {children?.length > 0 ? <div className={`content`}>{children}</div> : ``}
+              </div>
+
             </div>
-
-            {error && <div className={`name`}>
-              Error {error ?? 404}
-            </div>}
-
           </div>
-
-          <div className={`error-content`}>
-            {title != null ? <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-            {subtitle != null ? <span className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
-            {children ?? <p>No results could be found</p>}
+        </section>
+      )
+      break;
+    case 'log':
+      break;
+    default:
+      return (
+        <section
+          className={`
+            ${!display ? 'error-component' : ''}
+            ${display === 'inline' ? 'error-component-inline' : ''}
+            ${display === 'cover' ? 'error-component-cover' : ''}
+            ${display === 'log' ? 'error-component-log' : ''}
+            panel
+          `}
+          style={{
+            position: `relative`,
+            zIndex: position ?? 2
+          }}
+        >
+          <div className={`error-component-inner`}>
+            <div className={`error-component-content`}>
+    
+              <div className={`error-scene`}>
+                <div className={`icon`}>
+                  {iconSwitcher(icon)}
+                </div>
+                {error && <div className={`name`}>
+                  Error {error ?? 404}
+                </div>}
+              </div>
+    
+              <div className={`error-content`}>
+                {title != null ? <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
+                {subtitle != null ? <span className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                {children ?? <p>No results could be found</p>}
+              </div>
+    
+    
+            </div>
           </div>
-
-
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+      )
+      break;
+  }
 }
 
 /*

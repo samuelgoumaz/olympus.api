@@ -269,7 +269,7 @@ const Variant: React.FC<VariantProps> = ({
                 className={`variant-component-row table-col variants ref-variant-${variants.event ? variants.event.id : variants.product ? variants.product.id : `0`}-${variants.id} ${`dsp-active`}`}
                 key={`variant-component-key-${variants.id}`}
                 style={{ borderColor: secondary ? secondary : `transparent`}}>
-                {variants.in_cart === true ? <div className={`variant-component-col col-remove`}>
+                {variants.in_cart === true && (variants?.stock === false || variants?.stock?.limit > 0) ? <div className={`variant-component-col col-remove`}>
                     {variants.quantity > 0 ? <Button
                       icon={`remove`}
                       mode={`default`}
@@ -289,7 +289,7 @@ const Variant: React.FC<VariantProps> = ({
                     /> : ``}
                   </div> : ``}
 
-                  {variants.in_cart === true ? <div className={`variant-component-col col-indicator`}>
+                  {variants.in_cart === true && (variants?.stock === false || variants?.stock?.limit > 0) ? <div className={`variant-component-col col-indicator`}>
                     {variants.quantity > 0 ? <Button
                       label={`${variants.quantity}`}
                       primary={primary ?? "black"}
@@ -298,7 +298,7 @@ const Variant: React.FC<VariantProps> = ({
                     /> : ``}
                   </div> : ``}
 
-                  {variants.in_cart === true ? <div className={`variant-component-col col-add`}>
+                  {variants.in_cart === true && (variants?.stock === false || variants?.stock?.limit > 0) ? <div className={`variant-component-col col-add`}>
                     <Button
                       icon={`add`}
                       mode={`default`}
@@ -317,6 +317,16 @@ const Variant: React.FC<VariantProps> = ({
                       }
                     />
                   </div> : ``}
+
+                  {variants.in_cart === true && variants?.stock?.limit <= 0 ? <div className={`variant-component-col col-indicator`}>
+                    {<Button
+                      label={`Sold out`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
+                      mode={`indicator`}
+                    />}
+                  </div> : ``}
+                  
                 </div> : ``}
             </div>
           </div>}
@@ -374,7 +384,7 @@ const Variant: React.FC<VariantProps> = ({
                 className={`variant-component-row table-col variants ref-variant-${variants.event ? variants.event.id : variants.product ? variants.product.id : `0`}-${variants.id} ${`dsp-active`}`}
                 key={`variant-component-key-${variants.id}`}
                 style={{ borderColor: secondary ? secondary : `transparent`}}>
-                {variants.in_cart === true ? <div className={`variant-component-col col-remove`}>
+                {variants.in_cart === true && (variants?.stock === false || variants?.stock?.limit > 0) ? <div className={`variant-component-col col-remove`}>
                     {variants.quantity > 0 ? <Button
                       icon={`remove`}
                       mode={`default`}
@@ -394,7 +404,7 @@ const Variant: React.FC<VariantProps> = ({
                     /> : ``}
                   </div> : ``}
 
-                  {variants.in_cart === true ? <div className={`variant-component-col col-indicator`}>
+                  {variants.in_cart === true && (variants?.stock === false || variants?.stock?.limit > 0) ? <div className={`variant-component-col col-indicator`}>
                     {variants.quantity > 0 ? <Button
                       label={`${variants.quantity}`}
                       primary={primary ?? "black"}
@@ -403,7 +413,7 @@ const Variant: React.FC<VariantProps> = ({
                     /> : ``}
                   </div> : ``}
 
-                  {variants.in_cart === true ? <div className={`variant-component-col col-add`}>
+                  {variants.in_cart === true && (variants?.stock === false || variants?.stock?.limit > 0) ? <div className={`variant-component-col col-add`}>
                     <Button
                       icon={`add`}
                       mode={`default`}
@@ -422,6 +432,16 @@ const Variant: React.FC<VariantProps> = ({
                       }
                     />
                   </div> : ``}
+                  
+                  {variants?.stock?.limit <= 0 ? <div className={`variant-component-col col-indicator`}>
+                    {<Button
+                      label={`Sold out`}
+                      primary={primary ?? "black"}
+                      secondary={secondary ?? "white"}
+                      mode={`indicator`}
+                    />}
+                  </div> : ``}
+
                 </div> : ``}
             </div>
           </div>}
@@ -442,14 +462,14 @@ const Variant: React.FC<VariantProps> = ({
                     {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `transparent`}} dangerouslySetInnerHTML={{__html: variants[key].title }} /> : ``}
   
                     {/* <span style={{ borderColor: secondary ? secondary : `transparent`}} className={`table-col void`}></span> */}
-  
+                  
                     {variants[key].date ? <span className={`table-col date`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {moment(variants[key].date.date_start).format("dd DD MMM")}
                       {moment(variants[key].date.date_end).format("YYYY") !== moment(variants[key].date.date_start).format("YYYY") ? ` ${moment(variants[key].date.date_start).format("YY")}` : ``}<br />
                       {variants[key].date.date_end && variants[key].date.date_end !== variants[key].date.date_start ? moment(variants[key].date.date_end).format("dd DD MMM YY") : ``}
                     </span> : ``}
   
-                    {variants[key].date && moment(variants[key].date.hour_start) || variants[key].date && moment(variants[key].date.hour_end) ? <span className={`table-col hour`} style={{ borderColor: secondary ? secondary : `transparent`}}>
+                    {variants[key].date && variants[key].date.hour_start || variants[key].date && variants[key].date.hour_end ? <span className={`table-col hour`} style={{ borderColor: secondary ? secondary : `transparent`}}>
                       {variants[key].date.hour_start ? moment(variants[key].date.hour_start, "HH:mm:ss").format("HH:mm") : ``}<br />
                       {variants[key].date.hour_end && variants[key].date.hour_end !== variants[key].date.hour_start ? moment(variants[key].date.hour_end, "HH:mm:ss").format("HH:mm") : ``}
                     </span> : ``}
@@ -466,6 +486,17 @@ const Variant: React.FC<VariantProps> = ({
                       className={` table-col action ${key == 0 ? `dsp-active` : ``}`}
                       style={{ borderColor: secondary ? secondary : `transparent`}}
                     >
+                      {variants[key].formular ? <Button
+                        label={variants[key].formularLinkTitle ?? `Réserver`}
+                        primary={primary ?? "black"}
+                        secondary={secondary ?? "white"}
+                        href={variants[key].formularLink ?? false}
+                        style={{ 
+                          color: primary ? primary : `white`,
+                          background: secondary ? secondary : `transparent`
+                        }}
+                      /> : ``}
+
                       {variants[key].action.url ? <Button
                           label={variants[key].action && variants[key].action.title ? variants[key].action.title : `Réserver`}
                           primary={primary ?? "black"}
@@ -487,7 +518,7 @@ const Variant: React.FC<VariantProps> = ({
                     className={`variant-component-row table-col variants ref-variant-${variants[key].event ? variants[key].event.id : variants[key].product ? variants[key].product.id : `0`}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
                     key={`variant-component-key-${key}`}
                     style={{ borderColor: secondary ? secondary : `transparent`}}>
-                    {variants[key].in_cart === true ? <div className={`variant-component-col col-remove`}>
+                    {variants[key].in_cart === true && (variants[key].stock === false || variants[key].stock?.limit > 0) ? <div className={`variant-component-col col-remove`}>
                         {variants[key].quantity > 0 ? <Button
                           icon={`remove`}
                           mode={`default`}
@@ -507,7 +538,7 @@ const Variant: React.FC<VariantProps> = ({
                         /> : ``}
                       </div> : ``}
   
-                      {variants[key].in_cart === true ? <div className={`variant-component-col col-indicator`}>
+                      {variants[key].in_cart === true && (variants[key].stock === false || variants[key].stock?.limit > 0) ? <div className={`variant-component-col col-indicator`}>
                         {variants[key].quantity > 0 ? <Button
                           label={`${variants[key].quantity}`}
                           primary={primary ?? "black"}
@@ -515,8 +546,8 @@ const Variant: React.FC<VariantProps> = ({
                           mode={`indicator`}
                         /> : ``}
                       </div> : ``}
-  
-                      {variants[key].in_cart === true ? <div className={`variant-component-col col-add`}>
+
+                      {variants[key].in_cart === true && (variants[key].stock === false || variants[key].stock?.limit > 0) ? <div className={`variant-component-col col-add`}>
                         <Button
                           icon={`add`}
                           mode={`default`}
@@ -535,9 +566,17 @@ const Variant: React.FC<VariantProps> = ({
                           }
                         />
                       </div> : ``}
+
+                      {variants[key].in_cart === true && variants[key].stock?.limit <= 0 ? <div className={`variant-component-col col-indicator`}>
+                        {<Button
+                          label={`Sold out`}
+                          primary={primary ?? "black"}
+                          secondary={secondary ?? "white"}
+                          mode={`indicator`}
+                        />}
+                      </div> : ``}
+
                     </span> : ``}
-  
-  
                   </div>
                 ))}
               </div>
@@ -593,7 +632,7 @@ const Variant: React.FC<VariantProps> = ({
                 className={`variant-component-row ref-variant-${variants[key].parent.id}-${variants[key].id} ${key == 0 ? `dsp-active` : ``}`}
                 key={`variant-component-key-${key}`}
               >
-                <div className={`variant-component-col col-remove`}>
+                {variants[key].in_cart === true && (variants[key].stock === false || variants[key].stock?.limit > 0) ? <div className={`variant-component-col col-remove`}>
                   {variants[key].quantity > 0 ? <Button
                     icon={`remove`}
                     mode={`default`}
@@ -611,16 +650,18 @@ const Variant: React.FC<VariantProps> = ({
                       }
                     }
                   /> : ``}
-                </div>
-                <div className={`variant-component-col col-indicator`}>
+                </div> : ``}
+                
+                {variants[key].in_cart === true && (variants[key].stock === false || variants[key].stock?.limit > 0) ? <div className={`variant-component-col col-indicator`}>
                   {variants[key].quantity > 0 ? <Button
                     label={`${variants[key].quantity}`}
                     primary={primary ?? "black"}
                     secondary={secondary ?? "white"}
                     mode={`indicator`}
                   /> : ``}
-                </div>
-                <div className={`variant-component-col col-add`}>
+                </div> : ``}
+
+                {variants[key].in_cart === true && (variants[key].stock === false || variants[key].stock?.limit > 0) ? <div className={`variant-component-col col-add`}>
                   <Button
                     icon={`add`}
                     mode={`default`}
@@ -638,7 +679,17 @@ const Variant: React.FC<VariantProps> = ({
                       }
                     }
                   />
-                </div>
+                </div> : ``}
+
+                {variants[key].stock?.limit <= 0 ? <div className={`variant-component-col col-indicator`}>
+                  {<Button
+                    label={`Sold out`}
+                    primary={primary ?? "black"}
+                    secondary={secondary ?? "white"}
+                    mode={`indicator`}
+                  />}
+                </div> : ``}
+
                 {/**<div className={`variant-component-col col-price`}>
                   {variants[key].price_default != null ? variants[key].price_default : ""}
                   {variants[key].price_promotion != null ? variants[key].price_promotion : ""}

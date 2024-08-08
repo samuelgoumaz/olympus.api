@@ -1,6 +1,7 @@
 /*
 # Imports
 */
+@import "../../../lib/colors.scss";
 @import "../../../lib/materialize/normalize.scss";
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
@@ -9,11 +10,6 @@
 # Header
 */
 .header-component {
-  width: 100%;
-  position: fixed;
-  z-index: 9;
-  left: 0;
-  top: 0;
 
   .header-notification {
     width: 100%;
@@ -21,7 +17,6 @@
     color: white;
     display: none !important;
   }
-
 
   &.header-aside {
     text-align: left;
@@ -36,23 +31,10 @@
   }
 
   .header-inner {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    position: relative;
-    margin: 0 auto;
-    //background: linear-gradient(black, transparent);
-
     .header-inner-col {
-      width: 100%;
-      height: 100%;
-      display: inline-flex;
-      vertical-align: middle;
-      float: none;
-      position: relative;
 
       &.col-left {
-        padding: 0 20px;
+        //padding: 0 20px;
         text-align: left;
         width: 35%;
         position: initial;
@@ -66,7 +48,7 @@
         }
       }
       &.col-middle {
-        padding: 0 20px;
+        //padding: 0 20px;
         text-align: center;
         width: 30%;
         height: 100%;
@@ -90,12 +72,70 @@
         height: 100%;
         position: initial;
       }
-      .header-inner-col-content {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: inline;
-        vertical-align: middle;
+    }
+  }
+
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:after {
+      font-size: 12px;
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 999;
+    }
+    .col-left {
+      border: 4px solid $color-debug-2;
+      &:after {
+        font-size: 12px;
+        content: "left()";
+        color: $color-debug-2;
+        font-family: monospace;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .col-middle {
+      border: 4px solid $color-debug-3;
+      &:after {
+        font-size: 12px;
+        content: "middle()";
+        color: $color-debug-3;
+        font-family: monospace;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .col-right {
+      border: 4px solid $color-debug-4;
+      &:after {
+        font-size: 12px;
+        content: "right()";
+        color: $color-debug-4;
+        font-family: monospace;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
       }
     }
   }
@@ -112,7 +152,7 @@
 
       .header-inner-col {
         &.col-left {
-          padding: 0 10px;
+          //padding: 0 10px;
           width: 35%;
 
           .branding {
@@ -122,7 +162,7 @@
           }
         }
         &.col-middle {
-          padding: 0;
+          //padding: 0;
           width: 30%;
 
           .branding {
@@ -148,7 +188,7 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
-          padding: 0 15px;
+          //padding: 0 15px;
 
           .branding {
             width: auto;
@@ -158,7 +198,7 @@
         }
         &.col-middle {
           width: 30%;
-          padding: 0 10px;
+          //padding: 0 10px;
 
           .branding {
             width: auto;
@@ -183,7 +223,7 @@
       .header-inner-col {
         &.col-left {
           width: 35%;
-          padding: 0 20px;
+          //padding: 0 20px;
 
           .branding {
             width: auto;
@@ -195,7 +235,7 @@
           width: 30%;
 
           .branding {
-            padding: 0 15px;
+            //padding: 0 15px;
             width: auto;
             height: 70px;
             display: inline-block;

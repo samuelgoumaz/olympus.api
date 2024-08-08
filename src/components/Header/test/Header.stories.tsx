@@ -37,31 +37,21 @@ const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 https://storybook.js.org/docs/react/writing-stories/args
 */
 
-export const HelloWorld = Template.bind({});
-HelloWorld.args = {
-  label: 'Hello world!',
-  left_positive: _imageDefaultLeftBlack,
-  left_negative: _imageDefaultLeftWhite,
-  middle_positive: _imageDefaultMiddleBlack,
-  middle_negative: _imageDefaultMiddleWhite,
-};
-
-export const Weedonist = Template.bind({});
-Weedonist.args = {
-  title: 'The<strong>Weedonist</strong>',
-  left_positive: 'http://localhost:1337/uploads/branding_85acfc9546.svg',
-  left_negative: 'http://localhost:1337/uploads/branding_negative_6cc77d4e42.svg?updated_at=2022-05-23T17:43:41.259Z',
-};
-
-export const Dustygreen = Template.bind({});
-Dustygreen.args = {
-  title: ``,
+export const Default = Template.bind({});
+Default.args = {
+  debug: false,
   left: [
+    <Button
+      mode={`header`}
+      icon={`menu`}
+    />
+  ],
+  middle: [
     <img
       className={`branding`}
       width={`auto`}
       height={`100%`}
-      src="http://localhost:1337/uploads/branding_dustygreen_9a91db1cc6.png"
+      src="http://localhost:1337/uploads/mirador_branding_2aecbc3bfc.svg"
     />
   ],
   right: [
@@ -72,11 +62,27 @@ Dustygreen.args = {
   ]
 };
 
-export const EventsConcept = Template.bind({});
-EventsConcept.args = {
-  title: '',
-  left_positive: 'http://localhost:1337/uploads/eventsconcept_logotype_9e1a701ea0.svg',
-  left_negative: 'http://localhost:1337/uploads/eventsconcept_logotype_9e1a701ea0.svg',
-  middle_positive: 'http://localhost:1337/uploads/eventsconcept_branding_6a3daad5bb.svg',
-  middle_negative: 'http://localhost:1337/uploads/eventsconcept_branding_6a3daad5bb.svg',
+export const DefaultDebug = Template.bind({});
+DefaultDebug.args = {
+  debug: true,
+  left: [
+    <Button
+      mode={`header`}
+      icon={`menu`}
+    />
+  ],
+  middle: [
+    <img
+      className={`branding`}
+      width={`auto`}
+      height={`100%`}
+      src="http://localhost:1337/uploads/mirador_branding_2aecbc3bfc.svg"
+    />
+  ],
+  right: [
+    <Button
+      mode={`header`}
+      icon={`cart`}
+    />
+  ]
 };

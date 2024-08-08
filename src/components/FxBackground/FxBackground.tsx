@@ -12,13 +12,12 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface FxBackgroundProps {
   position: number;
   cover?: true | false;
-  align?: string | null;
+  align?: string | false;
   hover?: true | false;
-  image: string | null;
-  background?: string | null;
-  opacity: string | null;
-  mixBlendMode: string | null;
-  children: JSX.Element | JSX.Element[];
+  image: string | false;
+  background?: string | false;
+  opacity?: string | false;
+  mixBlendMode?: string | false;
 }
 
 
@@ -48,8 +47,7 @@ const FxBackground = ({
   background,
   opacity,
   mixBlendMode,
-  align,
-  children
+  align
 }: FxBackgroundProps) => (
   <div
     className={`
@@ -61,12 +59,12 @@ const FxBackground = ({
       top: 0,
       left: 0,
       backgroundColor: background ? background : `transparent`,
-      backgroundImage: image ? `url(${image})` : ``,
+      backgroundImage: image ? `url("${String(image)}")` : ``,
       backgroundSize: cover ? `cover` : `contain`,
       backgroundPosition: align ? align : `center`,
       backgroundRepeat: `no-repeat`,
-      opacity: opacity ?? ``,
-      mixBlendMode: mixBlendMode ?? `normal`,
+      opacity: opacity ? opacity : 1,
+      mixBlendMode: mixBlendMode ? mixBlendMode : `normal`,
       position: `absolute`,
       zIndex: position ?? 1
     }}

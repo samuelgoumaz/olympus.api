@@ -1,0 +1,81 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.products-component-panel {
+  width: 100%;
+  position: relative;
+
+  &.hv-padding {
+    padding: 100px;
+  }
+
+  &:after {
+    content: " ";
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+
+  .products-component-inner {
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .products-component-panel {
+    &.hv-padding {
+      padding: 20px;
+    }
+    .products-component-inner {
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .products-component-panel {
+    &.hv-padding {
+      padding: 40px;
+    }
+    .products-component-inner {
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .products-component-panel {
+    &.hv-padding {
+      padding: 60px;
+    }
+    .products-component-inner {
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .products-component-panel {
+    &.hv-padding {
+      padding: 80px;
+    }
+    .products-component-inner {
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .products-component-panel {
+    &.hv-padding {
+      padding: 90px;
+    }
+    .products-component-inner {
+    }
+  }
+}

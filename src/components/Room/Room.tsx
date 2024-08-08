@@ -39,6 +39,7 @@ export interface RoomProps {
     };
   };
   variants?: JSX.Element | false;
+  partners?: JSX.Element | false;
   buttons?: JSX.Element | false;
   children?: JSX.Element | false;
 }
@@ -76,6 +77,7 @@ const Room = ({
   scene,
   tags,
   variants,
+  partners,
   buttons,
   children
 }: RoomProps) => {
@@ -95,11 +97,14 @@ const Room = ({
     <div className={`room-inner`}>
       {children ? children : <div className={`room-inner-content ${aside ? `hv-aside` : ``}`}>
         <div className={`room-inner-col left`}>
-          {title && <h2 className={`title`} style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: `${title}` }} />}
+          {title && <h2 className={`title ${subtitle ? `hv_subtitle` : ``}`} style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: `${title}` }} />}
           {subtitle && <h3 className={`subtitle`} style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: `${subtitle}` }} />}
           {variants && <div className={`variants`}>{variants}</div>}
           {body && <div className={`body`} style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
-          {condition && <div className={`body`} style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: `${condition}` }} />}
+          {condition && <div className={`condition`} style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: `${condition}` }} />}
+          {partners && <div className="partners">
+            {partners && partners}
+          </div>}
         </div>
         <div className={`room-inner-col right`}>
           {scene && <div className={`scene`}>{scene}</div>}

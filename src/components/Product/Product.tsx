@@ -50,7 +50,7 @@ export interface ProductProps {
   children: JSX.Element | JSX.Element[];
   variants: JSX.Element | JSX.Element[];
   color?: string | false;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void | false;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 
@@ -80,7 +80,7 @@ const Product = ({
     case "grid":
       return (
         <div
-          onClick={onClick ? onClick : function () { return false }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
           className={`product-component-grid ${debug === true ? `debug` : ``}`}
           style={{
             zIndex: position,
@@ -120,7 +120,6 @@ const Product = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={onClick ? onClick : function () { return false }}
                   /> : ``}
                 </div>}
               </>}
@@ -171,7 +170,7 @@ const Product = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={onClick ? onClick : function () { return false }}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
                   /> : ``}
                 </div>}
               </>}
@@ -218,7 +217,7 @@ const Product = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={onClick ? onClick : function () { return false }}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
                   /> : ``}
                 </div>}
                 {<div className={`action`}>
@@ -274,7 +273,7 @@ const Product = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={onClick ? onClick : function () { return false }}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
                   /> : ``}
                 </div>}
                 {<div className={`action`}>
@@ -290,7 +289,7 @@ const Product = ({
     case "card":
       return (
         <div
-          onClick={onClick ? onClick : function () { return false }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
             ${display === `row` ? `product-component-row` : ``}
@@ -352,7 +351,7 @@ const Product = ({
     case "checkout":
       return (
         <div
-          onClick={onClick ? onClick : function () { return false }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
             ${display === `row` ? `product-component-row` : ``}
@@ -414,7 +413,7 @@ const Product = ({
     case "banner":
       return (
         <div
-          onClick={onClick ? onClick : function () { return false }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
           className={`
             ${display === `grid` ? `product-component-grid` : ``}
             ${display === `row` ? `product-component-row` : ``}

@@ -7,6 +7,10 @@ import Product from "../Product"
 import Error from "../Error";
 import Title from "../Title";
 import "./Products.scss";
+import "./ProductsGrid.scss";
+import "./ProductsPanel.scss";
+import "./ProductsSlide.scss";
+import "./ProductsRow.scss";
 
 /*
 # Interface
@@ -15,6 +19,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface ProductsProps {
   position?: number;
+  column?: number;
   title: string | null;
   subtitle: string | null;
   padding?: true | false;
@@ -27,6 +32,7 @@ export interface ProductsProps {
 
 const Products = ({
   position,
+  column,
   title,
   subtitle,
   padding,
@@ -39,7 +45,7 @@ const Products = ({
   /*
   # Slider settings */
   let sliderSettings = {
-    slidesToShow: display === `panel` ? 3 : 1,
+    slidesToShow: display === `panel` ? 3 : Number(column) > 1 ? Number(column) : 1,
     slidesToScroll: 1,
     infinite: false,
     dots: false,
@@ -47,15 +53,15 @@ const Products = ({
       {
         breakpoint: 1360,
         settings: {
-          slidesToShow: display === `panel` ? 3 : 1,
-          slidesToScroll: display === `panel` ? 3 : 1
+          slidesToShow: display === `panel` ? 3 : Number(column) >= 3 ? Number(column) : 1,
+          slidesToScroll: display === `panel` ? 3 : Number(column) >= 3 ? Number(column) : 1
         },
       },
       {
         breakpoint: 960,
         settings: {
-          slidesToShow: display === `panel` ? 2 : 1,
-          slidesToScroll: display === `panel` ? 2 : 1
+          slidesToShow: display === `panel` ? 2 : Number(column) >= 2 ? Number(column) : 1,
+          slidesToScroll: display === `panel` ? 2 : Number(column) >= 2 ? Number(column) : 1
         },
       },
       {

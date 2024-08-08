@@ -49,6 +49,21 @@
         margin-bottom: 1em;
       }
 
+      .partners {
+        margin: 1em 0;
+      }
+
+      .title {
+        &.hv_subtitle {
+          margin-bottom: 0;
+        }
+      }
+
+      .condition {
+        margin: 1em 0;
+        font-size: 0.875em;
+      }
+
       .tags {
         margin-bottom: 1em;
         .tag-component {
@@ -64,7 +79,7 @@
         }
       }
 
-      .action {
+      .action, .booking {
         margin-bottom: 1em;
         .button-component {
           width: 100% !important;

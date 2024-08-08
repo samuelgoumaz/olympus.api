@@ -135,29 +135,92 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
             ${mode == `submit` || mode == null ? `fxIcon-button` : ``}
           `}
           data-state={state != null ? String(state) : `default`}
+          style={{
+            minWidth: "50px",
+            minHeight: "50px",
+            overflow: "hidden",
+            display: "inline-block",
+            perspective: "200%",
+            position: "relative",
+            verticalAlign: "middle"
+          }}
         >
-          <div className={`cancel`}>
-            <div className={`inner`}>
+          <div className={`cancel`} style={{
+            display: "table",
+            position: "absolute",
+            backfaceVisibility: "hidden",
+            transformStyle: "preserve-3d",
+            minWidth: "140%",
+            minHeight: "100%",
+            marginLeft: "-20%",
+            padding: "0 20%",
+            transform: "rotateX(90deg)",
+            top: "-100%"
+          }}>
+            <div className={`inner`} style={{
+              width: "100%",
+              display: "table-cell",
+              verticalAlign: "middle",
+              textAlign: "center"
+            }}>
               <span className={`icon material-icons`}>cancel</span>
             </div>
           </div>
-          <div className={`front`}>
-            <div className={`inner`}>
+          <div className={`front`} style={{
+            display: "table",
+            position: "absolute",
+            backfaceVisibility: "hidden",
+            transformStyle: "preserve-3d",
+            minWidth: "140%",
+            minHeight: "100%",
+            marginLeft: "-20%",
+            padding: "0 20%",
+            transform: "rotateX(0deg)",
+            top: "0"
+          }}>
+            <div className={`inner`} style={{
+              width: "100%",
+              display: "table-cell",
+              verticalAlign: "middle",
+              textAlign: "center"
+            }}>
               {icon ? renderIcon(icon) : ``}
             </div>
           </div>
-          <div className={`back`}>
-            <div className={`inner`}>
+          <div className={`back`} style={{
+            display: "table",
+            position: "absolute",
+            backfaceVisibility: "hidden",
+            transformStyle: "preserve-3d",
+            minWidth: "140%",
+            minHeight: "100%",
+            marginLeft: "-20%",
+            padding: "0 20%",
+            transform: "rotateX(-90deg)",
+            top: "100%"
+          }}>
+            <div className={`inner`} style={{
+              width: "100%",
+              display: "table-cell",
+              verticalAlign: "middle",
+              textAlign: "center"
+            }}>
   
               {/**
               # STATE : loading **/}
               <svg
                 className={`spinner`}
                 xmlns={`http://www.w3.org/2000/svg`}
-                width={`200px`}
-                height={`200px`}
+                width={`100px`}
+                height={`100px`}
                 viewBox={`0 0 100 100`}
                 preserveAspectRatio={`xMidYMid`}
+                style={{
+                  maxWidth: "50px",
+                  minHeight: "50px",
+                  display: "block",
+                  padding: "22px"
+                }}
               >
                 <circle
                   cx={50}
@@ -181,8 +244,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   
             </div>
           </div>
-          <div className={`done`}>
-            <div className={`inner`}>
+          <div className={`done`} style={{
+            display: "table",
+            position: "absolute",
+            backfaceVisibility: "hidden",
+            transformStyle: "preserve-3d",
+            minWidth: "140%",
+            minHeight: "100%",
+            marginLeft: "-20%",
+            padding: "0 20%",
+            transform: "rotateX(-180deg)",
+            top: "100%"
+          }}>
+            <div className={`inner`} style={{
+              width: "100%",
+              display: "table-cell",
+              verticalAlign: "middle",
+              textAlign: "center"
+            }}>
               <span className={`icon error material-icons`}>warning</span>
               <span className={`icon complete material-icons`}>check_circle</span>
             </div>

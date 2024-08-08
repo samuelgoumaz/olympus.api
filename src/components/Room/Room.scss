@@ -41,12 +41,27 @@
       display: inline-block;
       vertical-align: top;
 
+      .title {
+        &.hv_subtitle {
+          margin-bottom: 0;
+        }
+      }
+
+      .condition {
+        margin: 1em 0;
+        font-size: 0.875em;
+      }
+
       .scene {
         margin-bottom: 1em;
       }
 
       .variants {
         margin-bottom: 1em;
+      }
+
+      .partners {
+        margin: 1em 0;
       }
 
       .tags {

@@ -88,3 +88,8 @@ export { default as Film } from "./Film";
 export { default as Feedback } from "./Feedback";
 export { default as Booking } from "./Booking";
 export { default as Room } from "./Room";
+export { default as Restaurant } from "./Restaurant";
+export { default as MenuExpandable } from "./MenuExpandable";
+export { default as Course } from "./Course";
+export { default as Core } from "./Core";
+export { default as LoadingScreen } from "./LoadingScreen";

@@ -31,6 +31,7 @@ export interface CalendarProps {
   timeStart?: number;
   timeEnd?: number;
   display?: string;
+  column?: number;
   group?: {
     day: true | false;
     month: true | false;
@@ -58,6 +59,7 @@ const Calendar: React.FC<CalendarProps> = ({
   elements,
   filter,
   children,
+  column,
   render,
 }) => {
 
@@ -392,11 +394,37 @@ const Calendar: React.FC<CalendarProps> = ({
   /*
   # Slider settings */
   let sliderSettings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: column ?? 1,
+    slidesToScroll: column ?? 1,
     infinite: false,
     dots: false,
-    adaptiveHeight: true
+    adaptiveHeight: false,
+    responsive: [
+      {
+        breakpoint: 1360,
+        settings: {
+          slidesToShow: column >= 3 ? 3 : 1,
+          slidesToScroll: 3,
+          infinite: false,
+        },
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: column >= 2 ? 2 : 1,
+          slidesToScroll: 2,
+          infinite: false,
+        },
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+        },
+      },
+    ],
   };
 
   /*

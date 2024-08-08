@@ -10,6 +10,7 @@ import "./Header.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface HeaderProps {
+  debug?: true | false;
   hv_menu: true | false;
   hv_home: true | false;
   position?: number | null;
@@ -18,8 +19,6 @@ export interface HeaderProps {
   middle?: JSX.Element | JSX.Element[];
   right?: JSX.Element | JSX.Element[];
 }
-
-
 
 /*
 # Class Components
@@ -39,6 +38,7 @@ export interface HeaderProps {
 }) => (
 */
 const Header = ({
+  debug,
   hv_menu,
   hv_home,
   position,
@@ -49,10 +49,15 @@ const Header = ({
 }: HeaderProps) => (
   <header
     className={`header-component
+      ${debug === true ? `debug` : ``}
       ${hv_menu === true ? `hv_menu` : ``}
       ${hv_home === true ? `hv_home` : ``}
     `}
     style={{
+      width: "100%",
+      position: "fixed",
+      left: 0,
+      top: 0,
       zIndex: position != null ? position : 1
     }}
   >
@@ -68,22 +73,70 @@ const Header = ({
       </div>
     </div> : ``}
 
-    <div className={`header-inner`}>
+    <div className={`header-inner`} style={{
+      width: "100%",
+      minHeight: "50px",
+      display: "flex",
+      position: "relative",
+      margin: "0 auto"
+    }}>
 
-      {left ? <div className={`header-inner-col col-left`}>
-        <div className={`header-inner-col-content`}>
+      {left ? <div className={`header-inner-col col-left`} style={{
+        width: "100%",
+        height: "100%",
+        display: "inline-flex",
+        verticalAlign: "middle",
+        float: "none",
+        position: "relative"
+      }}>
+        <div className={`header-inner-col-content`} style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          display: "inline",
+          verticalAlign: "middle",
+          textAlign: "left"
+        }}>
           {left && left}
         </div>
       </div> : ``}
 
-      {middle ? <div className={`header-inner-col col-middle`}>
-        <div className={`header-inner-col-content`}>
+      {middle ? <div className={`header-inner-col col-middle`} style={{
+        width: "100%",
+        height: "100%",
+        display: "inline-flex",
+        verticalAlign: "middle",
+        float: "none",
+        position: "relative"
+      }}>
+        <div className={`header-inner-col-content`} style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          display: "inline",
+          verticalAlign: "middle",
+          textAlign: "center"
+        }}>
           {middle && middle}
         </div>
       </div> : ``}
 
-      {right ? <div className={`header-inner-col col-right`}>
-        <div className={`header-inner-col-content`}>
+      {right ? <div className={`header-inner-col col-right`} style={{
+        width: "100%",
+        height: "100%",
+        display: "inline-flex",
+        verticalAlign: "middle",
+        float: "none",
+        position: "relative"
+      }}>
+        <div className={`header-inner-col-content`} style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          display: "inline",
+          verticalAlign: "middle",
+          textAlign: "right"
+        }}>
           {right && right}
         </div>
       </div> : ``}

@@ -87,7 +87,7 @@ export interface EventProps {
   scene?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
   variants?: JSX.Element | JSX.Element[];
-  onClickFunc: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onClick: (event: React.MouseEvent<HTMLDivElement>) => void | false;
 }
 
 /*
@@ -218,7 +218,7 @@ const Event: React.FC<EventProps> = ({
             left: position && timeEnd && timeStart ? eventLeft(position) : `auto`,
             zIndex: position ? position : 1
           }}
-          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick !== false) { onClick() } }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) { onClick() } }}
         >
           {fx ? <div className={`fx`}>{fx}</div> : ``}
           <div className={`event-component-inner`}>
@@ -451,11 +451,21 @@ const Event: React.FC<EventProps> = ({
             event-component-inner
           `}>
 
-            {scene && <div className={`scene`} onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}>
+            {scene && <div className={`scene`} 
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (onClick && onClick !== false) { 
+                  onClick()
+                }
+              }}>
               {scene}
             </div>}
 
-            <div className={`content`} onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}>
+            <div className={`content`} 
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (onClick && onClick !== false) { 
+                  onClick()
+                }
+              }}>
               {children ? children : <>
                 
                 {title && <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title">{title}</h3>}
@@ -482,12 +492,6 @@ const Event: React.FC<EventProps> = ({
 
                 <div className="action">
                   {buttons && buttons}
-                  {onClick ? <Button
-                    icon={`arrow_forward`}
-                    primary={primary ?? "black"}
-                    secondary={secondary ?? "white"}
-                    onClick={(event: React.MouseEvent<HTMLElement>) => { onClick() }}
-                  /> : ``}
                 </div>
                 
               </>}

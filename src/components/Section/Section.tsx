@@ -18,7 +18,7 @@ export interface SectionProps {
   subtitle?: string;
   body?: string;
   display?: string;
-  image?: string;
+  image?: string | false;
   video?: JSX.Element | false;
   fx?: JSX.Element | false;
   scene?: JSX.Element | false;
@@ -80,7 +80,7 @@ const Section = ({
       # Col scene */}
       <div className={`section-inner-col col-scene`}>
         {scene || image || video ? <div className={`scene`}>
-          {!scene ? image ? <FxBackground position={2} cover={video ? false : true} image={image} hover={video ? true : false} /> : `` : ``}
+          {!scene ? image ? <FxBackground position={2} cover={video ? false : true} image={image ?? false} hover={video ? true : false} /> : `` : ``}
           {scene ? scene : video ? video : ``}
         </div> : ``}
       </div>

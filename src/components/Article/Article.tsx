@@ -45,7 +45,7 @@ export interface ArticleProps {
   variants: JSX.Element | JSX.Element[];
   buttons: JSX.Element | JSX.Element[];
   color?: string | false;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void | false;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 
@@ -76,7 +76,6 @@ const Article = ({
     case "slide":
       return (
         <div
-          //onClick={onClick ? onClick : function () { return false }}
           className={`article-component-slide ${debug === true ? `debug` : ``}`}
           style={{
             zIndex: position,
@@ -116,7 +115,7 @@ const Article = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={onClick ? onClick : function () { return false }}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
                   /> : ``}
                 </div> : ``}
               </>}
@@ -129,7 +128,6 @@ const Article = ({
     case "grid":
       return (
         <div
-          //onClick={onClick ? onClick : function () { return false }}
           className={`
             ${display === `slide` ? `article-component-slide` : ``}
             ${display === `grid` ? `article-component-grid` : ``}
@@ -141,6 +139,7 @@ const Article = ({
             position: `relative`,
             height: height != null ? height : `auto`
           }}
+          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
         >
       
           {fx ? <div className={`fx`}>{fx}</div> : ``}
@@ -172,7 +171,6 @@ const Article = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={onClick ? onClick : function () { return false }}
                   /> : ``}
                 </div> : ``}
               </>}
@@ -185,7 +183,6 @@ const Article = ({
     case "row": 
       return (
         <div
-          onClick={onClick ? onClick : function () { return false }}
           className={`article-component-row ${debug === true ? `debug` : ``}`}
           style={{
             zIndex: position,
@@ -220,6 +217,7 @@ const Article = ({
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
                   /> : ``}
                 </div>}
               </>}
