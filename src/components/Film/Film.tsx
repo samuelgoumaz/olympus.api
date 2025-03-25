@@ -67,8 +67,6 @@ const Film = ({
     {fx ? <div className={`fx`}>{fx}</div> : ``}
     <div className={`film-inner`}>
         {children && <div className={`video`}>{children}</div>}
-        {header && <div className={`video-header`}>{header}</div>}
-        {controls && <div className={`video-controls`}>{controls}</div>}
     </div>
   </section>
 };

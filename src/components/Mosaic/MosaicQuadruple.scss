@@ -14,6 +14,8 @@
   display: inline-block;
   vertical-align: top;
   position: relative;
+  padding: 0.5em;
+  text-align: left;
 
   .mosaic-inner {
     width: 100%;
@@ -29,6 +31,7 @@
       }
     }
     .content {
+      margin: 0.5em 0;
       .title {
       }
     }
@@ -45,6 +48,7 @@
       .scene {
       }
       .content {
+        margin: 0.5em 0;
         .title {
         }
       }
@@ -59,6 +63,7 @@
       .scene {
       }
       .content {
+        margin: 0.5em 0;
         .title {
         }
       }
@@ -72,6 +77,7 @@
       .scene {
       }
       .content {
+        margin: 0.5em 0;
         .title {
         }
       }
@@ -85,6 +91,7 @@
       .scene {
       }
       .content {
+        margin: 0.5em 0;
         .title {
         }
       }
@@ -98,6 +105,7 @@
       .scene {
       }
       .content {
+        margin: 0.5em 0;
         .title {
         }
       }

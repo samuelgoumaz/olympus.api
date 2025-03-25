@@ -11,9 +11,9 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface SlideProps {
   cover?: string | null;
-  video?: string | null; // <= mp4 only
   title?: string | null;
-  body?: string | null; // <= mp4 only
+  body?: string | null; // <= mp4 o
+  video: JSX.Element | JSX.Element[];nly
   content: JSX.Element | JSX.Element[];
 }
 
@@ -52,17 +52,7 @@ const Slide = ({
 
       {/*
       # display video */}
-      {video ? <video
-        className={`video`}
-        muted={true}
-        autoPlay={true}
-        loop={true}
-        playsinline={true}
-        controls={false}
-        poster={cover}
-      >
-        <source src={video} type={`video/mp4`} />
-      </video> : ``}
+      {video ? video : ``}
 
       {/*
       # display image */}

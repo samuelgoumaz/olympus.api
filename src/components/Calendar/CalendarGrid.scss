@@ -12,8 +12,13 @@
   width: 100%;
   display: block;
   position: relative;
+  padding: 0 2.5em;
+  margin: 1em 0;
 
   .calendar-component-inner {
+    width: calc(100% + 1em);
+    position: relative;
+    left: -0.5em;
   }
 }
 
@@ -21,16 +26,41 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .calendar-component-grid {
+    padding: 0 1em;
+    .calendar-component-inner {
+    }
+  }  
 }
 
 @media #{$medium-and-down} {
+  .calendar-component-grid {
+    padding: 0 1em;
+    .calendar-component-inner {
+    }
+  }  
 }
 
 @media #{$medium-and-up} {
+  .calendar-component-grid {
+    padding: 0 1.5em;
+    .calendar-component-inner {
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .calendar-component-grid {
+    padding: 0 2em;
+    .calendar-component-inner {
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .calendar-component-grid {
+    padding: 0 2.5em;
+    .calendar-component-inner {
+    }
+  }
 }

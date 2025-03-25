@@ -1,0 +1,144 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.highlight-component {
+  width: 100%;
+  height: auto;
+  display: block;
+  clear: both;
+  position: relative;
+  @include aspect-ratio(1920, 1080);
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    .video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .highlight-component-inner {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: block;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    top: 0;
+    left: 0;
+
+    .content {
+      width: 100%;
+      height: 100%;
+      display: table;
+      vertical-align: bottom;
+      //background: linear-gradient(transparent, rgba(0,0,0,0.5));
+
+      .content-inner {
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 2.5em;
+
+        .title {
+
+        }
+        .body {
+          width: 66.66%;
+        }
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .highlight-component {
+    .highlight-component-inner {
+      .content {
+        //background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        .content-inner {
+          padding: 1em !important;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .highlight-component {
+    .highlight-component-inner {
+      .content {
+        //background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        .content-inner {
+          padding: 1em !important;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .highlight-component {
+    .highlight-component-inner {
+      .content {
+        //background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        .content-inner {
+          padding: 1.5em !important;
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .highlight-component {
+    .highlight-component-inner {
+      .content {
+        //background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        .content-inner {
+          padding: 2em !important;
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .highlight-component {
+    .highlight-component-inner {
+      .content {
+        //background: linear-gradient(transparent, rgba(0,0,0,0.5));
+        .content-inner {
+          padding: 2.5em !important;
+        }
+      }
+    }
+  }
+}

@@ -93,22 +93,22 @@ const Products = ({
         products-component-inner
       `}>
         {display === `slide` || display === `panel` ? <Slider {...sliderSettings}>
-          {elements.map((product, inc) => {
-            return render ? (
-              render(product, inc)
-            ) : (
-              <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
-            )
-          })}
-        </Slider> : ``}
-
-        {display !== `slide` && display !== `panel` ? elements.map((product, inc) => {
+          {elements?.length > 0 ? elements.map((product, inc) => {
             return render ? (
               render(product, inc)
             ) : (
               <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
             )
           }) : ``}
+        </Slider> : ``}
+
+        {display !== `slide` && display !== `panel` ? elements?.length > 0 ? elements.map((product, inc) => {
+            return render ? (
+              render(product, inc)
+            ) : (
+              <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
+            )
+          }) : `` : ``}
       </div>
     </section>
   </>)

@@ -1,0 +1,26 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+
+.highlights-component {
+  width: 100%;
+
+  .highlights-component-inner {
+    .slick-slider {
+      .slick-list {
+        .slick-track {
+          .slick-slide {
+            .slide-component {
+            }
+            &.slick-active {
+            }
+          }
+        }
+      }
+    }
+  }
+}

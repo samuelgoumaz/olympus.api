@@ -66,7 +66,7 @@ const InputCart = ({
   
       <span className={`form-item-container`}>
         {currency && <span className={`form-item-col currency`}>{currency}</span>}
-        {Number(total) && <span className={`form-item-col price`}>{priceFormatter(total) ?? `Error`}</span>}
+        {<span className={`form-item-col price`}>{priceFormatter(total) ?? `Error`}</span>}
       </span>
     
       {/**

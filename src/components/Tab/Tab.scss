@@ -17,8 +17,7 @@
     width: 100%;
     display: table;
     cursor: pointer;
-    padding: 0px 100px;
-    background: orange;
+    padding: 0px 2em;
 
     .tab-current {
       display: table-cell;
@@ -47,12 +46,10 @@
     overflow: hidden;
     font-size: 1em;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    padding: 100px;
-    background: blue;
+    padding: 2em;
 
     div {
       &:nth-child(odd) {
-        background: rgba(0,0,0,0.05);
       }
     }
   }
@@ -113,8 +110,7 @@
     height: 50px;
 
     .tab-handler {
-      background: turquoise;
-      padding: 0 0 0 10px;
+      padding: 0 0 0 1em;
 
       .tab-current {
         width: calc(100% - 25px);
@@ -195,8 +191,7 @@
     height: 60px;
 
     .tab-handler {
-      background: yellow;
-      padding: 0 0 0 12px;
+      padding: 0 0 0 1em;
 
       .tab-current {
         width: calc(100% - 26px);
@@ -277,8 +272,7 @@
     height: 70px;
 
     .tab-handler {
-      background: cyan;
-      padding: 0 0 0 15px;
+      padding: 0 0 0 1em;
 
       .tab-current {
         width: calc(100% - 30px);
@@ -359,8 +353,7 @@
     height: 80px;
 
     .tab-handler {
-      background: blue;
-      padding: 0 0 0 18px;
+      padding: 0 0 0 1em;
 
       .tab-current {
         width: calc(100% - 35px);
@@ -441,7 +434,7 @@
     height: 90px;
 
     .tab-handler {
-      padding: 0 0 0 20px;
+      padding: 0 0 0 1em;
 
       .tab-current {
         width: calc(100% - 40px);

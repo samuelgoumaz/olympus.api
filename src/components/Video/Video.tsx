@@ -67,7 +67,7 @@ const Video = ({
       position: `relative`,
       zIndex: position ?? 2
     }}
-    onMouseOver={
+    /*onMouseOver={
       (event: React.MouseEvent<HTMLElement>) => {
         event.preventDefault();
         onHover && onHover(event);
@@ -78,7 +78,7 @@ const Video = ({
         event.preventDefault();
         onLeave && onLeave(event);
       }
-    }
+    }*/
   >
     {!scene ? <div className={`video-inner`}>
       {children && <div className={`video`}>{children}</div>}

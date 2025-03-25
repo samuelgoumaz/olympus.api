@@ -1,0 +1,268 @@
+/*
+# Imports
+*/
+@import "../../../lib/colors.scss";
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# Component */
+.trade-component {
+
+  .fx {
+  }
+
+  .trade-inner {
+    position: relative !important;
+    padding: 100px;
+
+    &:after {
+      content: " ";
+      width: 100%;
+      display: block;
+      clear: both;
+    }
+
+    .trade-inner-col {
+
+      .title {
+        &.hv_subtitle {
+          margin-bottom: 0;
+        }
+      }
+
+      .condition {
+        margin: 1em 0;
+        font-size: 0.875em;
+      }
+
+      .scene {
+        margin-bottom: 1em;
+      }
+
+      .variants {
+        margin-bottom: 1em;
+      }
+
+      .partners {
+        margin: 1em 0;
+      }
+
+      .tags {
+        margin-bottom: 1em;
+        .tag-component {
+          width: 100%;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+
+          .tag-component-inner {
+            background: none !important;
+            border-radius: 0 !important;
+            padding: 0.5em 0 !important;
+            text-align: left !important;
+          }  
+        }
+      }
+
+      .action {
+        margin: 0.5em 0;
+        .button-component {
+        }
+      }
+
+      &.left {
+        padding-right: 40px;
+      }
+      &.right {
+      }
+    }
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:before {
+      content: "render()";
+      color: $color-debug-1;
+      font-family: monospace;
+      show-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2;
+      &:before {
+        content: "fx()";
+        color: $color-debug-2;
+        font-family: monospace;
+        show-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .trade-inner-content {
+      border: 4px solid $color-debug-3;
+      &:before {
+        content: "children()";
+        color: $color-debug-3;
+        font-family: monospace;
+        show-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
+      .scene {
+        position: relative;
+        border: 4px solid $color-debug-4;
+        &:before {
+          content: "scene()";
+          color: $color-debug-4;
+          font-family: monospace;
+          show-transform: uppercase;
+          display: block;
+          line-height: 1;
+          padding: 5px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 999;
+        }
+      }
+    }
+  }
+}
+
+/*
+# Responsive */
+@media #{$small-and-down} {
+  .trade-component {
+  
+    .fx {
+    }
+  
+    .trade-inner {
+      padding: 20px;
+      display: block !important;
+  
+      .trade-inner-col {
+        display: block !important;
+
+        .scene {
+          margin-top: 1em;
+        }
+
+        &.left {
+          width: 100% !important;
+          padding-right: 0px;
+        }
+        &.right {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .trade-component {
+    min-height: 400px;
+  
+    .fx {
+    }
+  
+    .trade-inner {
+      padding: 30px;
+  
+      .trade-inner-col {
+        &.left {
+          width: 60%;
+          padding-right: 20px;
+        }
+        &.right {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .trade-component {
+  
+    .fx {
+    }
+  
+    .trade-inner {
+      padding: 60px;
+  
+      .trade-inner-col {
+        &.left {
+          width: 65%;
+          padding-right: 30px;
+        }
+        &.right {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .trade-component {
+  
+    .fx {
+    }
+  
+    .trade-inner {
+      padding: 70px;
+  
+      .trade-inner-col {
+        &.left {
+          width: 65%;
+          padding-right: 35px;
+        }
+        &.right {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .trade-component {
+  
+    .fx {
+    }
+  
+    .trade-inner {
+      padding: 80px;
+  
+      .trade-inner-col {
+        &.left {
+          width: 65%;
+          padding-right: 40px;
+        }
+        &.right {
+          width: 35%;
+        }
+      }
+    }
+  }
+}

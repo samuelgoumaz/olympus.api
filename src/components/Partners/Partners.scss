@@ -13,6 +13,7 @@
   display: block;
   position: relative;
   text-align: inherit;
+  padding: 0 2.5em;
 
   .partners-component-inner {
     text-align: inherit;
@@ -33,16 +34,76 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .partners-component {
+    padding: 0 1em !important;
+
+    .partners-component-inner {
+  
+      &.align-left {
+      }
+      &.align-center {
+      }
+      &.align-right {
+      }
+    }
+  }
 }
 
 @media #{$medium-and-down} {
+  .partners-component {
+    padding: 0 1em !important;
+    .partners-component-inner {
+      &.align-left {
+      }
+      &.align-center {
+      }
+      &.align-right {
+      }
+    }
+  }
 }
 
 @media #{$medium-and-up} {
+  .partners-component {
+    padding: 0 1.5em !important;
+    .partners-component-inner {
+  
+      &.align-left {
+      }
+      &.align-center {
+      }
+      &.align-right {
+      }
+    }
+  }
 }
 
 @media #{$large-and-up} {
+  .partners-component {
+    padding: 0 2em !important;
+    .partners-component-inner {
+
+      &.align-left {
+      }
+      &.align-center {
+      }
+      &.align-right {
+      }
+    }
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .partners-component {
+    padding: 0 2.5em !important;
+    .partners-component-inner {
+  
+      &.align-left {
+      }
+      &.align-center {
+      }
+      &.align-right {
+      }
+    }
+  }
 }

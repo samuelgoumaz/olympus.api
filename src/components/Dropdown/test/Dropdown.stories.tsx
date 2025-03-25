@@ -36,6 +36,7 @@ https://storybook.js.org/docs/react/writing-stories/args
 export const InputDefaultWithList = Template.bind({});
 InputDefaultWithList.args = {
   display: `input`,
+  onHandler: false,
   children: [<ul>
     <li>line 1</li>
     <li>line 2</li>
@@ -47,6 +48,7 @@ export const InputDefaultWithIcon = Template.bind({});
 InputDefaultWithIcon.args = {
   display: `input`,
   icon: `home`,
+  onHandler: false,
   children: [<div>hello</div>],
 };
 
@@ -55,6 +57,7 @@ InputDefaultWithOnlyIcon.args = {
   display: `input`,
   icon: `home`,
   current: false,
+  onHandler: false,
   children: [<div>hello</div>],
 };
 
@@ -64,6 +67,7 @@ InputDefaultWithLabel.args = {
   display: `input`,
   icon: `home`,
   label: `Hello`,
+  onHandler: false,
   children: [<ul>
     <li>line 1</li>
     <li>line 2</li>

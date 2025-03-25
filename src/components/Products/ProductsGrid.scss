@@ -11,6 +11,8 @@
 .products-component-grid {
   width: 100%;
   position: relative;
+  padding: 0 2.5em;
+  margin: 1em auto;
 
   &.hv-padding {
     padding: 100px;
@@ -24,6 +26,9 @@
   }
 
   .products-component-inner {
+    width: calc( 100% + 1em );
+    left: -0.5em;
+    position: relative;
   }
 }
 
@@ -32,6 +37,7 @@
 */
 @media #{$small-and-down} {
   .products-component-grid {
+    padding: 0 1em !important;
     &.hv-padding {
       padding: 20px;
     }
@@ -42,6 +48,7 @@
 
 @media #{$medium-and-down} {
   .products-component-grid {
+    padding: 0 1em !important;
     &.hv-padding {
       padding: 40px;
     }
@@ -52,6 +59,7 @@
 
 @media #{$medium-and-up} {
   .products-component-grid {
+    padding: 0 1.5em !important;
     &.hv-padding {
       padding: 60px;
     }
@@ -62,6 +70,7 @@
 
 @media #{$large-and-up} {
   .products-component-grid {
+    padding: 0 2em !important;
     &.hv-padding {
       padding: 80px;
     }
@@ -72,6 +81,7 @@
 
 @media #{$extra-large-and-up} {
   .products-component-grid {
+    padding: 0 2.5em !important;
     &.hv-padding {
       padding: 90px;
     }

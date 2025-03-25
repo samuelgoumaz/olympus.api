@@ -9,42 +9,24 @@
 # document
 */
 .title-component {
-  width: 100%;
   position: relative;
   display: block;
+  max-width: 1920px;
+  margin: 1em auto;
 
   .fx-content {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
   }
 
   .title-content {
-    width: 100%;
-    padding: 1em 80px;
-    display: block;
-    position: relative;
-    z-index: 3;
 
     .title-inner-content {
       text-align: left;
 
       .title {
-        width: 50%;
-        display: inline-block;
-        vertical-align: middle;
-        margin-bottom: 0 !important;
-        margin: 0;
         //font-size: 7em;
         //margin-bottom: 0;
       }
       .subtitle {
-        width: 50%;
-        display: inline-block;
-        vertical-align: middle;
-        margin-bottom: 0 !important;
-        margin: 0;
         //font-size: 3.5em;
         //margin-bottom: 0;
       }
@@ -62,7 +44,7 @@
     .fx-content {
     }
     .title-content {
-      padding: 1em 20px;
+      padding: 0 1em !important;
       .title-inner-content {
         .title {
           width: 66.66%;
@@ -84,7 +66,7 @@
     .fx-content {
     }
     .title-content {
-      padding: 1em 40px;
+      padding: 0 1em !important;
       .title-inner-content {
         .title {
           width: 66.66%;
@@ -106,7 +88,7 @@
     .fx-content {
     }
     .title-content {
-      padding: 1em 50px;
+      padding: 0 1.5em !important;
       .title-inner-content {
         .title {
           //font-size: 4em;
@@ -126,7 +108,7 @@
     .fx-content {
     }
     .title-content {
-      padding: 1em 60px;
+      padding: 0 2em !important;
       .title-inner-content {
         .title {
           //font-size: 5em;
@@ -146,7 +128,7 @@
     .fx-content {
     }
     .title-content {
-      padding: 1em 70px;
+      padding: 0 2.5em !important;
       .title-inner-content {
         .title {
           //font-size: 6em;

@@ -15,6 +15,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 export interface MosaicProps {
   position?: number | null;
   alt?: string | null;
+  orientation?: string | null;
   body?: string | false;
   height?: string | null;
   image?: string | null;
@@ -30,6 +31,7 @@ export interface MosaicProps {
 const Mosaic = ({
   position,
   alt,
+  orientation,
   height,
   image,
   body,
@@ -42,6 +44,7 @@ const Mosaic = ({
       ${display === `double` ? `mosaic-component-double` : ``}
       ${display === `triple` ? `mosaic-component-triple` : ``}
       ${display === `quadruple` ? `mosaic-component-quadruple` : ``}
+      ${orientation ? orientation : ``}
     `}
     style={{
       zIndex: position,
@@ -55,13 +58,13 @@ const Mosaic = ({
     `}>
 
       {video ? video : <div className={`scene`}>
-        <img className={`image`} src={image} />
+        <img className={`image`} src={image} style={{ display: `block` }} />
       </div>}
 
-      <div className={`content`}>
+      {body || alt ? <div className={`content`}>
         {alt != null ? <h5 className="title" dangerouslySetInnerHTML={{ __html: alt }} /> : ``}
         {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />}
-      </div>
+      </div> : ``}
 
     </div>
   </section>

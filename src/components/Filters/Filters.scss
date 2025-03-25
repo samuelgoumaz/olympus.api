@@ -13,6 +13,7 @@
   display: block;
   z-index: 9;
   box-shadow: 0 0 40px rgba(0,0,0,0.15);
+  margin: 0.5em 0;
 
   .filters-component-inner {
     width: 100%;
@@ -22,7 +23,7 @@
     .filters-component-col {
       width: 50%;
       display: table-cell;
-      vertical-align: middle;
+      vertical-align: top;
       position: relative;
 
       &.col-left {
@@ -57,7 +58,11 @@
 
       .toggler-component {
         .toggler-handler {
+          background: transparent !important;
 
+          .dropdown-icon {
+            text-align: center !important;
+          }
         }
         .toggler-container {
 
@@ -67,6 +72,7 @@
 
       .dropdown-component-ui {
         display: block;
+        width: 100% !important;
         float: left;
         border-right: 1px solid rgba(0,0,0,0.05);
 

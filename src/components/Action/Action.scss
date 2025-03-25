@@ -11,6 +11,9 @@
 .action-component {
   width: 100%;
   position: relative;
+  padding: 0 2.5em;
+  margin: 2em 0;
+  text-align: center;
 
   &:after {
     content: " ";
@@ -20,6 +23,7 @@
   }
 
   .action-inner {
+    text-align: inherit;
   }
 }
 
@@ -28,6 +32,7 @@
 */
 @media #{$small-and-down} {
   .action-component {
+    padding: 0 1em;
     .action-inner {
     }
   }
@@ -35,6 +40,7 @@
 
 @media #{$medium-and-down} {
   .action-component {
+    padding: 0 1em;
     .action-inner {
     }
   }
@@ -42,6 +48,7 @@
 
 @media #{$medium-and-up} {
   .action-component {
+    padding: 0 1.5em;
     .action-inner {
     }
   }
@@ -49,6 +56,7 @@
 
 @media #{$large-and-up} {
   .action-component {
+    padding: 0 2em;
     .action-inner {
     }
   }
@@ -56,6 +64,7 @@
 
 @media #{$extra-large-and-up} {
   .action-component {
+    padding: 0 2.5em;
     .action-inner {
     }
   }

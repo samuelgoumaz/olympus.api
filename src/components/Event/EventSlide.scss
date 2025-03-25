@@ -10,40 +10,13 @@
 # document
 */
 .event-component-slide {
-  width: 100%;
-  display: block;
-  position: relative;
-
   .fx {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
   }
   .event-component-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    display: table;
-    z-index: 2;
-    
     .scene {
-      width: 35%;
-      display: table-cell;
-      position: relative;
-      z-index: 2;
       @include aspect-ratio(1, 1);
     }
     .content {
-      width: 65%;
-      padding: 100px;
-      vertical-align: middle;
-      display: table-cell;
-      position: relative;
-      z-index: 3;
-
       .body {
         margin: 1em 0;
         text-align:justify;
@@ -52,11 +25,15 @@
         text-justify: inter-word;
         hyphens: auto;
       }
-      .title {
-        margin: 0.1em 0;
+      .title, .subtitle {
+        margin: 0;
+        margin-bottom: 0.25em;
+        padding: 0;
       }
       .tags {
-        margin: 0.5em 0;
+        margin: 0;
+        margin-bottom: 0.25em;
+        padding: 0;
       }
       .date, .time {
         margin: 0.5em 0;
@@ -152,13 +129,12 @@
     .event-component-inner {
       
       .scene {
-        width: 100%;
-        display: block;
+        width: 100% !important;
+        display: block !important;
       }
       .content {
-        width: 100%;
-        display: block;
-        padding: 20px;
+        width: 100% !important;
+        display: block !important;
   
         .title {
         }
@@ -180,7 +156,6 @@
       }
       .content {
         width: 75%;
-        padding: 40px;
   
         .title {
         }
@@ -202,7 +177,6 @@
       }
       .content {
         width: 65%;
-        padding: 60px;
   
         .title {
         }
@@ -224,7 +198,6 @@
       }
       .content {
         width: 65%;
-        padding: 80px;
   
         .title {
         }
@@ -246,7 +219,6 @@
       }
       .content {
         width: 65%;
-        padding: 90px;
   
         .title {
         }

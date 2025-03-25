@@ -20,7 +20,7 @@ export interface DropdownProps {
   width?: string;
   selected?: true | false;
   children: JSX.Element | JSX.Element[];
-  onHandler?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onHandler?: (event: React.MouseEvent<HTMLDivElement>) => void | false;
 }
 
 
@@ -42,12 +42,13 @@ const Dropdown = ({
   /*
   # selectToggle(event) */
   function selectToggle (event) {
-    if (event.classList.contains("dsp-open")) {
+    console.log("selectToggle >>>> ", event.classList.contains("dsp-close"))
+    if (event.classList.contains("dsp-close")) {
+      event.classList.remove("dsp-close");
+      event.classList.add("dsp-open");
+    } else {
       event.classList.add("dsp-close");
       event.classList.remove("dsp-open");
-    } else {
-      event.classList.add("dsp-open");
-      event.classList.remove("dsp-close");
     }
   }
 
@@ -64,9 +65,20 @@ const Dropdown = ({
     } else {
       html = false;
     }
-
     return html;
+  }
 
+
+  function countData (elements) {
+    if (elements && elements.length > 0) {
+      if (elements[0].type == 'ul') {
+        return elements[0].props?.children?.length ?? 0
+      } else {
+        return elements[0].length ?? 0
+      }
+    } else {
+      return 0
+    }
   }
 
   /*
@@ -106,15 +118,18 @@ const Dropdown = ({
           width: width ? `100%` : `auto`
         }}
       >
-        {children && current !== false && !label || !icon ? <div className={`dropdown-current`}>
+        {children && current !== false && !label || !icon ? <div className={`
+          dropdown-current
+          ${!icon && countData(children) < 2 ? `hv_no_icon` : ``}
+        `}>
           {initData(children)}
         </div> : ``}
 
         {label ? <span className={`label`}>{label}</span> : ``}
         {icon ? <span className={`icon material-icons`}>{icon}</span> : ``}
 
-        {!icon && <div className={`dropdown-icon dsp-close material-icons`}>{`expand_less`}</div>}
-        {!icon && <div className={`dropdown-icon dsp-open material-icons`}>{`expand_more`}</div>}
+        {!icon && countData(children) > 1 ? <div className={`dropdown-icon dsp-close material-icons`}>{`expand_less`}</div> : ``}
+        {!icon && countData(children) > 1 ? <div className={`dropdown-icon dsp-open material-icons`}>{`expand_more`}</div> : ``}
       </div>
 
       <div
@@ -129,7 +144,7 @@ const Dropdown = ({
           }
         }
       >
-        {children}
+        {countData(children) > 1 ? children : ``}
       </div>
 
     </div>

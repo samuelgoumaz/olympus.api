@@ -2,8 +2,11 @@
 # Imports
 */
 import React, { useRef, useEffect, useState } from "react";
+import Slider from "react-slick";
+import Product from "../Product"
+import Error from "../Error";
+import Title from "../Title";
 import "./Variants.scss";
-import Variant from "../Variant";
 
 /*
 # Interface
@@ -11,96 +14,101 @@ import Variant from "../Variant";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface VariantsProps {
-  debug?: true | false;
-  position: number;
-  display?: string | false;
-  elements?: {
-    id?: number;
-    title?: string;
-    subtitle?: string;
-    sku?: string;
-    locale?: string;
-    action?: {
-      url?: string;
-      in_cart?: true | false;
-    } | false;
-    date?: {
-      date_start?: string;
-      date_end?: string;
-      hour_start?: string;
-      hour_end?: string;
-    } | false;
-    price?: {
-      price?: number;
-      price_strike?: number;
-    } | false;
-    stock?: {
-      limit?: number;
-    } | false;
-    formular?: any | false;
-    event?: any | false;
-    product?: any | false;
-  };
-  fx?: JSX.Element | false;
-  children?: JSX.Element | false;
-  buttons?: JSX.Element | false;
-  selectItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  addItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  removeItemFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  checkQuantityFunc?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  position?: number;
+  column?: number;
+  title: string | null;
+  subtitle: string | null;
+  padding?: true | false;
+  display?: string;
+  children: JSX.Element | JSX.Element[];
+  elements?: JSX.Element | JSX.Element[];
+  filter?: JSX.Element | JSX.Element[];
+  render?: (data: any, inc: number) => any;
 }
 
-
-
-/*
-# Class Components
-*/
-/*const Variants: React.FC<VariantsProps> = ({
-  left_positive,
-  left_negative,
-  middle_positive,
-  middle_negative,
-  fx_aside,
-  fx_negative,
-  fx_top,
-  fx_pinned,
+const Variants = ({
+  position,
+  column,
   title,
   subtitle,
-  children
-}) => (
-*/
-const Variants = ({
-  debug,
-  position,
+  padding,
   display,
-  elements,
-  fx,
   children,
-  buttons
+  elements,
+  filter,
+  render
 }: VariantsProps) => {
-  return <section
-    className={`
-      variants-component 
-      ${debug === true ? `debug` : ``}
-    `}
-    style={{
-      position: `relative`,
-      zIndex: position ?? 2
-    }}
-  >
+  /*
+  # Slider settings */
+  let sliderSettings = {
+    slidesToShow: display === `panel` ? 3 : Number(column) > 1 ? Number(column) : 1,
+    slidesToScroll: 1,
+    infinite: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1360,
+        settings: {
+          slidesToShow: display === `panel` ? 3 : Number(column) >= 3 ? Number(column) : 1,
+          slidesToScroll: display === `panel` ? 3 : Number(column) >= 3 ? Number(column) : 1
+        },
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: display === `panel` ? 2 : Number(column) >= 2 ? Number(column) : 1,
+          slidesToScroll: display === `panel` ? 2 : Number(column) >= 2 ? Number(column) : 1
+        },
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ]
+  };
 
-    {fx ? <div className={`fx`}>{fx}</div> : ``}
+  return (<>
+    {title || subtitle ? <Title
+      position={position}
+      title={title ?? null}
+      subtitle={subtitle ?? null}
+    /> : ``}
+    <section
+      className={`
+        ${display === `slide` ? `variants-component-slide` : ``}
+        ${display === `panel` ? `variants-component-panel` : ``}
+        ${display === `grid` ? `variants-component-grid` : ``}
+        ${display === `row` ? `variants-component-row` : ``}
+      `}
+    >
+      {filter && filter}
+      <div className={`
+        variants-component-inner
+      `}>
+        {display === `slide` || display === `panel` ? <Slider {...sliderSettings}>
+          {elements?.length > 0 ? elements.map((product, inc) => {
+            return render ? (
+              render(product, inc)
+            ) : (
+              <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
+            )
+          }) : ``}
+        </Slider> : ``}
 
-    <div className={`variants-inner`}>
-      {children ? children : <div className={`content`}>
-        <Variant
-          variants={elements ?? null}
-        />
-      </div>}
-    </div>
-    
-  </section>
-};
+        {display !== `slide` && display !== `panel` ? elements?.length > 0 ? elements.map((product, inc) => {
+            return render ? (
+              render(product, inc)
+            ) : (
+              <Error key={`error-content-${product.id}`} display={`message`}><strong>no event render</strong></Error>
+            )
+          }) : `` : ``}
+      </div>
+    </section>
+  </>)
+}
 
 /*
 # Export

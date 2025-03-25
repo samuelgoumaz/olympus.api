@@ -6,6 +6,110 @@
 @import "../../../lib/materialize/mixin.scss";
 @import "../../../lib/materialize/responsive.scss";
 
-section.error-component {
-    //background: blue !important;
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+    h1 {
+        font-size: 2.5em !important;
+    }
+    h2 {
+        font-size: 2.5em !important;
+    }
+    h3 {
+        font-size: 2em !important;
+    }
+    h4 {
+        font-size: 2em !important;
+    }
+    h5 {
+        font-size: 1.5em !important;
+    }
+    h6 {
+        font-size: 1em !important;
+    }
+}
+
+@media #{$medium-and-down} {
+    h1 {
+        font-size: 2.5em !important;
+    }
+    h2 {
+        font-size: 2.5em !important;
+    }
+    h3 {
+        font-size: 2em !important;
+    }
+    h4 {
+        font-size: 2em !important;
+    }
+    h5 {
+        font-size: 1.5em !important;
+    }
+    h6 {
+        font-size: 1em !important;
+    }
+}
+
+@media #{$medium-and-up} {
+    h1 {
+        font-size: 2.75em !important;
+    }
+    h2 {
+        font-size: 2.75em !important;
+    }
+    h3 {
+        font-size: 2.25em !important;
+    }
+    h4 {
+        font-size: 2.25em !important;
+    }
+    h5 {
+        font-size: 1.75em !important;
+    }
+    h6 {
+        font-size: 1.25em !important;
+    }
+}
+
+@media #{$large-and-up} {
+    h1 {
+        font-size: 3em !important;
+    }
+    h2 {
+        font-size: 3em !important;
+    }
+    h3 {
+        font-size: 2.5em !important;
+    }
+    h4 {
+        font-size: 2.5em !important;
+    }
+    h5 {
+        font-size: 2em !important;
+    }
+    h6 {
+        font-size: 1.5em !important;
+    }
+}
+
+@media #{$extra-large-and-up} {
+    h1 {
+        font-size: 3.25em !important;
+    }
+    h2 {
+        font-size: 3.25em !important;
+    }
+    h3 {
+        font-size: 2.75em !important;
+    }
+    h4 {
+        font-size: 2.75em !important;
+    }
+    h5 {
+        font-size: 2.25em !important;
+    }
+    h6 {
+        font-size: 1.75em !important;
+    }
 }

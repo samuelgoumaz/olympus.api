@@ -4,6 +4,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Dropdown from "../Dropdown"
 import Button from "../Button"
+import FxBackground from "../FxBackground";
 import "./VariantTable.scss";
 import "./VariantSmart.scss";
 import "./VariantSelector.scss";
@@ -23,6 +24,7 @@ export interface VariantProps {
   currencyRate?: number | false;
   display?: string | false;
   mode?: string | false;
+  image?: string | false;
   primary?: string | false;
   secondary?: string | false;
   variants?: {
@@ -67,6 +69,7 @@ export interface VariantProps {
 const Variant: React.FC<VariantProps> = ({
   api,
   display,
+  image,
   primary,
   secondary,
   variants,
@@ -109,7 +112,7 @@ const Variant: React.FC<VariantProps> = ({
         myVariant.clone :
           myVariant.attributes && myVariant.attributes.product.data.attributes.default.data ?
             `${api != false ? api : ``}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
-             : null;
+             : image?.length > 0 ? image : null;
 
     if (addItemFunc) {
       addItemFunc(myVariant)
@@ -164,7 +167,7 @@ const Variant: React.FC<VariantProps> = ({
         myVariant.clone :
           myVariant.attributes && myVariant.attributes.product.data.attributes.default.data ?
             `${api != false ? api : ``}${myVariant.attributes.product.data.attributes.default.data.attributes.url}`
-             : null;
+             : image?.length > 0 ? image : null;
 
     if (removeItemFunc) {
       removeItemFunc(myVariant)
@@ -458,7 +461,9 @@ const Variant: React.FC<VariantProps> = ({
               <div className={`table`}>
                 {Object.keys(variants).map((key) => (
                   <div className={`table-row`}>
-  
+                    
+                    {image ? <span className={`table-col scene`} style={{ borderColor: secondary ? secondary : `transparent`}}><img src={image} width={80} height={80} style={{ objectFit: `cover` }} /></span> : ``}
+                    
                     {variants[key].title ? <span className={`table-col title`} style={{ borderColor: secondary ? secondary : `transparent`}} dangerouslySetInnerHTML={{__html: variants[key].title }} /> : ``}
   
                     {/* <span style={{ borderColor: secondary ? secondary : `transparent`}} className={`table-col void`}></span> */}

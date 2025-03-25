@@ -94,8 +94,7 @@ const CartPrice = ({
 
       </div> : ``}
 
-      {<div className={`cartprice-component-col col-delivery`}>
-
+      {delivery !== false ? <div className={`cartprice-component-col col-delivery`}>
         {/**
         # cartprice **/}
         <div className={`cartprice-element`}>
@@ -104,9 +103,7 @@ const CartPrice = ({
             <span className={`value`}>{delivery > 0 ? `${Number(delivery).toFixed(2)}` : `Free`}</span>
           </div>
         </div>
-
-      </div>}
-
+      </div>: ``}
       {price && <div className={`cartprice-component-col col-price`}>
 
         {/**

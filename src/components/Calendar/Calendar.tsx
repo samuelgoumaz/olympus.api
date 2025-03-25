@@ -363,6 +363,7 @@ const Calendar: React.FC<CalendarProps> = ({
     slidesToScroll: 4,
     infinite: false,
     dots: false,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 1360,
@@ -397,8 +398,9 @@ const Calendar: React.FC<CalendarProps> = ({
     slidesToShow: column ?? 1,
     slidesToScroll: column ?? 1,
     infinite: false,
-    dots: false,
-    adaptiveHeight: false,
+    arrows: false,
+    dots: true,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 1360,

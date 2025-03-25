@@ -9,7 +9,8 @@
 # document
 */
 .partner-component {
-  width: 12.5%;
+  width: auto !important;
+  max-height: 120px !important;
   display: inline-block;
   vertical-align: top;
 
@@ -110,7 +111,7 @@
 @media #{$medium-and-up} {
   .partner-component {
     width: 20%;
-    max-width: 160px;
+    max-width: 120px;
 
     .fx {
     }
@@ -128,7 +129,7 @@
 @media #{$large-and-up} {
   .partner-component {
     width: 16.666%;
-    max-width: 200px;
+    max-width: 120px;
 
     .fx {
     }
@@ -146,7 +147,7 @@
 @media #{$extra-large-and-up} {
   .partner-component {
     width: 12.5%;
-    max-width: 200px;
+    max-width: 120px;
 
     .fx {
     }

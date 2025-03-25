@@ -25,6 +25,7 @@
   }
   .product-component-inner {
     position: relative;
+    margin: 0.5em;
     z-index: 2;
     
     .scene {
@@ -35,7 +36,7 @@
     .content {
       position: relative;
       text-align: center;
-      padding: 0 20px;
+      padding: 0 2.5em;
 
       .title {
         margin: 0.1em 0;
@@ -145,6 +146,9 @@
     .product-component-inner {
       .title {
       }
+      .content {
+        padding: 1em !important;
+      }
     }
   }
 }
@@ -154,6 +158,9 @@
     width: 50%;
     .product-component-inner {
       .title {
+      }
+      .content {
+        padding: 1em !important;
       }
     }
   }
@@ -165,6 +172,9 @@
     .product-component-inner {
       .title {
       }
+      .content {
+        padding: 1.5em !important;
+      }
     }
   }
 }
@@ -175,6 +185,9 @@
     .product-component-inner {
       .title {
       }
+      .content {
+        padding: 2em !important;
+      }
     }
   }
 }
@@ -184,6 +197,9 @@
     width: 33.33%;
     .product-component-inner {
       .title {
+      }
+      .content {
+        padding: 2.5em !important;
       }
     }
   }

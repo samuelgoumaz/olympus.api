@@ -22,6 +22,7 @@ export interface ArticlesProps {
   slug?: string;
   id?: number;
   display?: string;
+  column?: number;
   elements?: JSX.Element | JSX.Element[];
   children?: JSX.Element | JSX.Element[];
   filter?: JSX.Element | JSX.Element[];
@@ -43,16 +44,47 @@ const Articles: React.FC<ArticlesProps> = ({
   children,
   elements,
   filter,
+  column,
   render
 }) => {
 
   /*
   # Slider settings */
+  /*
+  # Slider settings */
   let sliderSettings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: column ?? 1,
+    slidesToScroll: column ?? 1,
     infinite: false,
-    adaptiveHeight: true
+    arrows: false,
+    dots: true,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1360,
+        settings: {
+          slidesToShow: column >= 3 ? 3 : 1,
+          slidesToScroll: 3,
+          infinite: false,
+        },
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: column >= 2 ? 2 : 1,
+          slidesToScroll: 2,
+          infinite: false,
+        },
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+        },
+      },
+    ],
   };
 
   /*
@@ -73,11 +105,11 @@ const Articles: React.FC<ArticlesProps> = ({
       /> : ``}
 
       <section
-      className={`
-        ${display === `slide` ? `articles-component-slide` : ``}
-        ${display === `grid` ? `articles-component-grid` : ``}
-        ${display === `row` ? `articles-component-row` : ``}
-      `}
+        className={`
+          ${display === `slide` ? `articles-component-slide` : ``}
+          ${display === `grid` ? `articles-component-grid` : ``}
+          ${display === `row` ? `articles-component-row` : ``}
+        `}
       >
 
         {filter && filter}
@@ -86,23 +118,23 @@ const Articles: React.FC<ArticlesProps> = ({
         `}>
           
           {display === `slide` && <Slider {...sliderSettings}>
-            {elements.map((article, inc) => {
+            {elements?.length > 0 ? elements.map((article, inc) => {
               return render ? (
                 render(article, inc)
               ) : (
                 <Error key={`error-content-${article.id}`} display={`message`}><strong>no event render</strong></Error>
               )
-            })}
+            }) : ``}
           </Slider>}
 
           {display !== `slide` && <>
-            {elements.map((article, inc) => {
+            {elements?.length > 0 ? elements.map((article, inc) => {
               return render ? (
                 render(article, inc)
               ) : (
                 <Error key={`error-content-${article.id}`} display={`message`}><strong>no event render</strong></Error>
               )
-            })}
+            }) : ``}
           </>}
         </div>
       </section>

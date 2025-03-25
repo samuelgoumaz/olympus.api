@@ -12,9 +12,11 @@
 
 .product-component-slide {
   width: 100%;
-  height: calc(100vh - 100px) !important;
+  height: auto;
+  display: block;
+  clear: both;
   position: relative;
-  overflow: hidden;
+  @include aspect-ratio(1920, 1080);
 
   .fx {
     position: absolute;
@@ -26,49 +28,40 @@
   }
 
   .product-inner {
-    width: 100%;
-    height: 100%;
-    display: table;
-    position: absolute;
-    z-index: 2;
-    top: 0;
 
     .scene {
-      position: absolute;
-      display: block;
       width: 100%;
       height: 100%;
-      top: 0;
+      position: absolute;
       z-index: 1;
-      float: none;
+      left: 0;
+      top: 0;
 
       .scene-inner {
-        position: absolute;
         width: 100%;
         height: 100%;
-        display: block;
-        top: 0;
       }
     }
     .content {
+      width: 50%;
+      height: 100%;
       position: absolute;
       display: table;
-      width: 100%;
-      height: auto;
-      bottom: 0;
       z-index: 2;
-      padding: 100px;
+      left: 0;
+      top: 0;
 
       .content-inner {
+        width: 100%;
         display: table-cell;
-        width: 30%;
-        vertical-align: bottom;
+        vertical-align: middle;
+        padding: 2.5em !important;
 
         .title {
-          margin: 0.1em 0;
+          margin: 1em 0;
         }
         .subtitle {
-          margin: 0.1em 0;
+          margin: 1em 0;
         }
         .tags {
           margin: 1em 0;
@@ -76,13 +69,13 @@
         .body {
           margin: 1em 0;
         }
+        .action {
+          margin: 1em 0;
+        }
       }
-
-      .action {
-        display: table-cell;
-        width: 70%;
-        vertical-align: bottom;
-        text-align: right;
+      .variants {
+        .variants-inner {
+        }
       }
     }
   }
@@ -92,40 +85,38 @@
 # Responsive */
 @media #{$small-and-down} {
   .product-component-slide {
-    height: 100vh;
-    max-height: none;
-
     .fx {
     }
+
+    &:before {
+      padding-top: 125% !important;
+    }
+  
     .product-inner {
-      position: relative;
-      height: auto;
-      
       .scene {
-        @include aspect-ratio(1,1);
-        position: relative;
-        display: block;
+        .scene-inner {
+        }
       }
       .content {
-        position: relative;
-        display: block;
-        padding: 30px;
+        width: 100%;
 
         .content-inner {
-          width: 100%;
-          display: block;
+          padding: 1em !important;
 
           .title {
           }
+          .subtitle {
+          }
+          .tags {
+          }
           .body {
           }
+          .action {
+          }
         }
-
-        .action {
-          width: 100%;
-          display: block;
-          text-align: left;
-          margin-top: 1em;
+        .variants {
+          .variants-inner {
+          }
         }
       }
     }
@@ -134,30 +125,34 @@
 
 @media #{$medium-and-down} {
   .product-component-slide {
-    height: calc(100vh - 60px);
     .fx {
     }
+  
     .product-inner {
       .scene {
+        .scene-inner {
+        }
       }
       .content {
-        padding: 40px;
+        width: 100%;
 
         .content-inner {
-          width: 100%;
-          display: block;
+          padding: 1em !important;
 
           .title {
           }
+          .subtitle {
+          }
+          .tags {
+          }
           .body {
           }
+          .action {
+          }
         }
-
-        .action {
-          width: 100%;
-          display: block;
-          text-align: left;
-          margin-top: 1em;
+        .variants {
+          .variants-inner {
+          }
         }
       }
     }
@@ -166,27 +161,34 @@
 
 @media #{$medium-and-up} {
   .product-component-slide {
-    height: calc(100vh - 70px);
     .fx {
     }
+  
     .product-inner {
       .scene {
+        .scene-inner {
+        }
       }
       .content {
-        padding: 50px;
+        width: 50%;
 
         .content-inner {
-          width: 50%;
+          padding: 1.5em !important;
 
           .title {
           }
+          .subtitle {
+          }
+          .tags {
+          }
           .body {
           }
+          .action {
+          }
         }
-
-        .action {
-          width: 50%;
-          float: none;
+        .variants {
+          .variants-inner {
+          }
         }
       }
     }
@@ -195,27 +197,34 @@
 
 @media #{$large-and-up} {
   .product-component-slide {
-    height: calc(100vh - 80px);
     .fx {
     }
+  
     .product-inner {
       .scene {
+        .scene-inner {
+        }
       }
       .content {
-        padding: 70px;
+        width: 50%;
 
         .content-inner {
-          width: 40%;
+          padding: 2em !important;
 
           .title {
           }
+          .subtitle {
+          }
+          .tags {
+          }
           .body {
           }
+          .action {
+          }
         }
-
-        .action {
-          width: 60%;
-          float: none;
+        .variants {
+          .variants-inner {
+          }
         }
       }
     }
@@ -224,27 +233,34 @@
 
 @media #{$extra-large-and-up} {
   .product-component-slide {
-    height: calc(100vh - 90px);
     .fx {
     }
+  
     .product-inner {
       .scene {
+        .scene-inner {
+        }
       }
       .content {
-        padding: 90px;
+        width: 50%;
 
         .content-inner {
-          width: 35%;
+          padding: 2.5em !important;
 
           .title {
           }
+          .subtitle {
+          }
+          .tags {
+          }
           .body {
           }
+          .action {
+          }
         }
-
-        .action {
-          width: 65%;
-          float: none;
+        .variants {
+          .variants-inner {
+          }
         }
       }
     }

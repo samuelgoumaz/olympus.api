@@ -232,7 +232,6 @@ const Event: React.FC<EventProps> = ({
                 {tags ? <Tags elements={tags} align={`left`} /> : ``}
               </div> */}
             </div>}
-
           </div>
         </div>
       );
@@ -287,7 +286,7 @@ const Event: React.FC<EventProps> = ({
                         icon={`expand_more`}
                         primary={primary ?? "black"}
                         secondary={secondary ?? "white"}
-                      /> : href && accordeon === true ? <Button
+                      /> : href ? <Button
                         icon={`chevron_right`}
                         primary={primary ?? "black"}
                         secondary={secondary ?? "white"}
@@ -432,6 +431,179 @@ const Event: React.FC<EventProps> = ({
         </div>
       );
       break;
+      
+    /* 
+    # Component DEFAULT */
+    case 'slide': // Page
+      return (
+        <div 
+        className={`
+          event-component-slide
+          ${mode === `allday` ? `allday` : ``}
+          ${debug === true ? `debug` : ``}
+        `}
+        id={`event-${slug}`}
+        style={{
+          width: "100%",
+          display: "block",
+          position: "relative"
+        }}
+        >
+          
+          {fx ? <div className={`fx`} style={{
+             position: "absolute",
+             width: "100%",
+             height: "100%",
+             zIndex: 1
+          }}>{fx}</div> : ``}
+
+          <div 
+            className={`event-component-inner`}
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "relative",
+              top: 0,
+              left: 0,
+              display: "table",
+              zIndex: 2
+            }}
+          >
+
+            {scene && <div className={`scene`} 
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (onClick && onClick !== false) { 
+                  onClick()
+                }
+              }}
+              style={{
+                width: "35%",
+                display: "table-cell",
+                position: "relative",
+                zIndex: 2
+              }}
+            >
+              {scene}
+            </div>}
+
+            <div className={`content`} 
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (onClick && onClick !== false) { 
+                  onClick()
+                }
+              }}
+              style={{
+                width: "65%",
+                padding: "2em",
+                verticalAlign: "middle",
+                display: "table-cell",
+                position: "relative",
+                zIndex: 3
+              }}
+            >
+              {children ? children : <>
+                
+                {title && <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title">{title}</h3>}
+                {subtitle ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle">{subtitle}</h6> : ``}
+
+                <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("ddd DD MMM YY")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? `${dateEnd ? ` — `+moment(dateEnd).format("ddd DD MMM YY") : ``}` : ``}</div>
+                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd ? timeEnd : ``}</div> : ``}
+                
+                {tags && <div className={`tags`}>
+                  {tags ? <Tags elements={tags} align={display === "grid" ? "center" : "left"} /> : ``}
+                </div>}
+
+                {body && <div className="body" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: body }} />}
+                
+                {/*buttons && <div className="buttons">
+                  {buttons && buttons}
+                 </div>*/}
+
+                {variants && <div className={`variants`}>{variants}</div>}
+
+                {display !== "grid" ? <div className="partners">
+                  {partners && partners}
+                </div> : ``}
+
+                {buttons && <div className="action">
+                  {buttons}
+                </div>}
+                
+              </>}
+            </div>
+
+          </div>
+          
+        </div>
+      );
+
+    case `grid`:
+      return (
+        <div 
+        className={`
+          event-component-grid
+          ${mode === `allday` ? `allday` : ``}
+          ${debug === true ? `debug` : ``}
+        `}
+        id={`event-${slug}`}
+        >
+          
+          <div className={`
+            event-component-inner
+          `}>
+            {fx ? <div className={`fx`}>{fx}</div> : ``}
+
+            {scene && <div className={`scene`} 
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (onClick && onClick !== false) { 
+                  onClick()
+                }
+              }}>
+              {scene}
+            </div>}
+
+            <div className={`content`} 
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                if (onClick && onClick !== false) { 
+                  onClick()
+                }
+              }}>
+              {children ? children : <>
+                
+                {title && <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} />}
+                {subtitle ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                
+                {dateStart || dateEnd ? <div className="date" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }}>{moment(dateStart).format("ddd DD MMM YY")}{new Date(dateEnd).getTime() !== new Date(dateStart).getTime() ? `${dateEnd ? ` — `+moment(dateEnd).format("ddd DD MMM YY") : ``}` : ``}</div> : ``}
+                {timeStart && timeEnd && timeStart !== timeEnd ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="time">{timeStart}{display === `grid` ? ` - ` : ` - `}{timeEnd ? timeEnd : ``}</div> : ``}
+
+                {tags && <div className={`tags`}>
+                  {tags ? <Tags elements={tags} align={display === "grid" ? "center" : "left"} /> : ``}
+                </div>}
+
+                {body && <div className="body" style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} dangerouslySetInnerHTML={{ __html: body }} />}
+                
+                {/*buttons && <div className="buttons">
+                  {buttons && buttons}
+                 </div>*/}
+
+                {variants && <div className={`variants`}>{variants}</div>}
+
+                {display !== "grid" ? <div className="partners">
+                  {partners && partners}
+                </div> : ``}
+
+                {buttons && <div className="action">
+                  {buttons}
+                </div>}
+                
+              </>}
+            </div>
+
+          </div>
+          
+        </div>
+      );
+      break;
 
     /* 
     # Component DEFAULT */
@@ -490,9 +662,9 @@ const Event: React.FC<EventProps> = ({
                   {partners && partners}
                 </div> : ``}
 
-                <div className="action">
-                  {buttons && buttons}
-                </div>
+                {buttons && <div className="action">
+                  {buttons}
+                </div>}
                 
               </>}
             </div>

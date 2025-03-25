@@ -53,16 +53,40 @@ const Introduction = ({
       ${debug === true ? `debug` : ``}
     `}
     style={{
+      width: `100%`,
       position: `relative`,
       zIndex: position ?? 2
     }}
   >
-    
-    {fx ? <div className={`fx`}>{fx}</div> : ``}
-
-    <div className={`introduction-inner`}>
-      {children ? children : <div className={`introduction-inner-content`}>
-        {scene && <div className={`scene`}>{scene}</div>}
+    {fx ? <div className={`fx`}
+      style={{
+        position: `absolute`,
+        top: 0,
+        left: 0,
+        width: `100%`,
+        height: `100%`,
+        zIndex: 1
+      }}
+    >{fx}</div> : ``}
+    <div className={`introduction-inner`} style={{
+      width: "100%",
+      position: "relative",
+      display: "block"
+    }}>
+      {children ? children : <div className={`introduction-inner-content`} style={{
+        position: `relative`,
+        width: `100%`,
+        margin: `0 auto`,
+        padding: `1em 0`
+      }}>
+        {scene && <div className={`scene`} style={{
+          position: `absolute`,
+          top: 0,
+          left: 0,
+          width: `100%`,
+          height: `100%`,
+          zIndex: 2
+        }}>{scene}</div>}
         <div className={`body`} dangerouslySetInnerHTML={{ __html: body }} />
         {buttons && <div className="action">
             {buttons && buttons}

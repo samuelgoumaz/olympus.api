@@ -84,11 +84,11 @@ const Article = ({
           }}
         >
 
-          {/* Fx render */ fx ? <div className={`fx`}>{fx}</div> : ``}
-
           <div className={`
             article-component-inner
           `}>
+
+            {/* Fx render */ fx ? <div className={`fx`}>{fx}</div> : ``}
 
             {/* Scene Render */ scene || image ? <div className={`scene`}>
               <div className={`scene-inner`}>
@@ -100,7 +100,7 @@ const Article = ({
                 {children ? children : <>
                   {title != null ? <div className={`header`}>
                   {title != null ? <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-                  {subtitle != null ? <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                  {subtitle != null ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
 
                   {tags ? <div className={`tags`}>
                     <Tags elements={tags} align={`left`} />
@@ -142,11 +142,11 @@ const Article = ({
           onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
         >
       
-          {fx ? <div className={`fx`}>{fx}</div> : ``}
       
           <div className={`
             article-inner
           `}>
+            {fx ? <div className={`fx`}>{fx}</div> : ``}
       
             {scene || image ? <div className={`scene`}>
               <div className={`scene-inner`}>
@@ -158,7 +158,7 @@ const Article = ({
               {children ? children : <>
 
                 {title != null ? <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-                {subtitle != null ? <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                {subtitle != null ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
                 {tags ? <div className={`tags`}>
                   <Tags elements={tags} align={`center`} />
                 </div> : ``}
@@ -185,29 +185,44 @@ const Article = ({
         <div
           className={`article-component-row ${debug === true ? `debug` : ``}`}
           style={{
+            width: "100%",
+            display: "block",
             zIndex: position,
             position: `relative`,
             height: height != null ? height : `auto`
           }}
         >
 
-          {fx ? <div className={`fx`}>{fx}</div> : ``}
 
           <div className={`
             article-component-inner
-          `}>
+          `} style={{
+            width: "100%",
+            display: "table",
+            position: "relative",
+            zIndex: 2
+          }}>
+            {fx ? <div className={`fx`}>{fx}</div> : ``}
 
-            {scene || image ? <div className={`scene`}>
+            {scene || image ? <div className={`scene`} style={{
+              width: "35%",
+              display: "table-cell"
+            }}>
               <div className={`scene-inner`}>
                 {scene ? scene : image ? <FxBackground image={image} /> : ``}
               </div>
             </div> : ``}
 
-            {<div className={`content`}>
+            {<div className={`content`} style={{
+              width: "65%",
+              display: "table-cell",
+              verticalAlign: "middle",
+              padding: "2em"
+            }}>
                 {children ? children : <>
                   {title != null ? <div className={`header`}>
                   {title != null ? <h3 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="title" dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-                  {subtitle != null ? <h5 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+                  {subtitle != null ? <h6 style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
                   {body != null ? <div style={{ color: `${color && color !== false && color !== `false` ? color : `inherit`}` }} className="body" dangerouslySetInnerHTML={{ __html: body }} /> : ``}
                   {tags ? <div className="tags"><Tags elements={tags} align={`left`} /></div> : ``}
                 </div> : ``}

@@ -57,26 +57,48 @@ const Title = ({
         <section
           className={display != null ? `title-component-${display}` : `title-component`}
           style={{
+            width: "100%",
             position: `relative`,
-            zIndex: position ?? 2
+            zIndex: position ?? 2,
+            display: "block"
           }}
         >
-      
-          <div className={`fx-content`}>
+          {children && <div className={`fx-content`} style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            zIndex: 1
+          }}>
             {children}
-          </div>
-      
-          {title || subtitle ? <div className={`title-content header`}>
+          </div>}
+          {title || subtitle ? <div className={`title-content header`} style={{
+            width: "100%",
+            padding: "0 1em",
+            display: "block",
+            position: "relative",
+            zIndex: 3
+          }}>
             <div className={`title-inner-content`}>
-              {title != null ? <h3 className={`title`} dangerouslySetInnerHTML={{ __html: title }} /> : ``}
-              {subtitle != null ? <h5 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} /> : ``}
+              {title != null ? <h1 className={`title`} dangerouslySetInnerHTML={{ __html: title }} style={{
+                width: "50%",
+                display: "inline-block",
+                verticalAlign: "middle",
+                marginBottom: 0,
+                margin: 0
+              }} /> : ``}
+              {subtitle != null ? <h4 className={`subtitle`} dangerouslySetInnerHTML={{ __html: subtitle }} style={{
+                width: "50%",
+                display: "inline-block",
+                verticalAlign: "middle",
+                marginBottom: 0,
+                margin: 0
+              }} /> : ``}
             </div>
           </div> : ``}
-
-          {date !== null || time !== null ? <div className={`title-content datetime`}>
+          {date?.length > 0 || time?.length > 0 ? <div className={`title-content datetime`}>
             <div className={`title-inner-content`}>
-              {date != null ? <div className={`date`} dangerouslySetInnerHTML={{ __html: date }} /> : ``}
-              {time != null ? <div className={`time`} dangerouslySetInnerHTML={{ __html: time }} /> : ``}
+              {date?.length > 0 ? <div className={`date`} dangerouslySetInnerHTML={{ __html: date }} /> : ``}
+              {time?.length > 0 ? <div className={`time`} dangerouslySetInnerHTML={{ __html: time }} /> : ``}
             </div>
           </div> : ``}
       

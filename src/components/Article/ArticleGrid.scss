@@ -24,15 +24,20 @@
   }
   .article-inner {
     position: relative;
+    padding: 0.5em;
     z-index: 2;
 
     .scene {
       width: 100%;
-      @include aspect-ratio(1,1);
+      @include aspect-ratio(4,3);
+      position: relative;
+      z-index: 2;
     }
     .content {
       text-align: center;
       padding: 20px;
+      position: relative;
+      z-index: 2;
 
       .title {
         margin: 0.1em 0;

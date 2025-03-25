@@ -34,26 +34,26 @@ const Core = ({
     }
     h1 {
         font-size: 3em;
+        margin-bottom: 0.25em;
         line-height: 1.1;
         margin: 0;
         padding: 0;
-        margin-bottom: 0.5em;
         display: block;
     }
     h2 {
         font-size: 3em;
+        margin-bottom: 0.25em;
         line-height: 1.1;
         margin: 0;
         padding: 0;
-        margin-bottom: 1em;
         display: block;
     }
     h3 {
         font-size: 2.5em;
+        margin-bottom: 0.25em;
         line-height: 1.1;
         margin: 0;
         padding: 0;
-        margin-bottom: 0.5em;
         display: block;
     }
     h4 {
@@ -61,7 +61,7 @@ const Core = ({
         line-height: 1.1;
         margin: 0;
         padding: 0;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.25em;
         display: block;
     }
     h5 {
@@ -69,15 +69,15 @@ const Core = ({
         line-height: 1.1;
         margin: 0;
         padding: 0;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.25em;
         display: block;
     }
     h6 {
-        font-size: 2em;
+        font-size: 1.5em;
         line-height: 1.1;
         margin: 0;
         padding: 0;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.25em;
         display: block;
     }
   `;

@@ -10,8 +10,6 @@ import "./InputContent.scss";
 https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface InputContentProps {
-  title?: string | null;
-  subtitle: string | null;
   body?: string | null;
 }
 
@@ -35,13 +33,9 @@ export interface InputContentProps {
 }) => (
 */
 const InputContent = ({
-  title,
-  subtitle,
   body
 }: InputContentProps) => (
   <div className={"form-item form-item-content"}>
-    {subtitle && <label className={`subtitle`}>{subtitle}</label>}
-    {title && <h6 className={`title`}>{title}</h6>}
     {body && <div className={`body`} dangerouslySetInnerHTML={{ __html: `${body}` }} />}
   </div>
 );

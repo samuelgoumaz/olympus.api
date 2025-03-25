@@ -12,8 +12,12 @@
   width: 100%;
   display: block;
   position: relative;
+  padding: 0 2.5em;
+  margin: 1em 0;
 
   .calendar-component-inner {
+    width: 100%;
+    position: relative;
 
     &.align-left {
       text-align: left;
@@ -31,16 +35,31 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .calendar-component-row {
+    padding: 0 1em;
+  }
 }
 
 @media #{$medium-and-down} {
+  .calendar-component-row {
+    padding: 0 1em;
+  }
 }
 
 @media #{$medium-and-up} {
+  .calendar-component-row {
+    padding: 0 1.5em;
+  }
 }
 
 @media #{$large-and-up} {
+  .calendar-component-row {
+    padding: 0 2em;
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .calendar-component-row {
+    padding: 0 2.5em;
+  }
 }

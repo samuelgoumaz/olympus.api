@@ -12,6 +12,9 @@
   width: 100%;
   display: block;
   clear: both;
+  padding: 0 2.5em;
+  margin: 1em 0;
+
   .slider-inner {
     .slider-inner-col {
       &.col-left {
@@ -28,16 +31,31 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .slider-component {
+    padding: 0 1em;
+  }
 }
 
 @media #{$medium-and-down} {
+  .slider-component {
+    padding: 0 1em;
+  }
 }
 
 @media #{$medium-and-up} {
+  .slider-component {
+    padding: 0 1.5em;
+  }
 }
 
 @media #{$large-and-up} {
+  .slider-component {
+    padding: 0 2em;
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .slider-component {
+    padding: 0 2.5em;
+  }
 }

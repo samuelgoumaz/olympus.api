@@ -1,0 +1,399 @@
+/*
+# Imports
+*/
+@import "../../../lib/colors.scss";
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# Component */
+.playlist-component {
+  width: 100%;
+  display: block;
+  background: white;
+  border-top: 1px solid grey;
+  padding: 0;
+  height: 100px;
+
+
+  .fx {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .playlist-inner {
+
+    .playlist-inner-content {
+      width: 100%;
+
+      &:after {
+        content: " ";
+        width: 100%;
+        display: block;
+        clear: both;
+      }
+
+      .image {
+        width: 100px;
+        background: black;
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+        }
+      }
+
+      .header {
+        height: 100px;
+        .header-inner {
+          height: 50px;
+          .header-col {
+            .timeline {
+              width: 100%;
+              vertical-align: middle;
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .controls {
+        width: 600px;
+        .button-header-component {
+          .fxIcon-header {
+          }
+          .icon {
+          }
+        }
+      }
+
+      .reset, .play, .playprev, .playnext, .volume, .close, .speed {
+        padding: 0px 0px;
+      }
+      .dropdown-component-ui {
+        .dropdown-handler {
+          .icon {
+
+          }
+        }
+      }
+    }
+  }
+
+  /*
+  # Debug */
+  &.debug {
+    border: 4px solid $color-debug-1;
+    &:before {
+      content: "render";
+      color: $color-debug-1;
+      font-family: monospace;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .fx {
+      border: 4px solid $color-debug-2;
+      &:before {
+        content: "fx";
+        color: $color-debug-2;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    .playlist-inner-content {
+      border: 4px solid $color-debug-3;
+      &:before {
+        content: "inner";
+        color: $color-debug-3;
+        font-family: monospace;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+      }
+    }
+  }
+}
+
+/*
+# Responsive */
+@media #{$small-and-down} {
+  .playlist-component {
+    height: 50px;
+  
+    .fx {
+    }
+  
+    .playlist-inner {
+      .playlist-inner-content {
+  
+        .image {
+          width: 50px;
+          display: block !important;
+          float: left;
+          img {
+            width: 50px !important;
+            height: 50px !important;
+          }
+        }
+
+        .header {
+          width: calc(100% - 50px);
+          height: 50px;
+          display: block !important;
+          float: left;
+          .header-inner {
+            height: 25px;
+            .header-col {
+            }
+          }
+        }
+  
+        .controls {
+          width: 100%;
+          clear: both;
+          display: block !important;
+          
+          .button-header-component {
+            .fxIcon-header {
+            }
+            .icon {
+            }
+          }
+        }
+  
+        .reset, .play, .playprev, .playnext, .volume, .close, .speed {
+        }
+        .dropdown-component-ui {
+          .dropdown-handler {
+            .icon {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .playlist-component {
+    height: 60px;
+  
+    .fx {
+    }
+  
+    .playlist-inner {
+      .playlist-inner-content {
+  
+        .image {
+          width: 60px;
+          img {
+            width: 60px !important;
+            height: 60px !important;
+          }
+        }
+
+        .header {
+          height: 60px;
+          .header-inner {
+            height: 30px;
+            .header-col {
+            }
+          }
+        }
+  
+        .controls {
+          width: 360px;
+          .button-header-component {
+            .fxIcon-header {
+            }
+            .icon {
+            }
+          }
+        }
+  
+        .reset, .play, .playprev, .playnext, .volume, .close, .speed {
+        }
+        .dropdown-component-ui {
+          .dropdown-handler {
+            .icon {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .playlist-component {
+    height: 70px;
+  
+    .fx {
+    }
+  
+    .playlist-inner {
+      .playlist-inner-content {
+  
+        .image {
+          width: 70px;
+          img {
+            width: 70px !important;
+            height: 70px !important;
+          }
+        }
+
+        .header {
+          height: 70px;
+          .header-inner {
+            height: 35px;
+            .header-col {
+            }
+          }
+        }
+  
+        .controls {
+          width: 420px;
+          .button-header-component {
+            .fxIcon-header {
+            }
+            .icon {
+            }
+          }
+        }
+  
+        .reset, .play, .playprev, .playnext, .volume, .close, .speed {
+        }
+        .dropdown-component-ui {
+          .dropdown-handler {
+            .icon {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .playlist-component {
+    height: 80px;
+  
+    .fx {
+    }
+  
+    .playlist-inner {
+      .playlist-inner-content {
+  
+        .image {
+          width: 80px;
+          img {
+            width: 80px !important;
+            height: 80px !important;
+          }
+        }
+
+        .header {
+          height: 80px;
+          .header-inner {
+            height: 40px;
+            .header-col {
+            }
+          }
+        }
+  
+        .controls {
+          width: 480px;
+          .button-header-component {
+            .fxIcon-header {
+            }
+            .icon {
+            }
+          }
+        }
+  
+        .reset, .play, .playprev, .playnext, .volume, .close, .speed {
+        }
+        .dropdown-component-ui {
+          .dropdown-handler {
+            .icon {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .playlist-component {
+    height: 90px;
+  
+    .fx {
+    }
+  
+    .playlist-inner {
+      .playlist-inner-content {
+  
+        .image {
+          width: 90px;
+          img {
+            width: 90px !important;
+            height: 90px !important;
+          }
+        }
+
+        .header {
+          height: 90px;
+          .header-inner {
+            height: 45px;
+            .header-col {
+            }
+          }
+        }
+  
+        .controls {
+          width: 540px;
+          .button-header-component {
+            .fxIcon-header {
+            }
+            .icon {
+            }
+          }
+        }
+  
+        .reset, .play, .playprev, .playnext, .volume, .close, .speed {
+        }
+        .dropdown-component-ui {
+          .dropdown-handler {
+            .icon {
+            }
+          }
+        }
+      }
+    }
+  }
+}

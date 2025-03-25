@@ -80,7 +80,6 @@ const Product = ({
     case "grid":
       return (
         <div
-          onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
           className={`product-component-grid ${debug === true ? `debug` : ``}`}
           style={{
             zIndex: position,
@@ -102,7 +101,7 @@ const Product = ({
             </div> : ``}
 
             <div className={`content`}>
-              {children ? children : <>
+              {children ? children : <div className={`content-inner`}>
 
                 {title != null ? <h3 className="title" dangerouslySetInnerHTML={{ __html: title.toString() }} /> : ``}
                 {subtitle != null ? <h6 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle.toString() }} /> : ``}
@@ -117,12 +116,13 @@ const Product = ({
                 {<div className={`action`}>
                   {variants ? variants : ``}
                   {onClick ? <Button
+                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
                     icon={`arrow_forward`}
                     mode={`default`}
                     color={color && color !== false && color !== `false` ? color : `inherit`}
                   /> : ``}
                 </div>}
-              </>}
+              </div>}
             </div>
 
           </div>
@@ -269,15 +269,17 @@ const Product = ({
                   {subtitle != null ? <h6 className="subtitle" dangerouslySetInnerHTML={{ __html: subtitle.toString() }} /> : ``}
                   {display === `slide` && tags ? <div className="tags"><Tags elements={tags} align={`left`} /></div> : ``}
                   {body != null ? <div className="body" dangerouslySetInnerHTML={{ __html: body.toString() }} /> : ``}
-                  {onClick ? <Button
-                    icon={`arrow_forward`}
-                    mode={`default`}
-                    color={color && color !== false && color !== `false` ? color : `inherit`}
-                    onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
-                  /> : ``}
+                  {<div className={`action`}>
+                    {onClick ? <Button
+                      icon={`arrow_forward`}
+                      mode={`default`}
+                      color={color && color !== false && color !== `false` ? color : `inherit`}
+                      onClick={(event: React.MouseEvent<HTMLElement>) => { if (onClick) onClick() }}
+                    /> : ``}
+                  </div>}
                 </div>}
-                {<div className={`action`}>
-                  {variants && <div className="tags">{variants}</div>}
+                {variants && <div className={`variants`}>
+                  {variants && <div className="variants-inner">{variants}</div>}
                 </div>}
               </>}
             </div>

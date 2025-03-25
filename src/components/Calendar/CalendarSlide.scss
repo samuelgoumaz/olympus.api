@@ -12,11 +12,27 @@
   width: 100%;
   display: block;
   position: relative;
+  padding: 0 2.5em;
+  max-width: 1920px;
+  margin: 1em auto;
 
   .calendar-component-inner {
+    width: calc(100% + 1em);
+    display: block;
+    margin-left: -0.5em;
+
+    .slick-arrow {
+      &.slick-next {
+        //right: -50px !important;
+      }
+      &.slick-prev {
+        //left: -50px !important;
+      }
+    }
 
     .event-component-grid {
       width: 100% !important;
+      position: relative;
     }
 
     &.align-left {
@@ -35,16 +51,31 @@
 # Responsive
 */
 @media #{$small-and-down} {
+  .calendar-component-slide {
+    padding: 0 1em !important;
+  }
 }
 
 @media #{$medium-and-down} {
+  .calendar-component-slide {
+    padding: 0 1em !important;
+  }
 }
 
 @media #{$medium-and-up} {
+  .calendar-component-slide {
+    padding: 0 1.5em !important;
+  }
 }
 
 @media #{$large-and-up} {
+  .calendar-component-slide {
+    padding: 0 2em !important;
+  }
 }
 
 @media #{$extra-large-and-up} {
+  .calendar-component-slide {
+    padding: 0 2.5em !important;
+  }
 }

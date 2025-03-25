@@ -13,6 +13,7 @@ export interface MainProps {
   blur?: false | true;
   negative?: false | true;
   marginTop?: true | false;
+  marginBanner?: true | false;
   position?: number | null;
   children: JSX.Element | JSX.Element[];
 }
@@ -40,6 +41,7 @@ const Main = ({
   blur,
   negative,
   marginTop,
+  marginBanner,
   position,
   children
 }: MainProps) => (
@@ -54,7 +56,10 @@ const Main = ({
       zIndex: position != null ? position : 1
     }}
   >
-    <div className={`main-inner`}>
+    <div className={`
+      main-inner
+      ${marginBanner === true ? `hv_banner` : ``}
+    `}>
       {children ?? <h1>...</h1>}
     </div>
   </main>

@@ -1,0 +1,61 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.highlights-component {
+  width: 100%;
+  display: block;
+  clear: both;
+  padding: 0 2.5em;
+  margin: 1em 0;
+
+  .highlights-inner {
+    .highlights-inner-col {
+      &.col-left {
+      }
+      &.col-middle {
+      }
+      &.col-right {
+      }
+    }
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .highlights-component {
+    padding: 0 1em;
+  }
+}
+
+@media #{$medium-and-down} {
+  .highlights-component {
+    padding: 0 1em;
+  }
+}
+
+@media #{$medium-and-up} {
+  .highlights-component {
+    padding: 0 1.5em;
+  }
+}
+
+@media #{$large-and-up} {
+  .highlights-component {
+    padding: 0 2em;
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .highlights-component {
+    padding: 0 2.5em;
+  }
+}

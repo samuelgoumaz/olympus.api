@@ -13,7 +13,7 @@ https://www.carlrippon.com/react-children-with-typescript/
 */
 export interface CardProps {
   position?: number | null;
-  image?: string | null;
+  image?: string | false;
   title: string | null;
   subtitle: string | null;
   height?: string | null;
@@ -66,21 +66,21 @@ const Card = ({
       ${fx !== undefined ? `hv-fx` : ``}
     `}>
 
-      <div className={`
+      {image || scene ? <div className={`
         scene
       `}>
         <div className={`
           scene-inner
-          ${padding != false ? `hv-padding` : ``}
+          ${padding !== false ? `hv-padding` : ``}
         `}>
           {scene ? scene : ``}
-          {image ? <div className={`image`}>
+          {image !== false ? <div className={`image`}>
             <img
               src={image}
             />
           </div> : ``}
         </div>
-      </div>
+      </div> : ``}
 
       <div className={`content`}>
         {title !== null || subtitle !== null || body !== null ? <div className={`header`}>

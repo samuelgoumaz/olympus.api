@@ -17,6 +17,7 @@ export interface ButtonProps {
   state?: string | null;
   href?: string | null;
   radius?: boolean | false;
+  target?: boolean | false;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void | false;
 }
 
@@ -24,6 +25,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   label,
   icon,
   mode,
+  target,
   primary,
   secondary,
   state,
@@ -105,13 +107,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
         `}
         style={{
           color: primary ? primary : `black`,
-          backgroundColor: secondary ? secondary : `#f2f2f2`,
+          backgroundColor: secondary ? secondary : `transparent`,
           border: mode == `border` ? `2px solid ${secondary ? secondary : `black`}` : `none`,
           cursor: `pointer`
         }}
         onClick={href ? function () {
           try {
-            window.open(href, "_blank")
+            if (target === true) {
+              window.open(href, "_blank")
+            } else {
+              window.location.href = String(href);
+            }
           } catch {
             window.location.href = String(href);
           }

@@ -30,6 +30,10 @@
       vertical-align: top;
       font-size: 1.25em;
       float: left;
+
+      &.hv_no_icon {
+        padding-right: 1em;
+      }
     }
     .label {
       height: 100%;

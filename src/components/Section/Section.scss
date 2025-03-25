@@ -10,9 +10,8 @@
 # document
 */
 .section-component {
-  width: 100%;
-  display: block;
-  position: relative;
+  padding: 0 2.5em;
+  margin: 1em 0;
 
   &:after {
     content: " ";
@@ -33,18 +32,10 @@
   /*
   # Inner */
   .section-inner {
-    display: flex;
-    position: relative;
-    z-index: 2;
-    justify-content: center;
 
     /*
     # col */
     .section-inner-col {
-      width: 50%;
-      display: flex;
-      align-items: center;
-      position: relative;
 
       &.col-scene {
         @include aspect-ratio(3,2.5);
@@ -65,7 +56,15 @@
       }
       &.col-content {
         .col-content-inner {
-          padding: 100px;
+          padding: 2.5em; 
+
+          .title {
+            margin-bottom: 0.5em;
+          }
+
+          .subtitle {
+            margin-bottom: 0.5em;
+          }
 
           .action {
             margin-top: 1em;
@@ -206,18 +205,19 @@
 # Responsive
 */
 @media #{$small-and-down} {
-  .section-component {
+  section.section-component {
+    padding: 0 1em;
 
     /*
     # Inner */
     .section-inner {
-      display: block;
+      display: block !important;
 
       /*
       # col */
       .section-inner-col {
-        width: 100%;
-        display: block;
+        width: 100% !important;
+        display: block !important;
 
         &.col-scene {
           .scene {
@@ -225,7 +225,7 @@
         }
         &.col-content {
           .col-content-inner {
-            padding: 20px;
+            padding: 1em; 
           }
         }
       }
@@ -277,7 +277,8 @@
 }
 
 @media #{$medium-and-down} {
-  .section-component {
+  section.section-component {
+    padding: 0 1em;
 
     /*
     # Inner */
@@ -292,7 +293,7 @@
         }
         &.col-content {
           .col-content-inner {
-            padding: 60px;
+            padding: 1.5em;
           }
         }
       }
@@ -344,7 +345,8 @@
 }
 
 @media #{$medium-and-up} {
-  .section-component {
+  section.section-component {
+    padding: 0 1.5em;
 
     /*
     # Inner */
@@ -359,7 +361,7 @@
         }
         &.col-content {
           .col-content-inner {
-            padding: 70px;
+            padding: 2em;
           }
         }
       }
@@ -411,7 +413,8 @@
 }
 
 @media #{$large-and-up} {
-  .section-component {
+  section.section-component {
+    padding: 0 2em;
 
     /*
     # Inner */
@@ -426,7 +429,7 @@
         }
         &.col-content {
           .col-content-inner {
-            padding: 80px;
+            padding: 2.5em;
           }
         }
       }
@@ -478,7 +481,8 @@
 }
 
 @media #{$extra-large-and-up} {
-  .section-component {
+  section.section-component {
+    padding: 0 2.5em;
 
     /*
     # Inner */
@@ -493,7 +497,7 @@
         }
         &.col-content {
           .col-content-inner {
-            padding: 90px;
+            padding: 2.5em;
           }
         }
       }

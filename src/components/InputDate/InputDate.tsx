@@ -1,7 +1,7 @@
 /*
 # Imports
 */
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, Children } from "react";
 import "./InputDate.scss";
 
 /*
@@ -14,9 +14,7 @@ export interface InputDateProps {
   name: string | null;
   required?: string | null;
   placeholder?: string | null;
-  onChange?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  onLoad?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  children?: JSX.Element | JSX.Element[];
 }
 
 
@@ -43,30 +41,29 @@ const InputDate = ({
   name,
   required,
   placeholder,
-  onChange,
-  onLoad,
-  onClick
+  children
 }: InputDateProps) => (
-  <p
+  <div
     className={"form-item form-item-date"}
   >
     {label && label !== null ? <label className={"form-item-label"}>{label}</label> : ``}
-    <input
-      className={"form-item-input form-item-input-date"}
-      type="text"
-      name={String(name) ?? `errorName`}
-      required={required == true ? `required` : ``}
-      placeholder={
-        `${placeholder ?? ``}${required == true ? `*` : ``}`
-      }
-      onLoad={onLoad}
-      onClick={onClick}
-      onChange={onChange}
-    />
-  </p>
+    {children && children}
+  </div>
 );
 
 /*
 # Export
+<input
+  className={"form-item-input form-item-input-date"}
+  type="date"
+  name={String(name) ?? `errorName`}
+  required={required == true ? `required` : ``}
+  placeholder={
+    `${placeholder ?? ``}${required == true ? `*` : ``}`
+  }
+  onLoad={onLoad}
+  onClick={onClick}
+  onChange={onChange}
+/>
 */
 export default InputDate;

@@ -10,10 +10,6 @@
 # document
 */
 .article-component-row {
-  width: 100%;
-  display: block;
-  clear: both;
-  position: relative;
 
   .fx {
     position: absolute;
@@ -21,25 +17,21 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 0;
   }
 
   .article-component-inner {
-    width: 100%;
-    display: table;
-    position: relative;
-    z-index: 2;
 
     .scene {
-      width: 35%;
-      display: table-cell;
       @include aspect-ratio(3,2);
+      position: relative;
+      z-index: 2;
     }
     .content {
-      width: 65%;
-      display: table-cell;
-      vertical-align: middle;
-      padding: 100px;
+      padding: 2.5em 0;
+      padding-left: 2.5em;
+      position: relative;
+      z-index: 2;
 
       .title {
         margin: 0.1em 0;
@@ -143,7 +135,7 @@
       .content {
         width: 100%;
         display: block;
-        padding: 20px;
+        padding: 1em 0em;
       }
       .action {
       }
@@ -162,7 +154,8 @@
       }
       .content {
         width: 50%;
-        padding: 40px;
+        padding: 1em 0;
+        padding-left: 1em;
   
         .title {
         }
@@ -184,7 +177,8 @@
       }
       .content {
         width: 65%;
-        padding: 60px;
+        padding: 1.5em 0;
+        padding-left: 1.5em;
   
         .title {
         }
@@ -206,7 +200,8 @@
       }
       .content {
         width: 65%;
-        padding: 80px;
+        padding: 2em 0;
+        padding-left: 2em;
   
         .title {
         }
@@ -228,7 +223,8 @@
       }
       .content {
         width: 65%;
-        padding: 90px;
+        padding: 2.5em 0;
+        padding-left: 2.5em;
   
         .title {
         }

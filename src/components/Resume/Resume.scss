@@ -1,0 +1,63 @@
+/*
+# Imports
+*/
+@import "../../../lib/materialize/normalize.scss";
+@import "../../../lib/materialize/mixin.scss";
+@import "../../../lib/materialize/responsive.scss";
+
+/*
+# document
+*/
+.resume-component {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  margin: 1em 0;
+  .resume-component-inner {
+    padding: 0 2.5em;
+  }
+}
+
+/*
+# Responsive
+*/
+@media #{$small-and-down} {
+  .resume-component {
+    .resume-component-inner {
+      padding: 0 1em !important;
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .resume-component {
+    .resume-component-inner {
+      padding: 0 1em !important;
+    }
+  }
+}
+
+@media #{$medium-and-up} {
+  .resume-component {
+    .resume-component-inner {
+      padding: 0 1.5em !important;
+    }
+  }
+}
+
+@media #{$large-and-up} {
+  .resume-component {
+    .resume-component-inner {
+      padding: 0 2em !important;
+    }
+  }
+}
+
+@media #{$extra-large-and-up} {
+  .resume-component {
+    .resume-component-inner {
+      padding: 0 2.5em !important;
+    }
+  }
+}

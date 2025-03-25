@@ -6,37 +6,61 @@
 @import "../../../lib/materialize/responsive.scss";
 
 /*
-# Input */
+# Input
+*/
 .dropdown-component-ui {
-  width: auto;
+  width: 100px;
   height: 100px;
   display: inline-block;
   position: relative;
 
   .dropdown-handler {
-    width: auto;
-    display: inline-block;
-    padding: 0 0 0 25px;
+    width: 100% !important;
+    height: 100%;
+    padding: 0 !important;
+    display: table !important;
+    border-radius: 0;
     overflow: hidden;
+    background: transparent;
     cursor: pointer;
-    background: lightgray;
 
     .dropdown-current {
-      width: calc(100% - 40px);
+      width: 100%;
       line-height: 100px;
-      display: inline-block;
+      display: block;
+      padding-left: 0;
       vertical-align: top;
-      font-size: 2em;
+      font-size: 1.25em;
       float: left;
     }
+    .label {
+      width: 100%;
+      height: 100%;
+      display: block;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0;
+      text-align: center;
+    }
+    .icon {
+      width: 100px;
+      height: 100px;
+      vertical-align: middle;
+      text-align: center;
+      display: table-cell !important;
+      padding: 0;
+    }
     .dropdown-icon {
-      width: 40px;
+      width: 100px;
       height: 100px;
       line-height: 100px;
-      display: inline-block;
+      display: block;
+      position: absolute;
       text-align: center;
-      font-size: 1.75em;
-      float: right;
+      padding: 0 0.2em 0 0.2em;
+      top: 0;
+      left: 0;
+      text-align: center !important;
     }
   }
 
@@ -46,17 +70,37 @@
     position: absolute;
     left: 0;
     overflow: hidden;
-    font-size: 1.75em;
+    font-size: 1.25em;
+    background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    cursor: pointer;
 
+    ul {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      li {
+        width: 100%;
+        display: block;
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        line-height: 35px;
+
+        &:nth-child(2) {
+          background: rgba(0,0,0,0.05);
+        }
+      }
+    }
     div {
       width: 100%;
       display: block;
       list-style: none;
       text-align: center;
       margin: 0;
-      line-height: 65px;
-      cursor: pointer;
+      line-height: 35px;
 
       &:nth-child(odd) {
         background: rgba(0,0,0,0.05);
@@ -110,28 +154,34 @@
       bottom: 100px;
     }
   }
+
 }
 
 /*
 # Responsive
 */
 @media #{$small-and-down} {
+
+  /*
+  # Input */
   .dropdown-component-ui {
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
 
     .dropdown-handler {
-      padding: 0 0 0 10px;
 
       .dropdown-current {
-        width: calc(100% - 25px);
         line-height: 50px;
-        font-size: 1em;
+        font-size: 0.875em;
+      }
+      .icon {
+        width: 50px;
+        height: 50px;
       }
       .dropdown-icon {
-        width: 24px;
+        width: 50px;
         height: 50px;
         line-height: 50px;
-        font-size: 1em;
       }
     }
 
@@ -140,36 +190,19 @@
 
       ul {
         li {
-          line-height: 40px;
-          &:nth-child(2) {
-          }
+          line-height: 25px;
         }
       }
       div {
-        line-height: 40px;
-        &:nth-child(odd) {
-        }
+        line-height: 25px;
       }
     }
 
     &.dsp-open {
       .dropdown-handler {
-        .dropdown-icon {
-          &.dsp-open {
-          }
-          &.dsp-close {
-          }
-        }
       }
     }
-
     &.dsp-close {
-      .dropdown-icon {
-        &.dsp-open {
-        }
-        &.dsp-close {
-        }
-      }
       .dropdown-content {
       }
     }
@@ -197,60 +230,47 @@
 }
 
 @media #{$medium-and-down} {
+  /*
+  # Input */
   .dropdown-component-ui {
-    height: 60px;
+    width: 60px !important;
+    height: 60px !important;
 
     .dropdown-handler {
-      padding: 0 0 0 12px;
 
       .dropdown-current {
-        width: calc(100% - 26px);
         line-height: 60px;
-        font-size: 1.125em;
+        font-size: 0.875em;
+      }
+      .icon {
+        width: 60px;
+        height: 60px;
       }
       .dropdown-icon {
-        width: 26px;
+        width: 60px;
         height: 60px;
         line-height: 60px;
-        font-size: 1.125em;
       }
     }
 
     .dropdown-content {
-      font-size: 1em;
+      font-size: 0.875em;
 
       ul {
         li {
-          line-height: 45px;
-          &:nth-child(2) {
-          }
+          line-height: 30px;
         }
       }
       div {
-        line-height: 45px;
-        &:nth-child(odd) {
-        }
+        line-height: 30px;
       }
     }
 
     &.dsp-open {
       .dropdown-handler {
-        .dropdown-icon {
-          &.dsp-open {
-          }
-          &.dsp-close {
-          }
-        }
       }
     }
-
     &.dsp-close {
-      .dropdown-icon {
-        &.dsp-open {
-        }
-        &.dsp-close {
-        }
-      }
       .dropdown-content {
       }
     }
@@ -278,60 +298,47 @@
 }
 
 @media #{$medium-and-up} {
+  /*
+  # Input */
   .dropdown-component-ui {
-    height: 70px;
+    width: 70px !important;
+    height: 70px !important;
 
     .dropdown-handler {
-      padding: 0 0 0 15px;
 
       .dropdown-current {
-        width: calc(100% - 30px);
         line-height: 70px;
-        font-size: 1.375em;
+        font-size: 1em;
+      }
+      .icon {
+        width: 70px;
+        height: 70px;
       }
       .dropdown-icon {
-        width: 30px;
+        width: 70px;
         height: 70px;
         line-height: 70px;
-        font-size: 1.375em;
       }
     }
 
     .dropdown-content {
-      font-size: 1.25em;
+      font-size: 1em;
 
       ul {
         li {
-          line-height: 50px;
-          &:nth-child(2) {
-          }
+          line-height: 35px;
         }
       }
       div {
-        line-height: 50px;
-        &:nth-child(odd) {
-        }
+        line-height: 35px;
       }
     }
 
     &.dsp-open {
       .dropdown-handler {
-        .dropdown-icon {
-          &.dsp-open {
-          }
-          &.dsp-close {
-          }
-        }
       }
     }
-
     &.dsp-close {
-      .dropdown-icon {
-        &.dsp-open {
-        }
-        &.dsp-close {
-        }
-      }
       .dropdown-content {
       }
     }
@@ -359,60 +366,47 @@
 }
 
 @media #{$large-and-up} {
+  /*
+  # Input */
   .dropdown-component-ui {
-    height: 80px;
+    width: 80px !important;
+    height: 80px !important;
 
     .dropdown-handler {
-      padding: 0 0 0 18px;
 
       .dropdown-current {
-        width: calc(100% - 35px);
         line-height: 80px;
-        font-size: 1.5em;
+        font-size: 1.1em;
+      }
+      .icon {
+        width: 80px;
+        height: 80px;
       }
       .dropdown-icon {
-        width: 35px;
+        width: 80px;
         height: 80px;
         line-height: 80px;
-        font-size: 1.5em;
       }
     }
 
     .dropdown-content {
-      font-size: 1.5em;
+      font-size: 1.1em;
 
       ul {
         li {
-          line-height: 55px;
-          &:nth-child(2) {
-          }
+          line-height: 40px;
         }
       }
       div {
-        line-height: 55px;
-        &:nth-child(odd) {
-        }
+        line-height: 40px;
       }
     }
 
     &.dsp-open {
       .dropdown-handler {
-        .dropdown-icon {
-          &.dsp-open {
-          }
-          &.dsp-close {
-          }
-        }
       }
     }
-
     &.dsp-close {
-      .dropdown-icon {
-        &.dsp-open {
-        }
-        &.dsp-close {
-        }
-      }
       .dropdown-content {
       }
     }
@@ -440,60 +434,48 @@
 }
 
 @media #{$extra-large-and-up} {
+  /*
+  # Input */
   .dropdown-component-ui {
-    height: 90px;
+    width: 90px !important;
+    height: 90px !important;
 
     .dropdown-handler {
-      padding: 0 0 0 20px;
 
       .dropdown-current {
-        width: calc(100% - 40px);
+        text-align: center;
         line-height: 90px;
-        font-size: 1.625em;
+        font-size: 1.2em;
+      }
+      .icon {
+        width: 90px;
+        height: 90px;
       }
       .dropdown-icon {
-        width: 40px;
+        width: 90px;
         height: 90px;
-        font-size: 1.625em;
         line-height: 90px;
       }
     }
 
     .dropdown-content {
-      font-size: 2em;
+      font-size: 1.2em;
 
       ul {
         li {
-          line-height: 60px;
-          &:nth-child(2) {
-          }
+          line-height: 45px;
         }
       }
       div {
-        line-height: 60px;
-        &:nth-child(odd) {
-        }
+        line-height: 45px;
       }
     }
 
     &.dsp-open {
       .dropdown-handler {
-        .dropdown-icon {
-          &.dsp-open {
-          }
-          &.dsp-close {
-          }
-        }
       }
     }
-
     &.dsp-close {
-      .dropdown-icon {
-        &.dsp-open {
-        }
-        &.dsp-close {
-        }
-      }
       .dropdown-content {
       }
     }
